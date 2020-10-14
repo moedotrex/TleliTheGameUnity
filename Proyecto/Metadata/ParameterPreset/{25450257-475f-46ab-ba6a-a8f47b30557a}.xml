@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="ParameterPreset" id="{25450257-475f-46ab-ba6a-a8f47b30557a}">
+		<property name="name">
+			<value>TipoDeGruñido</value>
+		</property>
+		<relationship name="folder">
+			<destination>{d8e7dcd7-c11a-4b5e-8452-954c57188cfc}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{e9773e8e-06ed-4265-b89d-6617de7d880d}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{e9773e8e-06ed-4265-b89d-6617de7d880d}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>11</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
