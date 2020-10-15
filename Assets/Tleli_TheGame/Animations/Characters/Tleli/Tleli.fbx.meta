@@ -1,12 +1,14 @@
 fileFormatVersion: 2
-guid: 1b6a3119ba837c444ac1b0217965bd3b
+guid: e9c380af1eca94245a808139a2aaf0ed
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable:
+  internalIDToNameTable: []
+  externalObjects:
   - first:
-      74: 6200578666267062213
-    second: run
-  externalObjects: {}
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tlelli_Rig_v1_blinn1
+    second: {fileID: 2100000, guid: d81ab76b786d6cb46bb650d8aaf72023, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -33,36 +35,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: run
-      takeName: run
-      internalID: 0
-      firstFrame: 62
-      lastFrame: 91
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 62
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []

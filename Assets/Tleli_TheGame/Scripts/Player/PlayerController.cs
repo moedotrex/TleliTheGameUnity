@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
 	private float vel;
 	bool isMoving;
 	Vector3 velocidad;
+	float _deltaVelocidad = 0f;
 
 	public Transform groundCheck;
 	public float groundDistance = 0.4f;
@@ -37,6 +38,8 @@ public class PlayerController : MonoBehaviour
 	public Vector3 moveDir;
 	public bool isDashing;
 	PlayerDash dashCount;
+
+	public TleliAnimationController tleliAnimationController;
 
 	void Start()
 	{
@@ -155,14 +158,30 @@ public class PlayerController : MonoBehaviour
 
 			moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
 			characterController.Move(moveDir.normalized * vel * Time.deltaTime);
+
+				_deltaVelocidad = vel * Time.deltaTime;
 			isMoving = true;
 
+			tleliAnimationController.SetForwardSpeedParameter(1f);
 		}
 
 		if (direction.magnitude <= 0f)
 		{
 			isMoving = false;
+			tleliAnimationController.SetForwardSpeedParameter(0f);
+			}
 		}
-		}
+
+		
+	}
+
+	public float GetVelocity()
+	{
+		return _deltaVelocidad;
+	}
+
+public float GetJumpVelocity()
+	{
+		return velocidad.y;
 	}
 }
