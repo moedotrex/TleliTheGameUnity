@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// Karime y Lucy  11/oct: Se agregó referencia a las partículas del enemigo (Todo lo que tiene //------ al final, corresponde a esta funcionalidad)
+
 public class SwordAttack : MonoBehaviour
 {
 
@@ -21,10 +24,13 @@ public class SwordAttack : MonoBehaviour
 
     public float Damage;
 
+    AttackFX enemyParticles;  //---------
+
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        enemyParticles = GameObject.FindGameObjectWithTag("Sword").GetComponent<AttackFX>();   //------------
     }
 
 
@@ -40,32 +46,23 @@ public class SwordAttack : MonoBehaviour
                 shootRay.origin = transform.position;
                 shootRay.direction = transform.forward;
                 ArateTimeStamp = Time.time + MArate;
-                
+
+                Debug.DrawRay(transform.position, transform.forward, Color.red);
+
 
                 if (Physics.Raycast(shootRay, out hit, range, mask))
                 {
 
                     EnemyHealth enemy = hit.transform.GetComponent<EnemyHealth>();
                     EnemyController mov = hit.transform.GetComponent<EnemyController>();
-                    TransporterStaticEnemy TP = hit.transform.GetComponent<TransporterStaticEnemy>();
 
-                    Debug.DrawLine(transform.position, hit.point, Color.red);
+                   
 
                     if (enemy != null)
                     {
                         enemy.HurtEnemy(Damage);
-                        
-                        
-                    }
-                    if (mov != null)
-                    {
-                        
-                        mov.stopMov(5f);
-
-                    }
-                    if (TP != null)
-                    {
-                        TP.transport();
+                        enemyParticles.PlayFX(enemy);   //--------------
+                        mov.stopMov(0.2f);
                     }
                     if (hit.rigidbody != null)
                     {
