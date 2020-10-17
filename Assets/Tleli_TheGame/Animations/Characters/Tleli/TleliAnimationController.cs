@@ -16,4 +16,25 @@ public class TleliAnimationController : MonoBehaviour
     {
         tleliAnimator.SetFloat("ForwardSpeed", forwardSpeed);
     }
+
+    public void JumpTakeOffTrigger()
+    {
+        tleliAnimator.SetTrigger("JumpTakeOff");
+    }
+
+    public void JumpLandTrigger()
+    {
+        tleliAnimator.SetTrigger("JumpLand");
+    }
+
+    public bool CheckFallLoop()
+    {
+        AnimatorStateInfo stateInfo= tleliAnimator.GetCurrentAnimatorStateInfo(0);
+        return stateInfo.IsName("jump_fallLoop");
+    }
+
+    public void JumpFallLoopBoolParameter(bool fallLoop)
+    {
+
+    }
 }

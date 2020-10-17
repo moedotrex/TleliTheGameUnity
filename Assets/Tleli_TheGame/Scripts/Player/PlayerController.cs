@@ -77,6 +77,7 @@ public class PlayerController : MonoBehaviour
 			isJumping = true;
 			saltoTimeCounter = saltoTime;
 			velocidad.y = Mathf.Sqrt(Salto * -2f * gravedad);
+				tleliAnimationController.JumpTakeOffTrigger();
 		}
 		//doble salto
 		if (doubleJump == true)
@@ -146,6 +147,11 @@ public class PlayerController : MonoBehaviour
 			velBase = velInicial;
 			Salto = saltoInicial;
 			extraJumps = extraJumpsValue;
+
+				if (tleliAnimationController.CheckFallLoop())
+				{
+					tleliAnimationController.JumpLandTrigger();
+				}
 		}
 
 		vel = velBase;
@@ -172,6 +178,15 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 
+		if (velocidad.y<0)
+        {
+			tleliAnimationController.JumpFallLoopBoolParameter(false);
+		}
+
+		if (velocidad.y>0)
+        {
+			tleliAnimationController.JumpFallLoopBoolParameter(true);
+        }
 		
 	}
 
