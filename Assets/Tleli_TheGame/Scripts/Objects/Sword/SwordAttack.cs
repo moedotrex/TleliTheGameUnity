@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// Karime y Lucy  11/oct: Se agregó referencia a las partículas del enemigo (Todo lo que tiene //------ al final, corresponde a esta funcionalidad)
+
 public class SwordAttack : MonoBehaviour
 {
 
@@ -21,10 +24,13 @@ public class SwordAttack : MonoBehaviour
 
     public float Damage;
 
+    AttackFX enemyParticles;  //---------
+
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        enemyParticles = GameObject.FindGameObjectWithTag("Sword").GetComponent<AttackFX>();   //------------
     }
 
 
@@ -55,6 +61,7 @@ public class SwordAttack : MonoBehaviour
                     if (enemy != null)
                     {
                         enemy.HurtEnemy(Damage);
+                        enemyParticles.PlayFX(enemy);   //--------------
                         mov.stopMov(0.2f);
                     }
                     if (hit.rigidbody != null)

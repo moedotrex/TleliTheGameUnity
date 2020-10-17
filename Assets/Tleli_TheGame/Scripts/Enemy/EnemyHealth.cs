@@ -6,7 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
 
     public float health;
-    private float currentHealth;
+    public float currentHealth;
 
    public  Color ogColor;
 
