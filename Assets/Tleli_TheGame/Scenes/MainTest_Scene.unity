@@ -1009,7 +1009,6 @@ GameObject:
   - component: {fileID: 350378872}
   - component: {fileID: 350378876}
   - component: {fileID: 350378871}
-  - component: {fileID: 350378877}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1190,18 +1189,6 @@ MonoBehaviour:
   dashTime: 0.25
   dashCooldown: 0.8
   gotDash: 0
---- !u!114 &350378877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 350378867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 495af35a8de31b94c9de613e422a803a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &390348063
 GameObject:
   m_ObjectHideFlags: 0
@@ -4964,7 +4951,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1605245786}
-  m_LocalRotation: {x: -0.10959639, y: 0.00000001740781, z: 6.3141437e-11, w: -0.9939762}
+  m_LocalRotation: {x: -0.10959639, y: -0.000000017850377, z: 0.0000000039507295,
+    w: -0.9939762}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6421,7 +6409,7 @@ GameObject:
   - component: {fileID: 2051667847}
   m_Layer: 0
   m_Name: Ikni
-  m_TagString: Ikni
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6440,9 +6428,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   TWaypoint: {fileID: 819281672}
-  Hold: 0
-  following: 0
-  tleliCloseness: 15
 --- !u!4 &2051667848
 Transform:
   m_ObjectHideFlags: 0
