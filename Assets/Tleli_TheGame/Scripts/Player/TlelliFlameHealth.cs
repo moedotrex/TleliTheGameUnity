@@ -19,8 +19,10 @@ public class TlelliFlameHealth : MonoBehaviour
     float flameIntensity;
       
     public float attack;      
-    public float flameDamage;    
- 
+    public float flameDamage;
+
+    public TleliAnimationController tleliAnimationController;
+
 
     void Start()
     {
@@ -85,7 +87,7 @@ public class TlelliFlameHealth : MonoBehaviour
         FlameUpdateMaterial();
     }
 
-
+    
     public void SetHPDamage(float attackStrength)
     {
         // Fórmula para cálculo de daño, flama como armadura
@@ -104,6 +106,7 @@ public class TlelliFlameHealth : MonoBehaviour
         Text damageTxt = GameObject.Find("ShowDamage").GetComponent<Text>();
         damageTxt.text = "- " + damage;
 
+       
     }
 
     public void EnemyDistance(float d)
@@ -149,5 +152,14 @@ public class TlelliFlameHealth : MonoBehaviour
     public float GetHP()
     {
         return HP;
+
+    }
+
+    public void DeathTleli()
+    {
+        if (HP == 0)
+        {
+            tleliAnimationController.IsDeadTrigger();
+        }
     }
 }

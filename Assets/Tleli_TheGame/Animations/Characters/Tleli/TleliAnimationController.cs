@@ -37,4 +37,9 @@ public class TleliAnimationController : MonoBehaviour
     {
 
     }
+    public void IsDeadTrigger()
+    {
+        
+        tleliAnimator.SetTrigger("Death");
+    }
 }
