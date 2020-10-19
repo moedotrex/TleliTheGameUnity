@@ -30,7 +30,8 @@ public class SwordAttack : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        enemyParticles = GameObject.FindGameObjectWithTag("Sword").GetComponent<AttackFX>();   //------------
+        //enemyParticles = GameObject.FindGameObjectWithTag("Sword").GetComponent<AttackFX>();   //------------
+        enemyParticles = GameObject.Find("Player_Weapon").GetComponent<AttackFX>();
     }
 
 
