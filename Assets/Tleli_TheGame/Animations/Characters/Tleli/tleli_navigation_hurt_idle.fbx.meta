@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 327d311a5b560934ea19cb6149ebe3b4
+guid: 74aef9f197d29d54bbcb4902ec1b9d06
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
-      74: -4071586955044407106
-    second: run_forward
+      74: -5252816984213320552
+    second: idle
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -20,14 +20,15 @@ ModelImporter:
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
-      copied configuration does not match position in animation file:\n\t'Tlelli_Rig_v1:spine4'
-      : position error = 3.572396 mm\n"
+      copied configuration does not match position in animation file:\n\t'Tlelli_Rig_v1:spine3'
+      : position error = 1.569721 mm\n\t'Tlelli_Rig_v1:spine4' : position error =
+      3.541963 mm\n\t'Tlelli_Rig_v1:head' : position error = 1.535748 mm\nCopied
+      Avatar Rig Configuration mis-match. Inbetween bone rotation in copied configuration
+      does not match rotation in animation file:\n\t'Tlelli_Rig_v1:spine2' : rotation
+      error = 20.061447 deg\n\t'Tlelli_Rig_v1:neck2' : rotation error = 19.540796
+      deg\n"
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'run_forward' has import animation warnings
-      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'Tlelli_Rig_v1:spine4' has translation animation
-      that will be discarded.\nEvent TleliStepSound has a time (0.000000) outside
-      the clip's valid range (0.000000..0.966667). It will never be fired"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -41,11 +42,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: run_forward
-      takeName: run_forward
+      name: idle
+      takeName: idle
       internalID: 0
-      firstFrame: 62
-      lastFrame: 91
+      firstFrame: 1
+      lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -64,25 +65,11 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0
-        functionName: TleliStepSound
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.5144509
-        functionName: TleliStepSound
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 62
+      additiveReferencePoseFrame: 1
     isReadable: 0
   meshes:
     lODScreenPercentages: []

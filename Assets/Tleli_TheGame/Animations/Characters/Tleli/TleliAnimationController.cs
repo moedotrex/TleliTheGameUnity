@@ -29,12 +29,24 @@ public class TleliAnimationController : MonoBehaviour
 
     public bool CheckFallLoop()
     {
-        AnimatorStateInfo stateInfo= tleliAnimator.GetCurrentAnimatorStateInfo(0);
+        AnimatorStateInfo stateInfo = tleliAnimator.GetCurrentAnimatorStateInfo(0);
         return stateInfo.IsName("jump_fallLoop");
     }
 
     public void JumpFallLoopBoolParameter(bool fallLoop)
     {
+        tleliAnimator.SetBool("JumpFallLoop", fallLoop);
+    } 
+
+    public void SetTleliHurtLayerWeight(float weight)
+    {
+
+        tleliAnimator.SetLayerWeight(1, weight);
 
     }
+
+    public void TleliStepSound()
+    {
+        GetComponent<FMODUnity.StudioEventEmitter>().Play();
+         }
 }
