@@ -17,6 +17,8 @@ public class EnemyController : MonoBehaviour
 
     public Vector3 EnemySpawn;
 
+    
+
     Transform target;
     NavMeshAgent agente;
     NavMeshAgent nav;
@@ -81,6 +83,9 @@ public class EnemyController : MonoBehaviour
             Debug.Log("false");
 
         }*/
+
+        
+
     }
 
         void FaceTarget()
