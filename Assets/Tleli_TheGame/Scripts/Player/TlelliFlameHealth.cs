@@ -157,7 +157,7 @@ public class TlelliFlameHealth : MonoBehaviour
 
     public void DeathTleli()
     {
-        if (HP == 0)
+        if (HP <= 0)
         {
             tleliAnimationController.IsDeadTrigger();
         }
