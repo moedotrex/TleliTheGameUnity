@@ -26,14 +26,50 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: jump_takeOff
+      takeName: jump_takeOff
+      internalID: 0
+      firstFrame: 93
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.7247706
+        functionName: TleliLevantaManos
+        data: StringSecreto
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 93
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -75,8 +111,1004 @@ ModelImporter:
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
-    human: []
-    skeleton: []
+    human:
+    - boneName: Tlelli_Rig_v1:root
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:leg_L
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:leg_R
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:knee_L
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:knee_R
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:ankle_L
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:ankle_R
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:spine1
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:spine3
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:neck1
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:clavicle_L
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:clavicle_R
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:shoulder_L
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:shoulder_R
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:elbow_L
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:elbow_R
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:wrist_L
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:wrist_R
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:toe_L
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:toe_R
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_thumb_1_L
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_thumb_2_L
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_thumb_3_L
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_index_1_L
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_index_2_L
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_index_3_L
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_middle_1_L
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_middle_2_L
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_middle_3_L
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_ring_1_L
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_ring_2_L
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_ring_3_L
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_pinky_1_L
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_pinky_2_L
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_pinky_3_L
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_thumb_1_R
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_thumb_2_R
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_thumb_3_R
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_index_1_R
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_index_2_R
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_index_3_R
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_middle_1_R
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_middle_2_R
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_middle_3_R
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_ring_1_R
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_ring_2_R
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_ring_3_R
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_pinky_1_R
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_pinky_2_R
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:finger_pinky_3_R
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tlelli_Rig_v1:spine4
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Tleli(Clone)
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:CONTROLS
+      parentName: Tleli(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:placement_padding
+      parentName: Tlelli_Rig_v1:CONTROLS
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:placement_offset
+      parentName: Tlelli_Rig_v1:placement_padding
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:placement_ctrl
+      parentName: Tlelli_Rig_v1:placement_offset
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:root_padding
+      parentName: Tlelli_Rig_v1:placement_ctrl
+      position: {x: -0, y: 0.9054912, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:root_offset
+      parentName: Tlelli_Rig_v1:root_padding
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:root_ctrl
+      parentName: Tlelli_Rig_v1:root_offset
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:spine1_padding
+      parentName: Tlelli_Rig_v1:root_ctrl
+      position: {x: 5.5301722e-18, y: 0.0042205574, z: 0.00643705}
+      rotation: {x: -0.7052264, y: 0.048566293, z: -0.017235363, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:spine1_offset
+      parentName: Tlelli_Rig_v1:spine1_padding
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:spine1_ctrl
+      parentName: Tlelli_Rig_v1:spine1_offset
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:spine2_padding
+      parentName: Tlelli_Rig_v1:spine1_ctrl
+      position: {x: -0.007885845, y: 0.0004005434, z: 0.08454028}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:spine2_offset
+      parentName: Tlelli_Rig_v1:spine2_padding
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:spine2_ctrl
+      parentName: Tlelli_Rig_v1:spine2_offset
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:spine3_padding
+      parentName: Tlelli_Rig_v1:spine2_ctrl
+      position: {x: -0.0051833517, y: 0.00026327642, z: 0.055568166}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:spine3_offset
+      parentName: Tlelli_Rig_v1:spine3_padding
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:spine3_ctrl
+      parentName: Tlelli_Rig_v1:spine3_offset
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:spine4_padding
+      parentName: Tlelli_Rig_v1:spine3_ctrl
+      position: {x: -0.006512406, y: 0.00033078267, z: 0.0698163}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:spine4_offset
+      parentName: Tlelli_Rig_v1:spine4_padding
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:spine4_ctrl
+      parentName: Tlelli_Rig_v1:spine4_offset
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:neck_1_padding
+      parentName: Tlelli_Rig_v1:spine4_ctrl
+      position: {x: -0.015592654, y: 0.052424982, z: 0.19166155}
+      rotation: {x: 0.7052264, y: -0.048566293, z: 0.017235363, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:neck_1_offset
+      parentName: Tlelli_Rig_v1:neck_1_padding
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:neck_1_ctrl
+      parentName: Tlelli_Rig_v1:neck_1_offset
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:neck_2_padding
+      parentName: Tlelli_Rig_v1:neck_1_ctrl
+      position: {x: 1.7701108e-17, y: 0.038201142, z: 0.0072764135}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:neck_2_offset
+      parentName: Tlelli_Rig_v1:neck_2_padding
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:neck_2_ctrl
+      parentName: Tlelli_Rig_v1:neck_2_offset
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:head_padding
+      parentName: Tlelli_Rig_v1:neck_2_ctrl
+      position: {x: -0, y: 0.05457306, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:head_offset
+      parentName: Tlelli_Rig_v1:head_padding
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:head_ctrl
+      parentName: Tlelli_Rig_v1:head_offset
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:clavicle_L__padding
+      parentName: Tlelli_Rig_v1:spine4_ctrl
+      position: {x: -0.08384486, y: 0.043881662, z: 0.120176524}
+      rotation: {x: 0.6866939, y: -0.16779298, z: 0.13723825, w: 0.69387513}
+      scale: {x: 0.49797073, y: 0.8150003, z: 0.5438959}
+    - name: Tlelli_Rig_v1:clavicle_L__offset
+      parentName: Tlelli_Rig_v1:clavicle_L__padding
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:clavicle_L__ctrl
+      parentName: Tlelli_Rig_v1:clavicle_L__offset
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:clavicle_R__padding
+      parentName: Tlelli_Rig_v1:spine4_ctrl
+      position: {x: 0.06368793, y: 0.037336875, z: 0.13396926}
+      rotation: {x: 0.69299775, y: 0.1394886, z: -0.17020299, w: 0.68653333}
+      scale: {x: 0.49797073, y: 0.8150003, z: 0.5438959}
+    - name: Tlelli_Rig_v1:clavicle_R__offset
+      parentName: Tlelli_Rig_v1:clavicle_R__padding
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:clavicle_R__ctrl
+      parentName: Tlelli_Rig_v1:clavicle_R__offset
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:leg_L__padding
+      parentName: Tlelli_Rig_v1:placement_ctrl
+      position: {x: -0.10186538, y: 0.2344705, z: -0.09084858}
+      rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:leg_L__offset
+      parentName: Tlelli_Rig_v1:leg_L__padding
+      position: {x: -8.881784e-18, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:leg_L__ctrl
+      parentName: Tlelli_Rig_v1:leg_L__offset
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:leg_R__padding
+      parentName: Tlelli_Rig_v1:placement_ctrl
+      position: {x: 0.10249761, y: 0.2344705, z: -0.09084858}
+      rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:leg_R__offset
+      parentName: Tlelli_Rig_v1:leg_R__padding
+      position: {x: -8.881784e-18, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:leg_R__ctrl
+      parentName: Tlelli_Rig_v1:leg_R__offset
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:hand_L_padding
+      parentName: Tlelli_Rig_v1:placement_ctrl
+      position: {x: -0.363855, y: 0.886325, z: 0.043546}
+      rotation: {x: -0.10798339, y: 0.25169927, z: -0.25170442, w: 0.9282414}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:hand_L_offset
+      parentName: Tlelli_Rig_v1:hand_L_padding
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:hand_L_ctrl
+      parentName: Tlelli_Rig_v1:hand_L_offset
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:hand_R_padding
+      parentName: Tlelli_Rig_v1:placement_ctrl
+      position: {x: 0.36385497, y: 0.886325, z: 0.043546002}
+      rotation: {x: -0.20846865, y: 0.92879957, z: -0.05269235, w: 0.3018207}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:hand_R_offset
+      parentName: Tlelli_Rig_v1:hand_R_padding
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:hand_R_ctrl
+      parentName: Tlelli_Rig_v1:hand_R_offset
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:SKELETON
+      parentName: Tleli(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:world
+      parentName: Tlelli_Rig_v1:SKELETON
+      position: {x: -0, y: 0, z: -0.06768905}
+      rotation: {x: -0.481092, y: 0.51821864, z: -0.481092, w: 0.51821864}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: Tlelli_Rig_v1:root
+      parentName: Tlelli_Rig_v1:world
+      position: {x: -0.91222656, y: 1.5099033e-16, z: 3.352659e-32}
+      rotation: {x: 0, y: 0, z: 1.110223e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:hip
+      parentName: Tlelli_Rig_v1:root
+      position: {x: -1.4210854e-16, y: 0, z: 0}
+      rotation: {x: 0.47263572, y: -0.6185896, z: 0.46909595, w: 0.41702706}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: Tlelli_Rig_v1:leg_L
+      parentName: Tlelli_Rig_v1:hip
+      position: {x: -0.095248185, y: -1.4210854e-16, z: -2.2204459e-17}
+      rotation: {x: -0.2655459, y: -0.23656332, z: 0.56666315, w: 0.7432469}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1}
+    - name: Tlelli_Rig_v1:knee_L
+      parentName: Tlelli_Rig_v1:leg_L
+      position: {x: -0.31452158, y: 7.105427e-17, z: -8.881784e-18}
+      rotation: {x: -0.34086636, y: -0.03866754, z: -0.034385715, w: 0.9386866}
+      scale: {x: 1.0000001, y: 1, z: 1.0000002}
+    - name: Tlelli_Rig_v1:ankle_L
+      parentName: Tlelli_Rig_v1:knee_L
+      position: {x: -0.34737074, y: 1.2434498e-16, z: -3.0198067e-16}
+      rotation: {x: 0.035133656, y: -0.0022153107, z: 0.21081379, w: 0.9768921}
+      scale: {x: 1.0000005, y: 1.0000006, z: 1.0000005}
+    - name: Tlelli_Rig_v1:foot_L
+      parentName: Tlelli_Rig_v1:ankle_L
+      position: {x: -0.17603603, y: 6.217249e-17, z: 0}
+      rotation: {x: 0.00000013038515, y: -0.0000000043073665, z: 0.39386392, w: 0.9191688}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: Tlelli_Rig_v1:toe_L
+      parentName: Tlelli_Rig_v1:foot_L
+      position: {x: -0.08013482, y: 5.7731595e-17, z: -1.2434498e-16}
+      rotation: {x: 0.010581373, y: -0.042718936, z: 0.2401993, w: 0.9697255}
+      scale: {x: 1.0000002, y: 1.0000006, z: 1.0000004}
+    - name: Tlelli_Rig_v1:leg_R
+      parentName: Tlelli_Rig_v1:hip
+      position: {x: 0.0800792, y: -0.03402054, z: -0.03875767}
+      rotation: {x: 0.6256773, y: 0.55738926, z: -0.33088923, w: -0.4340016}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000006}
+    - name: Tlelli_Rig_v1:knee_R
+      parentName: Tlelli_Rig_v1:leg_R
+      position: {x: -0.31452104, y: -5.3290704e-17, z: 8.8817837e-17}
+      rotation: {x: -0.34087977, y: -0.038669165, z: 0.03438523, w: -0.9386818}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000001}
+    - name: Tlelli_Rig_v1:ankle_R
+      parentName: Tlelli_Rig_v1:knee_R
+      position: {x: -0.34737036, y: 1.7763568e-17, z: 0}
+      rotation: {x: -0.035141133, y: 0.0022157612, z: 0.2108134, w: 0.976892}
+      scale: {x: 1.0000002, y: 1, z: 1.0000001}
+    - name: Tlelli_Rig_v1:foot_R
+      parentName: Tlelli_Rig_v1:ankle_R
+      position: {x: -0.17603655, y: -8.881784e-18, z: -3.5527135e-16}
+      rotation: {x: 0.0000000037252899, y: 0.000000053201795, z: -0.3938648, w: -0.9191684}
+      scale: {x: 0.99999994, y: 0.9999996, z: 0.99999994}
+    - name: Tlelli_Rig_v1:toe_R
+      parentName: Tlelli_Rig_v1:foot_R
+      position: {x: -0.08013488, y: 0, z: -3.5527136e-17}
+      rotation: {x: -0.010581777, y: 0.042720705, z: 0.24019831, w: 0.9697256}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1}
+    - name: Tlelli_Rig_v1:spine1
+      parentName: Tlelli_Rig_v1:root
+      position: {x: -0, y: -8.881784e-18, z: 1.5163038e-17}
+      rotation: {x: -0, y: -0, z: 0.00069832796, w: 0.99999976}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: Tlelli_Rig_v1:spine2
+      parentName: Tlelli_Rig_v1:spine1
+      position: {x: -0.08515189, y: -1.7408296e-15, z: 3.2195636e-17}
+      rotation: {x: -0, y: -0, z: -5.8207654e-11, w: 1}
+      scale: {x: 0.9999998, y: 0.9999998, z: 0.9999998}
+    - name: Tlelli_Rig_v1:spine3
+      parentName: Tlelli_Rig_v1:spine2
+      position: {x: -0.05597015, y: 0.000000008927246, z: 2.0470299e-18}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000002}
+    - name: Tlelli_Rig_v1:spine4
+      parentName: Tlelli_Rig_v1:spine3
+      position: {x: -0.07032137, y: -0.0000000996347, z: 3.974525e-17}
+      rotation: {x: 0.000000029823124, y: 0.0000000297815, z: 0.19035208, w: -0.9817159}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000004}
+    - name: Tlelli_Rig_v1:clavicle_R
+      parentName: Tlelli_Rig_v1:spine4
+      position: {x: -0.13667198, y: 0.008647836, z: 0.0741603}
+      rotation: {x: 0.5190423, y: -0.48020315, z: -0.6147366, w: -0.34942648}
+      scale: {x: 1.0000007, y: 1.0000001, z: 1.0000005}
+    - name: Tlelli_Rig_v1:shoulder_R
+      parentName: Tlelli_Rig_v1:clavicle_R
+      position: {x: -0.074540116, y: 2.842171e-16, z: 7.9936054e-17}
+      rotation: {x: -0.027794685, y: 0.0013995914, z: -0.09589639, w: 0.99500227}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: Tlelli_Rig_v1:elbow_R
+      parentName: Tlelli_Rig_v1:shoulder_R
+      position: {x: -0.2240513, y: 1.4210854e-16, z: 2.6645352e-17}
+      rotation: {x: -0.2016741, y: -0.030230409, z: -0.018881459, w: 0.978804}
+      scale: {x: 1.0000002, y: 1, z: 0.99999994}
+    - name: Tlelli_Rig_v1:wrist_R
+      parentName: Tlelli_Rig_v1:elbow_R
+      position: {x: -0.19491287, y: -2.842171e-16, z: -1.0658141e-16}
+      rotation: {x: -0.038980745, y: -0.02971477, z: -0.023822129, w: 0.99851394}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000002}
+    - name: Tlelli_Rig_v1:finger_middle_1_R
+      parentName: Tlelli_Rig_v1:wrist_R
+      position: {x: -0.034313478, y: 0, z: -1.0658141e-16}
+      rotation: {x: 0.010223908, y: 0.008630937, z: -0.02593379, w: 0.9995741}
+      scale: {x: 0.9999997, y: 1.0000001, z: 0.99999934}
+    - name: Tlelli_Rig_v1:finger_middle_2_R
+      parentName: Tlelli_Rig_v1:finger_middle_1_R
+      position: {x: -0.042016454, y: 0, z: 3.5527136e-17}
+      rotation: {x: -0.014988833, y: -0.006119597, z: 0.039416417, w: 0.9990917}
+      scale: {x: 1.0000002, y: 0.99999994, z: 1.0000007}
+    - name: Tlelli_Rig_v1:finger_middle_3_R
+      parentName: Tlelli_Rig_v1:finger_middle_2_R
+      position: {x: -0.03281784, y: 1.4210854e-16, z: -1.4210854e-16}
+      rotation: {x: -0.06825133, y: -0.009322129, z: 0.03584387, w: 0.99698055}
+      scale: {x: 1.0000006, y: 0.99999994, z: 1.0000001}
+    - name: Tlelli_Rig_v1:finger_middle_4_R
+      parentName: Tlelli_Rig_v1:finger_middle_3_R
+      position: {x: -0.032291055, y: 0, z: 1.0658141e-16}
+      rotation: {x: 0.093167156, y: -0.016020149, z: 0.035603564, w: 0.9948847}
+      scale: {x: 1.0000004, y: 1, z: 1.0000005}
+    - name: Tlelli_Rig_v1:finger_ring_1_R
+      parentName: Tlelli_Rig_v1:wrist_R
+      position: {x: -0.033999, y: -0.0031829914, z: 0.015846001}
+      rotation: {x: 0.062332846, y: 0.046840515, z: 0.030643327, w: 0.99648464}
+      scale: {x: 0.99999994, y: 1, z: 0.9999998}
+    - name: Tlelli_Rig_v1:finger_ring_2_R
+      parentName: Tlelli_Rig_v1:finger_ring_1_R
+      position: {x: -0.043429747, y: -1.4210854e-16, z: 1.0658141e-16}
+      rotation: {x: 0.03282027, y: -0.026497496, z: -0.021720521, w: 0.9988739}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: Tlelli_Rig_v1:finger_ring_3_R
+      parentName: Tlelli_Rig_v1:finger_ring_2_R
+      position: {x: -0.028767109, y: 1.4210854e-16, z: 0}
+      rotation: {x: -0.033633515, y: 0.0017497699, z: 0.030306516, w: 0.9989731}
+      scale: {x: 1.0000001, y: 0.9999998, z: 1}
+    - name: Tlelli_Rig_v1:finger_ring_4_R
+      parentName: Tlelli_Rig_v1:finger_ring_3_R
+      position: {x: -0.028298669, y: 2.1316282e-16, z: 1.7763568e-17}
+      rotation: {x: 0.032667104, y: 0.012927999, z: -0.1259971, w: 0.99140835}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000001}
+    - name: Tlelli_Rig_v1:finger_pinky_1_R
+      parentName: Tlelli_Rig_v1:wrist_R
+      position: {x: -0.0343196, y: -0.013973983, z: 0.029002981}
+      rotation: {x: 0.08985144, y: 0.07345729, z: -0.038142618, w: 0.9925099}
+      scale: {x: 0.9999998, y: 1, z: 0.99999994}
+    - name: Tlelli_Rig_v1:finger_pinky_2_R
+      parentName: Tlelli_Rig_v1:finger_pinky_1_R
+      position: {x: -0.0423911, y: -4.2632563e-16, z: 3.5527136e-17}
+      rotation: {x: 0.0672715, y: -0.0011929714, z: 0.039709374, w: 0.9969435}
+      scale: {x: 1.0000001, y: 0.9999998, z: 0.99999994}
+    - name: Tlelli_Rig_v1:finger_pinky_3_R
+      parentName: Tlelli_Rig_v1:finger_pinky_2_R
+      position: {x: -0.021445354, y: 1.4210854e-16, z: 8.881784e-18}
+      rotation: {x: 0.02632446, y: 0.005105186, z: 0.037940707, w: 0.9989202}
+      scale: {x: 1.0000008, y: 1.0000002, z: 1.0000006}
+    - name: Tlelli_Rig_v1:finger_pinky_4_R
+      parentName: Tlelli_Rig_v1:finger_pinky_3_R
+      position: {x: -0.021858415, y: 0, z: 7.105427e-17}
+      rotation: {x: 0.015567588, y: 0.012267913, z: -0.013839221, w: 0.99970776}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000008}
+    - name: Tlelli_Rig_v1:finger_index_1_R
+      parentName: Tlelli_Rig_v1:wrist_R
+      position: {x: -0.04305215, y: 0.0023444812, z: -0.01891243}
+      rotation: {x: -0.0014950624, y: -0.0012236417, z: -0.08227382, w: 0.9966079}
+      scale: {x: 0.9999998, y: 1.0000004, z: 0.9999998}
+    - name: Tlelli_Rig_v1:finger_index_2_R
+      parentName: Tlelli_Rig_v1:finger_index_1_R
+      position: {x: -0.029781222, y: 0, z: -1.7763567e-16}
+      rotation: {x: -0.045520637, y: -0.0071279765, z: 0.033725724, w: 0.99836844}
+      scale: {x: 1.0000004, y: 0.9999996, z: 0.9999998}
+    - name: Tlelli_Rig_v1:finger_index_3_R
+      parentName: Tlelli_Rig_v1:finger_index_2_R
+      position: {x: -0.029732477, y: -2.842171e-16, z: 3.5527136e-17}
+      rotation: {x: 0.03013002, y: -0.013350458, z: 0.019280834, w: 0.99927086}
+      scale: {x: 0.9999998, y: 0.99999994, z: 1.0000005}
+    - name: Tlelli_Rig_v1:finger_index_4_R
+      parentName: Tlelli_Rig_v1:finger_index_3_R
+      position: {x: -0.03307023, y: -1.4210854e-16, z: -3.5527136e-17}
+      rotation: {x: 0.0015878206, y: 0.0033258141, z: 0.042017773, w: 0.99911016}
+      scale: {x: 1.0000004, y: 1.0000002, z: 0.99999994}
+    - name: Tlelli_Rig_v1:finger_thumb_1_R
+      parentName: Tlelli_Rig_v1:wrist_R
+      position: {x: -0.020520434, y: -0.0015644096, z: -0.021742484}
+      rotation: {x: -0.28120422, y: -0.3280948, z: -0.26605177, w: 0.8616813}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.9999997}
+    - name: Tlelli_Rig_v1:finger_thumb_2_R
+      parentName: Tlelli_Rig_v1:finger_thumb_1_R
+      position: {x: -0.019922273, y: 4.2632563e-16, z: -7.105427e-16}
+      rotation: {x: 0.04561693, y: 0.007874633, z: 0.02926307, w: 0.9984993}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1}
+    - name: Tlelli_Rig_v1:finger_thumb_3_R
+      parentName: Tlelli_Rig_v1:finger_thumb_2_R
+      position: {x: -0.03339054, y: -7.81597e-16, z: 3.5527135e-16}
+      rotation: {x: 0.037343025, y: 0.041586533, z: 0.11735377, w: 0.9915162}
+      scale: {x: 0.99999994, y: 1.0000002, z: 0.9999998}
+    - name: Tlelli_Rig_v1:neck1
+      parentName: Tlelli_Rig_v1:spine4
+      position: {x: -0.20199361, y: -7.105427e-17, z: 1.1081705e-16}
+      rotation: {x: 0.0000000034628203, y: -0.00000005166574, z: -0.24526979, w: -0.9694548}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: Tlelli_Rig_v1:neck2
+      parentName: Tlelli_Rig_v1:neck1
+      position: {x: -0.038887996, y: 0, z: 1.6964732e-17}
+      rotation: {x: 0.000000042932232, y: -0.000000060454724, z: -0.055271707, w: 0.9984714}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000005}
+    - name: Tlelli_Rig_v1:head
+      parentName: Tlelli_Rig_v1:neck2
+      position: {x: -0.05473793, y: 5.3290704e-17, z: 2.423533e-17}
+      rotation: {x: -0.000000015997342, y: 0.000000029228545, z: -0.038801108, w: 0.999247}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+    - name: Tlelli_Rig_v1:clavicle_L
+      parentName: Tlelli_Rig_v1:spine4
+      position: {x: -0.13667198, y: 0.008647836, z: -0.0741603}
+      rotation: {x: -0.5190424, y: 0.48020315, z: -0.6147366, w: -0.34942654}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Tlelli_Rig_v1:shoulder_L
+      parentName: Tlelli_Rig_v1:clavicle_L
+      position: {x: -0.074540116, y: 0, z: -1.0658141e-16}
+      rotation: {x: 0.027795842, y: -0.0013996656, z: -0.09589661, w: 0.99500215}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:elbow_L
+      parentName: Tlelli_Rig_v1:shoulder_L
+      position: {x: -0.2240513, y: 0, z: 8.881784e-18}
+      rotation: {x: 0.2016739, y: 0.030229855, z: -0.018881451, w: 0.978804}
+      scale: {x: 0.99999994, y: 0.9999998, z: 1.0000002}
+    - name: Tlelli_Rig_v1:wrist_L
+      parentName: Tlelli_Rig_v1:elbow_L
+      position: {x: -0.19491287, y: 0, z: -1.7763567e-16}
+      rotation: {x: 0.03898076, y: 0.02971492, z: -0.02382199, w: 0.998514}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:finger_middle_1_L
+      parentName: Tlelli_Rig_v1:wrist_L
+      position: {x: -0.034313478, y: 0, z: 2.1316282e-16}
+      rotation: {x: -0.010223816, y: -0.008631067, z: -0.02593373, w: 0.9995742}
+      scale: {x: 1, y: 1.0000001, z: 0.9999998}
+    - name: Tlelli_Rig_v1:finger_middle_2_L
+      parentName: Tlelli_Rig_v1:finger_middle_1_L
+      position: {x: -0.042016454, y: -1.4210854e-16, z: -7.105427e-17}
+      rotation: {x: 0.014989084, y: 0.0061210655, z: 0.039418813, w: 0.9990917}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.9999998}
+    - name: Tlelli_Rig_v1:finger_middle_3_L
+      parentName: Tlelli_Rig_v1:finger_middle_2_L
+      position: {x: -0.03281784, y: -4.2632563e-16, z: -3.5527136e-17}
+      rotation: {x: 0.06825114, y: 0.009323293, z: 0.035844985, w: 0.9969805}
+      scale: {x: 1.0000002, y: 1, z: 1.0000001}
+    - name: Tlelli_Rig_v1:finger_middle_4_L
+      parentName: Tlelli_Rig_v1:finger_middle_3_L
+      position: {x: -0.032291055, y: 7.105427e-17, z: -3.5527136e-17}
+      rotation: {x: -0.09316718, y: 0.016020114, z: 0.035603758, w: 0.9948847}
+      scale: {x: 0.99999994, y: 1.0000002, z: 1.0000001}
+    - name: Tlelli_Rig_v1:finger_ring_1_L
+      parentName: Tlelli_Rig_v1:wrist_L
+      position: {x: -0.033999, y: -0.0031829914, z: -0.015846001}
+      rotation: {x: -0.062332682, y: -0.046840556, z: 0.030643368, w: 0.99648464}
+      scale: {x: 1.0000002, y: 1.0000002, z: 0.9999998}
+    - name: Tlelli_Rig_v1:finger_ring_2_L
+      parentName: Tlelli_Rig_v1:finger_ring_1_L
+      position: {x: -0.043429747, y: -2.842171e-16, z: -1.4210854e-16}
+      rotation: {x: 0.03376759, y: 0.024992276, z: -0.02343686, w: 0.9988423}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: Tlelli_Rig_v1:finger_ring_3_L
+      parentName: Tlelli_Rig_v1:finger_ring_2_L
+      position: {x: -0.028767109, y: 1.4210854e-16, z: -3.5527136e-17}
+      rotation: {x: 0.07102645, y: 0.0034233148, z: 0.030157225, w: 0.9970126}
+      scale: {x: 1.0000004, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:finger_ring_4_L
+      parentName: Tlelli_Rig_v1:finger_ring_3_L
+      position: {x: -0.028298566, y: 3.5527135e-16, z: -1.0658141e-16}
+      rotation: {x: -0.13551302, y: -0.02595515, z: -0.12397736, w: 0.9826456}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1}
+    - name: Tlelli_Rig_v1:finger_pinky_1_L
+      parentName: Tlelli_Rig_v1:wrist_L
+      position: {x: -0.0343196, y: -0.013973983, z: -0.029002981}
+      rotation: {x: -0.08985129, y: -0.07345852, z: -0.03814325, w: 0.9925098}
+      scale: {x: 1.0000001, y: 1.0000004, z: 0.9999998}
+    - name: Tlelli_Rig_v1:finger_pinky_2_L
+      parentName: Tlelli_Rig_v1:finger_pinky_1_L
+      position: {x: -0.0423911, y: -1.4210854e-16, z: -8.8817837e-17}
+      rotation: {x: 0.010394972, y: 0.0042740167, z: 0.039493963, w: 0.9991566}
+      scale: {x: 1.0000004, y: 0.9999998, z: 1}
+    - name: Tlelli_Rig_v1:finger_pinky_3_L
+      parentName: Tlelli_Rig_v1:finger_pinky_2_L
+      position: {x: -0.021445354, y: 2.842171e-16, z: -7.105427e-17}
+      rotation: {x: 0.011866196, y: 0.0022948764, z: 0.03821063, w: 0.9991966}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1}
+    - name: Tlelli_Rig_v1:finger_pinky_4_L
+      parentName: Tlelli_Rig_v1:finger_pinky_3_L
+      position: {x: -0.021858424, y: 1.4210854e-16, z: 1.4210854e-16}
+      rotation: {x: -0.13116977, y: -0.013786178, z: -0.012322895, w: 0.9911875}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999998}
+    - name: Tlelli_Rig_v1:finger_index_1_L
+      parentName: Tlelli_Rig_v1:wrist_L
+      position: {x: -0.04305215, y: 0.0023444812, z: 0.01891243}
+      rotation: {x: 0.0014950583, y: 0.0012234253, z: -0.08227272, w: 0.99660796}
+      scale: {x: 1.0000002, y: 1.0000001, z: 0.9999997}
+    - name: Tlelli_Rig_v1:finger_index_2_L
+      parentName: Tlelli_Rig_v1:finger_index_1_L
+      position: {x: -0.029781222, y: -5.684342e-16, z: -1.0658141e-16}
+      rotation: {x: 0.04552101, y: 0.007130016, z: 0.03372677, w: 0.99836844}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: Tlelli_Rig_v1:finger_index_3_L
+      parentName: Tlelli_Rig_v1:finger_index_2_L
+      position: {x: -0.029732477, y: 1.4210854e-16, z: 1.7763567e-16}
+      rotation: {x: 0.026537767, y: 0.014421588, z: 0.018493235, w: 0.99937266}
+      scale: {x: 1.0000005, y: 1.0000001, z: 1}
+    - name: Tlelli_Rig_v1:finger_index_4_L
+      parentName: Tlelli_Rig_v1:finger_index_3_L
+      position: {x: -0.03307023, y: -2.842171e-16, z: 7.105427e-17}
+      rotation: {x: -0.05819564, y: -0.0009398364, z: 0.042138766, w: 0.997415}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1}
+    - name: Tlelli_Rig_v1:finger_thumb_1_L
+      parentName: Tlelli_Rig_v1:wrist_L
+      position: {x: -0.020520434, y: -0.0015644096, z: 0.021742484}
+      rotation: {x: 0.2812043, y: 0.32809472, z: -0.26605055, w: 0.86168164}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000004}
+    - name: Tlelli_Rig_v1:finger_thumb_2_L
+      parentName: Tlelli_Rig_v1:finger_thumb_1_L
+      position: {x: -0.019922273, y: -1.4210854e-16, z: 2.1316282e-16}
+      rotation: {x: -0.045617227, y: -0.007871891, z: 0.029263755, w: 0.9984993}
+      scale: {x: 1.0000002, y: 0.99999994, z: 1}
+    - name: Tlelli_Rig_v1:finger_thumb_3_L
+      parentName: Tlelli_Rig_v1:finger_thumb_2_L
+      position: {x: -0.03339054, y: -7.105427e-17, z: -1.4210854e-16}
+      rotation: {x: 0.046118096, y: -0.031579614, z: 0.12043347, w: 0.9911466}
+      scale: {x: 1, y: 1.0000001, z: 1.0000004}
+    - name: Tlelli_Rig_v1:GEO
+      parentName: Tleli(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tlelli_Rig_v1:Base_Mesh_Tlelli
+      parentName: Tlelli_Rig_v1:GEO
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -85,15 +1117,16 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: 
+    rootMotionBoneName: Tlelli_Rig_v1:root
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: e9c380af1eca94245a808139a2aaf0ed,
+    type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 2
   additionalBone: 0
   userData: 
   assetBundleName: 

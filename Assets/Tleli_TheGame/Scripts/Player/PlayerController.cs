@@ -178,12 +178,12 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 
-		if (velocidad.y<0)
+		if (velocidad.y<-8f)
         {
 			tleliAnimationController.JumpFallLoopBoolParameter(false);
 		}
 
-		if (velocidad.y>0)
+		if (velocidad.y>-8f)
         {
 			tleliAnimationController.JumpFallLoopBoolParameter(true);
         }

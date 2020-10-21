@@ -19,8 +19,10 @@ public class TlelliFlameHealth : MonoBehaviour
     float flameIntensity;
       
     public float attack;      
-    public float flameDamage;    
- 
+    public float flameDamage;
+
+    public TleliAnimationController tleliAnimationController;
+
 
     void Start()
     {
@@ -99,6 +101,11 @@ public class TlelliFlameHealth : MonoBehaviour
         if (HP < 0)
         {
             HP = 0;
+        }
+
+        if(HP < 50f)
+        {
+            tleliAnimationController.SetTleliHurtLayerWeight(1f);
         }
 
         Text damageTxt = GameObject.Find("ShowDamage").GetComponent<Text>();

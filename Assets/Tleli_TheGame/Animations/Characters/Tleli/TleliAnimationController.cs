@@ -35,6 +35,16 @@ public class TleliAnimationController : MonoBehaviour
 
     public void JumpFallLoopBoolParameter(bool fallLoop)
     {
+        tleliAnimator.SetBool("JumpFallLoop", fallLoop);
+    }
 
+    public void SetTleliHurtLayerWeight(float weight)
+    {
+        tleliAnimator.SetLayerWeight(1, weight);
+    }
+
+    public void TleliStepSound(int step)
+    {
+        GetComponent<FMODUnity.StudioEventEmitter>().Play();
     }
 }
