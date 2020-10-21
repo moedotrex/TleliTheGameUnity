@@ -11,12 +11,25 @@ public class AttackFX: MonoBehaviour
     VisualEffect sparks;           //Efecto del arma 
     ParticleSystem particles;      //ParticleSystem del enemigo
     EnemyHealth enemyHealth;
+    ParticleSystem trails;
+    ParticleSystem weaponParticles;
 
     void Start()
     {
-        sparks = GetComponentInChildren<VisualEffect>();       
+        sparks = GetComponentInChildren<VisualEffect>();
+        trails = GameObject.Find("WeaponTrails").GetComponent<ParticleSystem>();
+        weaponParticles = GameObject.Find("WeaponParticles").GetComponent<ParticleSystem>();
     }
 
+
+    void Update()
+    {
+       if(Input.GetMouseButtonDown(0))
+        {
+            trails.Emit(30);
+            weaponParticles.Emit(20);
+        }
+    }
 
     public void PlayFX(EnemyHealth enem)
     {
@@ -31,9 +44,11 @@ public class AttackFX: MonoBehaviour
 
     IEnumerator WeaponFX()
     {
+        //yield return new WaitForSeconds(0.3f);
         sparks.SendEvent("Hit");
         yield return new WaitForSeconds(0.3f);
         sparks.Stop();
     }
 
+  
 }
