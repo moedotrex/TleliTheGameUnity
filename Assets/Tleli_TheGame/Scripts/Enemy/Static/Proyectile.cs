@@ -6,13 +6,20 @@ public class Proyectile : MonoBehaviour
 {
     public float speed;
     private Vector3 target;
-    private Transform player;
+    private Transform playerPos;
+    public float attackDamage = 10;
+    GameObject playerVida; 
+
+
+
+    TlelliFlameHealth TlelliHealth;
 
     void Start()
     {
-        
-       player = GameObject.FindGameObjectWithTag("Player").transform; 
-       target = new Vector3(player.position.x, player.position.y, player.position.z);
+        playerVida = GameObject.FindGameObjectWithTag("Player");
+        TlelliHealth = playerVida.GetComponent<TlelliFlameHealth>(); 
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform; 
+       target = new Vector3(playerPos.position.x, playerPos.position.y, playerPos.position.z);
     }
 
    
@@ -37,6 +44,7 @@ public class Proyectile : MonoBehaviour
          else if (other.CompareTag("Player"))
         {
             Destroy(gameObject);
+            TlelliHealth.SetHPDamage(attackDamage);
             Debug.Log("destroded1");
 
         }
