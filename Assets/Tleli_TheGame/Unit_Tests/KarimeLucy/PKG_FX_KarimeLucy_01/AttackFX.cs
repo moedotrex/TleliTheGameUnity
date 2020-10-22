@@ -16,7 +16,7 @@ public class AttackFX: MonoBehaviour
 
     void Start()
     {
-        sparks = GetComponentInChildren<VisualEffect>();
+        sparks = GameObject.Find("SwordSparks").GetComponent<VisualEffect>();
         trails = GameObject.Find("WeaponTrails").GetComponent<ParticleSystem>();
         weaponParticles = GameObject.Find("WeaponParticles").GetComponent<ParticleSystem>();
     }
@@ -47,7 +47,8 @@ public class AttackFX: MonoBehaviour
         //yield return new WaitForSeconds(0.3f);
         sparks.SendEvent("Hit");
         yield return new WaitForSeconds(0.3f);
-        sparks.Stop();
+        //sparks.Stop();
+        sparks.SendEvent("SparksStop");
     }
 
   
