@@ -51,6 +51,7 @@ public class TlelliFlameHealth : MonoBehaviour
         {
             SetFlameDamage(flameDamage * Time.deltaTime);
             FlameUpdateMaterial();
+            tleliAnimationController.IsHitTrigger();
         }
     }
 
