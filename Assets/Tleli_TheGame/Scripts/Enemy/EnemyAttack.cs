@@ -39,6 +39,10 @@ public class EnemyAttack : MonoBehaviour
         {
             TlelliHealth.SetHPDamage(attackDamage);
         }
+        if (TlelliHealth.HP == 0)
+        {
+
+        }
     }
 
     //¿jugador en rango de ataque?

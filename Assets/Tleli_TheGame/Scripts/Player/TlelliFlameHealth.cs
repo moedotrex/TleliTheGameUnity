@@ -102,6 +102,7 @@ public class TlelliFlameHealth : MonoBehaviour
         if (HP < 0)
         {
             HP = 0;
+            tleliAnimationController.IsDeadTrigger();
         }
 
         Text damageTxt = GameObject.Find("ShowDamage").GetComponent<Text>();
@@ -121,7 +122,6 @@ public class TlelliFlameHealth : MonoBehaviour
         //print("Distancia: " + dist + "  Daño: " + dam);
     }
 
-   
     
     //Remapear rango de valores de flama a intensidad para el shader
     //------------------------------------------------------------------------
@@ -134,8 +134,6 @@ public class TlelliFlameHealth : MonoBehaviour
     {
         return newMin + (original - originalMin) * (newMax - newMin) / (originalMax - originalMin);
     }
-
- 
 
 
     // Regresar valores 
@@ -156,11 +154,11 @@ public class TlelliFlameHealth : MonoBehaviour
 
     }
 
-    public void DeathTleli()
+  /*  public void DeathTleli()
     {
         if (HP <= 0)
         {
             tleliAnimationController.IsDeadTrigger();
         }
-    }
+    } */
 }
