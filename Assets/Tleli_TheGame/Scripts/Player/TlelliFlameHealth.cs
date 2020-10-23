@@ -44,7 +44,8 @@ public class TlelliFlameHealth : MonoBehaviour
     }
 
  
-
+    //Colisiona tleli con enemigo
+    //Si no estas frente a frente con enemigo no te quita vida
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
@@ -52,6 +53,7 @@ public class TlelliFlameHealth : MonoBehaviour
             SetFlameDamage(flameDamage * Time.deltaTime);
             FlameUpdateMaterial();
             tleliAnimationController.IsHitTrigger();
+            //agregra tiempo de recuperación
         }
     }
 
