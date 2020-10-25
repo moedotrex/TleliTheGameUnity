@@ -3,22 +3,53 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
-// Karime y Lucy 11 oct. Controla emisión de partículas desde el ParticleSystem de un enemigo y del VisualEffect del arma.
+// Karime y Lucy. Controla emisión de partículas desde el ParticleSystem de un enemigo y de los efectos del arma.
 
 public class AttackFX: MonoBehaviour
 {
-
-    VisualEffect sparks;           //Efecto del arma 
-    ParticleSystem particles;      //ParticleSystem del enemigo
+    //Partículas del enemigo
+    ParticleSystem particles;      
     EnemyHealth enemyHealth;
+
+    //Efectos del arma
+    VisualEffect sparks;           
     ParticleSystem trails;
     ParticleSystem weaponParticles;
+    ParticleSystem slash;
+
+    public bool useSparks;
+    public bool useTrails;
+    public bool useParticles;
+    public bool useSlash;
+    public bool useMovingTrails;
+
 
     void Start()
     {
-        sparks = GameObject.Find("SwordSparks").GetComponent<VisualEffect>();
-        trails = GameObject.Find("WeaponTrails").GetComponent<ParticleSystem>();
-        weaponParticles = GameObject.Find("WeaponParticles").GetComponent<ParticleSystem>();
+        if (useSparks || useMovingTrails)
+        {
+           sparks = GameObject.Find("SwordSparks").GetComponent<VisualEffect>();
+            if (useMovingTrails)
+            {
+                sparks.SendEvent("StartMovingTrails");
+            }
+            else
+            {
+                sparks.SendEvent("StopMovingTrails");
+            }
+        }
+        if (useTrails)
+        {
+            trails = GameObject.Find("WeaponTrails").GetComponent<ParticleSystem>();
+        }
+        if (useParticles)
+        {
+            weaponParticles = GameObject.Find("WeaponParticles").GetComponent<ParticleSystem>();
+        }
+        if (useSlash)
+        {
+            slash = GameObject.Find("WeaponSlash").GetComponent<ParticleSystem>();
+        } 
     }
 
 
@@ -26,14 +57,27 @@ public class AttackFX: MonoBehaviour
     {
        if(Input.GetMouseButtonDown(0))
         {
-            trails.Emit(30);
-            weaponParticles.Emit(20);
+            if (useTrails)
+            {
+                trails.Emit(30);
+            }
+            if (useParticles)
+            {
+                weaponParticles.Emit(20);
+            }
+            if (useSlash)
+            {
+                slash.Emit(1);
+            }   
         }
     }
 
     public void PlayFX(EnemyHealth enem)
     {
-        StartCoroutine(WeaponFX());
+        if (useSparks)
+        {
+            StartCoroutine(WeaponFX());
+        }
         GameObject enemy = enem.gameObject;
         enemyHealth = enemy.GetComponent<EnemyHealth>();
         particles = enemy.GetComponentInChildren<ParticleSystem>();
@@ -44,10 +88,8 @@ public class AttackFX: MonoBehaviour
 
     IEnumerator WeaponFX()
     {
-        //yield return new WaitForSeconds(0.3f);
         sparks.SendEvent("Hit");
         yield return new WaitForSeconds(0.3f);
-        //sparks.Stop();
         sparks.SendEvent("SparksStop");
     }
 
