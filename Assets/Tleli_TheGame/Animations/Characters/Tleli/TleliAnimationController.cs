@@ -72,4 +72,14 @@ public class TleliAnimationController : MonoBehaviour
     {
         tleliAnimator.SetBool("ChargedUpLightAttack", ChargedUpLightAttack);
     }
+
+    public void HeavyAttackTrigger()
+    {
+        tleliAnimator.SetTrigger("HeavyAttack");
+    }
+
+    public void HeavyAttackComboBoolParameter(bool HeavyAttackCombo)
+    {
+        tleliAnimator.SetBool("HeavyAttackCombo", HeavyAttackCombo);
+    }
 }
