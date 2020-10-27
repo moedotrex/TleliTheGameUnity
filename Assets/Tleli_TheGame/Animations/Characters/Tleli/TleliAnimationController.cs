@@ -48,4 +48,8 @@ public class TleliAnimationController : MonoBehaviour
         
         tleliAnimator.SetTrigger("Death");
     }
+    public void DashTrigger()
+    {
+        tleliAnimator.SetTrigger("Dash");
+    }
 }
