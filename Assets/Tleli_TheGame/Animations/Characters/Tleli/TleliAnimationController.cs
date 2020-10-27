@@ -35,7 +35,7 @@ public class TleliAnimationController : MonoBehaviour
 
     public void JumpFallLoopBoolParameter(bool fallLoop)
     {
-
+        tleliAnimator.SetBool("JumpFallLoop", fallLoop);
     }
 
     public void IsHitTrigger()
@@ -51,5 +51,15 @@ public class TleliAnimationController : MonoBehaviour
     public void DashTrigger()
     {
         tleliAnimator.SetTrigger("Dash");
+    }
+
+    public void LightAttackTrigger()
+    {
+        tleliAnimator.SetTrigger("LightAttack");
+    }
+
+    public void LightAttackComboBoolParameter(bool LightAttackCombo)
+    {
+        tleliAnimator.SetBool("LightAttackCombo", LightAttackCombo);
     }
 }
