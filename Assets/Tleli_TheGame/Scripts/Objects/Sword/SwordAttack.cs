@@ -76,7 +76,7 @@ public class SwordAttack : MonoBehaviour
 
         ///----------------------------------------------------------------
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) /*&& !Input.GetMouseButton(0)*/)
         {
             if (Time.time > ArateTimeStamp)
             {
@@ -119,12 +119,12 @@ public class SwordAttack : MonoBehaviour
             LAttackTimer += Time.deltaTime;
         }
 
-        if (Input.GetMouseButton(1))
+        /*if (Input.GetMouseButton(1))
         {
             HAttackTimer += Time.deltaTime;
-        }
+        }*/
 
-        if (LAttackTimer >= LAttackTime && !Input.GetMouseButtonDown(1))
+        if (LAttackTimer >= LAttackTime && !Input.GetMouseButton(1))
         {
             //UnityEngine.Debug.Log("LIGHT!");
             animator.SetBool("Lcharge", true);
