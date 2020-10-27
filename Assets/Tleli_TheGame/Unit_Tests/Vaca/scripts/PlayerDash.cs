@@ -12,6 +12,10 @@ public class PlayerDash : MonoBehaviour
     public float dashCooldown;
     float dashCooldownTime;
     public bool gotDash;
+    public GameObject player;
+
+
+    public Vector3 moveDir;
     //private int dashValue =1; //para solo dashear una vez en el aire
 
 
@@ -38,7 +42,9 @@ public class PlayerDash : MonoBehaviour
         float startTime = Time.time;
         while (Time.time < startTime + dashTime)
         {
-            moveScript.characterController.Move(moveScript.moveDir * dashSpeed * Time.deltaTime); //direccion tomada de playercontroller
+            //moveScript.characterController.Move(moveScript.moveDir * dashSpeed * Time.deltaTime); //direccion tomada de playercontroller
+            moveDir = Quaternion.Euler(0f, transform.eulerAngles.y, 0f) * Vector3.forward; //direccion tomada de player Y transform 
+            moveScript.characterController.Move(moveDir * dashSpeed * Time.deltaTime);
             moveScript.isDashing = true; 
             yield return null; 
             moveScript.isDashing = false;

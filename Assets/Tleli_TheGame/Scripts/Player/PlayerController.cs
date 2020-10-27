@@ -56,8 +56,6 @@ public class PlayerController : MonoBehaviour
 			velocidad.y = -10f;
 		}
 
-		
-
 		float vertical = Input.GetAxisRaw("Vertical");
 		float horizontal = Input.GetAxisRaw("Horizontal");
 

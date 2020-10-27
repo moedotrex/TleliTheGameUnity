@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 
 public class EnemyController : MonoBehaviour
 {
-
+    public bool touching;
 
     public float velRotacion = 20f;
     public float BuscarRadio;
@@ -22,7 +22,7 @@ public class EnemyController : MonoBehaviour
     NavMeshAgent nav;
     TlelliFlameHealth flama;
 
-   // public bool isAttacking;
+   public bool isAttacking;
 
     MusicaDinamica activa;
 
@@ -49,7 +49,7 @@ public class EnemyController : MonoBehaviour
             {
                 agente.SetDestination(target.position);
                 BuscarRadio = radioGrande;
-                // isAttacking = true;
+                isAttacking = true;
 
                 if (distance <= agente.stoppingDistance)
                 {
@@ -59,13 +59,12 @@ public class EnemyController : MonoBehaviour
                 flama.EnemyDistance(distance);
             }
 
-            if (distance >= BuscarRadio)
+            if (distance >= BuscarRadio && isAttacking == true)
             {
-                //isAttacking = false;
-                BuscarRadio = radioDef;
-                stopMov(5f);
-                agente.SetDestination(EnemySpawn);
-
+            BuscarRadio = radioDef;
+            stopMov(5f);
+            agente.SetDestination(EnemySpawn);
+            isAttacking = false;
             }
 
         /*if (isAttacking == true)
@@ -103,10 +102,30 @@ public class EnemyController : MonoBehaviour
 
         IEnumerator stopMovCoroutine(float time)
         {
-            nav = GetComponent<NavMeshAgent>();
             nav.speed = 0f;
             yield return new WaitForSeconds(time);
             nav.speed = movSpeed;
 
         }
+
+    public void slowMov(float time)
+    {
+        StartCoroutine(slowMovCoroutine(time));
     }
+
+    IEnumerator slowMovCoroutine(float time)
+    {
+        nav.speed = movSpeed * 0.75f;
+        yield return new WaitForSeconds(time);
+        nav.speed = movSpeed;
+
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("AOE_Slow"))
+        {
+            slowMov(5f);
+        }
+    }
+}

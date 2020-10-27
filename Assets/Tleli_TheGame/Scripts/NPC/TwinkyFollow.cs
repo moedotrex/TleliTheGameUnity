@@ -32,6 +32,7 @@ public class TwinkyFollow : MonoBehaviour
             speed = 6f;
             following = true;
             Hold = false;
+            Debug.Log("ikni got scared");
         }
 
 

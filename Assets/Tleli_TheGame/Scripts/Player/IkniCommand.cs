@@ -1,34 +1,75 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.WSA;
 
 public class IkniCommand : MonoBehaviour
 {
 
     TwinkyFollow ikniFollow;
-    // Start is called before the first frame update
+    IkniSlowAction ikniSlowAOE;
+    public float timeforCommand;
+    public float slowCD;
+    float inSlowCD;
+    float commandTimer;
+    bool commandReceived;
+   public  bool whichAction;
+    float timeHeld;
+
     void Start()
     {
+        inSlowCD = 0f;
         ikniFollow = GameObject.FindGameObjectWithTag("Ikni").GetComponent<TwinkyFollow>();
+        ikniSlowAOE = GameObject.FindGameObjectWithTag("Ikni").GetComponent<IkniSlowAction>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        if (Input.GetKeyDown("q"))
+        inSlowCD -= Time.deltaTime;
+
+        if (Input.GetKey("q"))
         {
-            if (ikniFollow.following == true)
+            timeHeld += Time.deltaTime;
+
+            if (timeHeld >= timeforCommand && commandReceived == false)
             {
-                ikniFollow.speed = 0f;
-                ikniFollow.following = false;
-                ikniFollow.Hold = true;
+                Debug.Log("long press");
+                ikniHold();
             }
-            else if (ikniFollow.following == false)
-            {
-                ikniFollow.speed = 6f;
-                ikniFollow.following = true;
-                ikniFollow.Hold = false;
+        }
+
+        if (Input.GetKeyUp("q"))
+        {
+            if (timeHeld <= timeforCommand && inSlowCD <= 0f) 
+            { 
+                Debug.Log("shortpress");
+                ikniSlowAOE.SlowInk();
+                inSlowCD = slowCD;
             }
+
+            timeHeld = 0f;
+            commandReceived = false;
+        }
+    }
+
+    public void ikniHold()
+    {
+        if (ikniFollow.following == true)
+        {
+            ikniFollow.speed = 0f;
+            ikniFollow.following = false;
+            ikniFollow.Hold = true;
+            commandTimer = 0f;
+            commandReceived = true;
+        }
+        else if (ikniFollow.following == false)
+        {
+            ikniFollow.speed = 6f;
+            ikniFollow.following = true;
+            ikniFollow.Hold = false;
+            commandTimer = 0f;
+            commandReceived = true;
         }
     }
 }
