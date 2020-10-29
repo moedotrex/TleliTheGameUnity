@@ -7,19 +7,20 @@ using UnityEngine.EventSystems;
 
 public class EnemyController : MonoBehaviour
 {
-    public bool touching;
-
     public float velRotacion = 20f;
-    public float BuscarRadio;
-    public float radioGrande;
+    float BuscarRadio;
+    float radioGrande;
     public float radioDef = 10f;
     public float movSpeed;
 
-    public Vector3 EnemySpawn;
+    bool knockback;
+    Vector3 direction;
+    public float knockbackForce;
+
+    Vector3 EnemySpawn;
 
     Transform target;
-    NavMeshAgent agente;
-    NavMeshAgent nav;
+    NavMeshAgent navAgent;
     TlelliFlameHealth flama;
 
    public bool isAttacking;
@@ -30,14 +31,20 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         target = PlayerManager.instance.player.transform;
-        agente = GetComponent<NavMeshAgent>();
         BuscarRadio = radioDef;
         radioGrande = BuscarRadio * 1.5f;
         EnemySpawn = this.transform.position;
         flama = GameObject.FindGameObjectWithTag("Player").GetComponent<TlelliFlameHealth>();
-        nav = GetComponent<NavMeshAgent>();
-        nav.speed = movSpeed;
+        navAgent = GetComponent<NavMeshAgent>();
+        navAgent.speed = movSpeed;
+    }
 
+    private void FixedUpdate()
+    {
+        if (knockback)
+        {
+            navAgent.velocity = direction * knockbackForce;
+        }
     }
 
 
@@ -47,11 +54,11 @@ public class EnemyController : MonoBehaviour
 
             if (distance <= BuscarRadio)
             {
-                agente.SetDestination(target.position);
+            navAgent.SetDestination(target.position);
                 BuscarRadio = radioGrande;
                 isAttacking = true;
 
-                if (distance <= agente.stoppingDistance)
+                if (distance <= navAgent.stoppingDistance)
                 {
                     FaceTarget();
                 }
@@ -63,7 +70,7 @@ public class EnemyController : MonoBehaviour
             {
             BuscarRadio = radioDef;
             stopMov(5f);
-            agente.SetDestination(EnemySpawn);
+            navAgent.SetDestination(EnemySpawn);
             isAttacking = false;
             }
 
@@ -102,9 +109,9 @@ public class EnemyController : MonoBehaviour
 
         IEnumerator stopMovCoroutine(float time)
         {
-            nav.speed = 0f;
+        navAgent.speed = 0f;
             yield return new WaitForSeconds(time);
-            nav.speed = movSpeed;
+        navAgent.speed = movSpeed;
 
         }
 
@@ -113,12 +120,35 @@ public class EnemyController : MonoBehaviour
         StartCoroutine(slowMovCoroutine(time));
     }
 
+    public void StartKnockBack()
+    {
+            direction = transform.forward * -1;
+            StartCoroutine(KnockBack());
+    }
+
     IEnumerator slowMovCoroutine(float time)
     {
-        nav.speed = movSpeed * 0.75f;
+        navAgent.speed = movSpeed * 0.75f;
         yield return new WaitForSeconds(time);
-        nav.speed = movSpeed;
+        navAgent.speed = movSpeed;
 
+    }
+
+    IEnumerator KnockBack()
+    {
+        knockback = true;
+        navAgent.speed = 10;
+        navAgent.angularSpeed = 0;
+        navAgent.acceleration = 20;
+        //velRotacion = 0f;
+
+        yield return new WaitForSeconds(0.2f);
+
+        knockback = false;
+        navAgent.speed = movSpeed;
+        navAgent.angularSpeed = 120f;
+        navAgent.acceleration = 8f;
+        //velRotacion = 20f;
     }
 
     public void OnTriggerEnter(Collider other)

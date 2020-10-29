@@ -91,7 +91,7 @@ public class TlelliFlameHealth : MonoBehaviour
     public void SetHPDamage(float attackStrength)
     {
        
-        if (invincibilityFrames.isDashing == false) {  // VACA si tleli esta dasheando no puede recibir daño (invincibilityFrames)
+        if (invincibilityFrames.isDisplaced == false) {  // VACA si tleli esta dasheando no puede recibir daño (invincibilityFrames)
         // Fórmula para cálculo de daño, flama como armadura
 
         float damage = attackStrength * (100 / (100 + flame));

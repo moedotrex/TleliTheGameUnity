@@ -34,8 +34,8 @@ public class PlayerController : MonoBehaviour
 	public CharacterController characterController;
 	public Transform cam;
 	
-	public Vector3 moveDir;
-	public bool isDashing;
+	Vector3 moveDir;
+	public bool isDisplaced;
 	PlayerDash dashCount;
 
 	void Start()
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
 		float vertical = Input.GetAxisRaw("Vertical");
 		float horizontal = Input.GetAxisRaw("Horizontal");
 
-		if (isDashing == false) //si se dashea no se puede controlar la direccion hasta que termine y la gravedad no se crece por la duracion de este
+		if (isDisplaced == false) //si se dashea no se puede controlar la direccion hasta que termine y la gravedad no se crece por la duracion de este
 		{ 
 			//gravedad
 			Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;

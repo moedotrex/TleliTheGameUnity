@@ -55,7 +55,7 @@ public class SwordAttack : MonoBehaviour
                     if (enemy != null)
                     {
                         enemy.HurtEnemy(Damage);
-                        mov.stopMov(0.2f);
+                        mov.StartKnockBack();
                     }
                     if (hit.rigidbody != null)
                     {

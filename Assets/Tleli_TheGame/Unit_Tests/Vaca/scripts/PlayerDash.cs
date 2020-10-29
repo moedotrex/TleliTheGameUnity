@@ -15,7 +15,7 @@ public class PlayerDash : MonoBehaviour
     public GameObject player;
 
 
-    public Vector3 moveDir;
+    Vector3 moveDir;
     //private int dashValue =1; //para solo dashear una vez en el aire
 
 
@@ -45,9 +45,9 @@ public class PlayerDash : MonoBehaviour
             //moveScript.characterController.Move(moveScript.moveDir * dashSpeed * Time.deltaTime); //direccion tomada de playercontroller
             moveDir = Quaternion.Euler(0f, transform.eulerAngles.y, 0f) * Vector3.forward; //direccion tomada de player Y transform 
             moveScript.characterController.Move(moveDir * dashSpeed * Time.deltaTime);
-            moveScript.isDashing = true; 
+            moveScript.isDisplaced = true; 
             yield return null; 
-            moveScript.isDashing = false;
+            moveScript.isDisplaced = false;
         }
     }
 }
