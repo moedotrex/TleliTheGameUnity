@@ -13,7 +13,6 @@ public class EnemyController : MonoBehaviour
     public float radioDef = 10f;
     public float movSpeed;
 
-    bool knockback;
     Vector3 direction;
     public float knockbackForce;
 
@@ -38,15 +37,6 @@ public class EnemyController : MonoBehaviour
         navAgent = GetComponent<NavMeshAgent>();
         navAgent.speed = movSpeed;
     }
-
-    private void FixedUpdate()
-    {
-        if (knockback)
-        {
-            navAgent.velocity = direction * knockbackForce;
-        }
-    }
-
 
     void Update()
     {
@@ -136,19 +126,22 @@ public class EnemyController : MonoBehaviour
 
     IEnumerator KnockBack()
     {
-        knockback = true;
-        navAgent.speed = 10;
-        navAgent.angularSpeed = 0;
-        navAgent.acceleration = 20;
-        //velRotacion = 0f;
+        float startTime = Time.time;
+        while (Time.time < startTime + 0.2f)
+        {
+            navAgent.velocity = direction * knockbackForce * Time.deltaTime;
+            //navAgent.speed = 10;
+            navAgent.angularSpeed = 0;
+            navAgent.acceleration = 20;
+            //velRotacion = 0f;
 
-        yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.2f);
 
-        knockback = false;
-        navAgent.speed = movSpeed;
-        navAgent.angularSpeed = 120f;
-        navAgent.acceleration = 8f;
-        //velRotacion = 20f;
+            //navAgent.speed = movSpeed;
+            navAgent.angularSpeed = 120f;
+            navAgent.acceleration = 8f;
+            //velRotacion = 20f; */
+        }
     }
 
     public void OnTriggerEnter(Collider other)
@@ -156,6 +149,7 @@ public class EnemyController : MonoBehaviour
         if (other.gameObject.CompareTag("AOE_Slow"))
         {
             slowMov(5f);
+            Debug.Log("slowed");
         }
     }
 }

@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
 	public CharacterController characterController;
 	public Transform cam;
 	
-	Vector3 moveDir;
+	public Vector3 moveDir;
 	public bool isDisplaced;
 	PlayerDash dashCount;
 
