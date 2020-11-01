@@ -1253,6 +1253,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resetTime: 0.8
   attackRate: 0.2
+  LAttackTime: 1
+  range: 5
+  mask:
+    serializedVersion: 2
+    m_Bits: 512
+  Damage: 5
 --- !u!1 &390348063
 GameObject:
   m_ObjectHideFlags: 0
@@ -2069,7 +2075,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683309831}
-  m_LocalRotation: {x: 0.04088534, y: 0.0000000018346135, z: -0.00000014969415, w: 0.99916387}
+  m_LocalRotation: {x: 0.04088534, y: 0.000000010430611, z: -0.00000015004589, w: 0.99916387}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2880,6 +2886,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5287698877848589849, guid: 78282a8975b30bc4999b58a8766528ae,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5287698877848589850, guid: 78282a8975b30bc4999b58a8766528ae,
         type: 3}
@@ -3888,7 +3899,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1127476430}
-  m_LocalRotation: {x: 0.040885344, y: -0.000000008595999, z: 3.5174436e-10, w: 0.99916387}
+  m_LocalRotation: {x: 0.040885344, y: 0.000000008595999, z: -3.5174436e-10, w: 0.99916387}
   m_LocalPosition: {x: -4.41, y: 2.4029999, z: -31.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -5472,7 +5483,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1605245786}
-  m_LocalRotation: {x: -0.10959639, y: 0.00000001740781, z: 6.3141437e-11, w: -0.9939762}
+  m_LocalRotation: {x: -0.10959639, y: -0.000000017850377, z: 0.0000000039507295,
+    w: -0.9939762}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6168,7 +6180,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1785024367
 Transform:
   m_ObjectHideFlags: 0
@@ -6223,6 +6235,8 @@ MonoBehaviour:
     m_Bits: 512
   kBack: 4000
   Damage: 5
+  LAttackTime: 2
+  HAttackTime: 2
 --- !u!136 &1785024370
 CapsuleCollider:
   m_ObjectHideFlags: 0
