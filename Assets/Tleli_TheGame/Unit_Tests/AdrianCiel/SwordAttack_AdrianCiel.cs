@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordAttack : MonoBehaviour
+public class SwordAttack_AdrianCiel : MonoBehaviour
 {
     /// Adrián y Ciel
    
