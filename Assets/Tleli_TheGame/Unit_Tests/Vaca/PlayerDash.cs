@@ -12,12 +12,14 @@ public class PlayerDash : MonoBehaviour
     public float dashCooldown;
     float dashCooldownTime;
     public bool gotDash;
+    Animator animator;
     //private int dashValue =1; //para solo dashear una vez en el aire
 
 
     void Start()
     {
         moveScript = GetComponent<PlayerController>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -29,12 +31,14 @@ public class PlayerDash : MonoBehaviour
         {
             StartCoroutine(Dash());
             dashCooldownTime = dashCooldown;
+                
         }
         }
     }
 
     IEnumerator Dash()
     {
+        animator.SetTrigger("Dash");
         float startTime = Time.time;
         while (Time.time < startTime + dashTime)
         {

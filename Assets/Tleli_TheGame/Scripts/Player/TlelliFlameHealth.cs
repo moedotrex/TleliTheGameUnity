@@ -19,8 +19,10 @@ public class TlelliFlameHealth : MonoBehaviour
     float flameIntensity;
       
     public float attack;      
-    public float flameDamage;    
- 
+    public float flameDamage;
+
+    public TleliAnimationController tleliAnimationController;
+
 
     void Start()
     {
@@ -42,13 +44,16 @@ public class TlelliFlameHealth : MonoBehaviour
     }
 
  
-
+    //Colisiona tleli con enemigo
+    //Si no estas frente a frente con enemigo no te quita vida
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
             SetFlameDamage(flameDamage * Time.deltaTime);
             FlameUpdateMaterial();
+            tleliAnimationController.IsHitTrigger();
+            //agregra tiempo de recuperación
         }
     }
 
@@ -85,7 +90,7 @@ public class TlelliFlameHealth : MonoBehaviour
         FlameUpdateMaterial();
     }
 
-
+    
     public void SetHPDamage(float attackStrength)
     {
         // Fórmula para cálculo de daño, flama como armadura
@@ -99,11 +104,13 @@ public class TlelliFlameHealth : MonoBehaviour
         if (HP < 0)
         {
             HP = 0;
+            tleliAnimationController.IsDeadTrigger();
         }
 
         Text damageTxt = GameObject.Find("ShowDamage").GetComponent<Text>();
         damageTxt.text = "- " + damage;
 
+       
     }
 
     public void EnemyDistance(float d)
@@ -117,7 +124,6 @@ public class TlelliFlameHealth : MonoBehaviour
         //print("Distancia: " + dist + "  Daño: " + dam);
     }
 
-   
     
     //Remapear rango de valores de flama a intensidad para el shader
     //------------------------------------------------------------------------
@@ -130,8 +136,6 @@ public class TlelliFlameHealth : MonoBehaviour
     {
         return newMin + (original - originalMin) * (newMax - newMin) / (originalMax - originalMin);
     }
-
- 
 
 
     // Regresar valores 
@@ -149,5 +153,14 @@ public class TlelliFlameHealth : MonoBehaviour
     public float GetHP()
     {
         return HP;
+
     }
+
+  /*  public void DeathTleli()
+    {
+        if (HP <= 0)
+        {
+            tleliAnimationController.IsDeadTrigger();
+        }
+    } */
 }

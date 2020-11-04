@@ -11,7 +11,7 @@ public class EnemyAttack : MonoBehaviour
     TlelliFlameHealth TlelliHealth;
     bool playerInRange;
     float timer;
-
+    //crear evento para detectar tiempo de anim gethit y death
 
     void Start()
     {
@@ -39,6 +39,10 @@ public class EnemyAttack : MonoBehaviour
         {
             TlelliHealth.SetHPDamage(attackDamage);
         }
+       /* if (TlelliHealth.HP < 0)
+        {
+       Poner una barrera para que deje de atacar
+        }*/
     }
 
     //¿jugador en rango de ataque?
