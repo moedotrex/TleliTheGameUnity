@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 	public Transform cam;
 	
 	public Vector3 moveDir;
-	public bool isDashing;
+	public bool isDisplaced;
 	PlayerDash dashCount;
 
 	public TleliAnimationController tleliAnimationController;
@@ -59,12 +59,10 @@ public class PlayerController : MonoBehaviour
 			velocidad.y = -10f;
 		}
 
-		
-
 		float vertical = Input.GetAxisRaw("Vertical");
 		float horizontal = Input.GetAxisRaw("Horizontal");
 
-		if (isDashing == false) //si se dashea no se puede controlar la direccion hasta que termine y la gravedad no se crece por la duracion de este
+		if (isDisplaced == false) //si se dashea no se puede controlar la direccion hasta que termine y la gravedad no se crece por la duracion de este
 		{ 
 			//gravedad
 			Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
@@ -77,7 +75,7 @@ public class PlayerController : MonoBehaviour
 			isJumping = true;
 			saltoTimeCounter = saltoTime;
 			velocidad.y = Mathf.Sqrt(Salto * -2f * gravedad);
-				tleliAnimationController.JumpTakeOffTrigger();
+			tleliAnimationController.JumpTakeOffTrigger();
 		}
 		//doble salto
 		if (doubleJump == true)

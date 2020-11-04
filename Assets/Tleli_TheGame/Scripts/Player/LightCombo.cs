@@ -55,8 +55,9 @@ public class LightCombo : MonoBehaviour
 
                     if (enemy != null)
                     {
+                        Debug.Log("hithithithithithi");
                         enemy.HurtEnemy(Damage);
-                        mov.stopMov(0.2f);
+                        mov.StartKnockBack();
                     }
                 }
 
