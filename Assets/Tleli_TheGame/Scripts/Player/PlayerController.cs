@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
 			} 
 		}
 
-		if (isJumping == true && extraJumps == 0) //segundo salto es menos fuerte (solo funciona con un doble salto, no triple...etc.)
+		if (isJumping == true && extraJumps < extraJumpsValue)
 		{
 			Salto = segundoSalto;
 			if (velBase >= velSegundoSalto)

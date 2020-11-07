@@ -5,11 +5,13 @@ using UnityEngine;
 public class TleliAnimationController : MonoBehaviour
 {
     Animator tleliAnimator;
+    LightCombo tleliCombat;
 
     // Start is called before the first frame update
     void Start()
     {
         tleliAnimator = this.gameObject.GetComponent<Animator>();
+        tleliCombat = GetComponentInParent<LightCombo>();
     }
 
     public void SetForwardSpeedParameter(float forwardSpeed)
@@ -81,5 +83,15 @@ public class TleliAnimationController : MonoBehaviour
     public void HeavyAttackComboBoolParameter(bool HeavyAttackCombo)
     {
         tleliAnimator.SetBool("HeavyAttackCombo", HeavyAttackCombo);
+    }
+
+    public void light1_Forward()
+    {
+        tleliCombat.startAttForward(0.22f);
+    }
+
+    public void lightAnimationHit()
+    {
+        tleliCombat.Attack();
     }
 }

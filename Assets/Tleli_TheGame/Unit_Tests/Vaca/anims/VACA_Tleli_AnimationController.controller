@@ -111,25 +111,25 @@ AnimatorStateMachine:
     m_Position: {x: 310, y: 150, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5829593478383088229}
-    m_Position: {x: 180, y: 320, z: 0}
+    m_Position: {x: 170, y: 370, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1696254870371727839}
     m_Position: {x: 320, y: 560, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1283829975718583533}
-    m_Position: {x: 440, y: 380, z: 0}
+    m_Position: {x: 440, y: 370, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6416669008754500855}
-    m_Position: {x: -270, y: -260, z: 0}
+    m_Position: {x: -300, y: -250, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4327790385511969738}
-    m_Position: {x: 650, y: 340, z: 0}
+    m_Position: {x: 700, y: 370, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -39950369520073107}
-    m_Position: {x: 90, y: -340, z: 0}
+    m_Position: {x: 120, y: -320, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2294115458692338317}
-    m_Position: {x: 90, y: -290, z: 0}
+    m_Position: {x: 120, y: -220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5529344116385151279}
     m_Position: {x: 20, y: -50, z: 0}
@@ -159,10 +159,10 @@ AnimatorStateMachine:
     m_Position: {x: 930, y: 210, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7168165223279614562}
-    m_Position: {x: -40, y: 230, z: 0}
+    m_Position: {x: -80, y: 230, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4446205308666434938}
-    m_Position: {x: -80, y: 320, z: 0}
+    m_Position: {x: -80, y: 310, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -2055177724447473915}
@@ -172,9 +172,9 @@ AnimatorStateMachine:
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: -250, y: -320, z: 0}
+  m_AnyStatePosition: {x: -280, y: -320, z: 0}
   m_EntryPosition: {x: 40, y: 160, z: 0}
-  m_ExitPosition: {x: -250, y: -200, z: 0}
+  m_ExitPosition: {x: -270, y: -180, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -2119361278736455043}
 --- !u!1102 &-7168165223279614562
@@ -868,8 +868,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -5357542784017364049, guid: 40b9d6b05e02b3e468e5f23fe2ca5b8c,
-    type: 3}
+  m_Motion: {fileID: 7400000, guid: c2058f824d917d74681cfbcf40edd2cd, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -909,7 +908,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Tleli_AnimationController
+  m_Name: VACA_Tleli_AnimationController
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: ForwardSpeed
@@ -917,115 +916,115 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: JumpTakeOff
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: JumpLand
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: JumpFallLoop
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Death
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: IsHit
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Dash
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: LightAttack
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: LightAttackCombo
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: ChargeLightAttack
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: ChargedUpLightAttack
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: LAttack_1
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: LAttack_2
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: LAttack_3
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Reset_LightCombo
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Lcharge
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: HAttack_1
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: HAttack_2
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Reset_HeavyCombo
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -1061,8 +1060,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 6097108830460815327, guid: 81ed0f4673b45e04eb406e3e4d900180,
-    type: 3}
+  m_Motion: {fileID: 7400000, guid: aa191ac52e2b6974f99b84c3cf78d84e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1116,7 +1114,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
   m_ExitTime: 0.8611111
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -1435,7 +1433,7 @@ AnimatorStateTransition:
   serializedVersion: 3
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
-  m_ExitTime: 0.673913
+  m_ExitTime: 0.67391306
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -1607,8 +1605,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 3340286990402000714, guid: 95f975153e4895d46b1e94ecf64fb121,
-    type: 3}
+  m_Motion: {fileID: 7400000, guid: 8bcbd083116194449876b078c4bbe01b, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

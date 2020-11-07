@@ -14,7 +14,7 @@ public class PlayerDash : MonoBehaviour
     public bool gotDash;
     Animator animator;
 
-    public GameObject player;
+    //public GameObject player;
     Vector3 moveDir;
     //private int dashValue =1; //para solo dashear una vez en el aire
 
