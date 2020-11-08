@@ -12,9 +12,9 @@ public class PlayerDash : MonoBehaviour
     public float dashCooldown;
     float dashCooldownTime;
     public bool gotDash;
-    public GameObject player;
+    Animator animator;
 
-
+    //public GameObject player;
     Vector3 moveDir;
     //private int dashValue =1; //para solo dashear una vez en el aire
 
@@ -22,6 +22,7 @@ public class PlayerDash : MonoBehaviour
     void Start()
     {
         moveScript = GetComponent<PlayerController>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -32,20 +33,21 @@ public class PlayerDash : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownTime <= 0)
         {
             StartCoroutine(Dash());
-            dashCooldownTime = dashCooldown;
+            dashCooldownTime = dashCooldown;               
         }
         }
     }
 
     IEnumerator Dash()
     {
+        //animator.SetTrigger("Dash");
         float startTime = Time.time;
         while (Time.time < startTime + dashTime)
         {
-            //moveScript.characterController.Move(moveScript.moveDir * dashSpeed * Time.deltaTime); //direccion tomada de playercontroller
             moveDir = Quaternion.Euler(0f, transform.eulerAngles.y, 0f) * Vector3.forward; //direccion tomada de player Y transform 
             moveScript.characterController.Move(moveDir * dashSpeed * Time.deltaTime);
-            moveScript.isDisplaced = true; 
+            moveScript.isDisplaced = true;
+            animator.SetTrigger("Dash"); //animation loop
             yield return null; 
             moveScript.isDisplaced = false;
         }

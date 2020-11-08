@@ -6,7 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
 
     public float health;
-    private float currentHealth;
+    public float currentHealth;
 
    public  Color ogColor;
 
@@ -29,7 +29,7 @@ public class EnemyHealth : MonoBehaviour
         //  GameObject.Instantiate(blood, transform.position, Quaternion.identity);
 
         currentHealth -= damage;
-        Debug.Log(transform.name + "takes" + damage + "damage.");
+       // Debug.Log(transform.name + "takes" + damage + "damage.");
         StartCoroutine(HurtEnemyCoroutine());
     }
 

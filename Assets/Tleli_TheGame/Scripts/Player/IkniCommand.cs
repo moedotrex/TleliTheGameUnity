@@ -13,7 +13,7 @@ public class IkniCommand : MonoBehaviour
     float inSlowCD;
     float commandTimer;
     bool commandReceived;
-   public  bool whichAction;
+    public bool whichAction;
     float timeHeld;
 
     void Start()
@@ -41,8 +41,8 @@ public class IkniCommand : MonoBehaviour
 
         if (Input.GetKeyUp("q"))
         {
-            if (timeHeld <= timeforCommand && inSlowCD <= 0f) 
-            { 
+            if (timeHeld <= timeforCommand && inSlowCD <= 0f)
+            {
                 Debug.Log("shortpress");
                 ikniSlowAOE.SlowInk();
                 inSlowCD = slowCD;

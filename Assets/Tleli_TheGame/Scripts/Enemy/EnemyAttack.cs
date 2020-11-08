@@ -12,7 +12,8 @@ public class EnemyAttack : MonoBehaviour
     tleliKnockBack playerKnockback;
     bool playerInRange;
     float timer;
-
+    public bool isDisplaced;
+    //crear evento para detectar tiempo de anim gethit y death
 
     void Start()
     {
@@ -26,7 +27,7 @@ public class EnemyAttack : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= timeBetweenAttacks && playerInRange)
+        if (timer >= timeBetweenAttacks && playerInRange && isDisplaced == false)
         {
             Attack();
         }
@@ -42,6 +43,10 @@ public class EnemyAttack : MonoBehaviour
             TlelliHealth.SetHPDamage(attackDamage);
             playerKnockback.startKnockBack();
         }
+       /* if (TlelliHealth.HP < 0)
+        {
+       Poner una barrera para que deje de atacar
+        }*/
     }
 
     //¿jugador en rango de ataque?

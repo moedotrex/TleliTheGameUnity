@@ -18,7 +18,7 @@ public class tleliKnockBack : MonoBehaviour
         moveScript = GetComponent<PlayerController>();
     }
 
-    public void startKnockBack() 
+    public void startKnockBack()
     {
         StartCoroutine(knockBack());
     }

@@ -4,6 +4,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering;
 
 public class EnemyController : MonoBehaviour
 {
@@ -13,18 +14,19 @@ public class EnemyController : MonoBehaviour
     public float radioDef = 10f;
     public float movSpeed;
 
-    Vector3 direction;
-    public float knockbackForce;
-
-    Vector3 EnemySpawn;
+    Vector3 kbDirection;
+    public Vector3 EnemySpawn;
 
     Transform target;
     NavMeshAgent navAgent;
     TlelliFlameHealth flama;
-
-   public bool isAttacking;
+    EnemyAttack enemyStagger;
+    
+    public bool isAttacking;
 
     MusicaDinamica activa;
+    bool knockback;
+    float knockbackForce;
 
 
     void Start()
@@ -35,7 +37,16 @@ public class EnemyController : MonoBehaviour
         EnemySpawn = this.transform.position;
         flama = GameObject.FindGameObjectWithTag("Player").GetComponent<TlelliFlameHealth>();
         navAgent = GetComponent<NavMeshAgent>();
+        enemyStagger = GetComponent<EnemyAttack>();
         navAgent.speed = movSpeed;
+    }
+
+    private void FixedUpdate()
+    {
+        if (knockback) 
+        {
+            navAgent.velocity = kbDirection * 2f;
+        }
     }
 
     void Update()
@@ -58,11 +69,12 @@ public class EnemyController : MonoBehaviour
 
             if (distance >= BuscarRadio && isAttacking == true)
             {
+             
             BuscarRadio = radioDef;
             stopMov(5f);
             navAgent.SetDestination(EnemySpawn);
             isAttacking = false;
-            }
+        }
 
         /*if (isAttacking == true)
         {
@@ -112,8 +124,8 @@ public class EnemyController : MonoBehaviour
 
     public void StartKnockBack()
     {
-            direction = transform.forward * -1;
-            StartCoroutine(KnockBack());
+        kbDirection = transform.forward * -1;
+        StartCoroutine(KnockBack());
     }
 
     IEnumerator slowMovCoroutine(float time)
@@ -126,22 +138,21 @@ public class EnemyController : MonoBehaviour
 
     IEnumerator KnockBack()
     {
-        float startTime = Time.time;
-        while (Time.time < startTime + 0.2f)
-        {
-            navAgent.velocity = direction * knockbackForce * Time.deltaTime;
-            //navAgent.speed = 10;
+        knockback = true;
+        enemyStagger.isDisplaced = true;
+            navAgent.speed = 10;
             navAgent.angularSpeed = 0;
-            navAgent.acceleration = 20;
-            //velRotacion = 0f;
+            navAgent.acceleration = 0;
+            velRotacion = 0f;
 
             yield return new WaitForSeconds(0.2f);
 
-            //navAgent.speed = movSpeed;
+        knockback = false;
+        enemyStagger.isDisplaced = false;
+        navAgent.speed = movSpeed;
             navAgent.angularSpeed = 120f;
             navAgent.acceleration = 8f;
-            //velRotacion = 20f; */
-        }
+            velRotacion = 20f;
     }
 
     public void OnTriggerEnter(Collider other)
@@ -152,4 +163,5 @@ public class EnemyController : MonoBehaviour
             Debug.Log("slowed");
         }
     }
+
 }
