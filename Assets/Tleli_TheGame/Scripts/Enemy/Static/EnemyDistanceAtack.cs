@@ -29,8 +29,6 @@ public class EnemyDistanceAtack : MonoBehaviour
                 Fire();
             }
             
-            
-            
         }
 
        

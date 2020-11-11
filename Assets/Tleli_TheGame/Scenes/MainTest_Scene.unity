@@ -5020,7 +5020,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1605245786}
-  m_LocalRotation: {x: -0.10959639, y: 0.00000001740781, z: 6.3141437e-11, w: -0.9939762}
+  m_LocalRotation: {x: -0.10959639, y: -0.000000017850377, z: 0.0000000039507295,
+    w: -0.9939762}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7333,7 +7334,7 @@ PrefabInstance:
     - target: {fileID: 4219402306929305349, guid: 5d8ad0a771ee40b46841cb090b7b755b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 21.97
+      value: -9.19
       objectReference: {fileID: 0}
     - target: {fileID: 4219402306929305349, guid: 5d8ad0a771ee40b46841cb090b7b755b,
         type: 3}
@@ -7389,6 +7390,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.8990874
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219402306929305354, guid: 5d8ad0a771ee40b46841cb090b7b755b,
+        type: 3}
+      propertyPath: attackDamage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219402306929305354, guid: 5d8ad0a771ee40b46841cb090b7b755b,
+        type: 3}
+      propertyPath: attackDamageSlam
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219402306929305354, guid: 5d8ad0a771ee40b46841cb090b7b755b,
+        type: 3}
+      propertyPath: speed
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d8ad0a771ee40b46841cb090b7b755b, type: 3}
