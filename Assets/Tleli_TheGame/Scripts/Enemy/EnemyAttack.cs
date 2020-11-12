@@ -12,6 +12,7 @@ public class EnemyAttack : MonoBehaviour
     tleliKnockBack playerKnockback;
     bool playerInRange;
     float timer;
+    public bool isDisplaced;
     //crear evento para detectar tiempo de anim gethit y death
 
     void Start()
@@ -26,7 +27,7 @@ public class EnemyAttack : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= timeBetweenAttacks && playerInRange)
+        if (timer >= timeBetweenAttacks && playerInRange && isDisplaced == false)
         {
             Attack();
         }

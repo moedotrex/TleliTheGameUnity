@@ -40,5 +40,12 @@ public class Collect : MonoBehaviour
             playerDash.gotDash = true;
             Destroy(other.gameObject);
         }
+
+        if (other.CompareTag("TripleJump"))
+        {
+            playercontroller.extraJumpsValue = 2;
+            Destroy(other.gameObject);
+        }
+
     }
 }
