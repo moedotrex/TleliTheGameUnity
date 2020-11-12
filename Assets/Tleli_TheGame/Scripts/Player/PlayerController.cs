@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
 		}
 
 		float vertical = Input.GetAxis("Vertical");
-		float horizontal = Input.GetAxis("Horizontal");
+		float horizontal = Input.GetAxisRaw("Horizontal");
 
 		if (isDisplaced == false) //si se dashea no se puede controlar la direccion hasta que termine y la gravedad no se crece por la duracion de este
 		{ 
