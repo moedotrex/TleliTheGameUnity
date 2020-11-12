@@ -20,7 +20,7 @@ public class LightCombo : MonoBehaviour
 
     Ray shootRay;
     RaycastHit hit;
-    float rayRange = 2f;
+    float rayRange = 1f;
     public LayerMask mask;
 
     public float Damage;
@@ -95,13 +95,13 @@ public class LightCombo : MonoBehaviour
 
         if (LAttackTimer >= LAttackTime && !Input.GetMouseButton(1))
         {
-            UnityEngine.Debug.Log("CHARGING ... LIGHT!");
+            //UnityEngine.Debug.Log("CHARGING ... LIGHT!");
             animator.SetBool("Lcharge", true);
         }
 
         if (Input.GetMouseButtonUp(0) || Input.GetMouseButton(1))
         {
-            UnityEngine.Debug.Log("RELEASE!   LIGHT ");
+            //UnityEngine.Debug.Log("RELEASE!   LIGHT ");
             animator.SetBool("Lcharge", false);
             LAttackTimer = 0;
         }
@@ -163,7 +163,7 @@ public class LightCombo : MonoBehaviour
     }
 
     public void startAttForward(float animDuration)
-        {
+    {
         StartCoroutine(AttForward(animDuration));
     }
 
@@ -172,7 +172,6 @@ public class LightCombo : MonoBehaviour
         float startTime = Time.time;
         while (Time.time < startTime + animDuration)
         {
-            
             moveDir = Quaternion.Euler(0f, transform.eulerAngles.y, 0f) * Vector3.forward; //direccion tomada de player Y transform 
             moveScript.characterController.Move(moveDir * 5f * Time.deltaTime);
             moveScript.isDisplaced = true;
