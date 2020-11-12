@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 99c9cd2bb2506554ea90b2ae53e05aa8
+guid: 21dff89383a97ec4d9b3e40dff27307a
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -11,35 +11,34 @@ ScriptedImporter:
   version: 29
   projectContext: 2
   mGraphInstanceData:
-  - graphLabel: Mushroom
-    prototypeName: Mushroom
+  - graphLabel: Roots
+    prototypeName: Roots
     graphDescIndex: 0
     generateAllOutputs: 0
     generateMipMaps: 1
-    preset: " <sbspreset pkgurl=\"pkg://Mushroom\" label=\"\" >\n  <presetinput identifier=\"$outputsize\"
-      uid=\"3872354394\" type=\"8\" value=\"9,9\" />\n </sbspreset>\n"
+    preset: " <sbspreset pkgurl=\"pkg://Roots\" label=\"\" >\n  <presetinput identifier=\"$outputsize\"
+      uid=\"2235011968\" type=\"8\" value=\"9,9\" />\n </sbspreset>\n"
     shaderName: Universal Render Pipeline/Lit
     materialProperties:
       shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-      shaderKeywords: _EMISSION _METALLICSPECGLOSSMAP _NORMALMAP _OCCLUSIONMAP
-      lightmapFlags: 1
+      shaderKeywords: _METALLICSPECGLOSSMAP _NORMALMAP _OCCLUSIONMAP
+      lightmapFlags: 4
       enableInstancingVariants: 0
       doubleSidedGI: 0
-      customRenderQueue: 2050
+      customRenderQueue: -1
       texEnvs:
       - name: _BaseMap
-        texture: {fileID: 1686081265904868641, guid: 99c9cd2bb2506554ea90b2ae53e05aa8,
+        texture: {fileID: -4183197587186927193, guid: 21dff89383a97ec4d9b3e40dff27307a,
           type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _BumpMap
-        texture: {fileID: 7535015461134384887, guid: 99c9cd2bb2506554ea90b2ae53e05aa8,
+        texture: {fileID: 5680650461429466601, guid: 21dff89383a97ec4d9b3e40dff27307a,
           type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _EmissionMap
-        texture: {fileID: -836910077551290571, guid: 99c9cd2bb2506554ea90b2ae53e05aa8,
-          type: 3}
+        texture: {instanceID: 0}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _MainTex
@@ -47,12 +46,12 @@ ScriptedImporter:
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _MetallicGlossMap
-        texture: {fileID: 5662171821322351072, guid: 99c9cd2bb2506554ea90b2ae53e05aa8,
+        texture: {fileID: -5119373090750458038, guid: 21dff89383a97ec4d9b3e40dff27307a,
           type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _OcclusionMap
-        texture: {fileID: 2391340856718530764, guid: 99c9cd2bb2506554ea90b2ae53e05aa8,
+        texture: {fileID: 5075946757875333374, guid: 21dff89383a97ec4d9b3e40dff27307a,
           type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
@@ -131,15 +130,6 @@ ScriptedImporter:
       bImage: 1
       bNumerical: 0
       bLinear: 1
-    - outputName: emissive
-      identifier: emissive
-      usageName: emissive
-      channelStr: emissive
-      label: Emissive
-      usage: 3
-      bImage: 1
-      bNumerical: 0
-      bLinear: 0
     - outputName: roughness
       identifier: roughness
       usageName: roughness
@@ -158,21 +148,21 @@ ScriptedImporter:
       bImage: 1
       bNumerical: 0
       bLinear: 1
-    - outputName: ambientOcclusion
-      identifier: ambientocclusion
-      usageName: ambientOcclusion
-      channelStr: ambientOcclusion
-      label: Ambient Occlusion
-      usage: 5
-      bImage: 1
-      bNumerical: 0
-      bLinear: 1
     - outputName: height
       identifier: height
       usageName: height
       channelStr: height
       label: Height
       usage: 9
+      bImage: 1
+      bNumerical: 0
+      bLinear: 1
+    - outputName: ambientOcclusion
+      identifier: ambientocclusion
+      usageName: ambientOcclusion
+      channelStr: ambientOcclusion
+      label: Ambient Occlusion
+      usage: 5
       bImage: 1
       bNumerical: 0
       bLinear: 1
@@ -187,11 +177,6 @@ ScriptedImporter:
       - sourceName: normal
         from: 0
         to: 3
-    - targetName: emissive
-      components:
-      - sourceName: emissive
-        from: 0
-        to: 3
     - targetName: roughness
       components:
       - sourceName: roughness
@@ -202,42 +187,38 @@ ScriptedImporter:
       - sourceName: smoothness
         from: 0
         to: 3
-    - targetName: ambientOcclusion
-      components:
-      - sourceName: ambientOcclusion
-        from: 0
-        to: 3
     - targetName: height
       components:
       - sourceName: height
         from: 0
         to: 3
+    - targetName: ambientOcclusion
+      components:
+      - sourceName: ambientOcclusion
+        from: 0
+        to: 3
     textureParameters:
-    - textureName: Mushroom - baseColor
+    - textureName: Roots - baseColor
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: Mushroom - normal
+    - textureName: Roots - normal
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: Mushroom - emissive
-      wrapMode: 1
-      filterMode: 1
-      aniso: 1
-    - textureName: Mushroom - roughness
+    - textureName: Roots - roughness
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: Mushroom - metallic
+    - textureName: Roots - metallic
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: Mushroom - ambientOcclusion
+    - textureName: Roots - height
       wrapMode: 0
       filterMode: 1
-      aniso: 0
-    - textureName: Mushroom - height
+      aniso: 1
+    - textureName: Roots - ambientOcclusion
       wrapMode: 0
       filterMode: 1
       aniso: 1
@@ -252,11 +233,10 @@ ScriptedImporter:
       textureFormatMode: 0
       normalCompressed: 0
       bGenerateOnLoad: 1
-    material: {fileID: 2154927139218458291, guid: 99c9cd2bb2506554ea90b2ae53e05aa8,
+    material: {fileID: 201679973854296888, guid: 21dff89383a97ec4d9b3e40dff27307a,
       type: 3}
     generatedTextures:
-    - {fileID: 1686081265904868641, guid: 99c9cd2bb2506554ea90b2ae53e05aa8, type: 3}
-    - {fileID: 7535015461134384887, guid: 99c9cd2bb2506554ea90b2ae53e05aa8, type: 3}
-    - {fileID: -836910077551290571, guid: 99c9cd2bb2506554ea90b2ae53e05aa8, type: 3}
-    - {fileID: 5662171821322351072, guid: 99c9cd2bb2506554ea90b2ae53e05aa8, type: 3}
-    - {fileID: 2391340856718530764, guid: 99c9cd2bb2506554ea90b2ae53e05aa8, type: 3}
+    - {fileID: -4183197587186927193, guid: 21dff89383a97ec4d9b3e40dff27307a, type: 3}
+    - {fileID: 5680650461429466601, guid: 21dff89383a97ec4d9b3e40dff27307a, type: 3}
+    - {fileID: -5119373090750458038, guid: 21dff89383a97ec4d9b3e40dff27307a, type: 3}
+    - {fileID: 5075946757875333374, guid: 21dff89383a97ec4d9b3e40dff27307a, type: 3}
