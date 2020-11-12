@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
 	private float vel;
 	bool isMoving;
 	Vector3 velocidad;
+	float _deltaVelocidad = 0f;
 
 	public Transform groundCheck;
 	public float groundDistance = 0.4f;
@@ -35,8 +36,10 @@ public class PlayerController : MonoBehaviour
 	public Transform cam;
 	
 	public Vector3 moveDir;
-	public bool isDashing;
+	public bool isDisplaced;
 	PlayerDash dashCount;
+
+	public TleliAnimationController tleliAnimationController;
 
 	void Start()
 	{
@@ -56,12 +59,10 @@ public class PlayerController : MonoBehaviour
 			velocidad.y = -10f;
 		}
 
-		
-
 		float vertical = Input.GetAxisRaw("Vertical");
 		float horizontal = Input.GetAxisRaw("Horizontal");
 
-		if (isDashing == false) //si se dashea no se puede controlar la direccion hasta que termine y la gravedad no se crece por la duracion de este
+		if (isDisplaced == false) //si se dashea no se puede controlar la direccion hasta que termine y la gravedad no se crece por la duracion de este
 		{ 
 			//gravedad
 			Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
@@ -74,6 +75,7 @@ public class PlayerController : MonoBehaviour
 			isJumping = true;
 			saltoTimeCounter = saltoTime;
 			velocidad.y = Mathf.Sqrt(Salto * -2f * gravedad);
+			tleliAnimationController.JumpTakeOffTrigger();
 		}
 		//doble salto
 		if (doubleJump == true)
@@ -124,7 +126,7 @@ public class PlayerController : MonoBehaviour
 			} 
 		}
 
-		if (isJumping == true && extraJumps == 0) //segundo salto es menos fuerte (solo funciona con un doble salto, no triple...etc.)
+		if (isJumping == true && extraJumps < extraJumpsValue)
 		{
 			Salto = segundoSalto;
 			if (velBase >= velSegundoSalto)
@@ -143,6 +145,11 @@ public class PlayerController : MonoBehaviour
 			velBase = velInicial;
 			Salto = saltoInicial;
 			extraJumps = extraJumpsValue;
+
+				if (tleliAnimationController.CheckFallLoop())
+				{
+					tleliAnimationController.JumpLandTrigger();
+				}
 		}
 
 		vel = velBase;
@@ -155,14 +162,39 @@ public class PlayerController : MonoBehaviour
 
 			moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
 			characterController.Move(moveDir.normalized * vel * Time.deltaTime);
+
+				_deltaVelocidad = vel * Time.deltaTime;
 			isMoving = true;
 
+			tleliAnimationController.SetForwardSpeedParameter(1f);
 		}
 
 		if (direction.magnitude <= 0f)
 		{
 			isMoving = false;
+			tleliAnimationController.SetForwardSpeedParameter(0f);
+			}
 		}
+
+		if (velocidad.y<0)
+        {
+			tleliAnimationController.JumpFallLoopBoolParameter(false);
 		}
+
+		if (velocidad.y>0)
+        {
+			tleliAnimationController.JumpFallLoopBoolParameter(true);
+        }
+		
+	}
+
+	public float GetVelocity()
+	{
+		return _deltaVelocidad;
+	}
+
+public float GetJumpVelocity()
+	{
+		return velocidad.y;
 	}
 }

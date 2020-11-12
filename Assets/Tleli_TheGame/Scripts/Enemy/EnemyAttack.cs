@@ -9,14 +9,16 @@ public class EnemyAttack : MonoBehaviour
 
     GameObject player;
     TlelliFlameHealth TlelliHealth;
+    tleliKnockBack playerKnockback;
     bool playerInRange;
     float timer;
-
+    //crear evento para detectar tiempo de anim gethit y death
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         TlelliHealth = player.GetComponent<TlelliFlameHealth>();
+        playerKnockback = player.GetComponent<tleliKnockBack>();
     }
 
 
@@ -38,7 +40,12 @@ public class EnemyAttack : MonoBehaviour
         if (TlelliHealth.HP > 0)
         {
             TlelliHealth.SetHPDamage(attackDamage);
+            playerKnockback.startKnockBack();
         }
+       /* if (TlelliHealth.HP < 0)
+        {
+       Poner una barrera para que deje de atacar
+        }*/
     }
 
     //¿jugador en rango de ataque?
