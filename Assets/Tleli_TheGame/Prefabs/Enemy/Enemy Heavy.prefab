@@ -366,10 +366,10 @@ GameObject:
   - component: {fileID: 4219402306929305350}
   - component: {fileID: 4219402306929305345}
   - component: {fileID: 4219402306929305344}
-  - component: {fileID: 4219402306929305354}
   - component: {fileID: 4219402306929305355}
   - component: {fileID: 4219402306929305351}
   - component: {fileID: 4219402306929305348}
+  - component: {fileID: 1021589927578829648}
   m_Layer: 9
   m_Name: Enemy Heavy
   m_TagString: Enemy
@@ -429,7 +429,6 @@ MonoBehaviour:
   velRotacion: 20
   radioDef: 10
   movSpeed: 2.5
-  knockbackForce: 1000
   EnemySpawn: {x: 0, y: 0, z: 0}
   isAttacking: 0
 --- !u!114 &4219402306929305344
@@ -444,23 +443,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 226b3a46ba112ba438c0c9cdefaefaba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
+  health: 40
   currentHealth: 0
   ogColor: {r: 0.60784316, g: 0.34901962, b: 0.42352942, a: 1}
---- !u!114 &4219402306929305354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4219402306929305346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6b57d913b0f87f4cadceffc507cc30a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeBetweenAttacks: 3
-  attackDamage: 40
 --- !u!65 &4219402306929305355
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -510,6 +495,24 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &1021589927578829648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4219402306929305346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1eab81383888bb4d9d944f75506ddef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenAttacks: 15
+  attackDamage: 40
+  attackDamageSlam: 1
+  slamCounter: 0
+  speed: 0
+  isDisplaced: 0
 --- !u!1 &4812200685003022120
 GameObject:
   m_ObjectHideFlags: 0

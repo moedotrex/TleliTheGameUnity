@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAttack : MonoBehaviour
+public class HeavyAttack : MonoBehaviour
 {
     public float timeBetweenAttacks = 3f;
     public float attackDamage = 1;
     public float attackDamageSlam = 1;
     public float slamCounter = 0;
-    public float speed; 
+    public float speed;
 
     private Vector3 slamLand;
     private Transform playerPos;
@@ -16,7 +16,7 @@ public class EnemyAttack : MonoBehaviour
     GameObject player;
     TlelliFlameHealth TlelliHealth;
 
-    
+
 
     tleliKnockBack playerKnockback;
 
@@ -26,7 +26,7 @@ public class EnemyAttack : MonoBehaviour
     //crear evento para detectar tiempo de anim gethit y death
 
     void Start()
-    { 
+    {
         player = GameObject.FindGameObjectWithTag("Player");
         TlelliHealth = player.GetComponent<TlelliFlameHealth>();
 
@@ -43,23 +43,23 @@ public class EnemyAttack : MonoBehaviour
         timer += Time.deltaTime;
 
 
-        if (timer >= timeBetweenAttacks && playerInRange && slamCounter <=1)
+        if (timer >= timeBetweenAttacks && playerInRange && slamCounter <= 1)
 
-        if (timer >= timeBetweenAttacks && playerInRange && isDisplaced == false)
+            if (timer >= timeBetweenAttacks && playerInRange && isDisplaced == false)
 
-        {
-            Attack();
-            slamCounter++;
-        }
+            {
+                Attack();
+                slamCounter++;
+            }
 
         if (timer >= timeBetweenAttacks && playerInRange && slamCounter >= 2)
         {
             AttackSlam();
             slamCounter = 0;
         }
-        
 
-        if (timer >= timeBetweenAttacks && slamCounter <= 1 )
+
+        if (timer >= timeBetweenAttacks && slamCounter <= 1)
         {
 
             JumpSlamp();
@@ -77,10 +77,10 @@ public class EnemyAttack : MonoBehaviour
             TlelliHealth.SetHPDamage(attackDamage);
             playerKnockback.startKnockBack();
         }
-       /* if (TlelliHealth.HP < 0)
-        {
-       Poner una barrera para que deje de atacar
-        }*/
+        /* if (TlelliHealth.HP < 0)
+         {
+        Poner una barrera para que deje de atacar
+         }*/
     }
 
     void AttackSlam()
@@ -97,10 +97,10 @@ public class EnemyAttack : MonoBehaviour
     {
         timer = 0f;
         int randomNum = Random.Range(1, 3);
-        if (TlelliHealth.HP > 0 && randomNum ==2)
+        if (TlelliHealth.HP > 0 && randomNum == 2)
         {
             transform.position = Vector3.MoveTowards(transform.position, slamLand, speed * Time.deltaTime);
-            if(playerInRange)
+            if (playerInRange)
             {
                 TlelliHealth.SetHPDamage(attackDamageSlam);
             }

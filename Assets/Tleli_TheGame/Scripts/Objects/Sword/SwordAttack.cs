@@ -68,7 +68,7 @@ public class SwordAttack : MonoBehaviour
                     if (enemy != null)
                     {
                         enemy.HurtEnemy(Damage);
-<<<<<<< HEAD
+
                         
                         
                     }
@@ -81,10 +81,10 @@ public class SwordAttack : MonoBehaviour
                     if (TP != null)
                     {
                         TP.transport();
-=======
+
                         enemyParticles.PlayFX(enemy);   //--------------
                         mov.stopMov(0.2f);
->>>>>>> Tech_Vaca
+
                     }
                     if (hit.rigidbody != null)
                     {
