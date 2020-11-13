@@ -7,6 +7,7 @@ public class Collect : MonoBehaviour
     TlelliFlameHealth tlelliFlame;
     PlayerController playercontroller;
     PlayerDash playerDash;
+    LightCombo charged;
     public int recoverAmount;
     // Start is called before the first frame update
     void Start()
@@ -14,6 +15,7 @@ public class Collect : MonoBehaviour
         tlelliFlame = GameObject.FindGameObjectWithTag("Player").GetComponent<TlelliFlameHealth>();
         playercontroller = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         playerDash = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDash>();
+        charged = GetComponent<LightCombo>();
     }
 
     // Update is called once per frame
@@ -29,6 +31,12 @@ public class Collect : MonoBehaviour
         if (other.CompareTag("Dash"))
         {
             playerDash.gotDash = true;
+            Destroy(other.gameObject);
+        }
+
+        if (other.CompareTag("ChargedLA"))
+        {
+            charged.gotCharged = true;
             Destroy(other.gameObject);
         }
     }
