@@ -30,7 +30,6 @@ public class PlayerController : MonoBehaviour
 
 	private int extraJumps;
 	public int extraJumpsValue;
-	public bool doubleJump;
 
 	public CharacterController characterController;
 	public Transform cam;
@@ -78,9 +77,7 @@ public class PlayerController : MonoBehaviour
 			tleliAnimationController.JumpTakeOffTrigger();
 		}
 		//doble salto
-		if (doubleJump == true)
-		{
-			if (Input.GetButtonDown("Jump") && extraJumps > 0 && doubleJump == true)
+			if (Input.GetButtonDown("Jump") && extraJumps > 0)
 			{
 				GetComponent<FMODUnity.StudioEventEmitter>().Play();
 				isJumping = true;
@@ -96,7 +93,6 @@ public class PlayerController : MonoBehaviour
 				saltoTimeCounter = saltoTime;
 				velocidad.y = Mathf.Sqrt(Salto * -2f * gravedad);
 			}
-		}
 
 		if (Input.GetButton("Jump") && isJumping == true)
 		{

@@ -6,7 +6,7 @@ public class DestroyOnCollision : MonoBehaviour
 {
     public GameObject destroyedVersion; //version destruida de la pared
 
-    void OnTriggerEnter(Collider other)
+    /*void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Sword") //para romper las paredes destructibles. lo agrego Moe
         {
@@ -14,6 +14,13 @@ public class DestroyOnCollision : MonoBehaviour
             Instantiate(destroyedVersion, transform.position, transform.rotation);
             Destroy(gameObject);
         }
+    }*/
+
+   public void DestroyYourself()
+    {
+        Instantiate(destroyedVersion, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
+
 
 }

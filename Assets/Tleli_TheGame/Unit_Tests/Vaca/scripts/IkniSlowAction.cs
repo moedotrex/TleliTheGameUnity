@@ -5,11 +5,11 @@ using UnityEngine;
 public class IkniSlowAction : MonoBehaviour
 {
     public GameObject inkSack;
-    public GameObject inkParticle;
+   // public GameObject inkParticle;
     Ray ray;
     RaycastHit hit;
-    public LayerMask mask;
-    public float range;
+    //public LayerMask mask;
+    //public float range;
 
     public void SlowInk()
     {

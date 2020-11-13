@@ -1,11 +1,8 @@
 fileFormatVersion: 2
-guid: 4b8f6f7692a3a7b4da746228d2e0ccd1
+guid: e49709e5618c13949a8dad719df07834
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable:
-  - first:
-      74: -4587314604593059962
-    second: spearATK
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -33,60 +30,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: spearATK
-      takeName: spearATK
-      internalID: 0
-      firstFrame: 107
-      lastFrame: 115
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events:
-      - time: 0.22458583
-        functionName: chargedLight_Forward
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 272966beacd33834894987bd6a171964,
-          type: 3}
-        floatParameter: 0.3
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.90243906
-        functionName: chargedLightHit
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 272966beacd33834894987bd6a171964,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 1
-        functionName: chargedLightHit
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 272966beacd33834894987bd6a171964,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 107
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []

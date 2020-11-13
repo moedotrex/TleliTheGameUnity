@@ -24,28 +24,12 @@ public class Collect : MonoBehaviour
             tlelliFlame.RecoverFlame(recoverAmount);
             tlelliFlame.FlameUpdateMaterial();
             Destroy(other.gameObject);
-          
-        }
-
-        if (other.CompareTag("DoubleJump"))
-        {
-            
-            playercontroller.doubleJump = true;
-            Destroy(other.gameObject);
         }
 
         if (other.CompareTag("Dash"))
         {
-
             playerDash.gotDash = true;
             Destroy(other.gameObject);
         }
-
-        if (other.CompareTag("TripleJump"))
-        {
-            playercontroller.extraJumpsValue = 2;
-            Destroy(other.gameObject);
-        }
-
     }
 }
