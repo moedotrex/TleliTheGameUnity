@@ -8,6 +8,8 @@ public class GameEvent : MonoBehaviour
 {
     public string eventName;
     public Text taskText;
+    public int llaves=0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +40,16 @@ public class GameEvent : MonoBehaviour
                     break;
                 case "SpearRoom":
                     taskText.text = "Reach the weapon on top of the column";
+                    break;
+                case "GetBreakWalls":
+                    taskText.text = "Get the two keys defeating the Miniboss - (0/2)";
+                    break;
+                case "GotOneKey":
+                    taskText.text = "Get the two keys defeating the Miniboss - (1/2)";
+                    llaves++;
+                    break;
+                case "GotTwoKey":
+                    taskText.text = "Return to the settlement - (2/2)";
                     break;
             }
         }
