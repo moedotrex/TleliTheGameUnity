@@ -123,6 +123,7 @@ public class LightCombo : MonoBehaviour
 
             if (enemy != null)
             {
+              //  ScreenShake.Instance.ShakeCamera(5f, 0.1f);
                 enemy.HurtEnemy(currentDamage);
                 mov.StartKnockBack();
             }
