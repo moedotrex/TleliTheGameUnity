@@ -44,12 +44,17 @@ public class GameEvent : MonoBehaviour
                 case "GetBreakWalls":
                     taskText.text = "Get the two keys defeating the Miniboss - (0/2)";
                     break;
-                case "GotOneKey":
-                    taskText.text = "Get the two keys defeating the Miniboss - (1/2)";
-                    llaves++;
-                    break;
-                case "GotTwoKey":
-                    taskText.text = "Return to the settlement - (2/2)";
+                case "GotKey":
+                    if (llaves == 1)
+                    {
+                        taskText.text = "Return to the settlement - (2/2)";
+                        llaves++;
+                    }
+                    if (llaves == 0)
+                    {
+                        taskText.text = "Get the other key defeating the Miniboss - (1/2)";
+                        llaves++;
+                    }
                     break;
             }
         }
