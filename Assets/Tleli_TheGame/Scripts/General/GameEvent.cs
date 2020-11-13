@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class GameEvent : MonoBehaviour
 {
     public string eventName;
     public Text taskText;
-    public int llaves=0;
+    public int llaves=1;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +56,9 @@ public class GameEvent : MonoBehaviour
                         taskText.text = "Get the other key defeating the Miniboss - (1/2)";
                         llaves++;
                     }
+                    break;
+                case "BossRoom":
+                    SceneManager.LoadScene("BossCutscene");
                     break;
             }
         }
