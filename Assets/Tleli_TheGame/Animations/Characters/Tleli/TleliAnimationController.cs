@@ -104,10 +104,8 @@ public class TleliAnimationController : MonoBehaviour
         if (tleliCombat.lunging == false)
         {
             tleliCombat.lunging = true;
-            tleliCombat.FaceTarget();
         }
-
-        else if (tleliCombat.lunging)
+        else
         {
             tleliCombat.lunging = false;
         }

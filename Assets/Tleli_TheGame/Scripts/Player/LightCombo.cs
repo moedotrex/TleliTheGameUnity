@@ -35,6 +35,7 @@ public class LightCombo : MonoBehaviour
     float velRotacion = 200F;
 
     public bool lunging;
+    public bool gotCharged;
 
     void Start()
     {
@@ -74,6 +75,7 @@ public class LightCombo : MonoBehaviour
                 Debug.Log("combo reset");
             }
         }
+
         if (combonum == 4)
         {
             intResetTime = 4f;
@@ -83,23 +85,37 @@ public class LightCombo : MonoBehaviour
         {
             intResetTime = resetTime;
         }
-        if (Input.GetMouseButton(0))
+
+        if (gotCharged) // ya adquirio el poder? 
+        {
+            if (Input.GetMouseButton(0))
         {
             LAttackTimer += Time.deltaTime;
         }
-        if (LAttackTimer >= LAttackTime && !Input.GetMouseButton(1))
+        if (LAttackTimer >= LAttackTime && !Input.GetMouseButton(1) )
         {
             animator.SetBool("Lcharge", true);
+            moveScript.isDisplaced = true;
+            if (target != null)
+            {
+                FaceTarget();
+            }
         }
         if (Input.GetMouseButtonUp(0) || Input.GetMouseButton(1))
         {            
             animator.SetBool("Lcharge", false);
             LAttackTimer = 0;
         }
-        if(lunging)
+        }
+
+        if (lunging == true)
         {
+
+            FaceTarget();
             shootRay.origin = transform.position;
             shootRay.direction = transform.forward;
+            Debug.DrawRay(transform.position, transform.forward, Color.red);
+
 
             if (Physics.Raycast(shootRay, out hit, 2f, mask))
             {
