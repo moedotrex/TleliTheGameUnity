@@ -58,6 +58,7 @@ public class LightCombo : MonoBehaviour
                 currentDamage += 2f;
                 reset = 0f;
             }
+
             if (target != null)
             { 
             FaceTarget();
@@ -111,11 +112,8 @@ public class LightCombo : MonoBehaviour
         if (lunging == true)
         {
 
-            FaceTarget();
             shootRay.origin = transform.position;
             shootRay.direction = transform.forward;
-            Debug.DrawRay(transform.position, transform.forward, Color.red);
-
 
             if (Physics.Raycast(shootRay, out hit, 2f, mask))
             {
