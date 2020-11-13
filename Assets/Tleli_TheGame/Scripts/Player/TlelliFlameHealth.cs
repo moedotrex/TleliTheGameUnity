@@ -19,15 +19,19 @@ public class TlelliFlameHealth : MonoBehaviour
     float flameIntensity;
       
     public float attack;      
-    public float flameDamage;    
- 
+    public float flameDamage;
+
+    PlayerController invincibilityFrames;  //VACA
+
+    public TleliAnimationController tleliAnimationController;
+
 
     void Start()
     {
         flame = maxFlame;
         HP = maxHP;
         flameIntensity = Remap(flame, 0, maxFlame, flameMinIntensity, flameMaxIntensity);         //Hacer un "remap" de los valores de la vida de Tlelli (0-100) a los valores de flama (0-5)
-   
+        getPCscritp(); //VACA obtener script de player controller
     }
 
 
@@ -42,13 +46,16 @@ public class TlelliFlameHealth : MonoBehaviour
     }
 
  
-
+    //Colisiona tleli con enemigo
+    //Si no estas frente a frente con enemigo no te quita vida
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
             SetFlameDamage(flameDamage * Time.deltaTime);
             FlameUpdateMaterial();
+            //tleliAnimationController.IsHitTrigger();
+            //agregra tiempo de recuperación
         }
     }
 
@@ -85,24 +92,29 @@ public class TlelliFlameHealth : MonoBehaviour
         FlameUpdateMaterial();
     }
 
-
+    
     public void SetHPDamage(float attackStrength)
     {
-        // Fórmula para cálculo de daño, flama como armadura
+        if (invincibilityFrames.isDisplaced == false) {  // VACA si tleli esta dasheando no puede recibir daño (invincibilityFrames)
 
-        float damage = attackStrength * (100 / (100 + flame));
-        damage = Mathf.Round(damage * 100f) / 100f;
+            // Fórmula para cálculo de daño, flama como armadura
 
-        //-------
+            float damage = attackStrength * (100 / (100 + flame));
+            damage = Mathf.Round(damage * 100f) / 100f;
+            tleliAnimationController.IsHitTrigger(); // VACA cambiar animacion cuando reciba daño y no cuando entre en trigger
 
-        HP -= damage;   
-        if (HP < 0)
-        {
-            HP = 0;
-        }
+            //-------
+
+            HP -= damage;
+            if (HP < 0)
+            {
+                HP = 0;
+                tleliAnimationController.IsDeadTrigger();
+            }
 
         Text damageTxt = GameObject.Find("ShowDamage").GetComponent<Text>();
         damageTxt.text = "- " + damage;
+        }
 
     }
 
@@ -117,7 +129,6 @@ public class TlelliFlameHealth : MonoBehaviour
         //print("Distancia: " + dist + "  Daño: " + dam);
     }
 
-   
     
     //Remapear rango de valores de flama a intensidad para el shader
     //------------------------------------------------------------------------
@@ -130,8 +141,6 @@ public class TlelliFlameHealth : MonoBehaviour
     {
         return newMin + (original - originalMin) * (newMax - newMin) / (originalMax - originalMin);
     }
-
- 
 
 
     // Regresar valores 
@@ -149,5 +158,20 @@ public class TlelliFlameHealth : MonoBehaviour
     public float GetHP()
     {
         return HP;
+
+    }
+
+    /*  public void DeathTleli()
+      {
+          if (HP <= 0)
+          {
+              tleliAnimationController.IsDeadTrigger();
+          }
+      } */
+
+    //VACA
+    public void getPCscritp()
+    {
+        invincibilityFrames = GetComponent<PlayerController>();
     }
 }

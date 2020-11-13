@@ -15,17 +15,26 @@ public class EnemyAttack : MonoBehaviour
 
     GameObject player;
     TlelliFlameHealth TlelliHealth;
+<<<<<<< HEAD
     
+=======
+    tleliKnockBack playerKnockback;
+>>>>>>> Tech_Vaca
     bool playerInRange;
     float timer;
-
+    public bool isDisplaced;
+    //crear evento para detectar tiempo de anim gethit y death
 
     void Start()
     { 
         player = GameObject.FindGameObjectWithTag("Player");
         TlelliHealth = player.GetComponent<TlelliFlameHealth>();
+<<<<<<< HEAD
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         slamLand = new Vector3(playerPos.position.x, playerPos.position.y, playerPos.position.z);
+=======
+        playerKnockback = player.GetComponent<tleliKnockBack>();
+>>>>>>> Tech_Vaca
     }
 
 
@@ -33,7 +42,11 @@ public class EnemyAttack : MonoBehaviour
     {
         timer += Time.deltaTime;
 
+<<<<<<< HEAD
         if (timer >= timeBetweenAttacks && playerInRange && slamCounter <=1)
+=======
+        if (timer >= timeBetweenAttacks && playerInRange && isDisplaced == false)
+>>>>>>> Tech_Vaca
         {
             Attack();
             slamCounter++;
@@ -62,7 +75,12 @@ public class EnemyAttack : MonoBehaviour
         if (TlelliHealth.HP > 0)
         {
             TlelliHealth.SetHPDamage(attackDamage);
+            playerKnockback.startKnockBack();
         }
+       /* if (TlelliHealth.HP < 0)
+        {
+       Poner una barrera para que deje de atacar
+        }*/
     }
 
     void AttackSlam()
