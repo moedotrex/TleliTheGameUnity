@@ -41,7 +41,7 @@ public class TlelliFlameHealth : MonoBehaviour
         // Ejemplo para probar relación entre ataque y flama
         if (Input.GetKeyDown("x"))
         {
-            SetHPDamage(attack);
+         SetHPDamage(attack);
         }  
     }
 

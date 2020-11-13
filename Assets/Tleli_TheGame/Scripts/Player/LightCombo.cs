@@ -34,20 +34,20 @@ public class LightCombo : MonoBehaviour
     float attRange = 6f;
     float velRotacion = 200F;
 
+    public bool lunging;
+
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
         moveScript = GetComponent<PlayerController>();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
         currentDamage = Damage;
-
     }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && combonum < 3)
         {
-
             if (Time.time >= nextAttackTime)
             {
                 daggerAnim.SetActive(true);
@@ -57,13 +57,11 @@ public class LightCombo : MonoBehaviour
                 currentDamage += 2f;
                 reset = 0f;
             }
-
             if (target != null)
             { 
             FaceTarget();
             }
         }
-
         if (combonum > 0)
         {
             reset += Time.deltaTime;
@@ -85,42 +83,51 @@ public class LightCombo : MonoBehaviour
         {
             intResetTime = resetTime;
         }
-
-
         if (Input.GetMouseButton(0))
         {
             LAttackTimer += Time.deltaTime;
         }
-
-
         if (LAttackTimer >= LAttackTime && !Input.GetMouseButton(1))
         {
-            //UnityEngine.Debug.Log("CHARGING ... LIGHT!");
             animator.SetBool("Lcharge", true);
         }
-
         if (Input.GetMouseButtonUp(0) || Input.GetMouseButton(1))
-        {
-            //UnityEngine.Debug.Log("RELEASE!   LIGHT ");
+        {            
             animator.SetBool("Lcharge", false);
             LAttackTimer = 0;
         }
+        if(lunging)
+        {
+            shootRay.origin = transform.position;
+            shootRay.direction = transform.forward;
 
+            if (Physics.Raycast(shootRay, out hit, 2f, mask))
+            {
+                DestroyOnCollision wall = hit.transform.GetComponent<DestroyOnCollision>();
+                EnemyHealth enemy = hit.transform.GetComponent<EnemyHealth>();
+                EnemyController mov = hit.transform.GetComponent<EnemyController>();
+                if (enemy != null)
+                {
+                    enemy.HurtEnemy(currentDamage + 10f);
+                    mov.StartKnockBack();
+                }
+                if (wall != null)
+                {
+                    Debug.Log("wall hit");
+                    wall.DestroyYourself();
+                }
+            }
+        }
     }
-
-
     public void Attack()
     {
         shootRay.origin = transform.position;
         shootRay.direction = transform.forward;
         Debug.DrawRay(transform.position, transform.forward, Color.red);
-
         if (Physics.Raycast(shootRay, out hit, rayRange, mask))
         {
-
             EnemyHealth enemy = hit.transform.GetComponent<EnemyHealth>();
             EnemyController mov = hit.transform.GetComponent<EnemyController>();
-
             if (enemy != null)
             {
                 enemy.HurtEnemy(currentDamage);
@@ -129,7 +136,7 @@ public class LightCombo : MonoBehaviour
         }
     }
 
-    void FaceTarget()
+    public void FaceTarget()
     {
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
@@ -167,6 +174,11 @@ public class LightCombo : MonoBehaviour
         StartCoroutine(AttForward(animDuration));
     }
 
+    public void startChargedAttForward(float animDuration)
+    {
+        StartCoroutine(ChargedAttForward(animDuration));
+    }
+
     IEnumerator AttForward(float animDuration)
     {
         float startTime = Time.time;
@@ -174,6 +186,19 @@ public class LightCombo : MonoBehaviour
         {
             moveDir = Quaternion.Euler(0f, transform.eulerAngles.y, 0f) * Vector3.forward; //direccion tomada de player Y transform 
             moveScript.characterController.Move(moveDir * 5f * Time.deltaTime);
+            moveScript.isDisplaced = true;
+            yield return null;
+            moveScript.isDisplaced = false;
+        }
+    }
+
+    IEnumerator ChargedAttForward(float animDuration)
+    {
+        float startTime = Time.time;
+        while (Time.time < startTime + animDuration)
+        {
+            moveDir = Quaternion.Euler(0f, transform.eulerAngles.y, 0f) * Vector3.forward;
+            moveScript.characterController.Move(moveDir * 15f * Time.deltaTime);
             moveScript.isDisplaced = true;
             yield return null;
             moveScript.isDisplaced = false;

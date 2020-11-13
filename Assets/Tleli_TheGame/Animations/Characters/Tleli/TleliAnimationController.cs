@@ -85,13 +85,31 @@ public class TleliAnimationController : MonoBehaviour
         tleliAnimator.SetBool("HeavyAttackCombo", HeavyAttackCombo);
     }
 
-    public void light1_Forward()
+    public void light1_Forward(float duration)
     {
-        tleliCombat.startAttForward(0.22f);
+        tleliCombat.startAttForward(duration);
+    }
+
+    public void chargedLight_Forward(float duration)
+    {
+        tleliCombat.startChargedAttForward(duration);
     }
 
     public void lightAnimationHit()
     {
         tleliCombat.Attack();
+    }
+    public void chargedLightHit()
+    {
+        if (tleliCombat.lunging == false)
+        {
+            tleliCombat.lunging = true;
+            tleliCombat.FaceTarget();
+        }
+
+        else if (tleliCombat.lunging)
+        {
+            tleliCombat.lunging = false;
+        }
     }
 }
