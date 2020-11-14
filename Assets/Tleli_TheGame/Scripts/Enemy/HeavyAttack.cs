@@ -9,14 +9,15 @@ public class HeavyAttack : MonoBehaviour
     public float attackDamageSlam = 1;
     public float slamCounter = 0;
     public float speed;
+    public float jumpSpeed;
+    
 
     private Vector3 slamLand;
     private Transform playerPos;
 
     GameObject player;
     TlelliFlameHealth TlelliHealth;
-
-
+ 
 
     tleliKnockBack playerKnockback;
 
@@ -31,7 +32,7 @@ public class HeavyAttack : MonoBehaviour
         TlelliHealth = player.GetComponent<TlelliFlameHealth>();
 
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
-        slamLand = new Vector3(playerPos.position.x, playerPos.position.y, playerPos.position.z);
+       
 
         playerKnockback = player.GetComponent<tleliKnockBack>();
 
@@ -43,9 +44,9 @@ public class HeavyAttack : MonoBehaviour
         timer += Time.deltaTime;
 
 
-        if (timer >= timeBetweenAttacks && playerInRange && slamCounter <= 1)
+        
 
-            if (timer >= timeBetweenAttacks && playerInRange && isDisplaced == false)
+            if (timer >= timeBetweenAttacks && playerInRange && isDisplaced == false && slamCounter <= 1)
 
             {
                 Attack();
@@ -59,10 +60,11 @@ public class HeavyAttack : MonoBehaviour
         }
 
 
-        if (timer >= timeBetweenAttacks && slamCounter <= 1)
+        if (timer >= timeBetweenAttacks && slamCounter >= 2)
         {
 
             JumpSlamp();
+            slamCounter = 0; 
         }
 
     }
@@ -75,7 +77,7 @@ public class HeavyAttack : MonoBehaviour
         if (TlelliHealth.HP > 0)
         {
             TlelliHealth.SetHPDamage(attackDamage);
-            playerKnockback.startKnockBack();
+            playerKnockback.startKnockBack(5f);
         }
         /* if (TlelliHealth.HP < 0)
          {
@@ -90,19 +92,24 @@ public class HeavyAttack : MonoBehaviour
         if (TlelliHealth.HP > 0)
         {
             TlelliHealth.SetHPDamage(attackDamageSlam);
+            playerKnockback.startKnockBack(8f);
         }
     }
 
     void JumpSlamp()
     {
         timer = 0f;
-        int randomNum = Random.Range(1, 3);
-        if (TlelliHealth.HP > 0 && randomNum == 2)
+
+        int randomNum = Random.Range(1, 100);
+        if (TlelliHealth.HP > 0 && randomNum <= 95)
         {
-            transform.position = Vector3.MoveTowards(transform.position, slamLand, speed * Time.deltaTime);
+            slamLand = new Vector3(playerPos.position.x, playerPos.position.y, playerPos.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, slamLand, jumpSpeed);
+
             if (playerInRange)
             {
                 TlelliHealth.SetHPDamage(attackDamageSlam);
+                playerKnockback.startKnockBack(10f);
             }
         }
     }
@@ -123,6 +130,8 @@ public class HeavyAttack : MonoBehaviour
         {
             playerInRange = false;
         }
+
     }
 
+    
 }

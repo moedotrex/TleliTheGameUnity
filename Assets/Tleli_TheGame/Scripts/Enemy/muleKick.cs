@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAttack : MonoBehaviour
+public class muleKick : MonoBehaviour
 {
     public float timeBetweenAttacks = 3f;
     public float attackDamage = 1;
     public float attackDamageSlam = 1;
-    public float KBforce;
 
     GameObject player;
     TlelliFlameHealth TlelliHealth;
@@ -56,7 +55,7 @@ public class EnemyAttack : MonoBehaviour
         if (TlelliHealth.HP > 0)
         {
             TlelliHealth.SetHPDamage(attackDamage);
-            playerKnockback.startKnockBack(KBforce);
+            playerKnockback.startKnockBack(15f);
         }
         /* if (TlelliHealth.HP < 0)
          {
