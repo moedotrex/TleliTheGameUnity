@@ -46,21 +46,28 @@ public class HeavyAttack : MonoBehaviour
 
         
 
-            if (timer >= timeBetweenAttacks && playerInRange && isDisplaced == false && slamCounter <= 1)
+            if (timer >= timeBetweenAttacks && playerInRange && isDisplaced == false )
 
             {
+            int randomNum = Random.Range(1, 100);
+            slamCounter++;
+            if (randomNum <= 66)
+            {
                 Attack();
-                slamCounter++;
             }
 
-        if (timer >= timeBetweenAttacks && playerInRange && slamCounter >= 2)
-        {
-            AttackSlam();
-            slamCounter = 0;
-        }
+            if (randomNum > 66)
+            {
+                AttackSlam();
+
+            }
+
+    }
 
 
-        if (timer >= timeBetweenAttacks && slamCounter >= 2)
+
+
+        if (timer >= timeBetweenAttacks && slamCounter >= 3)
         {
 
             JumpSlamp();
@@ -101,7 +108,7 @@ public class HeavyAttack : MonoBehaviour
         timer = 0f;
 
         int randomNum = Random.Range(1, 100);
-        if (TlelliHealth.HP > 0 && randomNum <= 95)
+        if (TlelliHealth.HP > 0 && randomNum >= 80)
         {
             slamLand = new Vector3(playerPos.position.x, playerPos.position.y, playerPos.position.z);
             transform.position = Vector3.MoveTowards(transform.position, slamLand, jumpSpeed);

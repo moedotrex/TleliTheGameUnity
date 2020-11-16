@@ -7,6 +7,8 @@ public class muleKick : MonoBehaviour
     public float timeBetweenAttacks = 3f;
     public float attackDamage = 1;
     public float attackDamageSlam = 1;
+    public float KBforce;
+    public float beforeKickTime;
 
     GameObject player;
     TlelliFlameHealth TlelliHealth;
@@ -35,27 +37,30 @@ public class muleKick : MonoBehaviour
         timer += Time.deltaTime;
 
 
-        if (timer >= timeBetweenAttacks && playerInRange)
-
+        if (playerInRange)
+        {
+            waitKick();
             if (timer >= timeBetweenAttacks && playerInRange && isDisplaced == false)
 
             {
+               
                 Attack();
 
             }
 
-
+        }
     }
 
 
     void Attack()
     {
         timer = 0f;
-
-        if (TlelliHealth.HP > 0)
+        
+        if (TlelliHealth.HP > 0 && playerInRange)
         {
+            
             TlelliHealth.SetHPDamage(attackDamage);
-            playerKnockback.startKnockBack(15f);
+            playerKnockback.startKnockBack(KBforce);
         }
         /* if (TlelliHealth.HP < 0)
          {
@@ -83,4 +88,12 @@ public class muleKick : MonoBehaviour
         }
     }
 
+    IEnumerator waitKick()
+    {
+        
+
+        yield return new WaitForSeconds(beforeKickTime);
+
+        
+    }
 }

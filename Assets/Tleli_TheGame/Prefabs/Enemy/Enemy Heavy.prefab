@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5498772149737914331}
   - component: {fileID: 3866049987126402954}
-  - component: {fileID: 5290711296605721060}
+  - component: {fileID: 3584953367977602782}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -45,7 +45,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.62, y: 0.91, z: 1}
   m_Center: {x: 0, y: -0.4, z: -0.57}
---- !u!114 &5290711296605721060
+--- !u!114 &3584953367977602782
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -54,13 +54,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 331395630450452611}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6b57d913b0f87f4cadceffc507cc30a, type: 3}
+  m_Script: {fileID: 11500000, guid: 21f2e2d6fc2aa9449bf5a649980fb739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAttacks: 5
+  timeBetweenAttacks: 3
   attackDamage: 30
-  attackDamageSlam: 0
+  attackDamageSlam: 1
   KBforce: 50
+  beforeKickTime: 50
   isDisplaced: 0
 --- !u!1 &998161918638296471
 GameObject:
@@ -572,7 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecf006b6767dd1e4fa8be41fc140b944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velRotacion: 0.5
+  velRotacion: 0.3
   radioDef: 10
   movSpeed: 2
   EnemySpawn: {x: 0, y: 0, z: 0}
