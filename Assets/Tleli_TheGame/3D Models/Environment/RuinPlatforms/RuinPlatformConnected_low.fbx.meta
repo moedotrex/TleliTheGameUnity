@@ -3,7 +3,13 @@ guid: 4693c09365fd38a479d8ecf3ce177e4f
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_RuinPlatformConnected
+    second: {fileID: 4141981223713704560, guid: 02c9f77226e6ccf4a8390a6339c49d12,
+      type: 3}
   materials:
     materialImportMode: 1
     materialName: 0
