@@ -65,7 +65,8 @@ public class EnemyController : MonoBehaviour
                 }
 
                 flama.EnemyDistance(distance);
-            }
+            flama.BattleMode(true); //Added by Emil. Necessary for changing camera into Battle Mode.
+        }
 
             if (distance >= BuscarRadio && isAttacking == true)
             {
@@ -74,6 +75,7 @@ public class EnemyController : MonoBehaviour
             stopMov(5f);
             navAgent.SetDestination(EnemySpawn);
             isAttacking = false;
+            flama.BattleMode(false); //Added by Emil. Necessary for changing camera into Battle Mode.
         }
 
         /*if (isAttacking == true)

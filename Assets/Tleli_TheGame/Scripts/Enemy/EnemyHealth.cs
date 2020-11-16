@@ -7,12 +7,14 @@ public class EnemyHealth : MonoBehaviour
 
     public float health;
     public float currentHealth;
+    TlelliFlameHealth flama; //Added by Emil. Necessary for changing camera into Battle Mode.
 
-   public  Color ogColor;
+    public  Color ogColor;
 
     void Start()
     {
         currentHealth = health;
+        flama = GameObject.FindGameObjectWithTag("Player").GetComponent<TlelliFlameHealth>();
     }
 
 
@@ -20,6 +22,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
+            flama.BattleMode(false);
             Destroy(gameObject);
         }
     }

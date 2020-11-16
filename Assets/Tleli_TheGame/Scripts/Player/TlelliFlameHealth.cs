@@ -21,6 +21,8 @@ public class TlelliFlameHealth : MonoBehaviour
     public float attack;      
     public float flameDamage;
 
+    public bool isBattling; //Added by Emil. Needed to zoom out camera when in battle.
+
     PlayerController invincibilityFrames;  //VACA
 
     public TleliAnimationController tleliAnimationController;
@@ -32,12 +34,12 @@ public class TlelliFlameHealth : MonoBehaviour
         HP = maxHP;
         flameIntensity = Remap(flame, 0, maxFlame, flameMinIntensity, flameMaxIntensity);         //Hacer un "remap" de los valores de la vida de Tlelli (0-100) a los valores de flama (0-5)
         getPCscritp(); //VACA obtener script de player controller
+        isBattling = false;
     }
 
 
     void Update()
     {
-
         // Ejemplo para probar relación entre ataque y flama
         if (Input.GetKeyDown("x"))
         {
@@ -54,18 +56,21 @@ public class TlelliFlameHealth : MonoBehaviour
         {
             SetFlameDamage(flameDamage * Time.deltaTime);
             FlameUpdateMaterial();
+            
             //tleliAnimationController.IsHitTrigger();
             //agregra tiempo de recuperación
         }
     }
 
-   /* private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            SetHPDamage(attack);
-        }
-    }*/
+    
+
+    /* private void OnTriggerEnter(Collider other)
+     {
+         if (other.gameObject.CompareTag("Enemy"))
+         {
+             SetHPDamage(attack);
+         }
+     }*/
 
     public void RecoverFlame(float recover)
     {
@@ -75,7 +80,7 @@ public class TlelliFlameHealth : MonoBehaviour
         {
             flame = maxFlame;
         }
-
+       
     }
 
     public void SetFlameDamage(float dam)
@@ -88,8 +93,9 @@ public class TlelliFlameHealth : MonoBehaviour
         {
             flame = 0;
         }
-
+        
         FlameUpdateMaterial();
+        isBattling = true;
     }
 
     
@@ -122,12 +128,17 @@ public class TlelliFlameHealth : MonoBehaviour
     {
         float dist = d;
         float dam;
-
         dam = (1 / dist) * flameDamage;
         SetFlameDamage(dam);
-
         //print("Distancia: " + dist + "  Daño: " + dam);
     }
+
+    public void BattleMode(bool bm) //Added by Emil. Necessary for changing camera into Battle Mode.
+    {
+        isBattling = bm;
+    }
+
+    
 
     
     //Remapear rango de valores de flama a intensidad para el shader
