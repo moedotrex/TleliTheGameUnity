@@ -211,7 +211,9 @@ ScriptedImporter:
     preset: " <sbspreset pkgurl=\"pkg://CaveRocksV2\" label=\"\" >\n  <presetinput
       identifier=\"$outputsize\" uid=\"3447877471\" type=\"8\" value=\"9,9\" />\n 
       <presetinput identifier=\"StonesHighlight_HUE\" uid=\"2753130997\" type=\"0\"
-      value=\"0.541\" />\n </sbspreset>\n"
+      value=\"0.289\" />\n  <presetinput identifier=\"StoneHighlight_SATURATION\"
+      uid=\"2753130807\" type=\"0\" value=\"0.841\" />\n  <presetinput identifier=\"StoneHighlight_LIGHTNESS\"
+      uid=\"2753130828\" type=\"0\" value=\"0.478\" />\n </sbspreset>\n"
     shaderName: Universal Render Pipeline/Lit
     materialProperties:
       shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
