@@ -46,8 +46,8 @@ public class EnemyController : MonoBehaviour
     private void FixedUpdate()
     {
         if (knockback) 
-        {
-            navAgent.velocity = kbDirection * 2f;
+        { 
+            navAgent.velocity = kbDirection * 3.5f;
         }
     }
 
