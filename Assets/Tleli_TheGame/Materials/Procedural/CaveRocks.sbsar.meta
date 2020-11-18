@@ -17,8 +17,9 @@ ScriptedImporter:
     generateAllOutputs: 0
     generateMipMaps: 1
     preset: " <sbspreset pkgurl=\"pkg://CaveRocks\" label=\"\" >\n  <presetinput
-      identifier=\"$outputsize\" uid=\"114068755\" type=\"8\" value=\"9,9\" />\n
-      </sbspreset>\n"
+      identifier=\"$outputsize\" uid=\"114068755\" type=\"8\" value=\"9,9\" />\n 
+      <presetinput identifier=\"RockBaseColor\" uid=\"1868009637\" type=\"3\" value=\"0.228113,0.228113,0.292453,1\"
+      />\n </sbspreset>\n"
     shaderName: Universal Render Pipeline/Lit
     materialProperties:
       shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
@@ -65,7 +66,7 @@ ScriptedImporter:
       - name: _Blend
         float: 0
       - name: _BumpScale
-        float: 1
+        float: 3.2
       - name: _Cull
         float: 2
       - name: _Cutoff
@@ -81,7 +82,7 @@ ScriptedImporter:
       - name: _GlossyReflections
         float: 0
       - name: _Metallic
-        float: 0.014
+        float: 0
       - name: _OcclusionStrength
         float: 1
       - name: _QueueOffset
@@ -89,7 +90,7 @@ ScriptedImporter:
       - name: _ReceiveShadows
         float: 1
       - name: _Smoothness
-        float: 0.062
+        float: 0
       - name: _SmoothnessTextureChannel
         float: 0
       - name: _SpecularHighlights
@@ -148,6 +149,15 @@ ScriptedImporter:
       bImage: 1
       bNumerical: 0
       bLinear: 1
+    - outputName: 
+      identifier: output
+      usageName: UNKNOWN
+      channelStr: 
+      label: output
+      usage: 36
+      bImage: 1
+      bNumerical: 0
+      bLinear: 1
     texturePackingList:
     - targetName: baseColor
       components:
@@ -169,6 +179,11 @@ ScriptedImporter:
       - sourceName: ambientOcclusion
         from: 0
         to: 3
+    - targetName: 
+      components:
+      - sourceName: 
+        from: 0
+        to: 3
     textureParameters:
     - textureName: CaveRocks - baseColor
       wrapMode: 0
@@ -183,6 +198,10 @@ ScriptedImporter:
       filterMode: 1
       aniso: 1
     - textureName: CaveRocks - ambientOcclusion
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: 'CaveRocks - '
       wrapMode: 0
       filterMode: 1
       aniso: 1
@@ -203,198 +222,3 @@ ScriptedImporter:
     - {fileID: -2301464330544503671, guid: 2e30d65769828d445a7758084f8c3adf, type: 3}
     - {fileID: 9213156742567688442, guid: 2e30d65769828d445a7758084f8c3adf, type: 3}
     - {fileID: -3764966847467801983, guid: 2e30d65769828d445a7758084f8c3adf, type: 3}
-  - graphLabel: CaveRocksV2
-    prototypeName: CaveRocksV2
-    graphDescIndex: 1
-    generateAllOutputs: 0
-    generateMipMaps: 1
-    preset: " <sbspreset pkgurl=\"pkg://CaveRocksV2\" label=\"\" >\n  <presetinput
-      identifier=\"$outputsize\" uid=\"3447877471\" type=\"8\" value=\"9,9\" />\n 
-      <presetinput identifier=\"StonesHighlight_HUE\" uid=\"2753130997\" type=\"0\"
-      value=\"0.556\" />\n  <presetinput identifier=\"StoneHighlight_SATURATION\"
-      uid=\"2753130807\" type=\"0\" value=\"0.841\" />\n  <presetinput identifier=\"StoneHighlight_LIGHTNESS\"
-      uid=\"2753130828\" type=\"0\" value=\"0.478\" />\n </sbspreset>\n"
-    shaderName: Universal Render Pipeline/Lit
-    materialProperties:
-      shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-      shaderKeywords: _NORMALMAP _OCCLUSIONMAP
-      lightmapFlags: 4
-      enableInstancingVariants: 0
-      doubleSidedGI: 0
-      customRenderQueue: 2050
-      texEnvs:
-      - name: _BaseMap
-        texture: {fileID: -2905425918081731538, guid: 2e30d65769828d445a7758084f8c3adf,
-          type: 3}
-        scale: {x: 1, y: 1}
-        offset: {x: 0, y: 0}
-      - name: _BumpMap
-        texture: {fileID: 7133406136392790086, guid: 2e30d65769828d445a7758084f8c3adf,
-          type: 3}
-        scale: {x: 1, y: 1}
-        offset: {x: 0, y: 0}
-      - name: _EmissionMap
-        texture: {instanceID: 0}
-        scale: {x: 1, y: 1}
-        offset: {x: 0, y: 0}
-      - name: _MainTex
-        texture: {instanceID: 0}
-        scale: {x: 1, y: 1}
-        offset: {x: 0, y: 0}
-      - name: _MetallicGlossMap
-        texture: {instanceID: 0}
-        scale: {x: 1, y: 1}
-        offset: {x: 0, y: 0}
-      - name: _OcclusionMap
-        texture: {fileID: -4292532363115784271, guid: 2e30d65769828d445a7758084f8c3adf,
-          type: 3}
-        scale: {x: 1, y: 1}
-        offset: {x: 0, y: 0}
-      - name: _SpecGlossMap
-        texture: {instanceID: 0}
-        scale: {x: 1, y: 1}
-        offset: {x: 0, y: 0}
-      floats:
-      - name: _AlphaClip
-        float: 0
-      - name: _Blend
-        float: 0
-      - name: _BumpScale
-        float: 1
-      - name: _Cull
-        float: 2
-      - name: _Cutoff
-        float: 0.5
-      - name: _DstBlend
-        float: 0
-      - name: _EnvironmentReflections
-        float: 1
-      - name: _GlossMapScale
-        float: 0
-      - name: _Glossiness
-        float: 0
-      - name: _GlossyReflections
-        float: 0
-      - name: _Metallic
-        float: 0
-      - name: _OcclusionStrength
-        float: 1
-      - name: _QueueOffset
-        float: 0
-      - name: _ReceiveShadows
-        float: 1
-      - name: _Smoothness
-        float: 0.048
-      - name: _SmoothnessTextureChannel
-        float: 0
-      - name: _SpecularHighlights
-        float: 1
-      - name: _SrcBlend
-        float: 1
-      - name: _Surface
-        float: 0
-      - name: _WorkflowMode
-        float: 1
-      - name: _ZWrite
-        float: 1
-      colors:
-      - name: _BaseColor
-        color: {r: 1, g: 1, b: 1, a: 1}
-      - name: _Color
-        color: {r: 1, g: 1, b: 1, a: 1}
-      - name: _EmissionColor
-        color: {r: 0, g: 0, b: 0, a: 1}
-      - name: _SpecColor
-        color: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    outputDescList:
-    - outputName: baseColor
-      identifier: basecolor
-      usageName: baseColor
-      channelStr: baseColor
-      label: Base Color
-      usage: 1
-      bImage: 1
-      bNumerical: 0
-      bLinear: 0
-    - outputName: normal
-      identifier: normal
-      usageName: normal
-      channelStr: normal
-      label: Normal
-      usage: 7
-      bImage: 1
-      bNumerical: 0
-      bLinear: 1
-    - outputName: roughness
-      identifier: roughness
-      usageName: roughness
-      channelStr: roughness
-      label: Roughness
-      usage: 15
-      bImage: 1
-      bNumerical: 0
-      bLinear: 1
-    - outputName: ambientOcclusion
-      identifier: ambientocclusion
-      usageName: ambientOcclusion
-      channelStr: ambientOcclusion
-      label: Ambient Occlusion
-      usage: 5
-      bImage: 1
-      bNumerical: 0
-      bLinear: 1
-    texturePackingList:
-    - targetName: baseColor
-      components:
-      - sourceName: baseColor
-        from: 0
-        to: 3
-    - targetName: normal
-      components:
-      - sourceName: normal
-        from: 0
-        to: 3
-    - targetName: roughness
-      components:
-      - sourceName: roughness
-        from: 0
-        to: 3
-    - targetName: ambientOcclusion
-      components:
-      - sourceName: ambientOcclusion
-        from: 0
-        to: 3
-    textureParameters:
-    - textureName: CaveRocksV2 - baseColor
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: CaveRocksV2 - normal
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: CaveRocksV2 - roughness
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: CaveRocksV2 - ambientOcclusion
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    colorSpaceList: []
-    inputTextureMap: []
-    targetSettingList:
-    - label: Default
-      bOverride: 0
-      bLockRatio: 1
-      textureWidth: 512
-      textureHeight: 512
-      textureFormatMode: 0
-      normalCompressed: 0
-      bGenerateOnLoad: 1
-    material: {fileID: 7543952076866020388, guid: 2e30d65769828d445a7758084f8c3adf,
-      type: 3}
-    generatedTextures:
-    - {fileID: -2905425918081731538, guid: 2e30d65769828d445a7758084f8c3adf, type: 3}
-    - {fileID: 7133406136392790086, guid: 2e30d65769828d445a7758084f8c3adf, type: 3}
-    - {fileID: -4292532363115784271, guid: 2e30d65769828d445a7758084f8c3adf, type: 3}

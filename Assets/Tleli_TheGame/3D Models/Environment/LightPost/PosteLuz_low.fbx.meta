@@ -3,7 +3,13 @@ guid: 8608e71aee155ce4eac9af72468a0bb8
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LightPost
+    second: {fileID: 4141981223713704560, guid: 02c9f77226e6ccf4a8390a6339c49d12,
+      type: 3}
   materials:
     materialImportMode: 1
     materialName: 0
