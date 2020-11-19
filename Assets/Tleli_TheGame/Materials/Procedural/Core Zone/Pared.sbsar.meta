@@ -18,8 +18,11 @@ ScriptedImporter:
     generateMipMaps: 1
     preset: " <sbspreset pkgurl=\"pkg://Ruins\" label=\"\" >\n  <presetinput identifier=\"$outputsize\"
       uid=\"238264850\" type=\"8\" value=\"9,9\" />\n  <presetinput identifier=\"aolevelsmid\"
-      uid=\"1739878936\" type=\"0\" value=\"1\" />\n  <presetinput identifier=\"levelouthigh_1\"
-      uid=\"1739067338\" type=\"0\" value=\"0.18\" />\n </sbspreset>\n"
+      uid=\"1739878936\" type=\"0\" value=\"1\" />\n  <presetinput identifier=\"outputcolor\"
+      uid=\"1739194889\" type=\"3\" value=\"0.216981,0.199885,0.191394,1\" />\n 
+      <presetinput identifier=\"luminosity\" uid=\"1739213351\" type=\"0\" value=\"0.24\"
+      />\n  <presetinput identifier=\"levelouthigh_1\" uid=\"1739067338\" type=\"0\"
+      value=\"0.18\" />\n </sbspreset>\n"
     shaderName: Universal Render Pipeline/Lit
     materialProperties:
       shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
