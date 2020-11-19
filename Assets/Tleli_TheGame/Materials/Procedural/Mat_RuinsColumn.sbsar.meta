@@ -19,14 +19,16 @@ ScriptedImporter:
     preset: " <sbspreset pkgurl=\"pkg://Ruins\" label=\"\" >\n  <presetinput identifier=\"$outputsize\"
       uid=\"238264850\" type=\"8\" value=\"9,9\" />\n  <presetinput identifier=\"tile\"
       uid=\"1739960667\" type=\"4\" value=\"3\" />\n  <presetinput identifier=\"aolevelsmid\"
-      uid=\"1739878936\" type=\"0\" value=\"0.548\" />\n  <presetinput identifier=\"dirtposition\"
-      uid=\"1739310380\" type=\"0\" value=\"0.432\" />\n  <presetinput identifier=\"saturation\"
-      uid=\"1739213364\" type=\"0\" value=\"0.246\" />\n  <presetinput identifier=\"luminosity\"
-      uid=\"1739213351\" type=\"0\" value=\"0.439\" />\n  <presetinput identifier=\"x_amount\"
-      uid=\"1739528426\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"levelouthigh_1\"
-      uid=\"1739067338\" type=\"0\" value=\"0.824\" />\n  <presetinput identifier=\"x_amount_1\"
-      uid=\"1739131345\" type=\"4\" value=\"36\" />\n  <presetinput identifier=\"levelinmid\"
-      uid=\"1739311982\" type=\"0\" value=\"0.298\" />\n  <presetinput identifier=\"outputcolor_2\"
+      uid=\"1739878936\" type=\"0\" value=\"0.548\" />\n  <presetinput identifier=\"outputcolor\"
+      uid=\"1739194889\" type=\"3\" value=\"0.5,0.485209,0.412736,1\" />\n  <presetinput
+      identifier=\"saturation\" uid=\"1739213364\" type=\"0\" value=\"0.246\" />\n 
+      <presetinput identifier=\"luminosity\" uid=\"1739213351\" type=\"0\" value=\"0.439\"
+      />\n  <presetinput identifier=\"rocktype\" uid=\"1739517119\" type=\"4\" value=\"2\"
+      />\n  <presetinput identifier=\"x_amount\" uid=\"1739528426\" type=\"4\" value=\"1\"
+      />\n  <presetinput identifier=\"levelouthigh_1\" uid=\"1739067338\" type=\"0\"
+      value=\"0.58\" />\n  <presetinput identifier=\"x_amount_1\" uid=\"1739131345\"
+      type=\"4\" value=\"36\" />\n  <presetinput identifier=\"levelinmid\" uid=\"1739311982\"
+      type=\"0\" value=\"0.298\" />\n  <presetinput identifier=\"outputcolor_2\"
       uid=\"1739909213\" type=\"0\" value=\"1\" />\n </sbspreset>\n"
     shaderName: Universal Render Pipeline/Lit
     materialProperties:
