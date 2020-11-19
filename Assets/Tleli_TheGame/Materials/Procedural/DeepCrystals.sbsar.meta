@@ -18,9 +18,10 @@ ScriptedImporter:
     generateMipMaps: 1
     preset: " <sbspreset pkgurl=\"pkg://DeepCrystals\" label=\"\" >\n  <presetinput
       identifier=\"$outputsize\" uid=\"68727028\" type=\"8\" value=\"9,9\" />\n 
-      <presetinput identifier=\"outputcolor\" uid=\"1839134333\" type=\"3\" value=\"0.667099,0.321569,0.74902,1\"
+      <presetinput identifier=\"outputcolor\" uid=\"1839134333\" type=\"3\" value=\"0.412769,0.321569,0.74902,1\"
       />\n  <presetinput identifier=\"outputcolor_1\" uid=\"1839134315\" type=\"3\"
-      value=\"0.202252,0.937822,0.95283,1\" />\n </sbspreset>\n"
+      value=\"0.209573,0,0.682353,1\" />\n  <presetinput identifier=\"Metallic\"
+      uid=\"1839172702\" type=\"0\" value=\"0.177\" />\n </sbspreset>\n"
     shaderName: Universal Render Pipeline/Lit
     materialProperties:
       shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
