@@ -5,10 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    public static bool GameIsPaused = false;
+    public bool GameIsPaused;
     public GameObject pauseMenuUI;
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -30,13 +29,15 @@ public class UIManager : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
-        
+        Cursor.lockState = CursorLockMode.Locked;
+
     }
     void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void Restart()
@@ -45,6 +46,5 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1f;
         GameIsPaused = false;
         SceneManager.LoadScene("MainTest_Scene");
-        Debug.Log("clicked");
     }
 }
