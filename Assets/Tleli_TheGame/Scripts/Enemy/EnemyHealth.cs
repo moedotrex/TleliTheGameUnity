@@ -11,10 +11,13 @@ public class EnemyHealth : MonoBehaviour
 
     public  Color ogColor;
 
+    ParticleSystem particles;
+
     void Start()
     {
         currentHealth = health;
         flama = GameObject.FindGameObjectWithTag("Player").GetComponent<TlelliFlameHealth>();
+        particles = GetComponentInChildren<ParticleSystem>();
     }
 
 
@@ -30,9 +33,10 @@ public class EnemyHealth : MonoBehaviour
     public void HurtEnemy(float damage)
     {
         //  GameObject.Instantiate(blood, transform.position, Quaternion.identity);
-
+        
         currentHealth -= damage;
-       // Debug.Log(transform.name + "takes" + damage + "damage.");
+        particles.Emit((int)currentHealth);
+        // Debug.Log(transform.name + "takes" + damage + "damage.");
         StartCoroutine(HurtEnemyCoroutine());
     }
 
