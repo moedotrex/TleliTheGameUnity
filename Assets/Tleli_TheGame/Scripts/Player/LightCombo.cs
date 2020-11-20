@@ -37,12 +37,15 @@ public class LightCombo : MonoBehaviour
     public bool lunging;
     public bool gotCharged;
 
+    ParticleSystem slash;   //------
+
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
         moveScript = GetComponent<PlayerController>();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
         currentDamage = Damage;
+        slash = GameObject.Find("WeaponSlash").GetComponent<ParticleSystem>();   //------
     }
 
     void Update()
@@ -57,6 +60,11 @@ public class LightCombo : MonoBehaviour
                 combonum++;
                 currentDamage += 2f;
                 reset = 0f;
+
+                if (combonum == 1)   //------
+                {
+                    StartCoroutine(Slash());  
+                }
             }
 
             if (target != null)
@@ -217,5 +225,11 @@ public class LightCombo : MonoBehaviour
             yield return null;
             moveScript.isDisplaced = false;
         }
+    }
+
+    IEnumerator Slash()   //------
+    {
+        yield return new WaitForSeconds(0.15f);
+        slash.Emit(1);
     }
 }
