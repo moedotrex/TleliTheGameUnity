@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5714487808436760994}
   - component: {fileID: 8710572972653641223}
   - component: {fileID: 6847402993058548429}
+  - component: {fileID: 8007572403857922717}
   m_Layer: 0
   m_Name: shroomPlatform3x3_low
   m_TagString: Untagged
@@ -80,3 +81,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8007572403857922717
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4901641313803053848}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8434054023525574758, guid: 7368f2fe9b9e472428d06b4502b22590, type: 3}

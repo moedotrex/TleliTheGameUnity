@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3329186058353082286}
   - component: {fileID: 1615561093506170247}
   - component: {fileID: 5809901557150250158}
+  - component: {fileID: 7069158880927949804}
   m_Layer: 0
   m_Name: PilarRotoMitad1_low
   m_TagString: Untagged
@@ -79,6 +80,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &7069158880927949804
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3780789801007348792}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3956365538575808399, guid: b9098dfda5d826a40bbef6f0fe23e15b, type: 3}
 --- !u!1 &5460456657824863651
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,6 +137,7 @@ GameObject:
   - component: {fileID: 7359112931625742152}
   - component: {fileID: 8609233111893899845}
   - component: {fileID: 8040375051937588371}
+  - component: {fileID: 9131583856916617463}
   m_Layer: 0
   m_Name: PilarBase_low
   m_TagString: Untagged
@@ -190,3 +206,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &9131583856916617463
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8051381363485453623}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.014996047, y: 0.0069088913, z: 0.01322086}
+  m_Center: {x: -0.000000025145708, y: 0.0034652364, z: 0.0016104267}

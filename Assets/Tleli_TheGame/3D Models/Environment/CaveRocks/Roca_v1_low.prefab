@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 5459513583234110244}
   - component: {fileID: 8367550030832571621}
   - component: {fileID: 3313550570790669034}
+  - component: {fileID: 8434387169017069155}
   m_Layer: 0
   m_Name: Roca_v1_low
   m_TagString: Untagged
@@ -110,3 +111,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8434387169017069155
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2410982351115884321}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7980142985971073894, guid: b223d6fb65a0c9340810ee3b56d888dd, type: 3}

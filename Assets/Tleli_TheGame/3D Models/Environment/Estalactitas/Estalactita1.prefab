@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4162868067899399071}
   - component: {fileID: 1038820677437281338}
   - component: {fileID: 2994426112369107184}
+  - component: {fileID: 8278213547687667422}
   m_Layer: 0
   m_Name: Estalactita1
   m_TagString: Untagged
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8278213547687667422
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3643037024069714213}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5597002278806442958, guid: 0e6553a42f0c37b4e9be961c0244246c, type: 3}

@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 6627806116179400669}
   - component: {fileID: 1562694493769753789}
   - component: {fileID: 7875836709717684668}
+  - component: {fileID: 5190771030659439625}
   m_Layer: 0
   m_Name: CaveRock_Wall3
   m_TagString: Untagged
@@ -110,3 +111,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &5190771030659439625
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254349206312611364}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5708123579146345900, guid: 1909e7cb60df10f428afc1f2ff303b8b, type: 3}
