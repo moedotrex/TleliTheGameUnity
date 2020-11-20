@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour
 {
     public float velRotacion = 20f;
     float BuscarRadio;
-    float radioGrande;
+    public float radioGrande;
     public float radioDef = 10f;
     public float movSpeed;
 
@@ -28,12 +28,17 @@ public class EnemyController : MonoBehaviour
     bool knockback;
     float knockbackForce;
 
+    public GameObject alertIcon;
+    int alertActive;
+
+    float reactionTime;
+
 
     void Start()
     {
         target = PlayerManager.instance.player.transform;
         BuscarRadio = radioDef;
-        radioGrande = BuscarRadio * 1.5f;
+       radioGrande = BuscarRadio * 1.5f;
         EnemySpawn = this.transform.position;
         flama = GameObject.FindGameObjectWithTag("Player").GetComponent<TlelliFlameHealth>();
         navAgent = GetComponent<NavMeshAgent>();
@@ -45,7 +50,7 @@ public class EnemyController : MonoBehaviour
     {
         if (knockback) 
         {
-            navAgent.velocity = kbDirection * 2f;
+            navAgent.velocity = kbDirection * 3.5f;
         }
     }
 
@@ -55,8 +60,18 @@ public class EnemyController : MonoBehaviour
 
             if (distance <= BuscarRadio)
             {
-            navAgent.SetDestination(target.position);
-                BuscarRadio = radioGrande;
+
+            reactionTime += Time.deltaTime;
+
+            if (reactionTime >= 0.6f)
+            {
+                if (alertActive < 1)
+                {
+                    Instantiate(alertIcon, transform.position, Quaternion.identity);
+                    alertActive++;
+                }
+                navAgent.SetDestination(target.position);
+              BuscarRadio = radioGrande;
                 isAttacking = true;
 
                 if (distance <= navAgent.stoppingDistance)
@@ -67,14 +82,17 @@ public class EnemyController : MonoBehaviour
                 flama.EnemyDistance(distance);
             flama.BattleMode(true); //Added by Emil. Necessary for changing camera into Battle Mode.
         }
+        }
 
-            if (distance >= BuscarRadio && isAttacking == true)
+        if (distance >= BuscarRadio && isAttacking == true)
             {
-             
+            reactionTime = 0f;
             BuscarRadio = radioDef;
             stopMov(5f);
             navAgent.SetDestination(EnemySpawn);
             isAttacking = false;
+            alertActive = 0;
+
             flama.BattleMode(false); //Added by Emil. Necessary for changing camera into Battle Mode.
         }
 
@@ -100,11 +118,7 @@ public class EnemyController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * velRotacion);
         }
 
-        private void OnDrawGizmosSelected()
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position, BuscarRadio);
-        }
+
 
         public void stopMov(float time)
         {
@@ -166,4 +180,9 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    public void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, BuscarRadio);
+    }
 }

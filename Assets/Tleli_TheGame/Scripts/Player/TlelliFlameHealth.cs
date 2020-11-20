@@ -24,6 +24,8 @@ public class TlelliFlameHealth : MonoBehaviour
     public bool isBattling; //Added by Emil. Needed to zoom out camera when in battle.
 
     PlayerController invincibilityFrames;  //VACA
+    float invincibilityLenght = 1f; //vaca duracion de invulnerabilidad despues de recibir daño
+    float invincibilityCounter;
 
     public TleliAnimationController tleliAnimationController;
 
@@ -41,13 +43,17 @@ public class TlelliFlameHealth : MonoBehaviour
     void Update()
     {
         // Ejemplo para probar relación entre ataque y flama
-        if (Input.GetKeyDown("x"))
+        /*if (Input.GetKeyDown("x"))
         {
          SetHPDamage(attack);
-        }  
+        }*/
+
+        if (invincibilityCounter > 0)
+        {
+            invincibilityCounter -= Time.deltaTime;
+        }
     }
 
- 
     //Colisiona tleli con enemigo
     //Si no estas frente a frente con enemigo no te quita vida
     private void OnTriggerStay(Collider other)
@@ -103,9 +109,13 @@ public class TlelliFlameHealth : MonoBehaviour
     {
         if (invincibilityFrames.isDisplaced == false) {  // VACA si tleli esta dasheando no puede recibir daño (invincibilityFrames)
 
-            // Fórmula para cálculo de daño, flama como armadura
+            if (invincibilityCounter <= 0) //VACA checa si tleli esta en tiempo de invulnerabilidad
+            {
+                invincibilityCounter = invincibilityLenght; //VACA empieza el timer de invulnerabilidad
 
-            float damage = attackStrength * (100 / (100 + flame));
+                // Fórmula para cálculo de daño, flama como armadura
+
+                float damage = attackStrength * (100 / (100 + flame));
             damage = Mathf.Round(damage * 100f) / 100f;
             tleliAnimationController.IsHitTrigger(); // VACA cambiar animacion cuando reciba daño y no cuando entre en trigger
 
@@ -120,6 +130,7 @@ public class TlelliFlameHealth : MonoBehaviour
 
         Text damageTxt = GameObject.Find("ShowDamage").GetComponent<Text>();
         damageTxt.text = "- " + damage;
+        }
         }
 
     }
@@ -172,13 +183,13 @@ public class TlelliFlameHealth : MonoBehaviour
 
     }
 
-    /*  public void DeathTleli()
+     public void DeathTleli()
       {
           if (HP <= 0)
           {
               tleliAnimationController.IsDeadTrigger();
           }
-      } */
+      }
 
     //VACA
     public void getPCscritp()

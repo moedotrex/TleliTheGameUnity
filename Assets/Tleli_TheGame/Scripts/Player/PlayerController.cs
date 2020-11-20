@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 	public float aceleracion = 0.08f;      //aceleracion en el aire.
 	private float vel;
 	bool isMoving;
-	Vector3 velocidad;
+	[HideInInspector] public Vector3 velocidad;
 	float _deltaVelocidad = 0f;
 
 	public Transform groundCheck;
@@ -28,21 +28,22 @@ public class PlayerController : MonoBehaviour
 	public float saltoTime;
 	private bool isJumping;
 
-	private int extraJumps;
+	int extraJumps;
 	public int extraJumpsValue;
 
-	public CharacterController characterController;
+	[HideInInspector] public CharacterController characterController;
 	public Transform cam;
-	
-	public Vector3 moveDir;
-	public bool isDisplaced;
-	PlayerDash dashCount;
 
-	public TleliAnimationController tleliAnimationController;
+	[HideInInspector] public Vector3 moveDir;
+	[HideInInspector] public bool isDisplaced;
+	PlayerDash dashCount;
+	
+	TleliAnimationController tleliAnimationController;
 
 	void Start()
 	{
 		characterController = GetComponent<CharacterController>();
+		tleliAnimationController = GetComponentInChildren<TleliAnimationController>();
 		dashCount = GetComponent<PlayerDash>();
 		extraJumps = extraJumpsValue;
 		velInicial = velBase;
@@ -172,12 +173,12 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 
-		if (velocidad.y<0)
+		if (velocidad.y<10.3f)
         {
 			tleliAnimationController.JumpFallLoopBoolParameter(false);
 		}
 
-		if (velocidad.y>0)
+		if (velocidad.y>10.3f)
         {
 			tleliAnimationController.JumpFallLoopBoolParameter(true);
         }

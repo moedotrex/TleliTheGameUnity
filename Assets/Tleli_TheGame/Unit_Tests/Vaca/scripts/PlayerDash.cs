@@ -50,6 +50,7 @@ public class PlayerDash : MonoBehaviour
             animator.SetTrigger("Dash"); //animation loop
             yield return null; 
             moveScript.isDisplaced = false;
+            moveScript.velocidad.y = -5f;
         }
     }
 }
