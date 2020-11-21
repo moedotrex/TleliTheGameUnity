@@ -47,5 +47,16 @@ public class Collect : MonoBehaviour
             Destroy(other.gameObject);
         }
 
+       
+
+    }
+
+    public void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("AOE_poison"))
+        {
+            tlelliFlame.flame -= 5f * Time.deltaTime;
+            Debug.Log("coff coff  tleli is poisoned");
+        }
     }
 }

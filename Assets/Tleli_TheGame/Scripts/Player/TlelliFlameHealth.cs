@@ -15,7 +15,7 @@ public class TlelliFlameHealth : MonoBehaviour
     float flameMinIntensity = 35;
 
     public float HP;
-    float flame;
+    public float flame;
     float flameIntensity;
       
     public float attack;      
