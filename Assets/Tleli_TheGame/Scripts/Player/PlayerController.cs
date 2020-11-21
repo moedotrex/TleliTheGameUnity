@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
 			velocidad.y = -10f;
 		}
 
-		float vertical = Input.GetAxis("Vertical");
+		float vertical = Input.GetAxisRaw("Vertical");
 		float horizontal = Input.GetAxisRaw("Horizontal");
 
 		if (isDisplaced == false) //si se dashea no se puede controlar la direccion hasta que termine y la gravedad no se crece por la duracion de este
@@ -166,13 +166,13 @@ public class PlayerController : MonoBehaviour
 				_deltaVelocidad = vel * Time.deltaTime;
 			isMoving = true;
 
-			tleliAnimationController.SetForwardSpeedParameter(vertical);
+			tleliAnimationController.SetForwardSpeedParameter(1f);
 		}
 
 		if (direction.magnitude <= 0f)
 		{
 			isMoving = false;
-			tleliAnimationController.SetForwardSpeedParameter(vertical);
+			tleliAnimationController.SetForwardSpeedParameter(0f);
 			}
 		}
 
