@@ -9,8 +9,9 @@ public class EnemyHealth : MonoBehaviour
     public float currentHealth;
     public bool imPoisonous;
     public GameObject cloudSpawner;
+    public GameObject flameSpawner;
 
-   public  Color ogColor;
+    public  Color ogColor;
 
     void Start()
     {
@@ -22,9 +23,11 @@ public class EnemyHealth : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            if(imPoisonous)
+            Instantiate(flameSpawner, transform.position, Quaternion.identity);
+            if (imPoisonous)
             {
                 Instantiate(cloudSpawner, transform.position, Quaternion.identity);
+               
             }
             Destroy(gameObject);
             

@@ -492,8 +492,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   currentHealth: 0
-  imPoisonous: 0
-  cloudSpawner: {fileID: 0}
+  cloudSpawner: {fileID: 7039557453951838944, guid: df4a1fd991dae47428eead02fd0332d2,
+    type: 3}
+  flameSpawner: {fileID: 7039557453951838944, guid: df4a1fd991dae47428eead02fd0332d2,
+    type: 3}
   ogColor: {r: 0.60784316, g: 0.34901962, b: 0.42352942, a: 1}
 --- !u!65 &4219402306929305355
 BoxCollider:

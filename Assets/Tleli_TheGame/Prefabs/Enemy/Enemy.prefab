@@ -154,7 +154,6 @@ MonoBehaviour:
   velRotacion: 20
   radioDef: 10
   movSpeed: 5
-  knockbackForce: 1000
   EnemySpawn: {x: 0, y: 0, z: 0}
   isAttacking: 0
 --- !u!114 &675025483163537253
@@ -171,6 +170,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   currentHealth: 0
+  cloudSpawner: {fileID: 7039557453951838944, guid: df4a1fd991dae47428eead02fd0332d2,
+    type: 3}
+  flameSpawner: {fileID: 7039557453951838944, guid: df4a1fd991dae47428eead02fd0332d2,
+    type: 3}
   ogColor: {r: 0.42481834, g: 0.28969374, b: 0.5849056, a: 1}
 --- !u!114 &675025483163537263
 MonoBehaviour:
@@ -186,6 +189,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 1.5
   attackDamage: 20
+  attackDamageSlam: 1
+  KBforce: 0
+  isDisplaced: 0
 --- !u!65 &675025483163537262
 BoxCollider:
   m_ObjectHideFlags: 0
