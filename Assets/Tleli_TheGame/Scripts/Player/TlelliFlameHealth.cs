@@ -125,7 +125,7 @@ public class TlelliFlameHealth : MonoBehaviour
 
 
                 SendHurt.playerisHurt = true;
-               
+                
 
                 HP -= damage;
 

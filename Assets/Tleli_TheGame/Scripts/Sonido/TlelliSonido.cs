@@ -14,6 +14,7 @@ public class TlelliSonido : MonoBehaviour
 
     bool playerismoving;
     public bool playerisHurt; //ADRIAN
+    public bool LAttack;
     private bool isGrounded;
     public float walkingspeed;
 
@@ -30,10 +31,11 @@ public class TlelliSonido : MonoBehaviour
     void Update()
     {
         CallHit(); //ADRIAN
+        CallAttack(); //ADRIAN
+
+        print("L is " + LAttack);
 
         isGrounded = controller.isGrounded;
-
-        print(playerisHurt);
 
         if (isGrounded && Input.GetAxis("Vertical") >= 0.01f || Input.GetAxis("Horizontal") >= 0.01f || Input.GetAxis("Vertical") <= -0.01f || Input.GetAxis("Horizontal") <= -0.01f)
         {
@@ -58,7 +60,7 @@ public class TlelliSonido : MonoBehaviour
     }
     //
 
-    private void CallHit()
+    public void CallHit()
     {
         if(playerisHurt)
         {
@@ -68,9 +70,22 @@ public class TlelliSonido : MonoBehaviour
             playerisHurt = false;
 
         }
+
     }
 
-   
+   public void CallAttack()
+    {
+        if (LAttack)
+        {
+
+            FMODUnity.RuntimeManager.PlayOneShot("event:/LAttackSwings");
+
+           LAttack = false;
+
+        }
+    }
+
+
     private void OnDisable()
     {
         playerismoving = false;
