@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 344753519978135671}
   - component: {fileID: 7196005489673274064}
   - component: {fileID: 7669956310650208017}
+  - component: {fileID: 7863455379598755827}
   m_Layer: 8
   m_Name: RuinPlatform2x2
   m_TagString: Untagged
@@ -79,6 +80,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &7863455379598755827
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2900105889237256203}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000002, y: 0.99999976, z: 2.0000002}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4040444961284787908
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,7 +102,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3700089605305259134}
-  - component: {fileID: 3806635257053976844}
   m_Layer: 8
   m_Name: RuinPlatform2x2_low
   m_TagString: Untagged
@@ -111,17 +124,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 84.4, z: 0}
---- !u!64 &3806635257053976844
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4040444961284787908}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
