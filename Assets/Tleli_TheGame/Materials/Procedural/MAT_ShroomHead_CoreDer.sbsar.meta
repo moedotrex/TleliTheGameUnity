@@ -1,0 +1,266 @@
+fileFormatVersion: 2
+guid: 0453c57c801cb0f499dfc5526255c9e1
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 232528478, guid: 43a8bbf65be290d44ba52b94476242b9, type: 3}
+  version: 29
+  projectContext: 2
+  mGraphInstanceData:
+  - graphLabel: Mushroom
+    prototypeName: Mushroom
+    graphDescIndex: 0
+    generateAllOutputs: 0
+    generateMipMaps: 1
+    preset: " <sbspreset pkgurl=\"pkg://Mushroom\" label=\"\" >\n  <presetinput identifier=\"$outputsize\"
+      uid=\"3872354394\" type=\"8\" value=\"9,9\" />\n  <presetinput identifier=\"GlowingSpots\"
+      uid=\"2405368813\" type=\"3\" value=\"0.152189,0.716981,0.666039,1\" />\n 
+      <presetinput identifier=\"BiggerSpotsColor\" uid=\"2405368649\" type=\"3\"
+      value=\"0.483699,0.477928,0.566038,1\" />\n  <presetinput identifier=\"BackgroundColor\"
+      uid=\"2405369683\" type=\"3\" value=\"0.301175,0.315618,0.45283,1\" />\n </sbspreset>\n"
+    shaderName: Universal Render Pipeline/Lit
+    materialProperties:
+      shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+      shaderKeywords: _EMISSION _METALLICSPECGLOSSMAP _NORMALMAP _OCCLUSIONMAP
+      lightmapFlags: 1
+      enableInstancingVariants: 0
+      doubleSidedGI: 0
+      customRenderQueue: -1
+      texEnvs:
+      - name: _BaseMap
+        texture: {fileID: 1686081265904868641, guid: 0453c57c801cb0f499dfc5526255c9e1,
+          type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _BumpMap
+        texture: {fileID: 7535015461134384887, guid: 0453c57c801cb0f499dfc5526255c9e1,
+          type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _EmissionMap
+        texture: {fileID: -836910077551290571, guid: 0453c57c801cb0f499dfc5526255c9e1,
+          type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _MainTex
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _MetallicGlossMap
+        texture: {fileID: 5662171821322351072, guid: 0453c57c801cb0f499dfc5526255c9e1,
+          type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _OcclusionMap
+        texture: {fileID: 2391340856718530764, guid: 0453c57c801cb0f499dfc5526255c9e1,
+          type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _SpecGlossMap
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      floats:
+      - name: _AlphaClip
+        float: 0
+      - name: _Blend
+        float: 0
+      - name: _BumpScale
+        float: 1
+      - name: _Cull
+        float: 2
+      - name: _Cutoff
+        float: 0.5
+      - name: _DstBlend
+        float: 0
+      - name: _EnvironmentReflections
+        float: 1
+      - name: _GlossMapScale
+        float: 0
+      - name: _Glossiness
+        float: 0
+      - name: _GlossyReflections
+        float: 0
+      - name: _Metallic
+        float: 0
+      - name: _OcclusionStrength
+        float: 1
+      - name: _QueueOffset
+        float: 0
+      - name: _ReceiveShadows
+        float: 1
+      - name: _Smoothness
+        float: 1
+      - name: _SmoothnessTextureChannel
+        float: 0
+      - name: _SpecularHighlights
+        float: 1
+      - name: _SrcBlend
+        float: 1
+      - name: _Surface
+        float: 0
+      - name: _WorkflowMode
+        float: 1
+      - name: _ZWrite
+        float: 1
+      colors:
+      - name: _BaseColor
+        color: {r: 1, g: 1, b: 1, a: 1}
+      - name: _Color
+        color: {r: 1, g: 1, b: 1, a: 1}
+      - name: _EmissionColor
+        color: {r: 0, g: 0, b: 0, a: 1}
+      - name: _SpecColor
+        color: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    outputDescList:
+    - outputName: baseColor
+      identifier: basecolor
+      usageName: baseColor
+      channelStr: baseColor
+      label: Base Color
+      usage: 1
+      bImage: 1
+      bNumerical: 0
+      bLinear: 0
+    - outputName: normal
+      identifier: normal
+      usageName: normal
+      channelStr: normal
+      label: Normal
+      usage: 7
+      bImage: 1
+      bNumerical: 0
+      bLinear: 1
+    - outputName: emissive
+      identifier: emissive
+      usageName: emissive
+      channelStr: emissive
+      label: Emissive
+      usage: 3
+      bImage: 1
+      bNumerical: 0
+      bLinear: 0
+    - outputName: roughness
+      identifier: roughness
+      usageName: roughness
+      channelStr: roughness
+      label: Roughness
+      usage: 15
+      bImage: 1
+      bNumerical: 0
+      bLinear: 1
+    - outputName: metallic
+      identifier: metallic
+      usageName: metallic
+      channelStr: metallic
+      label: Metallic
+      usage: 34
+      bImage: 1
+      bNumerical: 0
+      bLinear: 1
+    - outputName: ambientOcclusion
+      identifier: ambientocclusion
+      usageName: ambientOcclusion
+      channelStr: ambientOcclusion
+      label: Ambient Occlusion
+      usage: 5
+      bImage: 1
+      bNumerical: 0
+      bLinear: 1
+    - outputName: height
+      identifier: height
+      usageName: height
+      channelStr: height
+      label: Height
+      usage: 9
+      bImage: 1
+      bNumerical: 0
+      bLinear: 1
+    texturePackingList:
+    - targetName: baseColor
+      components:
+      - sourceName: baseColor
+        from: 0
+        to: 3
+    - targetName: normal
+      components:
+      - sourceName: normal
+        from: 0
+        to: 3
+    - targetName: emissive
+      components:
+      - sourceName: emissive
+        from: 0
+        to: 3
+    - targetName: roughness
+      components:
+      - sourceName: roughness
+        from: 0
+        to: 3
+    - targetName: metallic
+      components:
+      - sourceName: smoothness
+        from: 0
+        to: 3
+    - targetName: ambientOcclusion
+      components:
+      - sourceName: ambientOcclusion
+        from: 0
+        to: 3
+    - targetName: height
+      components:
+      - sourceName: height
+        from: 0
+        to: 3
+    textureParameters:
+    - textureName: Mushroom - baseColor
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Mushroom - normal
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Mushroom - emissive
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Mushroom - roughness
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Mushroom - metallic
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Mushroom - ambientOcclusion
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Mushroom - height
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    colorSpaceList: []
+    inputTextureMap: []
+    targetSettingList:
+    - label: Default
+      bOverride: 0
+      bLockRatio: 1
+      textureWidth: 512
+      textureHeight: 512
+      textureFormatMode: 0
+      normalCompressed: 0
+      bGenerateOnLoad: 1
+    material: {fileID: 2154927139218458291, guid: 0453c57c801cb0f499dfc5526255c9e1,
+      type: 3}
+    generatedTextures:
+    - {fileID: 1686081265904868641, guid: 0453c57c801cb0f499dfc5526255c9e1, type: 3}
+    - {fileID: 7535015461134384887, guid: 0453c57c801cb0f499dfc5526255c9e1, type: 3}
+    - {fileID: -836910077551290571, guid: 0453c57c801cb0f499dfc5526255c9e1, type: 3}
+    - {fileID: 5662171821322351072, guid: 0453c57c801cb0f499dfc5526255c9e1, type: 3}
+    - {fileID: 2391340856718530764, guid: 0453c57c801cb0f499dfc5526255c9e1, type: 3}
