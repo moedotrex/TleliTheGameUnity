@@ -17,8 +17,11 @@ ScriptedImporter:
     generateAllOutputs: 0
     generateMipMaps: 1
     preset: " <sbspreset pkgurl=\"pkg://MushroomStem\" label=\"\" >\n  <presetinput
-      identifier=\"$outputsize\" uid=\"1125861846\" type=\"8\" value=\"9,9\" />\n
-      </sbspreset>\n"
+      identifier=\"$outputsize\" uid=\"1125861846\" type=\"8\" value=\"9,9\" />\n 
+      <presetinput identifier=\"StemColor1\" uid=\"713344214\" type=\"3\" value=\"0.395158,0.419592,0.754717,1\"
+      />\n  <presetinput identifier=\"StemColor2\" uid=\"713344216\" type=\"3\" value=\"0.339623,0.0624778,0.28553,1\"
+      />\n  <presetinput identifier=\"StemColor3\" uid=\"713344201\" type=\"3\" value=\"0.759634,0.569064,0.867925,1\"
+      />\n </sbspreset>\n"
     shaderName: Universal Render Pipeline/Lit
     materialProperties:
       shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
@@ -26,7 +29,7 @@ ScriptedImporter:
       lightmapFlags: 4
       enableInstancingVariants: 0
       doubleSidedGI: 0
-      customRenderQueue: -1
+      customRenderQueue: 2050
       texEnvs:
       - name: _BaseMap
         texture: {fileID: -4735379244703418890, guid: 16b67aff8ef3bdb46902567c5fb1cd5a,
