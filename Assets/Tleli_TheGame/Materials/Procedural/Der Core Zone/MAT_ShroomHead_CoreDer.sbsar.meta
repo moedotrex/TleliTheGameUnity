@@ -29,7 +29,7 @@ ScriptedImporter:
       lightmapFlags: 1
       enableInstancingVariants: 0
       doubleSidedGI: 0
-      customRenderQueue: -1
+      customRenderQueue: 2050
       texEnvs:
       - name: _BaseMap
         texture: {fileID: 1686081265904868641, guid: 0453c57c801cb0f499dfc5526255c9e1,
@@ -94,7 +94,7 @@ ScriptedImporter:
       - name: _ReceiveShadows
         float: 1
       - name: _Smoothness
-        float: 1
+        float: 0.35
       - name: _SmoothnessTextureChannel
         float: 0
       - name: _SpecularHighlights
