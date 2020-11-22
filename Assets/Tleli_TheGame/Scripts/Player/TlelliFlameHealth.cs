@@ -27,8 +27,6 @@ public class TlelliFlameHealth : MonoBehaviour
     float invincibilityLenght = 1f; //vaca duracion de invulnerabilidad despues de recibir daño
     float invincibilityCounter;
 
-    TlelliSonido SendHurt; //ADRIAN llamar script para madarle el dolor
-
     public TleliAnimationController tleliAnimationController;
 
 
@@ -39,7 +37,6 @@ public class TlelliFlameHealth : MonoBehaviour
         flameIntensity = Remap(flame, 0, maxFlame, flameMinIntensity, flameMaxIntensity);         //Hacer un "remap" de los valores de la vida de Tlelli (0-100) a los valores de flama (0-5)
         getPCscritp(); //VACA obtener script de player controller
         isBattling = false;
-        SendHurt = GetComponent<TlelliSonido>();
     }
 
 
@@ -55,7 +52,6 @@ public class TlelliFlameHealth : MonoBehaviour
         {
             invincibilityCounter -= Time.deltaTime;
         }
-
     }
 
     //Colisiona tleli con enemigo
@@ -123,16 +119,10 @@ public class TlelliFlameHealth : MonoBehaviour
                 damage = Mathf.Round(damage * 100f) / 100f;
                 tleliAnimationController.IsHitTrigger(); // VACA cambiar animacion cuando reciba daño y no cuando entre en trigger
 
+            //-------
 
-                SendHurt.playerisHurt = true;
-               
-
-                HP -= damage;
-
-                
-                //-------
-
-                if (HP < 0)
+            HP -= damage;
+            if (HP < 0)
             {
                 HP = 0;
                 tleliAnimationController.IsDeadTrigger();
