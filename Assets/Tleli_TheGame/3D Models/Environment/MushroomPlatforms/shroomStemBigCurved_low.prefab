@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7412732875063420733}
   - component: {fileID: 5868342956780218520}
   - component: {fileID: 8544592494029708370}
-  - component: {fileID: 2126372504399388433}
+  - component: {fileID: 6056009500854164849}
   m_Layer: 0
   m_Name: shroomStemBigCurved_low
   m_TagString: Untagged
@@ -80,7 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &2126372504399388433
+--- !u!64 &6056009500854164849
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,6 +91,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 8641884002023032247, guid: 998dfb02f42da824587b736fef0f8fa9, type: 3}
+  m_Mesh: {fileID: -4725697027465371009, guid: 5591117488506224aaf753c30c349bd5, type: 3}
