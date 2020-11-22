@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviour
 		if (isGrounded && velocidad.y < 0)
 		{
 			velocidad.y = -10f;
+			tleliAnimationController.LandTrigger();
 		}
 
 		float vertical = Input.GetAxisRaw("Vertical");
@@ -75,9 +76,11 @@ public class PlayerController : MonoBehaviour
 			isJumping = true;
 			saltoTimeCounter = saltoTime;
 			velocidad.y = Mathf.Sqrt(Salto * -2f * gravedad);
-			tleliAnimationController.JumpTakeOffTrigger();
-		}
-		//doble salto
+			//leliAnimationController.JumpTakeOffTrigger();
+				tleliAnimationController.JumpTakeOffbool(true);
+
+			}
+			//doble salto
 			if (Input.GetButtonDown("Jump") && extraJumps > 0)
 			{
 				GetComponent<FMODUnity.StudioEventEmitter>().Play();
@@ -173,12 +176,13 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 
-		if (velocidad.y<10.3f)
+		if (velocidad.y<0)
         {
 			tleliAnimationController.JumpFallLoopBoolParameter(false);
+			tleliAnimationController.JumpTakeOffbool(false);
 		}
 
-		if (velocidad.y>10.3f)
+		if (velocidad.y>0)
         {
 			tleliAnimationController.JumpFallLoopBoolParameter(true);
         }

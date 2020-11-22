@@ -10,14 +10,16 @@ public class FlameControl: MonoBehaviour
 {
    
     public Material matFlama;
-    TlelliFlameHealth tlelli;
+    //TlelliFlameHealth tlelli;
+    TleliHealth tlelli;
     float flama;
 
     
     void Start()
     {
         
-        tlelli = GameObject.FindGameObjectWithTag("Player").GetComponent<TlelliFlameHealth>();
+       // tlelli = GameObject.FindGameObjectWithTag("Player").GetComponent<TlelliFlameHealth>();
+        tlelli = GameObject.FindGameObjectWithTag("Player").GetComponent<TleliHealth>();
         flama = tlelli.GetFlameIntensity();
         matFlama.SetFloat("_FLAMELEVEL", flama);
     }

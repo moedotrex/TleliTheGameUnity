@@ -6,7 +6,7 @@ using UnityEngine.UI;
 // FlamaTlelli
 // Karime y Lucy
 // Control de vida y flama de Tlelli
-public class TlelliFlameHealth : MonoBehaviour
+public class TleliHealth : MonoBehaviour
 
 {
     public float maxHP = 100;        
@@ -14,8 +14,8 @@ public class TlelliFlameHealth : MonoBehaviour
     float flameMaxIntensity = 65;           //Valor máximo de la flama en shader (brightness)
     float flameMinIntensity = 35;
 
-    public float HP;
-    float flame;
+    [HideInInspector] public float HP;
+    [HideInInspector] public float flame;
     float flameIntensity;
       
     public float attack;      
@@ -27,11 +27,12 @@ public class TlelliFlameHealth : MonoBehaviour
     float invincibilityLenght = 1f; //vaca duracion de invulnerabilidad despues de recibir daño
     float invincibilityCounter;
 
-    public TleliAnimationController tleliAnimationController;
+    TleliAnimationController tleliAnimationController;
 
 
     void Start()
     {
+        tleliAnimationController = GetComponentInChildren<TleliAnimationController>();
         flame = maxFlame;
         HP = maxHP;
         flameIntensity = Remap(flame, 0, maxFlame, flameMinIntensity, flameMaxIntensity);         //Hacer un "remap" de los valores de la vida de Tlelli (0-100) a los valores de flama (0-5)
@@ -42,11 +43,6 @@ public class TlelliFlameHealth : MonoBehaviour
 
     void Update()
     {
-        // Ejemplo para probar relación entre ataque y flama
-        /*if (Input.GetKeyDown("x"))
-        {
-         SetHPDamage(attack);
-        }*/
 
         if (invincibilityCounter > 0)
         {
@@ -54,29 +50,21 @@ public class TlelliFlameHealth : MonoBehaviour
         }
     }
 
-    //Colisiona tleli con enemigo
-    //Si no estas frente a frente con enemigo no te quita vida
+
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
             SetFlameDamage(flameDamage * Time.deltaTime);
             FlameUpdateMaterial();
-            
+
             //tleliAnimationController.IsHitTrigger();
             //agregra tiempo de recuperación
         }
     }
 
-    
-
-    /* private void OnTriggerEnter(Collider other)
-     {
-         if (other.gameObject.CompareTag("Enemy"))
-         {
-             SetHPDamage(attack);
-         }
-     }*/
+    //Colisiona tleli con enemigo
+    //Si no estas frente a frente con enemigo no te quita vida
 
     public void RecoverFlame(float recover)
     {
@@ -99,29 +87,29 @@ public class TlelliFlameHealth : MonoBehaviour
         {
             flame = 0;
         }
-        
+
         FlameUpdateMaterial();
         isBattling = true;
+    }
+
+    public void HurtFlame(float dmg)
+    {
+        flame -= dmg;
     }
 
     
     public void SetHPDamage(float attackStrength)
     {
-        if (invincibilityFrames.isDisplaced == false) {  // VACA si tleli esta dasheando no puede recibir daño (invincibilityFrames)
+        if (invincibilityFrames.isDisplaced == false) {
 
-            if (invincibilityCounter <= 0) //VACA checa si tleli esta en tiempo de invulnerabilidad
+            if (invincibilityCounter <= 0)
             {
-                invincibilityCounter = invincibilityLenght; //VACA empieza el timer de invulnerabilidad
+                invincibilityCounter = invincibilityLenght;             
+                /*float damage = attackStrength * (100 / (100 + flame));
+                damage = Mathf.Round(damage * 100f) / 100f;*/
+                tleliAnimationController.IsHitTrigger();
 
-                // Fórmula para cálculo de daño, flama como armadura
-                
-                float damage = attackStrength * (100 / (100 + flame));
-                damage = Mathf.Round(damage * 100f) / 100f;
-                tleliAnimationController.IsHitTrigger(); // VACA cambiar animacion cuando reciba daño y no cuando entre en trigger
-
-            //-------
-
-            HP -= damage;
+            HP -= attackStrength;
             if (HP < 0)
             {
                 HP = 0;
@@ -129,7 +117,7 @@ public class TlelliFlameHealth : MonoBehaviour
             }
 
         Text damageTxt = GameObject.Find("ShowDamage").GetComponent<Text>();
-        damageTxt.text = "- " + damage;
+        damageTxt.text = "- " + attackStrength;
         }
         }
 
@@ -149,9 +137,6 @@ public class TlelliFlameHealth : MonoBehaviour
         isBattling = bm;
     }
 
-    
-
-    
     //Remapear rango de valores de flama a intensidad para el shader
     //------------------------------------------------------------------------
     public void FlameUpdateMaterial()

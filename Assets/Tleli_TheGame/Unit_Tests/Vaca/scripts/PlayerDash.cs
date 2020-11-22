@@ -32,7 +32,8 @@ public class PlayerDash : MonoBehaviour
         { 
         if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownTime <= 0)
         {
-            StartCoroutine(Dash());
+                animator.SetTrigger("DashPress");
+                StartCoroutine(Dash());
             dashCooldownTime = dashCooldown;               
         }
         }
@@ -47,8 +48,8 @@ public class PlayerDash : MonoBehaviour
             moveDir = Quaternion.Euler(0f, transform.eulerAngles.y, 0f) * Vector3.forward; //direccion tomada de player Y transform 
             moveScript.characterController.Move(moveDir * dashSpeed * Time.deltaTime);
             moveScript.isDisplaced = true;
+            yield return null;
             animator.SetTrigger("Dash"); //animation loop
-            yield return null; 
             moveScript.isDisplaced = false;
             moveScript.velocidad.y = -5f;
         }

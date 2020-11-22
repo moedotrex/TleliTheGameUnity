@@ -19,7 +19,8 @@ public class EnemyController : MonoBehaviour
 
     Transform target;
     NavMeshAgent navAgent;
-    TlelliFlameHealth flama;
+    //TlelliFlameHealth flama;
+    TleliHealth flama;
     EnemyAttack enemyStagger;
     
     public bool isAttacking;
@@ -40,7 +41,8 @@ public class EnemyController : MonoBehaviour
         BuscarRadio = radioDef;
        radioGrande = BuscarRadio * 1.5f;
         EnemySpawn = this.transform.position;
-        flama = GameObject.FindGameObjectWithTag("Player").GetComponent<TlelliFlameHealth>();
+        //flama = GameObject.FindGameObjectWithTag("Player").GetComponent<TlelliFlameHealth>();
+        flama = GameObject.FindGameObjectWithTag("Player").GetComponent<TleliHealth>();
         navAgent = GetComponent<NavMeshAgent>();
         enemyStagger = GetComponent<EnemyAttack>();
         navAgent.speed = movSpeed;
@@ -128,7 +130,7 @@ public class EnemyController : MonoBehaviour
         IEnumerator stopMovCoroutine(float time)
         {
         navAgent.speed = 0f;
-            yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(time);
         navAgent.speed = movSpeed;
 
         }

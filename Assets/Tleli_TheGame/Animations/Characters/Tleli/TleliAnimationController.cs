@@ -19,9 +19,9 @@ public class TleliAnimationController : MonoBehaviour
         tleliAnimator.SetFloat("ForwardSpeed", forwardSpeed);
     }
 
-    public void JumpTakeOffTrigger()
+    public void JumpTakeOffbool(bool jumpTakeOff)
     {
-        tleliAnimator.SetTrigger("JumpTakeOff");
+        tleliAnimator.SetBool("JumpTakeOff", jumpTakeOff);
     }
 
     public void JumpLandTrigger()
@@ -53,6 +53,10 @@ public class TleliAnimationController : MonoBehaviour
     public void DashTrigger()
     {
         tleliAnimator.SetTrigger("Dash");
+    }
+    public void DashPress()
+    {
+        tleliAnimator.SetTrigger("DashPress");
     }
 
     public void LightAttackTrigger()
@@ -94,6 +98,12 @@ public class TleliAnimationController : MonoBehaviour
     {
         tleliCombat.startChargedAttForward(duration);
     }
+
+    public void LandTrigger()
+    {
+        tleliAnimator.SetTrigger("ChargeLightAttack");
+    }
+
 
     public void lightAnimationHit()
     {

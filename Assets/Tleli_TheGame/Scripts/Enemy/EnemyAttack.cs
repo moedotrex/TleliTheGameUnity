@@ -8,7 +8,8 @@ public class EnemyAttack : MonoBehaviour
     public float attackDamage = 1;
 
     GameObject player;
-    TlelliFlameHealth TlelliHealth;
+    // TlelliFlameHealth TlelliHealth;
+    TleliHealth TlelliHealth;
     tleliKnockBack playerKnockback;
     bool playerInRange;
     float timer;
@@ -18,7 +19,10 @@ public class EnemyAttack : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        TlelliHealth = player.GetComponent<TlelliFlameHealth>();
+
+        // TlelliHealth = player.GetComponent<TlelliFlameHealth>();
+        TlelliHealth = player.GetComponent<TleliHealth>();
+
         playerKnockback = player.GetComponent<tleliKnockBack>();
     }
 
@@ -38,15 +42,21 @@ public class EnemyAttack : MonoBehaviour
     {
         timer = 0f;
 
-        if (TlelliHealth.HP > 0)
+        if (TlelliHealth.flame > 0)
         {
-            TlelliHealth.SetHPDamage(attackDamage);
+            TlelliHealth.HurtFlame(attackDamage);
             playerKnockback.startKnockBack();
         }
-       /* if (TlelliHealth.HP < 0)
+
+        if (TlelliHealth.flame <= 0)
         {
-       Poner una barrera para que deje de atacar
-        }*/
+            TlelliHealth.SetHPDamage(1);
+        }
+
+        /* if (TlelliHealth.HP < 0)
+         {
+        Poner una barrera para que deje de atacar
+         }*/
     }
 
     //¿jugador en rango de ataque?

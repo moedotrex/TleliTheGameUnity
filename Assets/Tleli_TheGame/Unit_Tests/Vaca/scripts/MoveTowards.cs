@@ -9,19 +9,26 @@ public class MoveTowards : MonoBehaviour
     Transform target;
     public float playerDis;
     bool follow;
+    TleliHealth getFlame;
+
 
     void Start()
     {
         target = PlayerManager.instance.player.transform;
+        getFlame = GameObject.FindGameObjectWithTag("Player").GetComponent<TleliHealth>();
+
     }
 
     void Update()
     {
         float distance = Vector3.Distance(target.position, transform.position);
-
+        
         if (distance <= playerDis)
         {
+            if (getFlame.flame < 100)
+            { 
             follow = true;
+            }
         }
         if (follow) 
         { 

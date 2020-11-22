@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Collect : MonoBehaviour
 {
-    TlelliFlameHealth tlelliFlame;
+    //TlelliFlameHealth tlelliFlame;
+    TleliHealth tlelliFlame;
     PlayerController playercontroller;
     PlayerDash playerDash;
     LightCombo charged;
@@ -12,7 +13,8 @@ public class Collect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tlelliFlame = GameObject.FindGameObjectWithTag("Player").GetComponent<TlelliFlameHealth>();
+        //tlelliFlame = GameObject.FindGameObjectWithTag("Player").GetComponent<TlelliFlameHealth>();
+        tlelliFlame = GameObject.FindGameObjectWithTag("Player").GetComponent<TleliHealth>();
         playercontroller = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         playerDash = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDash>();
         charged = GetComponent<LightCombo>();
