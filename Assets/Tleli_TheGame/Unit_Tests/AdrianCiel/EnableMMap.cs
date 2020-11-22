@@ -9,7 +9,7 @@ public class EnableMMap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        minimap = GameObject.Find("MinimapUI").GetComponent<RawImage>();
+        minimap = GameObject.Find("Mapa 0").GetComponent<RawImage>();
         minimap.enabled = false;
     }
 
