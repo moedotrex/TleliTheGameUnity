@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &8789204085698997031
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5802265308605207279}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.050014887, y: 0.05001488, z: 0.08932907}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7273756624343627660
 GameObject:
   m_ObjectHideFlags: 0
@@ -50,11 +63,25 @@ CapsuleCollider:
   m_GameObject: {fileID: 7273756624343627660}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.18239594
   m_Height: 1.0194702
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: -0.4902649, z: 0.31760406}
+--- !u!64 &2215750505986409504
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7866573052613549023}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4068373912626513877, guid: 3ce46d1eb388fd143ae105a0d6454d5f, type: 3}
 --- !u!1 &8518201251303085899
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,6 +220,18 @@ PrefabInstance:
 --- !u!4 &7168369830961109351 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3ce46d1eb388fd143ae105a0d6454d5f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7273756625132666508}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7866573052613549023 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8513424388201257645, guid: 3ce46d1eb388fd143ae105a0d6454d5f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7273756625132666508}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5802265308605207279 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3779745573541866595, guid: 3ce46d1eb388fd143ae105a0d6454d5f,
     type: 3}
   m_PrefabInstance: {fileID: 7273756625132666508}
   m_PrefabAsset: {fileID: 0}

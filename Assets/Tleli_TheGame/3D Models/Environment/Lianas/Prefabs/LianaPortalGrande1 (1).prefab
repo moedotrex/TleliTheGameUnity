@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4455325142787182970}
   - component: {fileID: 755378824492703455}
   - component: {fileID: 3287436687880071701}
+  - component: {fileID: 4321700375471085906}
   m_Layer: 0
   m_Name: LianaPortalGrande1 (1)
   m_TagString: Untagged
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &4321700375471085906
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3936056121399315392}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2340832540735950873, guid: 9099701501e47914fabb7dcc5a0b65b4, type: 3}
