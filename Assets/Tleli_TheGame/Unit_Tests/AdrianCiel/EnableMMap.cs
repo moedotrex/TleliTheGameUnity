@@ -5,12 +5,15 @@ using UnityEngine.UI;
 
 public class EnableMMap : MonoBehaviour
 {
-    RawImage minimap;
+    Image minimap;
+    Image marcador;
     // Start is called before the first frame update
     void Start()
     {
-        minimap = GameObject.Find("Mapa 0").GetComponent<RawImage>();
+        minimap = GameObject.Find("Mapa_0").GetComponent<Image>();
         minimap.enabled = false;
+        marcador = GameObject.Find("Marcador").GetComponent<Image>();
+        marcador.enabled = false;
     }
 
     // Update is called once per frame
@@ -19,6 +22,7 @@ public class EnableMMap : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.M))
         {
             minimap.enabled = !minimap.enabled;
+            marcador.enabled = !marcador.enabled;
         }
     }
 }
