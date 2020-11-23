@@ -113,7 +113,7 @@ public class TleliHealth : MonoBehaviour
             if (HP < 0)
             {
                 HP = 0;
-                tleliAnimationController.IsDeadTrigger();
+                    //tleliAnimationController.IsDeadTrigger(); The Dead Trigger is now a Bool. This animation is played in the TleliDeath script. Changed by Emil.
             }
 
         Text damageTxt = GameObject.Find("ShowDamage").GetComponent<Text>();
@@ -168,13 +168,13 @@ public class TleliHealth : MonoBehaviour
 
     }
 
-     public void DeathTleli()
-      {
-          if (HP <= 0)
-          {
-              tleliAnimationController.IsDeadTrigger();
-          }
-      }
+     //public void DeathTleli() This method wasn't used. Now the Dead Trigger is a Bool
+     // {
+     //     if (HP <= 0)
+     //     {
+     //         tleliAnimationController.IsDeadTrigger();
+     //     }
+     // }
 
     //VACA
     public void getPCscritp()

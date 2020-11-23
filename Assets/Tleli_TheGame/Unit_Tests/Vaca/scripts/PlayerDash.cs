@@ -6,6 +6,7 @@ using UnityEngine.Rendering;
 public class PlayerDash : MonoBehaviour
 {
     PlayerController moveScript;
+    TleliDeath tleliDeath;
 
     public float dashSpeed;
     public float dashTime;
@@ -22,7 +23,9 @@ public class PlayerDash : MonoBehaviour
     void Start()
     {
         moveScript = GetComponent<PlayerController>();
+        tleliDeath = GetComponent<TleliDeath>(); //Stop actions when Tleli is Dead. By Emil.
         animator = GetComponentInChildren<Animator>();
+        
     }
 
     void Update()
@@ -30,7 +33,7 @@ public class PlayerDash : MonoBehaviour
         dashCooldownTime -= Time.deltaTime;
         if (gotDash == true) 
         { 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownTime <= 0)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownTime <= 0 && !tleliDeath.isDead)
         {
                 animator.SetTrigger("DashPress");
                 StartCoroutine(Dash());

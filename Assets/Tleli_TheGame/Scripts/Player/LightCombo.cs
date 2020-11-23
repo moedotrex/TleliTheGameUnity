@@ -39,11 +39,13 @@ public class LightCombo : MonoBehaviour
 
     ParticleSystem slash;   //------
     TlelliSonido SendLAttack; //ADRIAN
+    TleliDeath tleliDeath; //Stop actions when Tleli is Dead. By Emil.
 
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
         moveScript = GetComponent<PlayerController>();
+        tleliDeath = GetComponent<TleliDeath>();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
         currentDamage = Damage;
         slash = GameObject.Find("WeaponSlash").GetComponent<ParticleSystem>();   //------
@@ -52,7 +54,7 @@ public class LightCombo : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && combonum < 3)
+        if (Input.GetMouseButtonDown(0) && combonum < 3 && !tleliDeath.isDead)
         {
             if (Time.time >= nextAttackTime)
             {
@@ -98,7 +100,7 @@ public class LightCombo : MonoBehaviour
             intResetTime = resetTime;
         }
 
-        if (gotCharged) // ya adquirio el poder? 
+        if (gotCharged && !tleliDeath.isDead) // ya adquirio el poder? 
         {
             if (Input.GetMouseButton(0))
         {

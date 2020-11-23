@@ -2424,6 +2424,7 @@ GameObject:
   - component: {fileID: 350378879}
   - component: {fileID: 350378880}
   - component: {fileID: 350378881}
+  - component: {fileID: 350378882}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2556,6 +2557,7 @@ MonoBehaviour:
   player: {fileID: 350378867}
   inputwalksound: event:/Pasos_Pasto
   playerisHurt: 0
+  LAttack: 0
   walkingspeed: 0.3
 --- !u!114 &350378874
 MonoBehaviour:
@@ -2690,8 +2692,29 @@ MonoBehaviour:
   maxFlame: 100
   HP: 0
   flame: 0
+  attack: 0
   flameDamage: 10
   isBattling: 0
+--- !u!114 &350378882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350378867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28b9433b608af93448180a8e55652e0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpoints:
+  - {fileID: 9464914}
+  - {fileID: 95271003}
+  - {fileID: 96357449}
+  - {fileID: 99771159}
+  - {fileID: 402236281}
+  defaultRespawnTime: 5
+  isDead: 0
 --- !u!1 &353108758
 GameObject:
   m_ObjectHideFlags: 0
@@ -5368,7 +5391,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683309831}
-  m_LocalRotation: {x: -0.030852158, y: -0.0000000053700338, z: -0.00000013918388,
+  m_LocalRotation: {x: -0.030852158, y: -0.0000000032202598, z: -0.00000013911753,
     w: 0.999524}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -7018,7 +7041,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1127476430}
-  m_LocalRotation: {x: -0.03085215, y: -0.000000002149774, z: -6.635673e-11, w: 0.999524}
+  m_LocalRotation: {x: -0.03085215, y: 0.000000002149774, z: 6.635673e-11, w: 0.999524}
   m_LocalPosition: {x: 5.4, y: 37.542, z: -58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -9833,7 +9856,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1605245786}
-  m_LocalRotation: {x: -0.0031005288, y: 2.7917982e-11, z: -0.0000000090042676, w: -0.99999523}
+  m_LocalRotation: {x: -0.0031005288, y: 2.7918e-11, z: -0.0000000090042676, w: -0.99999523}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
