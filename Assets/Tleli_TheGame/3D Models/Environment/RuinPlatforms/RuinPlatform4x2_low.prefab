@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6385782770637664212
+--- !u!1 &7017480430897457707
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1892248567352282022}
-  - component: {fileID: 7307360974462169614}
-  - component: {fileID: 3516708245947626293}
+  - component: {fileID: 7017480430897457706}
+  - component: {fileID: 7017480430897457704}
+  - component: {fileID: 7017480430897457705}
+  - component: {fileID: 7017480430897457711}
   m_Layer: 0
   m_Name: RuinPlatform4x2
   m_TagString: Untagged
@@ -18,35 +19,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1892248567352282022
+--- !u!4 &7017480430897457706
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6385782770637664212}
+  m_GameObject: {fileID: 7017480430897457707}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.011069269, y: -0.5, z: -0.016813533}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8009235838129778315}
+  m_Father: {fileID: 7017480432025664558}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7307360974462169614
+--- !u!33 &7017480430897457704
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6385782770637664212}
+  m_GameObject: {fileID: 7017480430897457707}
   m_Mesh: {fileID: -8721376790698361795, guid: d492318936e0c6440ba89d8e62d39a43, type: 3}
---- !u!23 &3516708245947626293
+--- !u!23 &7017480430897457705
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6385782770637664212}
+  m_GameObject: {fileID: 7017480430897457707}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -79,7 +80,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &7236533788367254577
+--- !u!65 &7017480430897457711
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7017480430897457707}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.000001, y: 0.99999994, z: 2.0000002}
+  m_Center: {x: -0.00000047683716, y: -0.000000923872, z: 0.00000011920929}
+--- !u!1 &7017480432025664552
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,40 +101,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8009235838129778315}
-  - component: {fileID: -2423434711091917055}
+  - component: {fileID: 7017480432025664558}
   m_Layer: 0
-  m_Name: RuinPlatform4x2_low
+  m_Name: RuinPlatform4x2_low (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8009235838129778315
+--- !u!4 &7017480432025664558
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7236533788367254577}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -77.6924, y: 24.882904, z: -27.001938}
+  m_GameObject: {fileID: 7017480432025664552}
+  m_LocalRotation: {x: -0, y: -0.6991794, z: -0, w: 0.71494627}
+  m_LocalPosition: {x: -133.16, y: 25.17, z: -25.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1892248567352282022}
+  - {fileID: 7017480430897457706}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &-2423434711091917055
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7236533788367254577}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.867508, y: 0.9740181, z: 2.1824474}
-  m_Center: {x: -0.02998352, y: -0.49894905, z: 0.027440071}
+  m_LocalEulerAnglesHint: {x: 0, y: -88.72201, z: 0}
