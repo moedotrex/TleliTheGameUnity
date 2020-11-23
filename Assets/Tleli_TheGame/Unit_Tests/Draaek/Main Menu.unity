@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -247,6 +247,7 @@ GameObject:
   - component: {fileID: 706695682}
   - component: {fileID: 706695684}
   - component: {fileID: 706695683}
+  - component: {fileID: 706695685}
   m_Layer: 5
   m_Name: '[PH]Start Menu Image'
   m_TagString: Untagged
@@ -310,6 +311,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 706695681}
   m_CullTransparentMesh: 0
+--- !u!114 &706695685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706695681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 392d97a257763da4dbdea4d50b7db4c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstGame: 0
+  screens:
+  - {fileID: 21300000, guid: 7270352ddc5a8f14e9186d32989e7781, type: 3}
+  - {fileID: 21300000, guid: 0f7005c3aba863b468e61b335aa13787, type: 3}
 --- !u!1 &775533005
 GameObject:
   m_ObjectHideFlags: 0
