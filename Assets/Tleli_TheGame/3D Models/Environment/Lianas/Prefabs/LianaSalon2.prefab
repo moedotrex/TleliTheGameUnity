@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5200722282550929109}
   - component: {fileID: 9188318273729931632}
   - component: {fileID: 6370202585482649018}
+  - component: {fileID: 4355262152728108709}
   m_Layer: 0
   m_Name: LianaSalon2
   m_TagString: Untagged
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &4355262152728108709
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4856989193296444527}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3606324013033487961, guid: c1997d3bbea6883409ebe87ace3f26f8, type: 3}

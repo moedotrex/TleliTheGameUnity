@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7982216968622305514}
   - component: {fileID: 6442772687799254863}
   - component: {fileID: 9119126060511529861}
+  - component: {fileID: 3845499183760080372}
   m_Layer: 0
   m_Name: CaveFloor_4
   m_TagString: Untagged
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &3845499183760080372
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7317602439742597712}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2192420551719900557, guid: b5b8e2f19297a464496390378127cc69, type: 3}

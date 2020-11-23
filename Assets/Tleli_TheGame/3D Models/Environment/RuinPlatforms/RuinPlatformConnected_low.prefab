@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 396711165615224282}
-  - component: {fileID: 147457468449667895}
-  - component: {fileID: 147457468449667881}
   m_Layer: 8
   m_Name: RuinPlatformConnected_low
   m_TagString: Untagged
@@ -33,33 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 82.63901, z: 0}
---- !u!64 &147457468449667895
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1065864478477610848}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
---- !u!65 &147457468449667881
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1065864478477610848}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.41, y: 0.59, z: 2.14}
-  m_Center: {x: 0, y: 0, z: -0.27}
 --- !u!1 &2280217122148995600
 GameObject:
   m_ObjectHideFlags: 0
@@ -71,6 +42,7 @@ GameObject:
   - component: {fileID: 129200775495295036}
   - component: {fileID: 256334521142676094}
   - component: {fileID: 6414415202226587902}
+  - component: {fileID: 2677617690717502967}
   m_Layer: 8
   m_Name: RuinPlatformConnected
   m_TagString: Untagged
@@ -139,3 +111,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2677617690717502967
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2280217122148995600}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -785833489295992149, guid: 74b1b1033872286458765cb39d29c69e, type: 3}

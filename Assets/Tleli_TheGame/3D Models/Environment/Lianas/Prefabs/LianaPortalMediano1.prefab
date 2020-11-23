@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1203138608544867741}
   - component: {fileID: 2818606466944002616}
   - component: {fileID: 70163049834618610}
+  - component: {fileID: 3302001990626426012}
   m_Layer: 0
   m_Name: LianaPortalMediano1
   m_TagString: Untagged
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &3302001990626426012
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015845289376595751}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6187978934654303964, guid: aaa3d536a548ac245b7af430d6536a97, type: 3}

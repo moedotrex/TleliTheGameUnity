@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1425098873207800029}
   - component: {fileID: 65942546551717405}
   - component: {fileID: 2955328891435329025}
+  - component: {fileID: 5272930208492143512}
   m_Layer: 0
   m_Name: PilarTop_low
   m_TagString: Untagged
@@ -79,6 +80,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &5272930208492143512
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482066316283267904}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.918235, y: 2.4025116, z: 5.538174}
+  m_Center: {x: 0.0000030994415, y: 20.314777, z: 0.94417757}
 --- !u!1 &4502411533309307505
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +104,7 @@ GameObject:
   - component: {fileID: 2172570934545152345}
   - component: {fileID: 6041650222262750061}
   - component: {fileID: 5246269080946820332}
+  - component: {fileID: 1617260741658180405}
   m_Layer: 0
   m_Name: PilarMid_low
   m_TagString: Untagged
@@ -158,6 +173,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1617260741658180405
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4502411533309307505}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.649818, y: 16.587978, z: 3.6498191}
+  m_Center: {x: -0.00000059604645, y: 10.819532, z: 0}
 --- !u!1 &5197778452382293322
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +197,7 @@ GameObject:
   - component: {fileID: 4737405823408676661}
   - component: {fileID: 5828876869337500216}
   - component: {fileID: 5191332902109582574}
+  - component: {fileID: 4989390992392964088}
   m_Layer: 0
   m_Name: PilarBase_low
   m_TagString: Untagged
@@ -237,6 +266,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &4989390992392964088
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197778452382293322}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6746210355440894454, guid: 76a20ee33ff77b44cb87ae7c9cf6257f, type: 3}
 --- !u!1 &7807279270622684638
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,7 +289,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7427235737571704676}
-  - component: {fileID: 7586614708312830515}
   m_Layer: 0
   m_Name: PilarCompleto_low
   m_TagString: Untagged
@@ -271,16 +313,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7586614708312830515
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7807279270622684638}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.36, y: 21.61, z: 4.14}
-  m_Center: {x: 0, y: 10.74, z: 0.21}
