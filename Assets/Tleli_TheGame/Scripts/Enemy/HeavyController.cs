@@ -6,7 +6,7 @@ using UnityEngine.AI;
 using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 
-public class EnemyController : MonoBehaviour
+public class HeavyController : MonoBehaviour
 {
     public float velRotacion = 20f;
     float BuscarRadio;
@@ -17,18 +17,20 @@ public class EnemyController : MonoBehaviour
     Vector3 kbDirection;
     public Vector3 EnemySpawn;
 
-    
+
 
     Transform target;
     NavMeshAgent navAgent;
     TlelliFlameHealth flama;
-    EnemyAttack enemyStagger;
-    
+    HeavyAttack enemyStagger;
+
     public bool isAttacking;
 
     MusicaDinamica activa;
     bool knockback;
     float knockbackForce;
+
+    bool jumping;
 
 
     void Start()
@@ -39,15 +41,20 @@ public class EnemyController : MonoBehaviour
         EnemySpawn = this.transform.position;
         flama = GameObject.FindGameObjectWithTag("Player").GetComponent<TlelliFlameHealth>();
         navAgent = GetComponent<NavMeshAgent>();
-        enemyStagger = GetComponent<EnemyAttack>();
-        navAgent.speed = movSpeed;
+        enemyStagger = GetComponent<HeavyAttack>();
+        navAgent.speed = movSpeed; 
     }
 
     private void FixedUpdate()
     {
-        if (knockback) 
-        { 
-            navAgent.velocity = kbDirection * 3.5f;
+        if (knockback)
+        {
+            navAgent.velocity = kbDirection * 2f;
+        }
+
+        if (jumping)
+        {
+            navAgent.velocity = kbDirection * -2f;
         }
     }
 
@@ -55,23 +62,23 @@ public class EnemyController : MonoBehaviour
     {
         float distance = Vector3.Distance(target.position, transform.position);
 
-            if (distance <= BuscarRadio)
-            {
+        if (distance <= BuscarRadio)
+        {
             navAgent.SetDestination(target.position);
-                BuscarRadio = radioGrande;
-                isAttacking = true;
+            BuscarRadio = radioGrande;
+            isAttacking = true;
 
-                if (distance <= navAgent.stoppingDistance)
-                {
-                    FaceTarget();
-                }
-
-                flama.EnemyDistance(distance);
+            if (distance <= navAgent.stoppingDistance)
+            {
+                FaceTarget();
             }
 
-            if (distance >= BuscarRadio && isAttacking == true)
-            {
-             
+            flama.EnemyDistance(distance);
+        }
+
+        if (distance >= BuscarRadio && isAttacking == true)
+        {
+
             BuscarRadio = radioDef;
             stopMov(5f);
             navAgent.SetDestination(EnemySpawn);
@@ -92,35 +99,35 @@ public class EnemyController : MonoBehaviour
 
         }*/
 
-        
+
 
     }
 
-        void FaceTarget()
-        {
-            Vector3 direction = (target.position - transform.position).normalized;
-            Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * velRotacion);
-        }
+    void FaceTarget()
+    {
+        Vector3 direction = (target.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * velRotacion);
+    }
 
-        private void OnDrawGizmosSelected()
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position, BuscarRadio);
-        }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, BuscarRadio);
+    }
 
-        public void stopMov(float time)
-        {
-            StartCoroutine(stopMovCoroutine(time));
-        }
+    public void stopMov(float time)
+    {
+        StartCoroutine(stopMovCoroutine(time));
+    }
 
-        IEnumerator stopMovCoroutine(float time)
-        {
+    IEnumerator stopMovCoroutine(float time)
+    {
         navAgent.speed = 0f;
-            yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(time);
         navAgent.speed = movSpeed;
 
-        }
+    }
 
     public void slowMov(float time)
     {
@@ -145,21 +152,39 @@ public class EnemyController : MonoBehaviour
     {
         knockback = true;
         enemyStagger.isDisplaced = true;
-            navAgent.speed = 10;
-            navAgent.angularSpeed = 0;
-            navAgent.acceleration = 0;
-            velRotacion = 0f;
+        navAgent.speed = 10;
+        navAgent.angularSpeed = 0;
+        navAgent.acceleration = 0;
+        velRotacion = 0f;
 
-            yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.2f);
 
         knockback = false;
         enemyStagger.isDisplaced = false;
         navAgent.speed = movSpeed;
-            navAgent.angularSpeed = 120f;
-            navAgent.acceleration = 8f;
-            velRotacion = 20f;
+        navAgent.angularSpeed = 120f;
+        navAgent.acceleration = 8f;
+        velRotacion = 20f;
     }
 
+    IEnumerator JumpAtack()
+    {
+        jumping= true;
+        enemyStagger.isDisplaced = true;
+        navAgent.speed = 10;
+        navAgent.angularSpeed = 0;
+        navAgent.acceleration = 0;
+        velRotacion = 0f;
+
+        yield return new WaitForSeconds(0.2f);
+
+        jumping= false;
+        enemyStagger.isDisplaced = false;
+        navAgent.speed = movSpeed;
+        navAgent.angularSpeed = 120f;
+        navAgent.acceleration = 8f;
+        velRotacion = 20f;
+    }
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("AOE_Slow"))

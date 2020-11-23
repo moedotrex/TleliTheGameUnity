@@ -6,14 +6,15 @@ public class TransporterStaticEnemy : MonoBehaviour
 {
     public float posX;
     public float posZ;
+    public bool atackDistance = true;
 
     public float timeTransport;
     public void transport()
     {
+        atackDistance = false;
              stopMov();
             
-            //timeTransport = 10f;
-        //}
+           
     }
 
     public void stopMov()
@@ -23,9 +24,9 @@ public class TransporterStaticEnemy : MonoBehaviour
 
     IEnumerator stopMovCoroutine()
     {
-        
-        yield return new WaitForSeconds(3f);
-        transform.position = new Vector3(Random.Range(-posX, posX), transform.position.y, Random.Range(-posZ, posZ));
 
+        yield return new WaitForSeconds(timeTransport);
+        transform.position = new Vector3(Random.Range(-posX, posX), transform.position.y, Random.Range(-posZ, posZ));
+        atackDistance = true;
     }
 }

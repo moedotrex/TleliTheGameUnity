@@ -10,7 +10,7 @@ public class tleliKnockBack : MonoBehaviour
     Vector3 moveDir;
 
     public float knockBackTime;
-    public float knockBackForce;
+    
 
 
     void Start()
@@ -18,18 +18,18 @@ public class tleliKnockBack : MonoBehaviour
         moveScript = GetComponent<PlayerController>();
     }
 
-    public void startKnockBack()
+    public void startKnockBack(float force)
     {
-        StartCoroutine(knockBack());
+        StartCoroutine(knockBack(force));
     }
 
-    IEnumerator knockBack()
+    IEnumerator knockBack(float force)
     {
         float startTime = Time.time;
         while (Time.time < startTime + knockBackTime)
         {
             moveDir = Quaternion.Euler(0f, transform.eulerAngles.y, 0f) * Vector3.forward * -1f;
-            moveScript.characterController.Move(moveDir * knockBackForce * Time.deltaTime);
+            moveScript.characterController.Move(moveDir * force * Time.deltaTime);
             moveScript.isDisplaced = true;
             yield return null;
             moveScript.isDisplaced = false;

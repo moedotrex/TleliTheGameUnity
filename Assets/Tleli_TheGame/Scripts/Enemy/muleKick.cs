@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAttack : MonoBehaviour
+public class muleKick : MonoBehaviour
 {
     public float timeBetweenAttacks = 3f;
     public float attackDamage = 1;
     public float attackDamageSlam = 1;
     public float KBforce;
+    public float beforeKickTime;
 
     GameObject player;
     TlelliFlameHealth TlelliHealth;
@@ -36,25 +37,28 @@ public class EnemyAttack : MonoBehaviour
         timer += Time.deltaTime;
 
 
-        if (timer >= timeBetweenAttacks && playerInRange)
-
+        if (playerInRange)
+        {
+            waitKick();
             if (timer >= timeBetweenAttacks && playerInRange && isDisplaced == false)
 
             {
+               
                 Attack();
 
             }
 
-
+        }
     }
 
 
     void Attack()
     {
         timer = 0f;
-
-        if (TlelliHealth.HP > 0)
+        
+        if (TlelliHealth.HP > 0 && playerInRange)
         {
+            
             TlelliHealth.SetHPDamage(attackDamage);
             playerKnockback.startKnockBack(KBforce);
         }
@@ -84,4 +88,12 @@ public class EnemyAttack : MonoBehaviour
         }
     }
 
+    IEnumerator waitKick()
+    {
+        
+
+        yield return new WaitForSeconds(beforeKickTime);
+
+        
+    }
 }
