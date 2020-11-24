@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{9f29e339-c822-4486-a408-4d3d610eb358}">
 		<property name="name">
 			<value>Land</value>
@@ -86,9 +86,9 @@
 	</object>
 	<object class="Timeline" id="{34725748-ffaa-4ba3-8a92-d857ec7aa75c}">
 		<relationship name="modules">
-			<destination>{d4c9cda2-0b74-4862-863c-809abb6229f1}</destination>
-			<destination>{792c9274-0c44-4e70-86fb-1244d19b80ad}</destination>
 			<destination>{00bb450a-e84d-412e-80c6-017d8817c777}</destination>
+			<destination>{792c9274-0c44-4e70-86fb-1244d19b80ad}</destination>
+			<destination>{d4c9cda2-0b74-4862-863c-809abb6229f1}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{d2b52088-1453-4ff0-85eb-f52284a1bbc7}">

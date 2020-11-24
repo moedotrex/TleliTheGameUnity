@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{487928f5-7f31-4568-897e-0da929ce0344}">
 		<property name="name">
 			<value>Wallbreack</value>
@@ -31,9 +31,6 @@
 		</relationship>
 		<relationship name="timeline">
 			<destination>{fb6e18ab-9036-4389-bbc1-903b1f20d3ae}</destination>
-		</relationship>
-		<relationship name="banks">
-			<destination>{984c04bc-e8c6-4031-87ac-84f4d8cb6f38}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{606734a1-e764-4d57-838e-352c9e5b1420}">
