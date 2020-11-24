@@ -94,19 +94,10 @@ public class TleliHealth : MonoBehaviour
 
     public void HurtFlame(float dmg)
     {
-        if (invincibilityFrames.isDisplaced == false)
-        {
-
-            if (invincibilityCounter <= 0)
-            {
-                invincibilityCounter = invincibilityLenght;
-                flame -= dmg;
-                tleliAnimationController.IsHitTrigger();
-            }
-        }
+        flame -= dmg;
     }
 
-
+    
     public void SetHPDamage(float attackStrength)
     {
         if (invincibilityFrames.isDisplaced == false) {

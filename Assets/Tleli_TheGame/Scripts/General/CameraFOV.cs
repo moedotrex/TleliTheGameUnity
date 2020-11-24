@@ -22,7 +22,7 @@ public class CameraFOV : MonoBehaviour
     
     void Update()
     {
-        //print(tlelliFlameHealth.isBattling);
+        print(tlelliFlameHealth.isBattling);
         switch (tlelliFlameHealth.isBattling)
         {
             case true:

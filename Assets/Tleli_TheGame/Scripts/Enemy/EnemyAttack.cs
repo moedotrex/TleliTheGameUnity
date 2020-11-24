@@ -6,11 +6,13 @@ public class EnemyAttack : MonoBehaviour
 {
     public float timeBetweenAttacks = 3f;
     public float attackDamage = 1;
+    public float attackDamageSlam = 1;
+    public float KBforce;
 
     GameObject player;
-    // TlelliFlameHealth TlelliHealth;
-    TleliHealth TlelliHealth;
+    TlelliFlameHealth TlelliHealth;
     tleliKnockBack playerKnockback;
+
     bool playerInRange;
     float timer;
     public bool isDisplaced;
@@ -19,11 +21,13 @@ public class EnemyAttack : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        TlelliHealth = player.GetComponent<TlelliFlameHealth>();
 
-        // TlelliHealth = player.GetComponent<TlelliFlameHealth>();
-        TlelliHealth = player.GetComponent<TleliHealth>();
+        //playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+        //slamLand = new Vector3(playerPos.position.x, playerPos.position.y, playerPos.position.z);
 
         playerKnockback = player.GetComponent<tleliKnockBack>();
+
     }
 
 
@@ -31,10 +35,17 @@ public class EnemyAttack : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= timeBetweenAttacks && playerInRange && isDisplaced == false)
-        {
-            Attack();
-        }
+
+        if (timer >= timeBetweenAttacks && playerInRange)
+
+            if (timer >= timeBetweenAttacks && playerInRange && isDisplaced == false)
+
+            {
+                Attack();
+
+            }
+
+
     }
 
 
@@ -42,22 +53,18 @@ public class EnemyAttack : MonoBehaviour
     {
         timer = 0f;
 
-        if (TlelliHealth.flame > 0)
+        if (TlelliHealth.HP > 0)
         {
-            TlelliHealth.HurtFlame(attackDamage);
-            playerKnockback.startKnockBack(5f);
+            TlelliHealth.SetHPDamage(attackDamage);
+            playerKnockback.startKnockBack(KBforce);
         }
-
-        if (TlelliHealth.flame <= 0)
-        {
-            TlelliHealth.SetHPDamage(1);
-        }
-
         /* if (TlelliHealth.HP < 0)
          {
         Poner una barrera para que deje de atacar
          }*/
     }
+
+
 
     //¿jugador en rango de ataque?
     void OnTriggerEnter(Collider other)
@@ -76,4 +83,5 @@ public class EnemyAttack : MonoBehaviour
             playerInRange = false;
         }
     }
+
 }
