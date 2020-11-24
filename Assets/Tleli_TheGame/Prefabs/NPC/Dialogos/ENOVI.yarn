@@ -1,0 +1,116 @@
+﻿title: ENOVI.start
+tags:
+---
+<<if $die is false>>
+And what are you looking at?
+[[Nothing|ENOVI.uno]]
+[[Why the aggression?|ENOVI.dos]]
+<<else>>
+[[ENOVI.Jealous]]
+<<endif>>
+===
+
+title: ENOVI.uno
+tags:
+---
+Thats what I thought.
+<<set $die to false>>
+===
+
+title: ENOVI.dos
+tags:
+---
+I heard you’re attempting to open the big gate, huh? Good luck with that
+[[Word Travels fast|ENOVI.tre]]
+[[I am|ENOVI.cuat]]
+<<set $die to false>>
+===
+
+title: ENOVI.tre
+tags:
+---
+I mean, we will all know if you enter for that door in the middle.
+[[I see|ENOVI.qinq]]
+<<set $die to false>>
+===
+
+title: ENOVI.cuat
+tags:
+---
+Ha! And how does a silly little girl like you expect to do that? You have no idea what awaits you behind those doors
+[[What do you mean?|ENOVI.zeiz]]
+<<set $die to false>>
+===
+
+title: ENOVI.qinq
+tags:
+---
+So, are you going?
+[[Thats the plan|ENOVI.cuat]]
+[[You're not?|ENOVI.sept1]]
+<<set $die to false>>
+===
+
+title: ENOVI.sept1
+tags:
+---
+I'm not stupid enough to go out there, besides, you wont make it past the ruins thats for sure.
+[[We will see|ENOVI.sept]]
+<<set $die to false>>
+===
+
+title: ENOVI.zeiz
+tags:
+---
+Don’t you think we’ve all tried? The keys have been long lost in those old ruins. If you enter, you’d be dead faster than me saying, “Upi!” 
+[[Well I wont know unless I try|ENOVI.oct]]
+[[Well, somebody has to get the job done|ENOVI.sept]]
+<<set $die to false>>
+===
+
+title: ENOVI.sept
+tags:
+---
+Hmp....
+<<set $die to true>>
+===
+
+title: ENOVI.oct
+tags:
+---
+It’s not like you’d have a chance anyways.
+[[We will see|ENOVI.nov]]
+[[I dont know yet|ENOVI.dec]]
+<<set $die to false>>
+===
+
+title: ENOVI.nov
+tags:
+---
+Ugh… bye!
+<<set $die to true>>
+===
+
+title: ENOVI.dec
+tags:
+---
+Thought so.
+<<set $die to true>>
+===
+
+
+title: ENOVI.Jealous
+tags:
+---
+What now?
+[[What do youdo around here?|ENOVI.Jealous1]]
+[[See you|ENOVI.nov]]
+<<set $die to true>>
+===
+
+title: ENOVI.Jealous1
+tags:
+---
+None of your buisness.
+
+===

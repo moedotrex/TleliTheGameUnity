@@ -1,0 +1,66 @@
+﻿title: TASI-QUEST1
+tags:
+---
+<<if $die is false>>
+Elige tu destuno o muere por siempre, Elige:
+[[ULTIMATE DEATH |Intento_2.dos]]
+[[Nah quiero vivir|Intento_2.tres ]]
+<<else>>
+[[Muerte.continuacion]]
+<<endif>>
+
+===
+
+title: Intento_2.dos
+tags:
+---
+SO YOU HAVE COOOOSEN DEATH
+<<set $die to true>>
+===
+
+title: Intento_2.tres
+tags:
+---
+Ah, bueno entonces continuemos, que hacemos?
+[[Vamos por tacos?| Intento_2.cuatro]]
+[[Adios| Intento_2.zinq]]
+<<set $die to false>>
+===
+
+title: Intento_2.cuatro
+tags:
+---
+Claro!!
+<<set $die to false>>
+===
+
+title: Intento_2.zinq
+tags:
+---
+Bye Bye!
+<<set $die to false>>
+===
+
+title: Muerte.continuacion
+tags:
+---
+Welcome to hell....will you take the job?
+<<set $numJUEGO to 0>>
+[[Play |Muerte.play]]
+[[Take it|Muerte.work]]
+
+===
+
+title: Muerte.play
+tags:
+---
+<<set $numJUEGO to $numJUEGO + 1>>
+supongo que vas a jugar {$numJUEGO} entonces.
+===
+
+title: Muerte.work
+tags:
+---
+Vamos a trabajar.
+<<AceptarMisionUno GameManager>>
+===
