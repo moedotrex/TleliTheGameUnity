@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.00.00">
+<objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{63e47bc3-a94c-4796-b4fa-ed22f10a6de1}">
 		<property name="name">
 			<value>Jump</value>
@@ -77,8 +77,8 @@
 	</object>
 	<object class="Timeline" id="{9b2817a7-7cfd-4f6d-8586-02cc120528c6}">
 		<relationship name="modules">
-			<destination>{838c1b77-d194-4f6c-9449-55d0c3def3f7}</destination>
 			<destination>{8a0ec1d2-1497-4a00-a902-80eba9632e5e}</destination>
+			<destination>{838c1b77-d194-4f6c-9449-55d0c3def3f7}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{147a0fc2-c6b4-45fa-8903-df8905ce653f}">
