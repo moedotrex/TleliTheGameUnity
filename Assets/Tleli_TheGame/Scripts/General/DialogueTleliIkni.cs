@@ -64,6 +64,14 @@ public class DialogueTleliIkni : MonoBehaviour
                     thisCollider.enabled = false;
                     changeDialogue();
                     break;
+                case "Event_FindIkni":
+                    thisCollider.enabled = false;
+                    changeDialogue();
+                    break;
+                case "Dialogue-EndCave":
+                    thisCollider.enabled = false;
+                    changeDialogue();
+                    break;
             }
 
         }
