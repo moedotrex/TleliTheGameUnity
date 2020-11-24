@@ -9,19 +9,17 @@ public class GameEvent : MonoBehaviour
 {
     public string eventName;
     public Text taskText;
-    int llaves=0;
+    int llaves = 0;
     public GameObject ikniFollow;
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     void OnTriggerEnter(Collider other)
@@ -31,6 +29,11 @@ public class GameEvent : MonoBehaviour
             Collider thisCollider = this.GetComponent<Collider>();
             switch (this.eventName)
             {
+                case "TleliIntro":
+                    ikniFollow.SetActive(true);
+                    taskText.text = "Go into the cave and find Ikni";
+                    thisCollider.enabled = false;
+                    break;
                 case "FindIkni":
                     ikniFollow.SetActive(true);
                     taskText.text = "Investigate the glowing weapon";
@@ -89,13 +92,13 @@ public class GameEvent : MonoBehaviour
     }
 
     void OnTriggerExit(Collider other)
+{
+    if (other.CompareTag("Player"))
     {
-        if (other.CompareTag("Player"))
+        if (this.eventName == "GetKeys" && llaves < 2)
         {
-            if (this.eventName == "GetKeys" && llaves<2)
-            {
-                taskText.text = "Go to the temple ruins past the mushrooms";
-            }
+            taskText.text = "Go to the temple ruins past the mushrooms";
         }
     }
+}
 }
