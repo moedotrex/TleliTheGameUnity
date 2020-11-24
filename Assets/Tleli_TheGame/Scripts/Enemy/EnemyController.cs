@@ -58,6 +58,13 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
+
+        if (Input.GetKeyDown("x"))
+      {
+            StartCoroutine(slowMovCoroutine(5f));
+            Debug.Log("slowed");
+      }
+
         float distance = Vector3.Distance(target.position, transform.position);
 
             if (distance <= BuscarRadio)
@@ -151,7 +158,6 @@ public class EnemyController : MonoBehaviour
         navAgent.speed = movSpeed * 0.75f;
         yield return new WaitForSeconds(time);
         navAgent.speed = movSpeed;
-
     }
 
     IEnumerator KnockBack()
@@ -173,9 +179,9 @@ public class EnemyController : MonoBehaviour
             velRotacion = 20f;
     }
 
-    public void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("AOE_Slow"))
+        if (other.CompareTag("AOE_Slow"))
         {
             slowMov(5f);
             Debug.Log("slowed");

@@ -154,6 +154,7 @@ public class LightCombo : MonoBehaviour
             {
                 enemy.HurtEnemy(currentDamage);
                 mov.StartKnockBack();
+                mov.stopMov(1f);
             }
         }
     }

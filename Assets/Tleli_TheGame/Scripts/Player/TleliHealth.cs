@@ -18,7 +18,7 @@ public class TleliHealth : MonoBehaviour
     [HideInInspector] public float flame;
     float flameIntensity;
       
-    public float attack;      
+    //public float attack;      
     public float flameDamage;
 
     public bool isBattling; //Added by Emil. Needed to zoom out camera when in battle.
