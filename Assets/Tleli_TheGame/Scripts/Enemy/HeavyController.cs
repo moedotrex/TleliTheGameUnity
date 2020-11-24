@@ -32,9 +32,13 @@ public class HeavyController : MonoBehaviour
 
     bool jumping;
 
+    Animator animator;
+    HeavyBoiAnimationController heavyBoiAnimationController; //moe
 
     void Start()
     {
+        heavyBoiAnimationController = GetComponentInChildren<HeavyBoiAnimationController>(); //moe
+
         target = PlayerManager.instance.player.transform;
         BuscarRadio = radioDef;
         radioGrande = BuscarRadio * 1.5f;
@@ -64,6 +68,8 @@ public class HeavyController : MonoBehaviour
 
         if (distance <= BuscarRadio)
         {
+            animator.SetBool("IsWalking", true); //moe
+
             navAgent.SetDestination(target.position);
             BuscarRadio = radioGrande;
             isAttacking = true;
