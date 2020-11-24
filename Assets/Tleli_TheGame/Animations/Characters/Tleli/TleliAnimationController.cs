@@ -45,10 +45,9 @@ public class TleliAnimationController : MonoBehaviour
         tleliAnimator.SetTrigger("IsHit");
     }
 
-    public void IsDeadTrigger()
+    public void IsDeadBool(bool isDead)
     {
-        
-        tleliAnimator.SetTrigger("Death");
+           tleliAnimator.SetBool("isDead", isDead);
     }
     public void DashTrigger()
     {

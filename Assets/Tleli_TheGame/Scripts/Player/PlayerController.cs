@@ -39,10 +39,12 @@ public class PlayerController : MonoBehaviour
 	PlayerDash dashCount;
 	
 	TleliAnimationController tleliAnimationController;
+	TleliDeath tleliDeath;
 
 	void Start()
 	{
 		characterController = GetComponent<CharacterController>();
+		tleliDeath = GetComponent<TleliDeath>();
 		tleliAnimationController = GetComponentInChildren<TleliAnimationController>();
 		dashCount = GetComponent<PlayerDash>();
 		extraJumps = extraJumpsValue;
@@ -70,6 +72,8 @@ public class PlayerController : MonoBehaviour
 			velocidad.y += gravedad * Time.deltaTime;
 
 		//salto
+		if(!tleliDeath.isDead)// Stop actions when Tleli is Dead. By Emil.
+		{ 
 		if (Input.GetButtonDown("Jump") && isGrounded)
 		{
 			GetComponent<FMODUnity.StudioEventEmitter>().Play();
@@ -139,8 +143,8 @@ public class PlayerController : MonoBehaviour
 		{
 			velBase = velMax;
 		}
-
-		if (isGrounded == true) //regresa a tierra
+			}
+			if (isGrounded == true) //regresa a tierra
 		{
 			velBase = velInicial;
 			Salto = saltoInicial;
@@ -153,6 +157,8 @@ public class PlayerController : MonoBehaviour
 		}
 
 		vel = velBase;
+		if(!tleliDeath.isDead)// Stop actions when Tleli is Dead. By Emil.
+			{ 
 		if (direction.magnitude >= 0.1f)
 		{
 			float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
@@ -175,7 +181,7 @@ public class PlayerController : MonoBehaviour
 			tleliAnimationController.SetForwardSpeedParameter(0f);
 			}
 		}
-
+		}
 		if (velocidad.y<0)
         {
 			tleliAnimationController.JumpFallLoopBoolParameter(false);

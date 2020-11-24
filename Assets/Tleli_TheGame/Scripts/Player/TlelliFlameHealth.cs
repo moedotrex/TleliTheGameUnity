@@ -15,7 +15,7 @@ public class TlelliFlameHealth : MonoBehaviour
     float flameMinIntensity = 35;
 
     public float HP;
-    float flame;
+    public float flame;
     float flameIntensity;
       
     public float attack;      
@@ -125,7 +125,7 @@ public class TlelliFlameHealth : MonoBehaviour
 
 
                 SendHurt.playerisHurt = true;
-               
+                
 
                 HP -= damage;
 
@@ -135,10 +135,10 @@ public class TlelliFlameHealth : MonoBehaviour
                 if (HP < 0)
             {
                 HP = 0;
-                tleliAnimationController.IsDeadTrigger();
-            }
+                    //tleliAnimationController.IsDeadTrigger(); This Trigger is now a Bool and it's controlled from the TleliDeath script. Changed by Emil.
+                }
 
-        Text damageTxt = GameObject.Find("ShowDamage").GetComponent<Text>();
+                Text damageTxt = GameObject.Find("ShowDamage").GetComponent<Text>();
         damageTxt.text = "- " + damage;
         }
         }
@@ -197,7 +197,7 @@ public class TlelliFlameHealth : MonoBehaviour
       {
           if (HP <= 0)
           {
-              tleliAnimationController.IsDeadTrigger();
+              //tleliAnimationController.IsDeadTrigger(); Wasn't used. This Trigger is now a Bool and it's controlled from the TleliDeath script. Changed by Emil.
           }
       }
 
