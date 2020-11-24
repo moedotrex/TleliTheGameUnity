@@ -2,65 +2,54 @@
 tags:
 ---
 <<if $die is false>>
-Elige tu destuno o muere por siempre, Elige:
-[[ULTIMATE DEATH |Intento_2.dos]]
-[[Nah quiero vivir|Intento_2.tres ]]
+Hey you! You look like someone who cares for others, since you are traveling with a youngling. You got a minute to help me out?
+[[Sorry, Im a little busy at the moment.  |TASI-QUEST2]]
+[[Sure, what seems to be the problem? |TASI-QUEST3]]
+[[Upis?  The creatures wondering around? |TASI-QUEST4]]
 <<else>>
-[[Muerte.continuacion]]
+[[TASI-IDLE]]
 <<endif>>
 
 ===
 
-title: Intento_2.dos
+title: TASI-QUEST2
 tags:
 ---
-SO YOU HAVE COOOOSEN DEATH
+Oh man, thanks for your time anyways.
+<<set $die to false>>
+===
+
+title: TASI-QUEST3
+tags:
+---
+I was wondering around with the Upis until we heard this loud rumble, much louder than the usual monsters that are around, it might be the Henchmen…. rumor has ir hes been corrupted…..I got scared so I hid, but when I came back up the Upis where gone. I think they got scared and ran away….. will you help me find them? 
+[[I till help you out, don’t worry. |TASI-QUEST5]]
+[[I dont think I have the time, Im sorry.|TASI-QUEST2]]
+<<set $die to false>>
+===
+
+title: TASI-QUEST4
+tags:
+---
+Yes! Upis are the wonderful small beings native from The Deep, they don’t hurt anybody, but right now I’m worried some of them might be in danger.
+[[That can’t be good, what hapened?|TASI-QUEST3]]
+<<set $die to false>>
+===
+
+title: TASI-QUEST5
+tags:
+---
+Thank you so much!!
+<<AceptarMisionUno GameManager>>
 <<set $die to true>>
 ===
 
-title: Intento_2.tres
+title: TASI-IDLE
 tags:
 ---
-Ah, bueno entonces continuemos, que hacemos?
-[[Vamos por tacos?| Intento_2.cuatro]]
-[[Adios| Intento_2.zinq]]
-<<set $die to false>>
-===
+You have such beautiful hair! Very vibrant
+Do you think the guardian is doing okay?
+I hear noises every now and then, rumbling and movement…..scary
 
-title: Intento_2.cuatro
-tags:
----
-Claro!!
-<<set $die to false>>
-===
 
-title: Intento_2.zinq
-tags:
----
-Bye Bye!
-<<set $die to false>>
-===
-
-title: Muerte.continuacion
-tags:
----
-Welcome to hell....will you take the job?
-<<set $numJUEGO to 0>>
-[[Play |Muerte.play]]
-[[Take it|Muerte.work]]
-
-===
-
-title: Muerte.play
-tags:
----
-<<set $numJUEGO to $numJUEGO + 1>>
-supongo que vas a jugar {$numJUEGO} entonces.
-===
-
-title: Muerte.work
-tags:
----
-Vamos a trabajar.
-<<AceptarMisionUno GameManager>>
 ===

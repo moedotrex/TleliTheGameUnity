@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
 
 public class LightCombo : MonoBehaviour
@@ -162,7 +161,6 @@ public class LightCombo : MonoBehaviour
             {
                 enemy.HurtEnemy(currentDamage);
                 mov.StartKnockBack();
-                mov.stopMov(1f);
             }
         }
     }

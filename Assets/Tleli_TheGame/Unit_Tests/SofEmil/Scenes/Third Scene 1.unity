@@ -732,7 +732,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 445254978}
-  m_LocalRotation: {x: 0.0872251, y: 8.438911e-12, z: -9.63799e-11, w: 0.9961887}
+  m_LocalRotation: {x: 0.0872251, y: 8.438913e-12, z: -9.63799e-11, w: 0.9961887}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1605,7 +1605,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d1728e6302d25ca45b9fc121b83a1778,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d1728e6302d25ca45b9fc121b83a1778,
         type: 3}
@@ -2232,7 +2232,7 @@ PrefabInstance:
         type: 3}
       propertyPath: yarnScripts.Array.data[0]
       value: 
-      objectReference: {fileID: 2480198943629176163, guid: cd8176dfdc1414f4986ec00c05e59cf9,
+      objectReference: {fileID: 2480198943629176163, guid: 3aaec6cf8dd37664788fa1ccfc5f85e9,
         type: 3}
     - target: {fileID: 5935829475398715329, guid: 4ec3df5875e7347beb6176b545b8fb39,
         type: 3}
@@ -2251,6 +2251,12 @@ PrefabInstance:
       propertyPath: yarnScripts.Array.data[3]
       value: 
       objectReference: {fileID: 2480198943629176163, guid: 4b924d10fb30cb54ab971800de62678b,
+        type: 3}
+    - target: {fileID: 5935829475398715329, guid: 4ec3df5875e7347beb6176b545b8fb39,
+        type: 3}
+      propertyPath: yarnScripts.Array.data[4]
+      value: 
+      objectReference: {fileID: 2480198943629176163, guid: 3aaec6cf8dd37664788fa1ccfc5f85e9,
         type: 3}
     - target: {fileID: 5935829475398715334, guid: 4ec3df5875e7347beb6176b545b8fb39,
         type: 3}
@@ -2365,7 +2371,7 @@ PrefabInstance:
     - target: {fileID: 8245181055515182852, guid: 4ec3df5875e7347beb6176b545b8fb39,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8245181055515182852, guid: 4ec3df5875e7347beb6176b545b8fb39,
         type: 3}
@@ -2539,6 +2545,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.4822886, y: 3.0806768, z: 2.3237631}
   m_Center: {x: -0.08586069, y: 1.0403383, z: -0.10369874}
+--- !u!114 &1949493891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949493887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab1787c3a51a734591213a546c5332c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 1893111446}
+  nodoDialogo: TASI-QUEST1
+  helpText: {fileID: 194772018}
+  cajaDialogue: {fileID: 1893111445}
 --- !u!1 &1974207924
 GameObject:
   m_ObjectHideFlags: 0
@@ -3600,7 +3622,7 @@ PrefabInstance:
     - target: {fileID: 2252756650566678880, guid: 675e50ed2e0aa2d4b8b98abb55ede605,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2252756650566678880, guid: 675e50ed2e0aa2d4b8b98abb55ede605,
         type: 3}
@@ -4517,7 +4539,7 @@ PrefabInstance:
     - target: {fileID: 4437541901368508757, guid: e8e5980bb3dd6504dad39e540fa04d16,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4437541901368508757, guid: e8e5980bb3dd6504dad39e540fa04d16,
         type: 3}
