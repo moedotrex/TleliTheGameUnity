@@ -1350,8 +1350,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 255845357}
-  m_LocalRotation: {x: 0.072604924, y: -0.0000000034651193, z: -0.000000011022395,
-    w: 0.9973608}
+  m_LocalRotation: {x: 0.07260493, y: 0.0000000051153752, z: -0.00000001164703, w: 0.9973608}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1904,6 +1903,7 @@ MonoBehaviour:
   velMax: 6
   velSegundoSalto: 5.5
   aceleracion: 10.5
+  velocidad: {x: 0, y: 0, z: 0}
   groundCheck: {fileID: 1791596724}
   groundDistance: 0.4
   groundMask:
@@ -1915,12 +1915,10 @@ MonoBehaviour:
   isGrounded: 0
   saltoTime: 0.25
   extraJumpsValue: 1
-  doubleJump: 0
   characterController: {fileID: 350378868}
   cam: {fileID: 1127476431}
   moveDir: {x: 0, y: 0, z: 0}
   isDisplaced: 0
-  tleliAnimationController: {fileID: 510926351865986209}
 --- !u!114 &350378871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1976,6 +1974,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 350378867}
   inputwalksound: event:/Pasos_Pasto
+  playerisHurt: 0
+  LAttack: 0
   walkingspeed: 0.3
 --- !u!114 &350378874
 MonoBehaviour:
@@ -2007,6 +2007,7 @@ MonoBehaviour:
   HP: 0
   attack: 20
   flameDamage: 10
+  isBattling: 0
   tleliAnimationController: {fileID: 510926351865986209}
 --- !u!114 &350378876
 MonoBehaviour:
@@ -2044,6 +2045,8 @@ MonoBehaviour:
     m_Bits: 512
   Damage: 3
   daggerAnim: {fileID: 7491506764540606865}
+  lunging: 0
+  gotCharged: 0
 --- !u!114 &350378878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8352,6 +8355,76 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ab20dd2c4d286e4eb230e7f279822f8, type: 3}
+--- !u!1 &1767639281
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1767639284}
+  - component: {fileID: 1767639283}
+  - component: {fileID: 1767639282}
+  m_Layer: 0
+  m_Name: MusicChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1767639282
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767639281}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.52, y: 2.29, z: 3.89}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1767639283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767639281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/OverworldMusic
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: Music
+    Value: 4
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!4 &1767639284
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767639281}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.28, y: 32.37, z: -17.98}
+  m_LocalScale: {x: 4.0257, y: 4.0257, z: 4.0257}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1791596723
 GameObject:
   m_ObjectHideFlags: 0
