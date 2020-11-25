@@ -128,6 +128,7 @@ public class HeavyAttack : MonoBehaviour
 
             if (playerInRange)
             {
+                heavyBoiAnimationController.JumpTrigger(); //moe
                 TlelliHealth.HurtFlame(attackDamage);
                 playerKnockback.startKnockBack(5f);
             }
