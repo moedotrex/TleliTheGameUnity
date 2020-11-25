@@ -21,6 +21,8 @@ public class HeavyAttack : MonoBehaviour
 
     tleliKnockBack playerKnockback;
 
+    HeavyBoiAnimationController heavyBoiAnimationController; //moe 
+
     bool playerInRange;
     float timer;
     public bool isDisplaced;
@@ -28,6 +30,8 @@ public class HeavyAttack : MonoBehaviour
 
     void Start()
     {
+        heavyBoiAnimationController = GetComponentInChildren<HeavyBoiAnimationController>(); //moe
+
         player = GameObject.FindGameObjectWithTag("Player");
         TlelliHealth = player.GetComponent<TlelliFlameHealth>();
 
@@ -83,6 +87,8 @@ public class HeavyAttack : MonoBehaviour
 
         if (TlelliHealth.HP > 0)
         {
+            heavyBoiAnimationController.LightAttackTrigger(); //moe
+
             TlelliHealth.SetHPDamage(attackDamage);
             playerKnockback.startKnockBack(5f);
         }
@@ -98,6 +104,8 @@ public class HeavyAttack : MonoBehaviour
 
         if (TlelliHealth.HP > 0)
         {
+            heavyBoiAnimationController.LightAttackTrigger(); //moe
+
             TlelliHealth.SetHPDamage(attackDamageSlam);
             playerKnockback.startKnockBack(8f);
         }

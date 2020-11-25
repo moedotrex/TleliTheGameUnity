@@ -32,7 +32,6 @@ public class HeavyController : MonoBehaviour
 
     bool jumping;
 
-    Animator animator;
     HeavyBoiAnimationController heavyBoiAnimationController; //moe
 
     void Start()
@@ -68,7 +67,8 @@ public class HeavyController : MonoBehaviour
 
         if (distance <= BuscarRadio)
         {
-            animator.SetBool("IsWalking", true); //moe
+            //animator.SetBool("IsWalking", true); //moe
+            heavyBoiAnimationController.IsWalkingBoolParameter(true); //moe
 
             navAgent.SetDestination(target.position);
             BuscarRadio = radioGrande;

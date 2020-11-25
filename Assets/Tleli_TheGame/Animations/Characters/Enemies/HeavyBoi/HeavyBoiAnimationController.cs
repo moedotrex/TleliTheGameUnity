@@ -21,4 +21,9 @@ public class HeavyBoiAnimationController : MonoBehaviour
     {
         heavyBoiAnimator.SetBool("IsWalking", IsWalking);
     }
+
+    public void LightAttackTrigger()
+    {
+        heavyBoiAnimator.SetTrigger("LightAttackTrigger");
+    }
 }
