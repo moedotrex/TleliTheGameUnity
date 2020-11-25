@@ -16,8 +16,9 @@ public class HeavyAttack : MonoBehaviour
     private Transform playerPos;
 
     GameObject player;
-    TlelliFlameHealth TlelliHealth;
- 
+    //TlelliFlameHealth TlelliHealth;
+    TleliHealth TlelliHealth;
+
 
     tleliKnockBack playerKnockback;
 
@@ -33,7 +34,8 @@ public class HeavyAttack : MonoBehaviour
         heavyBoiAnimationController = GetComponentInChildren<HeavyBoiAnimationController>(); //moe
 
         player = GameObject.FindGameObjectWithTag("Player");
-        TlelliHealth = player.GetComponent<TlelliFlameHealth>();
+        // TlelliHealth = player.GetComponent<TlelliFlameHealth>();
+        TlelliHealth = player.GetComponent<TleliHealth>();
 
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
        
@@ -46,9 +48,6 @@ public class HeavyAttack : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-
-
-        
 
             if (timer >= timeBetweenAttacks && playerInRange && isDisplaced == false )
 
@@ -65,11 +64,7 @@ public class HeavyAttack : MonoBehaviour
                 AttackSlam();
 
             }
-
-    }
-
-
-
+        }
 
         if (timer >= timeBetweenAttacks && slamCounter >= 3)
         {
@@ -89,8 +84,13 @@ public class HeavyAttack : MonoBehaviour
         {
             heavyBoiAnimationController.LightAttackTrigger(); //moe
 
-            TlelliHealth.SetHPDamage(attackDamage);
+            TlelliHealth.HurtFlame(attackDamage);
             playerKnockback.startKnockBack(5f);
+        }
+
+        if (TlelliHealth.flame <= 0)
+        {
+            TlelliHealth.SetHPDamage(1);
         }
         /* if (TlelliHealth.HP < 0)
          {
@@ -106,8 +106,13 @@ public class HeavyAttack : MonoBehaviour
         {
             heavyBoiAnimationController.LightAttackTrigger(); //moe
 
-            TlelliHealth.SetHPDamage(attackDamageSlam);
-            playerKnockback.startKnockBack(8f);
+            TlelliHealth.HurtFlame(attackDamage);
+            playerKnockback.startKnockBack(5f);
+        }
+
+        if (TlelliHealth.flame <= 0)
+        {
+            TlelliHealth.SetHPDamage(1);
         }
     }
 
@@ -123,9 +128,14 @@ public class HeavyAttack : MonoBehaviour
 
             if (playerInRange)
             {
-                TlelliHealth.SetHPDamage(attackDamageSlam);
-                playerKnockback.startKnockBack(10f);
+                TlelliHealth.HurtFlame(attackDamage);
+                playerKnockback.startKnockBack(5f);
             }
+        }
+
+        if (TlelliHealth.flame <= 0)
+        {
+            TlelliHealth.SetHPDamage(1);
         }
     }
 

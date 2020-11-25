@@ -58,7 +58,6 @@ public class EnemyHealth : MonoBehaviour
         {
             Renderer r = layer.GetComponent<Renderer>();
             r.material.color = Color.red;
-
         }
 
         yield return new WaitForSeconds(0.1f);

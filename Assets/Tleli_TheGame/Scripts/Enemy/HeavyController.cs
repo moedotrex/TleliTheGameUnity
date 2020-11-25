@@ -1,10 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.EventSystems;
-using UnityEngine.Rendering;
 
 public class HeavyController : MonoBehaviour
 {
@@ -15,13 +11,12 @@ public class HeavyController : MonoBehaviour
     public float movSpeed;
 
     Vector3 kbDirection;
-    public Vector3 EnemySpawn;
-
-
+    [HideInInspector] public Vector3 EnemySpawn;
 
     Transform target;
     NavMeshAgent navAgent;
-    TlelliFlameHealth flama;
+    //TlelliFlameHealth flama;
+    TleliHealth flama;
     HeavyAttack enemyStagger;
 
     public bool isAttacking;
@@ -31,6 +26,10 @@ public class HeavyController : MonoBehaviour
     float knockbackForce;
 
     bool jumping;
+
+    public GameObject alertIcon;
+    int alertActive;
+    float reactionTime;
 
     HeavyBoiAnimationController heavyBoiAnimationController; //moe
 
@@ -42,7 +41,8 @@ public class HeavyController : MonoBehaviour
         BuscarRadio = radioDef;
         radioGrande = BuscarRadio * 1.5f;
         EnemySpawn = this.transform.position;
-        flama = GameObject.FindGameObjectWithTag("Player").GetComponent<TlelliFlameHealth>();
+        //flama = GameObject.FindGameObjectWithTag("Player").GetComponent<TlelliFlameHealth>();
+        flama = GameObject.FindGameObjectWithTag("Player").GetComponent<TleliHealth>();
         navAgent = GetComponent<NavMeshAgent>();
         enemyStagger = GetComponent<HeavyAttack>();
         navAgent.speed = movSpeed; 
@@ -52,7 +52,7 @@ public class HeavyController : MonoBehaviour
     {
         if (knockback)
         {
-            navAgent.velocity = kbDirection * 2f;
+            navAgent.velocity = kbDirection * 10f;
         }
 
         if (jumping)
@@ -67,46 +67,45 @@ public class HeavyController : MonoBehaviour
 
         if (distance <= BuscarRadio)
         {
-            //animator.SetBool("IsWalking", true); //moe
-            heavyBoiAnimationController.IsWalkingBoolParameter(true); //moe
 
-            navAgent.SetDestination(target.position);
-            BuscarRadio = radioGrande;
-            isAttacking = true;
+            reactionTime += Time.deltaTime;
 
-            if (distance <= navAgent.stoppingDistance)
+            if (reactionTime >= 0.6f)
             {
-                FaceTarget();
-            }
+                if (alertActive < 1)
+                {
+                    Instantiate(alertIcon, transform.position, Quaternion.identity);
+                    alertActive++;
+                }
 
-            flama.EnemyDistance(distance);
+                heavyBoiAnimationController.IsWalkingBoolParameter(true); //moe
+
+                navAgent.SetDestination(target.position);
+                BuscarRadio = radioGrande;
+                isAttacking = true;
+
+                if (distance <= navAgent.stoppingDistance)
+                {
+                    FaceTarget();
+                }
+
+                flama.EnemyDistance(distance);
+                flama.BattleMode(true); //Added by Emil. Necessary for changing camera into Battle Mode.
+
+            }
         }
 
-        if (distance >= BuscarRadio && isAttacking == true)
+            if (distance >= BuscarRadio && isAttacking == true)
         {
-
+            reactionTime = 0f;
             BuscarRadio = radioDef;
             stopMov(5f);
             navAgent.SetDestination(EnemySpawn);
             isAttacking = false;
+            alertActive = 0;
+
+            flama.BattleMode(false); //Added by Emil. Necessary for changing camera into Battle Mode.
         }
-
-        /*if (isAttacking == true)
-        {
-            MusicaDinamica activa = GameObject.FindGameObjectWithTag("GameManager").GetComponent<MusicaDinamica>();
-            activa.tlelliEnCombate = true;
-            Debug.Log("true");
-        }
-       if (isAttacking == false)
-        {
-            MusicaDinamica activa = GameObject.FindGameObjectWithTag("GameManager").GetComponent<MusicaDinamica>();
-            activa.tlelliEnCombate = false;
-            Debug.Log("false");
-
-        }*/
-
-
-
     }
 
     void FaceTarget()

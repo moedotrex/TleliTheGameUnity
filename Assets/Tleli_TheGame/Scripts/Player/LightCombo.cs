@@ -132,10 +132,12 @@ public class LightCombo : MonoBehaviour
                 DestroyOnCollision wall = hit.transform.GetComponent<DestroyOnCollision>();
                 EnemyHealth enemy = hit.transform.GetComponent<EnemyHealth>();
                 EnemyController mov = hit.transform.GetComponent<EnemyController>();
+                HeavyController Hmov = hit.transform.GetComponent<HeavyController>();
                 if (enemy != null)
                 {
+                    Hmov.StartKnockBack();
                     enemy.HurtEnemy(currentDamage + 10f);
-                    mov.StartKnockBack();
+                    //mov.StartKnockBack();
                 }
                 if (wall != null)
                 {
