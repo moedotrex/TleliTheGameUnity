@@ -17,9 +17,9 @@ ScriptedImporter:
     generateAllOutputs: 1
     generateMipMaps: 1
     preset: " <sbspreset pkgurl=\"pkg://Ruins\" label=\"\" >\n  <presetinput identifier=\"$outputsize\"
-      uid=\"238264850\" type=\"8\" value=\"9,9\" />\n  <presetinput identifier=\"$randomseed\"
+      uid=\"238264850\" type=\"8\" value=\"11,11\" />\n  <presetinput identifier=\"$randomseed\"
       uid=\"1497478208\" type=\"4\" value=\"1754\" />\n  <presetinput identifier=\"tile\"
-      uid=\"1739960667\" type=\"4\" value=\"6\" />\n  <presetinput identifier=\"offset\"
+      uid=\"1739960667\" type=\"4\" value=\"9\" />\n  <presetinput identifier=\"offset\"
       uid=\"1739956392\" type=\"1\" value=\"0.26,0\" />\n  <presetinput identifier=\"aolevelsmid\"
       uid=\"1739878936\" type=\"0\" value=\"1\" />\n  <presetinput identifier=\"outputcolor\"
       uid=\"1739194889\" type=\"3\" value=\"0.286275,0.27451,0.247059,1\" />\n  <presetinput
@@ -239,8 +239,8 @@ ScriptedImporter:
     - label: Default
       bOverride: 0
       bLockRatio: 1
-      textureWidth: 512
-      textureHeight: 512
+      textureWidth: 2048
+      textureHeight: 2048
       textureFormatMode: 0
       normalCompressed: 0
       bGenerateOnLoad: 1
