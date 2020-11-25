@@ -1,10 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.EventSystems;
-using UnityEngine.Rendering;
 
 public class EnemyController : MonoBehaviour
 {
@@ -17,19 +13,21 @@ public class EnemyController : MonoBehaviour
     Vector3 kbDirection;
     public Vector3 EnemySpawn;
 
-    
-
     Transform target;
     NavMeshAgent navAgent;
-    TlelliFlameHealth flama;
+    //TlelliFlameHealth flama;
+    TleliHealth flama;
     EnemyAttack enemyStagger;
-    
+
     public bool isAttacking;
 
     MusicaDinamica activa;
     bool knockback;
     float knockbackForce;
 
+    public GameObject alertIcon;
+    int alertActive;
+    float reactionTime;
 
     void Start()
     {
@@ -37,7 +35,8 @@ public class EnemyController : MonoBehaviour
         BuscarRadio = radioDef;
         radioGrande = BuscarRadio * 1.5f;
         EnemySpawn = this.transform.position;
-        flama = GameObject.FindGameObjectWithTag("Player").GetComponent<TlelliFlameHealth>();
+        //flama = GameObject.FindGameObjectWithTag("Player").GetComponent<TlelliFlameHealth>();
+        flama = GameObject.FindGameObjectWithTag("Player").GetComponent<TleliHealth>();
         navAgent = GetComponent<NavMeshAgent>();
         enemyStagger = GetComponent<EnemyAttack>();
         navAgent.speed = movSpeed;
@@ -45,26 +44,30 @@ public class EnemyController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (knockback) 
-        { 
+        if (knockback)
+        {
             navAgent.velocity = kbDirection * 3.5f;
         }
     }
 
     void Update()
     {
-
-        if (Input.GetKeyDown("x"))
-      {
-            StartCoroutine(slowMovCoroutine(5f));
-            Debug.Log("slowed");
-      }
-
         float distance = Vector3.Distance(target.position, transform.position);
 
-            if (distance <= BuscarRadio)
+        if (distance <= BuscarRadio)
+        {
+
+            reactionTime += Time.deltaTime;
+
+            if (reactionTime >= 0.6f)
             {
-            navAgent.SetDestination(target.position);
+                if (alertActive < 1)
+                {
+                    Instantiate(alertIcon, transform.position, Quaternion.identity);
+                    alertActive++;
+                }
+
+                navAgent.SetDestination(target.position);
                 BuscarRadio = radioGrande;
                 isAttacking = true;
 
@@ -74,60 +77,47 @@ public class EnemyController : MonoBehaviour
                 }
 
                 flama.EnemyDistance(distance);
+                flama.BattleMode(true); //Added by Emil. Necessary for changing camera into Battle Mode.
             }
+        }
 
-            if (distance >= BuscarRadio && isAttacking == true)
-            {
-             
+        if (distance >= BuscarRadio && isAttacking == true)
+        {
+            reactionTime = 0f;
             BuscarRadio = radioDef;
             stopMov(5f);
             navAgent.SetDestination(EnemySpawn);
             isAttacking = false;
+            alertActive = 0;
+
+            flama.BattleMode(false); //Added by Emil. Necessary for changing camera into Battle Mode.
         }
-
-        /*if (isAttacking == true)
-        {
-            MusicaDinamica activa = GameObject.FindGameObjectWithTag("GameManager").GetComponent<MusicaDinamica>();
-            activa.tlelliEnCombate = true;
-            Debug.Log("true");
-        }
-       if (isAttacking == false)
-        {
-            MusicaDinamica activa = GameObject.FindGameObjectWithTag("GameManager").GetComponent<MusicaDinamica>();
-            activa.tlelliEnCombate = false;
-            Debug.Log("false");
-
-        }*/
-
-        
-
     }
 
-        void FaceTarget()
-        {
-            Vector3 direction = (target.position - transform.position).normalized;
-            Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * velRotacion);
-        }
+    void FaceTarget()
+    {
+        Vector3 direction = (target.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * velRotacion);
+    }
 
-        private void OnDrawGizmosSelected()
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position, BuscarRadio);
-        }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, BuscarRadio);
+    }
 
-        public void stopMov(float time)
-        {
-            StartCoroutine(stopMovCoroutine(time));
-        }
+    public void stopMov(float time)
+    {
+        StartCoroutine(stopMovCoroutine(time));
+    }
 
-        IEnumerator stopMovCoroutine(float time)
-        {
+    IEnumerator stopMovCoroutine(float time)
+    {
         navAgent.speed = 0f;
-            yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(time);
         navAgent.speed = movSpeed;
-
-        }
+    }
 
     public void slowMov(float time)
     {
@@ -151,19 +141,19 @@ public class EnemyController : MonoBehaviour
     {
         knockback = true;
         enemyStagger.isDisplaced = true;
-            navAgent.speed = 10;
-            navAgent.angularSpeed = 0;
-            navAgent.acceleration = 0;
-            velRotacion = 0f;
+        navAgent.speed = 10;
+        navAgent.angularSpeed = 0;
+        navAgent.acceleration = 0;
+        velRotacion = 0f;
 
-            yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.2f);
 
         knockback = false;
         enemyStagger.isDisplaced = false;
         navAgent.speed = movSpeed;
-            navAgent.angularSpeed = 120f;
-            navAgent.acceleration = 8f;
-            velRotacion = 20f;
+        navAgent.angularSpeed = 120f;
+        navAgent.acceleration = 8f;
+        velRotacion = 20f;
     }
 
     private void OnTriggerEnter(Collider other)

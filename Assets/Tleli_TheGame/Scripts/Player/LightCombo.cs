@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
 
 public class LightCombo : MonoBehaviour
@@ -64,17 +63,17 @@ public class LightCombo : MonoBehaviour
                 combonum++;
                 currentDamage += 2f;
                 reset = 0f;
-                
+
 
                 if (combonum == 1)   //------
                 {
-                    StartCoroutine(Slash());  
+                    StartCoroutine(Slash());
                 }
             }
 
             if (target != null)
-            { 
-            FaceTarget();
+            {
+                FaceTarget();
             }
         }
         if (combonum > 0)
@@ -103,23 +102,23 @@ public class LightCombo : MonoBehaviour
         if (gotCharged && !tleliDeath.isDead) // ya adquirio el poder? 
         {
             if (Input.GetMouseButton(0))
-        {
-            LAttackTimer += Time.deltaTime;
-        }
-        if (LAttackTimer >= LAttackTime && !Input.GetMouseButton(1) )
-        {
-            animator.SetBool("Lcharge", true);
-            moveScript.isDisplaced = true;
-            if (target != null)
             {
-                FaceTarget();
+                LAttackTimer += Time.deltaTime;
             }
-        }
-        if (Input.GetMouseButtonUp(0) || Input.GetMouseButton(1))
-        {            
-            animator.SetBool("Lcharge", false);
-            LAttackTimer = 0;
-        }
+            if (LAttackTimer >= LAttackTime && !Input.GetMouseButton(1))
+            {
+                animator.SetBool("Lcharge", true);
+                moveScript.isDisplaced = true;
+                if (target != null)
+                {
+                    FaceTarget();
+                }
+            }
+            if (Input.GetMouseButtonUp(0) || Input.GetMouseButton(1))
+            {
+                animator.SetBool("Lcharge", false);
+                LAttackTimer = 0;
+            }
         }
 
         if (lunging == true)
@@ -162,7 +161,6 @@ public class LightCombo : MonoBehaviour
             {
                 enemy.HurtEnemy(currentDamage);
                 mov.StartKnockBack();
-                mov.stopMov(1f);
             }
         }
     }
