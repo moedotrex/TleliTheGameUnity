@@ -23,7 +23,12 @@ PrefabInstance:
     - target: {fileID: 2348861504016569413, guid: 0d5cdf354a4fdd34bb6f15f172f4d9c5,
         type: 3}
       propertyPath: m_Name
-      value: GuardianLowPoly
+      value: GuardianLowPoly Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348861504016569413, guid: 0d5cdf354a4fdd34bb6f15f172f4d9c5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3157874065772842751, guid: 0d5cdf354a4fdd34bb6f15f172f4d9c5,
         type: 3}
