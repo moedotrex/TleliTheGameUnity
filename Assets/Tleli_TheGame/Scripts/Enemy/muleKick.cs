@@ -40,27 +40,24 @@ public class muleKick : MonoBehaviour
         timer += Time.deltaTime;
 
 
-        if (playerInRange)
+        if (timer >= timeBetweenAttacks && playerInRange)
+
         {
-            waitKick();
-            if (timer >= timeBetweenAttacks && playerInRange && isDisplaced == false)
 
-            {
-               
-                Attack();
-
-            }
+            Attack();
 
         }
+
     }
 
 
     void Attack()
     {
+
         timer = 0f;
-        
         if (TlelliHealth.HP > 0 && playerInRange)
         {
+            
             TlelliHealth.HurtFlame(attackDamage);
             playerKnockback.startKnockBack(KBforce);
         }
