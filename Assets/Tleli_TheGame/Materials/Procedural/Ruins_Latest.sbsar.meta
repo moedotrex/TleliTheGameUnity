@@ -19,7 +19,8 @@ ScriptedImporter:
     preset: " <sbspreset pkgurl=\"pkg://Ruins\" label=\"\" >\n  <presetinput identifier=\"$outputsize\"
       uid=\"238264850\" type=\"8\" value=\"9,9\" />\n  <presetinput identifier=\"switchNormal\"
       uid=\"1739855192\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"switchAO\"
-      uid=\"1739865834\" type=\"4\" value=\"0\" />\n </sbspreset>\n"
+      uid=\"1739865834\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"tile\"
+      uid=\"1739960667\" type=\"4\" value=\"5\" />\n </sbspreset>\n"
     shaderName: Universal Render Pipeline/Lit
     materialProperties:
       shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
