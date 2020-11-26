@@ -1522,7 +1522,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1070662667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2163,7 +2163,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1677788714}
-  m_LocalRotation: {x: 0.05098104, y: -0.000000017318266, z: 8.944468e-10, w: 0.99869967}
+  m_LocalRotation: {x: 0.05098104, y: 0.000000017317205, z: -8.7360463e-10, w: 0.99869967}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3640,7 +3640,7 @@ GameObject:
   - component: {fileID: 2138051476}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3657,9 +3657,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45204ed5d2deda4fb91c92befcd7cd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueRunner: {fileID: 0}
+  dialogueRunner: {fileID: 1893111446}
   tasiYes: 
   nodoDialogo: 
+  Upis: {fileID: 694310581}
 --- !u!4 &2138051475
 Transform:
   m_ObjectHideFlags: 0
@@ -3688,6 +3689,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextLevel: 
   objToDestroy: {fileID: 43493466}
+  UpisCount: 0
+  Gotem: 0
 --- !u!1 &2145026264
 GameObject:
   m_ObjectHideFlags: 3
