@@ -8,11 +8,14 @@ public class AceptarMision : MonoBehaviour
     public string nodoDialogo;
     CountObjects countObjects;
     public GameObject Upis;
+    bool misionUno;
+
 
     private void Start()
     {
         countObjects = GetComponent<CountObjects>();
         countObjects.enabled = false;
+        misionUno = false;
         GameObject[] collectables = GameObject.FindGameObjectsWithTag("Upis");
         foreach (GameObject o in collectables)
         {
@@ -21,15 +24,6 @@ public class AceptarMision : MonoBehaviour
         }
 
 
-    }
-
-    void Update()
-    {
-        //Mandar a llamar el dialogo 
-        if (GameObject.Find("TASI.QUEST5"))
-        {
-            dialogueRunner.StartDialogue(nodoDialogo);
-        }
     }
 
     [Yarn.Unity.YarnCommand("AceptarMisionUno")]
@@ -44,6 +38,11 @@ public class AceptarMision : MonoBehaviour
         //Upis.SetActive(true);
         countObjects.enabled = true;
         Debug.Log("Mision uno Aceptada");
+    }
+    public void CompletaMisionUno()
+    {
+        misionUno = true;
+        //dialogueRunner.StartDialogue(nodoDialogo);
     }
 
 }

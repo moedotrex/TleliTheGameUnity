@@ -10,17 +10,20 @@ public class CountObjects : MonoBehaviour
     GameObject objUI;
     public int UpisCount;
     public bool Gotem;
+    AceptarMision aceptarMision;
     // Start is called before the first frame update
     void Start()
     {
         objUI = GameObject.Find("ObjectNum");
         objUI.GetComponent<Text>().text = "All Objects Collected";
+        aceptarMision = GetComponent<AceptarMision>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        objUI.GetComponent<Text>().text = ObjectCollect.objects.ToString();
+        //objUI.GetComponent<Text>().text = ObjectCollect.objects.ToString();
+        objUI.GetComponent<Text>().text = UpisCount.ToString();
         /*if (ObjectCollect.objects == 0 )
         {
             //Application.LoadLevel("nextLevel");
@@ -33,7 +36,8 @@ public class CountObjects : MonoBehaviour
             Debug.Log("Gotem");
             Destroy(objToDestroy);
             Gotem = true;
-            objUI.GetComponent<Text>().text = "All Objects Collected";
+            aceptarMision.CompletaMisionUno();
+            objUI.GetComponent<Text>().text = "All Upis Collected";
         }
     }
 }

@@ -14,10 +14,13 @@ public class ContinueScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             dialogueUI.MarkLineComplete();
-
+        }
+        if (Input.GetKeyDown("1"))
+        {
+            dialogueUI.MarkLineComplete();
         }
     }
 }
