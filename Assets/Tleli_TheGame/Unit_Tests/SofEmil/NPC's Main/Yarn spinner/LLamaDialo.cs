@@ -65,4 +65,10 @@ public class LLamaDialo : MonoBehaviour
         talk = false;
         dialogueRunner.Stop();
     }
+
+    public void setDialogue(string newDialogue)
+    {
+        nodoDialogo = newDialogue;
+
+    }
 }

@@ -9,6 +9,7 @@ public class AceptarMision : MonoBehaviour
     CountObjects countObjects;
     public GameObject Upis;
     bool misionUno;
+    public LLamaDialo llamadialogo;
 
 
     private void Start()
@@ -42,7 +43,7 @@ public class AceptarMision : MonoBehaviour
     public void CompletaMisionUno()
     {
         misionUno = true;
-        //dialogueRunner.StartDialogue(nodoDialogo);
+        llamadialogo.setDialogue("TASI.DONE");
     }
 
 }
