@@ -28,7 +28,11 @@ public class PlayerController : MonoBehaviour
 	public float saltoTime;
 	private bool isJumping;
 
-	int extraJumps;
+    public int canMove = 0;
+    float rotacionDefault;
+
+
+    int extraJumps;
 	public int extraJumpsValue;
 
 	[HideInInspector] public CharacterController characterController;
@@ -50,11 +54,16 @@ public class PlayerController : MonoBehaviour
 		extraJumps = extraJumpsValue;
 		velInicial = velBase;
 		saltoInicial = Salto;
+
+        rotacionDefault = tempRotacion;
 	}
 
 	void Update()
 	{
-		isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        
+
+
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
 		if (isGrounded && velocidad.y < 0)
 		{
@@ -104,6 +113,7 @@ public class PlayerController : MonoBehaviour
 
 		if (Input.GetButton("Jump") && isJumping == true)
 		{
+
 			if (saltoTimeCounter > 0)
 			{
 				velocidad.y = Mathf.Sqrt(Salto * -2f * gravedad);
@@ -152,11 +162,21 @@ public class PlayerController : MonoBehaviour
 
 				if (tleliAnimationController.CheckFallLoop())
 				{
+                    canMove = 10;
 					tleliAnimationController.JumpLandTrigger();
 				}
 		}
 
-		vel = velBase;
+
+            if (canMove > 0)
+            {
+                canMove -= 1;
+                velBase = 0;
+                tempRotacion = 10;
+            }
+            else { tempRotacion = rotacionDefault; }
+
+            vel = velBase;
 		if(!tleliDeath.isDead)// Stop actions when Tleli is Dead. By Emil.
 			{ 
 		if (direction.magnitude >= 0.1f)
@@ -193,6 +213,7 @@ public class PlayerController : MonoBehaviour
 			tleliAnimationController.JumpFallLoopBoolParameter(true);
         }
 		
+        
 	}
 
 	public float GetVelocity()
