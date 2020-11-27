@@ -29,8 +29,12 @@ public class EnemyController : MonoBehaviour
     int alertActive;
     float reactionTime;
 
+    ChomperAnimationController chomperController; //Draaek
+
     void Start()
     {
+        chomperController = GetComponentInChildren<ChomperAnimationController>(); //Draaek
+
         target = PlayerManager.instance.player.transform;
         BuscarRadio = radioDef;
         radioGrande = BuscarRadio * 1.5f;
@@ -40,6 +44,7 @@ public class EnemyController : MonoBehaviour
         navAgent = GetComponent<NavMeshAgent>();
         enemyStagger = GetComponent<EnemyAttack>();
         navAgent.speed = movSpeed;
+
     }
 
     private void FixedUpdate()
@@ -68,6 +73,9 @@ public class EnemyController : MonoBehaviour
                 }
 
                 navAgent.SetDestination(target.position);
+
+                chomperController.IsWalkingBoolParameter(true); //Draaek
+
                 BuscarRadio = radioGrande;
                 isAttacking = true;
 
@@ -115,8 +123,10 @@ public class EnemyController : MonoBehaviour
     IEnumerator stopMovCoroutine(float time)
     {
         navAgent.speed = 0f;
+        chomperController.IsWalkingBoolParameter(false); //Draaek
         yield return new WaitForSeconds(time);
         navAgent.speed = movSpeed;
+        chomperController.IsWalkingBoolParameter(true); //Draaek
     }
 
     public void slowMov(float time)

@@ -16,11 +16,15 @@ public class EnemyHealth : MonoBehaviour
     public Color ogColor;
     ParticleSystem particles;
 
+    ChomperAnimationController chomperController; //Draaek
+
     void Start()
     {
         currentHealth = health;
         flama = GameObject.FindGameObjectWithTag("Player").GetComponent<TlelliFlameHealth>();
         particles = GetComponentInChildren<ParticleSystem>();
+
+        chomperController = GetComponentInChildren<ChomperAnimationController>(); //Draaek
     }
 
 
@@ -28,6 +32,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
+            chomperController.IsDeadBoolParameter(true);
             Instantiate(flameSpawner, transform.position, Quaternion.identity);
 
             if (imPoisonous)
@@ -44,6 +49,15 @@ public class EnemyHealth : MonoBehaviour
     {
         //  GameObject.Instantiate(blood, transform.position, Quaternion.identity);
 
+        if (Random.Range(0, 1) > 0.49)
+        {
+            chomperController.IsHitTrigger();
+        }
+
+        else
+        {
+            chomperController.IsHitAltTrigger();
+        }
         currentHealth -= damage;
         particles.Emit((int)currentHealth);
         // Debug.Log(transform.name + "takes" + damage + "damage.");

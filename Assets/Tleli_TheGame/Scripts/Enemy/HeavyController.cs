@@ -130,8 +130,10 @@ public class HeavyController : MonoBehaviour
     IEnumerator stopMovCoroutine(float time)
     {
         navAgent.speed = 0f;
+        heavyBoiAnimationController.IsWalkingBoolParameter(false); //Draaek
         yield return new WaitForSeconds(time);
         navAgent.speed = movSpeed;
+        heavyBoiAnimationController.IsWalkingBoolParameter(true); //Draaek
 
     }
 

@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 8ab8551116eafa64b896f1062f4d9c24
+guid: 8d087678648d3f64591241f713030652
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
-      74: -2584991093147098692
-    second: NavigationFinal
+      74: 2562888284788868603
+    second: Idle2
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: NavigationFinal
-      takeName: NavigationFinal
+      name: Idle2
+      takeName: Idle2
       internalID: 0
-      firstFrame: 405
-      lastFrame: 465
+      firstFrame: 1
+      lastFrame: 120
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -62,7 +62,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 405
+      additiveReferencePoseFrame: 1
     isReadable: 0
   meshes:
     lODScreenPercentages: []

@@ -16,9 +16,13 @@ public class EnemyAttack : MonoBehaviour
     public bool isDisplaced;
     //crear evento para detectar tiempo de anim gethit y death
 
+    ChomperAnimationController chomperController; //Draaek
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+
+        chomperController = GetComponentInChildren<ChomperAnimationController>(); //Draaek
 
         // TlelliHealth = player.GetComponent<TlelliFlameHealth>();
         TlelliHealth = player.GetComponent<TleliHealth>();
@@ -44,6 +48,7 @@ public class EnemyAttack : MonoBehaviour
 
         if (TlelliHealth.flame > 0)
         {
+            chomperController.LightAtkTrigger(); //Draaek
             TlelliHealth.HurtFlame(attackDamage);
             playerKnockback.startKnockBack(5f);
         }
