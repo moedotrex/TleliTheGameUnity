@@ -8,8 +8,6 @@ public class PlayerDash : MonoBehaviour
     PlayerController moveScript;
     TleliDeath tleliDeath;
 
-    public PlayerController Tleli;
-
     public float dashSpeed;
     public float dashTime;
     public float dashCooldown;
@@ -37,7 +35,6 @@ public class PlayerDash : MonoBehaviour
         { 
         if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownTime <= 0 && !tleliDeath.isDead)
         {
-                Tleli.canMove = 30;
                 animator.SetTrigger("DashPress");
                 StartCoroutine(Dash());
             dashCooldownTime = dashCooldown;               
