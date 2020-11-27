@@ -1,0 +1,681 @@
+fileFormatVersion: 2
+guid: 3dfd71a06ebe79f449503f9d24633a96
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      74: -4102744836010665959
+    second: IdleTest
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'IdleTest' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Tasi_RIG:QuickRigCharacter1_LeftLeg' has
+      translation animation that will be discarded.\n\t'Tasi_RIG:QuickRigCharacter1_LeftForeArm'
+      has translation animation that will be discarded.\n\t'Tasi_RIG:QuickRigCharacter1_RightForeArm'
+      has translation animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: IdleTest
+      takeName: IdleTest
+      internalID: 0
+      firstFrame: 1
+      lastFrame: 160
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: Tasi_RIG:QuickRigCharacter1_Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tasi_RIG:QuickRigCharacter1_LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tasi_RIG:QuickRigCharacter1_RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tasi_RIG:QuickRigCharacter1_LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tasi_RIG:QuickRigCharacter1_RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tasi_RIG:QuickRigCharacter1_LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tasi_RIG:QuickRigCharacter1_RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tasi_RIG:QuickRigCharacter1_Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tasi_RIG:QuickRigCharacter1_Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tasi_RIG:QuickRigCharacter1_Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tasi_RIG:QuickRigCharacter1_Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tasi_RIG:QuickRigCharacter1_LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tasi_RIG:QuickRigCharacter1_RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tasi_RIG:QuickRigCharacter1_LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tasi_RIG:QuickRigCharacter1_RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tasi_RIG:QuickRigCharacter1_LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tasi_RIG:QuickRigCharacter1_RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tasi_RIG:QuickRigCharacter1_LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tasi_RIG:QuickRigCharacter1_RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tasi_RIG:QuickRigCharacter1_LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tasi_RIG:QuickRigCharacter1_RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tasi_RIG:QuickRigCharacter1_Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Tasi(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:LOW
+      parentName: Tasi(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:HANDFUR_low
+      parentName: Tasi_RIG:LOW
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0785534, y: 1.0785534, z: 1.0785534}
+    - name: Tasi_RIG:HORNS_low
+      parentName: Tasi_RIG:LOW
+      position: {x: -1.3716389, y: -76.72269, z: 8.72253}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 86.28125, y: 86.28125, z: 86.28125}
+    - name: Tasi_RIG:BOD_low
+      parentName: Tasi_RIG:LOW
+      position: {x: -0.016081523, y: 1.1239362, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 85.28334, y: 85.28334, z: 85.28334}
+    - name: Tasi_RIG:FACE_low
+      parentName: Tasi_RIG:LOW
+      position: {x: -1.0878277, y: -51.13077, z: 1.30454}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 86.28125, y: 86.28125, z: 86.28125}
+    - name: Tasi_RIG:CHEST_low
+      parentName: Tasi_RIG:LOW
+      position: {x: -0.0024306625, y: 1.1390212, z: -0.009420176}
+      rotation: {x: 0, y: -0, z: -0.0045210165, w: 0.9999898}
+      scale: {x: 86.2314, y: 83.60003, z: 83.60003}
+    - name: Tasi_RIG:PANTS_low
+      parentName: Tasi_RIG:LOW
+      position: {x: -1.6938102, y: 53.748714, z: 4.4819436}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 87.16588, y: 87.16588, z: 96.98521}
+    - name: Tasi_RIG:EARING_low
+      parentName: Tasi_RIG:LOW
+      position: {x: -0.016081523, y: 1.1239362, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 86.28125, y: 86.28125, z: 86.28125}
+    - name: Tasi_RIG:EyeCylinder_low
+      parentName: Tasi_RIG:LOW
+      position: {x: 0.0014248216, y: 0, z: 0.00855776}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Reference
+      parentName: Tasi(Clone)
+      position: {x: -0, y: -0.0115380855, z: -0.060285673}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Hips
+      parentName: Tasi_RIG:QuickRigCharacter1_Reference
+      position: {x: -0, y: 0.7200267, z: 0.0014835644}
+      rotation: {x: 0.55065477, y: -0.44359815, z: -0.55065477, w: 0.44359815}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_LeftUpLeg
+      parentName: Tasi_RIG:QuickRigCharacter1_Hips
+      position: {x: -0.0016109151, y: -0.005419283, z: 0.09492313}
+      rotation: {x: -0.05860882, y: -0.2248533, z: 0.9582668, w: -0.16652577}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_LeftLeg
+      parentName: Tasi_RIG:QuickRigCharacter1_LeftUpLeg
+      position: {x: -0.23869109, y: 0.00000052448274, z: 0.00000027560418}
+      rotation: {x: 0.119635984, y: -0.016615389, z: -0.13653444, w: 0.9832444}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_LeftFoot
+      parentName: Tasi_RIG:QuickRigCharacter1_LeftLeg
+      position: {x: -0.38198355, y: -0.000000061560804, z: -0.00000002935588}
+      rotation: {x: 0.060159974, y: -0.05911225, z: 0.51717055, w: 0.85171664}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_LeftToeBase
+      parentName: Tasi_RIG:QuickRigCharacter1_LeftFoot
+      position: {x: -0.11784806, y: 0.000000032041207, z: 0.000000032685726}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_RightUpLeg
+      parentName: Tasi_RIG:QuickRigCharacter1_Hips
+      position: {x: -0.0016109151, y: -0.005419283, z: -0.09492313}
+      rotation: {x: -0.22481582, y: 0.05860816, z: 0.1665264, w: 0.9582755}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_RightLeg
+      parentName: Tasi_RIG:QuickRigCharacter1_RightUpLeg
+      position: {x: 0.23869142, y: 0.00000017656949, z: 0.000000087200405}
+      rotation: {x: 0.11962997, y: -0.01661237, z: -0.13653757, w: 0.9832448}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_RightFoot
+      parentName: Tasi_RIG:QuickRigCharacter1_RightLeg
+      position: {x: 0.38198343, y: 0.000000073356894, z: 0.00000031597312}
+      rotation: {x: 0.060128864, y: -0.059100717, z: 0.5171759, w: 0.8517164}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_RightToeBase
+      parentName: Tasi_RIG:QuickRigCharacter1_RightFoot
+      position: {x: 0.11784807, y: -0.00000005714093, z: 0.000000016585066}
+      rotation: {x: 0.000025408954, y: 0.000000016424677, z: -4.1733386e-13, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Spine
+      parentName: Tasi_RIG:QuickRigCharacter1_Hips
+      position: {x: -0.14528193, y: -0.0000000022838662, z: 0}
+      rotation: {x: 0, y: 0, z: 0.088999905, w: 0.99603164}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Spine1
+      parentName: Tasi_RIG:QuickRigCharacter1_Spine
+      position: {x: -0.172547, y: 7.527544e-10, z: 0}
+      rotation: {x: 0, y: 0, z: 0.003475618, w: 0.999994}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Spine2
+      parentName: Tasi_RIG:QuickRigCharacter1_Spine1
+      position: {x: -0.21341428, y: 5.2619914e-10, z: -2.5768592e-17}
+      rotation: {x: 0, y: 0, z: 0.087993056, w: 0.9961211}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_LeftShoulder
+      parentName: Tasi_RIG:QuickRigCharacter1_Spine2
+      position: {x: -0.07434923, y: -0.021735042, z: 0.07851419}
+      rotation: {x: -0.4619662, y: 0.53533846, z: 0.4619662, w: 0.53533846}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_LeftArm
+      parentName: Tasi_RIG:QuickRigCharacter1_LeftShoulder
+      position: {x: -0.11777128, y: -2.842171e-16, z: 3.5527136e-17}
+      rotation: {x: 0.9419298, y: 0.014639853, z: 0.003740787, w: 0.33546987}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_LeftForeArm
+      parentName: Tasi_RIG:QuickRigCharacter1_LeftArm
+      position: {x: -0.22546652, y: 0.00000002126229, z: 0.0000003189002}
+      rotation: {x: -0.0010889766, y: -0.006753518, z: -0.022354858, w: 0.9997268}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_LeftHand
+      parentName: Tasi_RIG:QuickRigCharacter1_LeftForeArm
+      position: {x: -0.40836623, y: -0.00000007645916, z: 0.00000006458291}
+      rotation: {x: 0.00000058935365, y: -3.4738662e-13, z: -0.00000058943664, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_RightShoulder
+      parentName: Tasi_RIG:QuickRigCharacter1_Spine2
+      position: {x: -0.07434923, y: -0.021735042, z: -0.07851419}
+      rotation: {x: 0.53533846, y: 0.4619662, z: -0.53533846, w: 0.4619662}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_RightArm
+      parentName: Tasi_RIG:QuickRigCharacter1_RightShoulder
+      position: {x: 0.11777128, y: 2.842171e-16, z: -3.5527136e-17}
+      rotation: {x: 0.9600254, y: 0.016018612, z: 0.0030277963, w: 0.27943763}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_RightForeArm
+      parentName: Tasi_RIG:QuickRigCharacter1_RightArm
+      position: {x: 0.23018117, y: -0.00000023234915, z: -0.0000004428044}
+      rotation: {x: -0.0012086629, y: -0.006226964, z: -0.018636426, w: 0.9998062}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_RightHand
+      parentName: Tasi_RIG:QuickRigCharacter1_RightForeArm
+      position: {x: 0.4070131, y: 0.000000093171366, z: 0.0000000047118527}
+      rotation: {x: 0, y: 0, z: -0.0000010993535, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Neck
+      parentName: Tasi_RIG:QuickRigCharacter1_Spine2
+      position: {x: -0.23870715, y: -0.0000000045165423, z: -1.1603487e-16}
+      rotation: {x: 0, y: 0, z: -0.0975264, w: 0.99523294}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Head
+      parentName: Tasi_RIG:QuickRigCharacter1_Neck
+      position: {x: -0.22176942, y: -0.000000003015212, z: -1.1126253e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_Reference
+      parentName: Tasi(Clone)
+      position: {x: -0, y: -0.0115380855, z: -0.060285673}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_HipsEffector
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Reference
+      position: {x: -0, y: 0.72275436, z: -0.003468561}
+      rotation: {x: 3.061617e-17, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_LeftAnkleEffector
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Reference
+      position: {x: -0.1655944, y: 0.11311367, z: -0.044473086}
+      rotation: {x: 0.0007738545, y: -0.026113277, z: -0.01920423, w: 0.9994742}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_RightAnkleEffector
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Reference
+      position: {x: 0.16559443, y: 0.113113895, z: -0.04447297}
+      rotation: {x: 0.0007729231, y: 0.02608712, z: 0.019183015, w: 0.9994753}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_LeftWristEffector
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Reference
+      position: {x: -0.35508606, y: 0.72549754, z: 0.13912557}
+      rotation: {x: 0.28246483, y: 0.39288166, z: 0.516014, w: 0.7068148}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_RightWristEffector
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Reference
+      position: {x: 0.35508606, y: 0.7254977, z: 0.13912557}
+      rotation: {x: 0.3218592, y: -0.4301438, z: -0.4998769, w: 0.6793424}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_LeftKneeEffector
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Reference
+      position: {x: -0.1396098, y: 0.48919344, z: 0.017171783}
+      rotation: {x: 0.076836504, y: -0.107725106, z: -0.04270477, w: 0.9902867}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_RightKneeEffector
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Reference
+      position: {x: 0.13960649, y: 0.48919305, z: 0.017173672}
+      rotation: {x: 0.07683962, y: 0.10769312, z: 0.042706944, w: 0.99028987}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_LeftElbowEffector
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Reference
+      position: {x: -0.2902584, y: 1.1140186, z: 0.031367302}
+      rotation: {x: 0.28246483, y: 0.3928808, z: 0.5160141, w: 0.70681524}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_RightElbowEffector
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Reference
+      position: {x: 0.3020927, y: 1.1146294, z: 0.0322237}
+      rotation: {x: 0.32185933, y: -0.43014294, z: -0.49987656, w: 0.6793431}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_ChestOriginEffector
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Reference
+      position: {x: -0, y: 0.8619784, z: 0.032411575}
+      rotation: {x: -6.2450045e-17, y: -1.2325952e-32, z: -6.162976e-33, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_ChestEndEffector
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Reference
+      position: {x: -0, y: 1.3181021, z: 0.0125498865}
+      rotation: {x: 5.551115e-17, y: 3.9853483e-16, z: 3.0699812e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_LeftFootEffector
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Reference
+      position: {x: -0.17323044, y: 0.04329825, z: 0.050161332}
+      rotation: {x: 0.00077385444, y: -0.02611328, z: -0.01920423, w: 0.9994742}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_RightFootEffector
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Reference
+      position: {x: 0.17323041, y: 0.043298643, z: 0.05016154}
+      rotation: {x: 0.0007729231, y: 0.02608712, z: 0.019183015, w: 0.9994753}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_LeftShoulderEffector
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Reference
+      position: {x: -0.19628547, y: 1.3181021, z: 0.0125498865}
+      rotation: {x: 0.36097324, y: 0.27540797, z: 0.4644923, w: 0.760326}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_RightShoulderEffector
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Reference
+      position: {x: 0.19628547, y: 1.3181021, z: 0.0125498865}
+      rotation: {x: 0.41118667, y: -0.29286087, z: -0.42941514, w: 0.74883956}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_HeadEffector
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Reference
+      position: {x: -0, y: 1.7053801, z: 0.020745954}
+      rotation: {x: 3.061617e-17, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_LeftHipEffector
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Reference
+      position: {x: -0.09492313, y: 0.72275436, z: -0.003468561}
+      rotation: {x: -0.06298038, y: -0.21728651, z: -0.08234492, w: 0.97058713}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_RightHipEffector
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Reference
+      position: {x: 0.09492313, y: 0.72275436, z: -0.003468561}
+      rotation: {x: -0.06297573, y: 0.21724969, z: 0.08233822, w: 0.97059625}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_Hips
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Reference
+      position: {x: -0, y: 0.7200267, z: 0.0014835644}
+      rotation: {x: 3.061617e-17, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_LeftUpLeg
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Hips
+      position: {x: -0.09492313, y: 0.002727661, z: -0.0049521253}
+      rotation: {x: -0.06298038, y: -0.21728651, z: -0.08234492, w: 0.97058713}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_LeftLeg
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_LeftUpLeg
+      position: {x: -0, y: -0.23869106, z: 0}
+      rotation: {x: 0.1365366, y: 0.119636014, z: 0.016616276, w: 0.98324406}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_LeftFoot
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_LeftLeg
+      position: {x: -0, y: -0.38198325, z: 0}
+      rotation: {x: -0.076983385, y: 0.0803663, z: 0.025587713, w: 0.9934587}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_LeftToeBase
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_LeftFoot
+      position: {x: -0.000000057220458, y: -0.069815256, z: 0.09494195}
+      rotation: {x: 2.2365468e-32, y: -0, z: -1.2246469e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_RightUpLeg
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Hips
+      position: {x: 0.09492313, y: 0.002727661, z: -0.0049521253}
+      rotation: {x: -0.06297573, y: 0.21724969, z: 0.08233822, w: 0.97059625}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_RightLeg
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_RightUpLeg
+      position: {x: 0.000000019073486, y: -0.23869106, z: 0.0000023365021}
+      rotation: {x: 0.13653366, y: -0.11962998, z: -0.01661207, w: 0.9832453}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_RightFoot
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_RightLeg
+      position: {x: -0.000000009536743, y: -0.38198325, z: 0}
+      rotation: {x: -0.076985665, y: -0.0803618, z: -0.025609074, w: 0.99345833}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_RightToeBase
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_RightFoot
+      position: {x: 0.000007953644, y: -0.069815256, z: 0.09494195}
+      rotation: {x: 2.2365468e-32, y: -0, z: -1.2246469e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_Spine
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Hips
+      position: {x: -0, y: 0.14195175, z: 0.03092801}
+      rotation: {x: -6.2450045e-17, y: -1.2325952e-32, z: -6.162976e-33, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_Spine1
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Spine
+      position: {x: -0, y: 0.17243339, z: 0.006260135}
+      rotation: {x: 1.5612511e-17, y: -5.7115584e-17, z: -5.716336e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_Spine2
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Spine1
+      position: {x: -0, y: 0.21332245, z: 0.006260136}
+      rotation: {x: 5.551115e-17, y: 3.9853483e-16, z: 3.0699812e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_LeftShoulder
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Spine2
+      position: {x: -0.07851419, y: 0.07036781, z: -0.03238196}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_LeftArm
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_LeftShoulder
+      position: {x: -0.11777128, y: 0, z: 8.881784e-18}
+      rotation: {x: 0.36097324, y: 0.27540797, z: 0.4644923, w: 0.760326}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_LeftForeArm
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_LeftArm
+      position: {x: -0.22546631, y: 0, z: 0}
+      rotation: {x: -0.00000030435442, y: 0.15911949, z: 0.0000023141115, w: 0.9872593}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_LeftHand
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_LeftForeArm
+      position: {x: -0.40836623, y: 0, z: -8.881784e-18}
+      rotation: {x: 0.00000060420973, y: 0.0000007332779, z: -0.000000105547265, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_RightShoulder
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Spine2
+      position: {x: 0.07851419, y: 0.07036781, z: -0.03238196}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_RightArm
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_RightShoulder
+      position: {x: 0.11777128, y: 0, z: 8.881784e-18}
+      rotation: {x: 0.41118667, y: -0.29286087, z: -0.42941514, w: 0.74883956}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_RightForeArm
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_RightArm
+      position: {x: 0.23018116, y: 0, z: 0}
+      rotation: {x: -0.00000021836959, y: -0.19048634, z: 0.0000018899183, w: 0.9816899}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_RightHand
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_RightForeArm
+      position: {x: 0.40701312, y: 0, z: 0}
+      rotation: {x: 0.0000004422507, y: -0.0000010597655, z: -0.00000022755269, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_Neck
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Spine2
+      position: {x: -0, y: 0.236137, z: -0.03493456}
+      rotation: {x: 2.7755576e-17, y: 6.162976e-33, z: 6.162976e-33, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tasi_RIG:QuickRigCharacter1_Ctrl_Head
+      parentName: Tasi_RIG:QuickRigCharacter1_Ctrl_Neck
+      position: {x: -0, y: 0.22150879, z: 0.010748672}
+      rotation: {x: 3.061617e-17, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 1554f0bf5a73d5747ad7fdcc2fca3d45,
+    type: 3}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
