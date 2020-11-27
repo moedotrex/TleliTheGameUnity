@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c0514d6e13761704faf4bbe4b9aab5e0
+guid: 708135dbdd3091f4e8ae934f6a05178e
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: MAT_Grass
+      name: MAT_Foliage
     second: {fileID: 2100000, guid: f8407db5b836f6f499e83521022c8ad0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Foliage2
+    second: {fileID: 2100000, guid: 4f92417366f21e34babdbdf769ac4fb1, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
