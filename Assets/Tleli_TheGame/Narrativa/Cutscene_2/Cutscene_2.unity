@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6635,7 +6635,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809043359}
-  m_LocalRotation: {x: -0.047472723, y: 0.4142341, z: -0.0141793545, w: 0.90882087}
+  m_LocalRotation: {x: -0.04726618, y: 0.4142577, z: -0.013726217, w: 0.9088279}
   m_LocalPosition: {x: -0.21702965, y: 0.3980336, z: 0.035146803}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -12403,7 +12403,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560939909}
-  m_LocalRotation: {x: -0.000002608367, y: -0.8272034, z: 0.0012408177, w: 0.67927593}
+  m_LocalRotation: {x: -0.0000026178006, y: -0.83019507, z: 0.0012453053, w: 0.6792729}
   m_LocalPosition: {x: -52.2, y: -18.7, z: -37.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -12450,6 +12450,8 @@ PlayableDirector:
     value: {fileID: 751063730}
   - key: {fileID: 5655787718757625928, guid: f7cce8f88a2f006449dc000447a73dc1, type: 2}
     value: {fileID: 115474762}
+  - key: {fileID: -5714703027901228120, guid: f7cce8f88a2f006449dc000447a73dc1, type: 2}
+    value: {fileID: 2078375479}
   m_ExposedReferences:
     m_References:
     - 3039b981ed700d348a516e67d73369e5: {fileID: 530530977}
@@ -16372,6 +16374,7 @@ GameObject:
   - component: {fileID: 2078375477}
   - component: {fileID: 2078375476}
   - component: {fileID: 2078375475}
+  - component: {fileID: 2078375479}
   m_Layer: 0
   m_Name: bro_billboard
   m_TagString: Untagged
@@ -16454,6 +16457,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!95 &2078375479
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078375474}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2080583538
 GameObject:
   m_ObjectHideFlags: 0
