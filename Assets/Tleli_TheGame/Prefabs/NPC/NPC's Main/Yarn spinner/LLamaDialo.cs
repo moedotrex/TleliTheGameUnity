@@ -18,7 +18,7 @@ public class LLamaDialo : MonoBehaviour
     {
         helpText.SetActive(false);
         talk = false;
-        camm = GameObject.FindGameObjectWithTag("CameraBrain").GetComponent<CinemachineFreeLook>();
+        //camm = GameObject.FindGameObjectWithTag("CameraBrain").GetComponent<CinemachineFreeLook>();
     }
 
     void Update()
@@ -31,15 +31,15 @@ public class LLamaDialo : MonoBehaviour
                 cajaDialogue.SetActive(true);
                 helpText.SetActive(false);
                 dialogueRunner.StartDialogue(nodoDialogo);
-                camm.m_YAxis.m_MaxSpeed = 0;
-                camm.m_XAxis.m_MaxSpeed = 0;
+                //camm.m_YAxis.m_MaxSpeed = 0;
+                //camm.m_XAxis.m_MaxSpeed = 0;
             
 
             }
         else if (!dialogueRunner.IsDialogueRunning)
             {
-                camm.m_YAxis.m_MaxSpeed = 1.5f;
-                camm.m_XAxis.m_MaxSpeed = 350;
+                //camm.m_YAxis.m_MaxSpeed = 1.5f;
+                //camm.m_XAxis.m_MaxSpeed = 350;
             }
 
         }
