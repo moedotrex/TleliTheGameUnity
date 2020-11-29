@@ -171,9 +171,15 @@ public class PlayerController : MonoBehaviour
             if (canMove > 0)
             {
                 canMove -= 1;
-                velBase = 0;
+                velBase = 1;
                 tempRotacion = 10;
             }
+
+            if (isJumping == true)
+            {
+                velBase = 5.5f;
+            }
+
             else { tempRotacion = rotacionDefault; }
 
             vel = velBase;
