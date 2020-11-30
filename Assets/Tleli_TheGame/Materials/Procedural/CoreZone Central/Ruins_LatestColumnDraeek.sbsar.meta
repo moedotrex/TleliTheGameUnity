@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5f55d20febe952c4b806bc0be851177d
+guid: 137b2d9fb7d125046a3ddccbd44fe77f
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -11,40 +11,32 @@ ScriptedImporter:
   version: 29
   projectContext: 2
   mGraphInstanceData:
-  - graphLabel: RuinsCentral
+  - graphLabel: Ruins
     prototypeName: Ruins
     graphDescIndex: 0
-    generateAllOutputs: 1
+    generateAllOutputs: 0
     generateMipMaps: 1
     preset: " <sbspreset pkgurl=\"pkg://Ruins\" label=\"\" >\n  <presetinput identifier=\"$outputsize\"
-      uid=\"238264850\" type=\"8\" value=\"11,11\" />\n  <presetinput identifier=\"$randomseed\"
-      uid=\"1497478208\" type=\"4\" value=\"1754\" />\n  <presetinput identifier=\"tile\"
-      uid=\"1739960667\" type=\"4\" value=\"9\" />\n  <presetinput identifier=\"offset\"
-      uid=\"1739956392\" type=\"1\" value=\"0.26,0\" />\n  <presetinput identifier=\"aolevelsmid\"
-      uid=\"1739878936\" type=\"0\" value=\"1\" />\n  <presetinput identifier=\"outputcolor\"
-      uid=\"1739194889\" type=\"3\" value=\"0.286275,0.27451,0.247059,1\" />\n  <presetinput
-      identifier=\"luminosity\" uid=\"1739213351\" type=\"0\" value=\"0.24\" />\n 
-      <presetinput identifier=\"levelouthigh_1\" uid=\"1739067338\" type=\"0\" value=\"0.09\"
-      />\n  <presetinput identifier=\"x_amount_1\" uid=\"1739131345\" type=\"4\"
-      value=\"16\" />\n  <presetinput identifier=\"levelinmid\" uid=\"1739311982\"
-      type=\"0\" value=\"0.322\" />\n </sbspreset>\n"
+      uid=\"238264850\" type=\"8\" value=\"9,9\" />\n  <presetinput identifier=\"switchNormal\"
+      uid=\"1739855192\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"switchAO\"
+      uid=\"1739865834\" type=\"4\" value=\"0\" />\n  <presetinput identifier=\"tile\"
+      uid=\"1739960667\" type=\"4\" value=\"2\" />\n </sbspreset>\n"
     shaderName: Universal Render Pipeline/Lit
     materialProperties:
       shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-      shaderKeywords: _HEIGHTMAP _METALLICSPECGLOSSMAP _NORMALMAP _OCCLUSIONMAP _ROUGHNESSMAP
-        _SPECULARHIGHLIGHTS_OFF
+      shaderKeywords: _METALLICSPECGLOSSMAP _NORMALMAP _OCCLUSIONMAP
       lightmapFlags: 4
       enableInstancingVariants: 0
       doubleSidedGI: 0
       customRenderQueue: 2050
       texEnvs:
       - name: _BaseMap
-        texture: {fileID: -3321497331244547994, guid: 5f55d20febe952c4b806bc0be851177d,
+        texture: {fileID: -1105342066092305313, guid: 137b2d9fb7d125046a3ddccbd44fe77f,
           type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _BumpMap
-        texture: {fileID: -5785991365464815640, guid: 5f55d20febe952c4b806bc0be851177d,
+        texture: {fileID: 6231359754582114168, guid: 137b2d9fb7d125046a3ddccbd44fe77f,
           type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
@@ -57,12 +49,12 @@ ScriptedImporter:
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _MetallicGlossMap
-        texture: {fileID: 1753482221075599855, guid: 5f55d20febe952c4b806bc0be851177d,
+        texture: {fileID: -2312144589109408385, guid: 137b2d9fb7d125046a3ddccbd44fe77f,
           type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _OcclusionMap
-        texture: {fileID: -8741269434886304065, guid: 5f55d20febe952c4b806bc0be851177d,
+        texture: {fileID: -759625297313370325, guid: 137b2d9fb7d125046a3ddccbd44fe77f,
           type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
@@ -104,7 +96,7 @@ ScriptedImporter:
       - name: _SmoothnessTextureChannel
         float: 0
       - name: _SpecularHighlights
-        float: 0
+        float: 1
       - name: _SrcBlend
         float: 1
       - name: _Surface
@@ -209,27 +201,27 @@ ScriptedImporter:
         from: 0
         to: 3
     textureParameters:
-    - textureName: RuinsCentral - baseColor
+    - textureName: Ruins - baseColor
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: RuinsCentral - normal
+    - textureName: Ruins - normal
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: RuinsCentral - roughness
+    - textureName: Ruins - roughness
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: RuinsCentral - metallic
+    - textureName: Ruins - metallic
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: RuinsCentral - height
+    - textureName: Ruins - height
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: RuinsCentral - ambientOcclusion
+    - textureName: Ruins - ambientOcclusion
       wrapMode: 0
       filterMode: 1
       aniso: 1
@@ -239,17 +231,15 @@ ScriptedImporter:
     - label: Default
       bOverride: 0
       bLockRatio: 1
-      textureWidth: 2048
-      textureHeight: 2048
+      textureWidth: 512
+      textureHeight: 512
       textureFormatMode: 0
       normalCompressed: 0
       bGenerateOnLoad: 1
-    material: {fileID: 8198465642642920986, guid: 5f55d20febe952c4b806bc0be851177d,
+    material: {fileID: 4141981223713704560, guid: 137b2d9fb7d125046a3ddccbd44fe77f,
       type: 3}
     generatedTextures:
-    - {fileID: -3321497331244547994, guid: 5f55d20febe952c4b806bc0be851177d, type: 3}
-    - {fileID: -5785991365464815640, guid: 5f55d20febe952c4b806bc0be851177d, type: 3}
-    - {fileID: 3266055195692339909, guid: 5f55d20febe952c4b806bc0be851177d, type: 3}
-    - {fileID: 1753482221075599855, guid: 5f55d20febe952c4b806bc0be851177d, type: 3}
-    - {fileID: -3587943264626538501, guid: 5f55d20febe952c4b806bc0be851177d, type: 3}
-    - {fileID: -8741269434886304065, guid: 5f55d20febe952c4b806bc0be851177d, type: 3}
+    - {fileID: -1105342066092305313, guid: 137b2d9fb7d125046a3ddccbd44fe77f, type: 3}
+    - {fileID: 6231359754582114168, guid: 137b2d9fb7d125046a3ddccbd44fe77f, type: 3}
+    - {fileID: -2312144589109408385, guid: 137b2d9fb7d125046a3ddccbd44fe77f, type: 3}
+    - {fileID: -759625297313370325, guid: 137b2d9fb7d125046a3ddccbd44fe77f, type: 3}
