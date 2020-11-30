@@ -15,7 +15,7 @@ public class CountObjects : MonoBehaviour
     void Start()
     {
         objUI = GameObject.Find("ObjectNum");
-        objUI.GetComponent<Text>().text = "All Objects Collected";
+        //objUI.GetComponent<Text>().text = "All Objects Collected";
         aceptarMision = GetComponent<AceptarMision>();
     }
 
