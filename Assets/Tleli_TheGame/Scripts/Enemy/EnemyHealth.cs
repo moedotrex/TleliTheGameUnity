@@ -49,7 +49,7 @@ public class EnemyHealth : MonoBehaviour
     {
         //  GameObject.Instantiate(blood, transform.position, Quaternion.identity);
 
-        if (Random.Range(0, 1) > 0.49)
+        if (Random.Range(0, 10) > 5)
         {
             chomperController.IsHitTrigger();
         }
