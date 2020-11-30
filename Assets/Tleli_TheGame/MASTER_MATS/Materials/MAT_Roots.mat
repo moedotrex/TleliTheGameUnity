@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MAT_RuinColumn4x1
+  m_Name: MAT_Roots
   m_Shader: {fileID: -6465566751694194690, guid: 247ec58ab1c200a479d84178ada291fb,
     type: 3}
   m_ShaderKeywords: 
@@ -34,12 +34,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_45B4DE71:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: b8c550bdce21dd34ca6253f2666ba954, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_54438476:
-        m_Texture: {fileID: 6231359754582114168, guid: c88f3d85312c9e24190907401c7d2417,
-          type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_90C9203D:
@@ -47,19 +46,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_90CD9A0B:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 441bf5ae6bcd6e248889146771407c7e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_BD305425:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 8ebc4a4e3f264024286788431e312e13, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_CE347D4D:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: d8ab63fcccc520047b92bafcc54c0b10, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_D3CB43BE:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: be0fe66aa4e8dc24997d5deae5a2956d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_EF94E7B8:
@@ -97,15 +96,15 @@ Material:
     m_Floats:
     - Boolean_22EC64F: 1
     - Boolean_25308C13: 1
-    - Boolean_3998A2FA: 0
+    - Boolean_3998A2FA: 1
     - Boolean_58480D43: 1
     - Boolean_5F3DFE21: 0
-    - Boolean_6B12D7DA: 0
+    - Boolean_6B12D7DA: 1
     - Boolean_86F2B5B: 0
     - Boolean_AB3361F: 1
     - Boolean_B11E34F6: 0
-    - Boolean_B2D82E09: 0
-    - Boolean_BFAAFC3A: 0
+    - Boolean_B2D82E09: 1
+    - Boolean_BFAAFC3A: 1
     - Boolean_C6D6F89D: 0
     - Boolean_D1EDB5CE: 0
     - Boolean_D7DAEA24: 0
@@ -116,8 +115,8 @@ Material:
     - Vector1_22768129: 1
     - Vector1_2471C3E8: 0.55
     - Vector1_44437D32: 0.5
-    - Vector1_4996DAB4: 1
-    - Vector1_513565C9: 0
+    - Vector1_4996DAB4: 0.98
+    - Vector1_513565C9: 0.94
     - Vector1_51DDDCE7: 1
     - Vector1_56291164: 0
     - Vector1_58941B33: 1
@@ -134,7 +133,7 @@ Material:
     - Vector1_CB4A3B4C: 0
     - Vector1_D49A5279: 1
     - Vector1_D545B73C: 0
-    - Vector1_DA13CB76: 1
+    - Vector1_DA13CB76: 0.83
     - Vector1_DB44B3E9: 0
     - Vector1_E521CBB0: 0
     - Vector1_F5263237: 0
@@ -161,9 +160,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_2951E45B: {r: 0.7450981, g: 0.15294117, b: 0.34175438, a: 0}
-    - Color_6D57DF08: {r: 0.2169812, g: 1.82311, b: 2, a: 0}
-    - Color_81334E39: {r: 0.33962262, g: 0.32905656, b: 0.28034887, a: 0}
+    - Color_2951E45B: {r: 0.9622642, g: 0, b: 0.3029348, a: 0}
+    - Color_6D57DF08: {r: 0.12892133, g: 0.8108101, b: 0.88165563, a: 0}
+    - Color_81334E39: {r: 0.15107968, g: 0.14457993, b: 0.1792453, a: 0}
     - Vector2_3856E7A3: {r: 1, g: 1, b: 0, a: 0}
     - Vector2_48C8E1AC: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_568F7EA8: {r: 1, g: 1, b: 0, a: 0}
