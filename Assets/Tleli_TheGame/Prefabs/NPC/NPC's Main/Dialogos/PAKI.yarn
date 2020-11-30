@@ -1,5 +1,99 @@
 ﻿title: PAKI
 tags:
 ---
+<<if $die is false>>
+You seem quite somber, young girl. Is something troubling you?
+[[Do you feel safe here?|PAKI.one]]
+[[I'm alright I guess|PAKI.two]]
+[[Not really..|PAKI.tree]]
+<<else>>
+[[PAKI.conv]]
+<<endif>>
+===
 
+title: PAKI.one
+tags:
+---
+I like it here. It’s nice and quiet... Can’t remember the last time I felt so much peace...you?
+[[I'm alright|PAKI.two]]
+[[Not really..|PAKI.tree]]
+<<set $die to false>>
+===
+
+title: PAKI.two
+tags:
+---
+You got a little one with you, Is he a sibling?
+[[No.. hes my companion, we tag along together|PAKI.forr]]
+[[We look out for eachother, hes my friend|PAKI.forr]]
+<<set $die to false>>
+===
+
+title: PAKI.tree
+tags:
+---
+Really? is it your past life?
+[[Yeah, could be..|PAKI.two]]
+[[The monsters scare me a little..|PAKI.help]]
+<<set $die to false>>
+===
+
+title: PAKI.forr
+tags:
+---
+Thats good, having somebody is important and healthy..
+[[Do you have anyone here?|PAKI.six]]
+[[See you around|PAKI.sev]]
+<<set $die to false>>
+===
+
+title: PAKI.six
+tags:
+---
+I do know the Cheiftan, hes a very caring person and nice as well.
+[[Later!|PAKI.sev]]
+[[He sure seems like it|PAKI.sev]]
+<<set $die to false>>
+===
+
+title: PAKI.sev
+tags:
+---
+Ill see you around!
+<<set $die to true>>
+===
+
+title: PAKI.help
+tags:
+---
+They sure are scary, but not worries!
+<<set $die to true>>
+===
+
+
+title: PAKI.conv
+tags:
+---
+Hows the trip going?
+[[Do you remember who you used to be?|PAKI.eee]]
+[[Have you been to the caves?|PAKI.ooo]]
+[[Have a nice one!|PAKI.sss]]
+===
+
+title: PAKI.eee
+tags:
+---
+I was a profesional dancer, I loved to dance! I still do, tho I dont do it anymore infront of a crowd.
+===
+
+title: PAKI.ooo
+tags:
+---
+Oh my no, horrible creatures in there, besides out here we have good company and a LOT of shrooms haha~
+===
+
+title: PAKI.sss
+tags:
+---
+You too kiddo. 
 ===

@@ -1,0 +1,98 @@
+﻿title: ARCANE.ok
+tags:
+---
+<<if $die is false>>
+This place… We are all doomed...stuck here trying to get the keys... and for what?
+[[You okay?|ARCANE.uno]]
+[[Maybe the guardian can help?|ARCANE.dos]]
+<<else>>
+[[ARCANE.Jealous]]
+<<endif>>
+===
+
+title: ARCANE.uno
+tags:
+---
+I am not. Don’t you see!? This whole place is rotten, and the guardian is nowhere to be seen....
+[[The guardian?|ARCANE.dos]]
+<<set $die to false>>
+===
+
+title: ARCANE.dos
+tags:
+---
+You truly are new here huh? ... It’s been a long time since the great Guardian of the Deep succumbed to the Amana. From there… it’s all been…. just so… 
+[[So....?|ARCANE.tre]]
+<<set $die to false>>
+===
+
+title: ARCANE.tre
+tags:
+---
+...just so horrible. Listen, girl, you need to get out of here. Dont bother with the keys..
+[[Why?|ARCANE.qinq]]
+[[What did you see?|ARCANE.cuat]]
+<<set $die to false>>
+===
+
+title: ARCANE.cuat
+tags:
+---
+I saw my friend get consumed by the Amana, in this attempt to recover the keys, 
+<<wait 1>>
+hes one of those things now..
+[[Thats horrible...|ARCANE.sept]]
+[[I have to get those keys, I need to get out of here.|ARCANE.sept]]
+<<set $die to false>>
+===
+
+title: ARCANE.qinq
+tags:
+---
+The keys are the way out of here, Cheiftan said so.. but its not worth it fighting those monsters...
+[[Did you try it?|ARCANE.sept1]]
+<<set $die to false>>
+===
+
+title: ARCANE.sept1
+tags:
+---
+I did... but those gatekeepers put on a good fight
+[[We will see about that|ARCANE.sept]]
+<<set $die to false>>
+===
+
+title: ARCANE.sept
+tags:
+---
+Bless us all...
+<<set $die to true>>
+===
+
+title: ARCANE.Jealous
+tags:
+---
+You again...
+[[Any tips for me??|ARCANE.Jealous1]]
+[[You have to get back where its safe..|ARCANE.Jealous2]]
+[[See you|ARCANE.nov]]
+<<set $die to true>>
+===
+
+title: ARCANE.Jealous1
+tags:
+---
+Try to stay out of sight.. some of those things are fast...
+===
+
+title: ARCANE.Jealous2
+tags:
+---
+Only way out is though those caves, but wow...I do miss my friends...
+===
+
+title: ARCANE.nov
+tags:
+---
+Lets hope.
+===
