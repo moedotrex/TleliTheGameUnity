@@ -5,6 +5,7 @@ using UnityEngine;
 public class Minimap : MonoBehaviour
 {
     public RectTransform playerInMap;
+    public RectTransform playerInMap2;
     public RectTransform map2dEnd;
     public Transform map3dParent;
     public Transform map3dEnd;
@@ -21,6 +22,7 @@ public class Minimap : MonoBehaviour
         mapped = Multiply(normalized, map2dEnd.localPosition);
         mapped.z = 0;
         playerInMap.localPosition = mapped;
+        playerInMap2.localPosition = mapped;
     }
 
     private static Vector3 Divide(Vector3 a, Vector3 b)
