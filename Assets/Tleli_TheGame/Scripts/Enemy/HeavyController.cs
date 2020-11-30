@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -6,10 +7,14 @@ public class HeavyController : MonoBehaviour
 {
     public float velRotacion = 20f;
     float BuscarRadio;
+    public float jumpRadio;
     float radioGrande;
     public float radioDef = 10f;
     public float movSpeed;
+    public float movAcce = 8;
 
+
+    Vector3 slamLand;
     Vector3 kbDirection;
     [HideInInspector] public Vector3 EnemySpawn;
 
@@ -18,7 +23,7 @@ public class HeavyController : MonoBehaviour
     //TlelliFlameHealth flama;
     TleliHealth flama;
     HeavyAttack enemyStagger;
-
+    HeavyAttack attack;
     public bool isAttacking;
 
     MusicaDinamica activa;
@@ -36,16 +41,19 @@ public class HeavyController : MonoBehaviour
     void Start()
     {
         heavyBoiAnimationController = GetComponentInChildren<HeavyBoiAnimationController>(); //moe
-
+        attack = GetComponentInParent<HeavyAttack>();
         target = PlayerManager.instance.player.transform;
         BuscarRadio = radioDef;
         radioGrande = BuscarRadio * 1.5f;
+        jumpRadio = radioGrande - 5f;
+
         EnemySpawn = this.transform.position;
         //flama = GameObject.FindGameObjectWithTag("Player").GetComponent<TlelliFlameHealth>();
         flama = GameObject.FindGameObjectWithTag("Player").GetComponent<TleliHealth>();
         navAgent = GetComponent<NavMeshAgent>();
         enemyStagger = GetComponent<HeavyAttack>();
-        navAgent.speed = movSpeed; 
+        navAgent.speed = movSpeed;
+        navAgent.acceleration = movAcce;
     }
 
     private void FixedUpdate()
@@ -85,14 +93,24 @@ public class HeavyController : MonoBehaviour
                 BuscarRadio = radioGrande;
                 isAttacking = true;
 
+                if (distance >= jumpRadio && distance <= radioGrande)
+                {
+                    int randomNum = Random.Range(1, 100);
+                    if(randomNum >= 99)
+                    {
+                        JumpStart();
+                    }
+                }
+
                 if (distance <= navAgent.stoppingDistance)
                 {
                     FaceTarget();
+                    navAgent.SetDestination(target.position);
                 }
 
                 flama.EnemyDistance(distance);
                 flama.BattleMode(true); //Added by Emil. Necessary for changing camera into Battle Mode.
-
+                 
             }
         }
 
@@ -148,6 +166,28 @@ public class HeavyController : MonoBehaviour
         StartCoroutine(KnockBack());
     }
 
+    public void JumpStart()
+    {
+        slamLand = new Vector3(target.position.x, target.position.y, target.position.z);
+        Debug.Log("Funcionaelsalto!!!!");
+
+        movSpeed = +500f;
+        movAcce = +500f;
+
+
+
+        /*valoraltura = 
+       
+       
+        
+        posY++;
+        if posY >= valordealtura;
+            posy--;*/
+
+
+
+    }
+
     IEnumerator slowMovCoroutine(float time)
     {
         navAgent.speed = movSpeed * 0.75f;
@@ -165,7 +205,7 @@ public class HeavyController : MonoBehaviour
         navAgent.acceleration = 0;
         velRotacion = 0f;
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(.2f);
 
         knockback = false;
         enemyStagger.isDisplaced = false;
@@ -178,20 +218,17 @@ public class HeavyController : MonoBehaviour
     IEnumerator JumpAtack()
     {
         jumping= true;
-        enemyStagger.isDisplaced = true;
-        navAgent.speed = 10;
+        navAgent.speed = 200;
         navAgent.angularSpeed = 0;
-        navAgent.acceleration = 0;
-        velRotacion = 0f;
-
-        yield return new WaitForSeconds(0.2f);
+        navAgent.acceleration = 50;
+ 
+        yield return new WaitForSeconds(2f);
 
         jumping= false;
-        enemyStagger.isDisplaced = false;
         navAgent.speed = movSpeed;
         navAgent.angularSpeed = 120f;
         navAgent.acceleration = 8f;
-        velRotacion = 20f;
+        
     }
     public void OnTriggerEnter(Collider other)
     {

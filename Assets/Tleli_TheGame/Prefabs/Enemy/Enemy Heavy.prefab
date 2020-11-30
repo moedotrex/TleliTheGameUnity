@@ -156,8 +156,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.71, y: 2.1495764, z: 1.78}
-  m_Center: {x: 0.028990258, y: 0.039788447, z: 0.75}
+  m_Size: {x: 2.23, y: 2.1495764, z: 1.18}
+  m_Center: {x: 0.028990258, y: 0.2, z: 0.76}
 --- !u!65 &4219402306929305351
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -228,6 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velRotacion: 0.3
+  jumpRadio: 0
   radioDef: 10
   movSpeed: 2
   EnemySpawn: {x: 0, y: 0, z: 0}

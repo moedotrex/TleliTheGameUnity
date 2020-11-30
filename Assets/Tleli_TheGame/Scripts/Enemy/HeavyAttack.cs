@@ -24,7 +24,7 @@ public class HeavyAttack : MonoBehaviour
     //TlelliFlameHealth TlelliHealth;
     TleliHealth TlelliHealth;
 
-
+    
     tleliKnockBack playerKnockback;
 
 
@@ -38,7 +38,7 @@ public class HeavyAttack : MonoBehaviour
 
     void Start()
     {
-
+        
         target = PlayerManager.instance.player.transform;
         heavyBoiAnimationController = GetComponentInChildren<HeavyBoiAnimationController>(); //moe
 
@@ -47,7 +47,8 @@ public class HeavyAttack : MonoBehaviour
         TlelliHealth = player.GetComponent<TleliHealth>();
 
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
-       
+
+        
 
         playerKnockback = player.GetComponent<tleliKnockBack>();
 
@@ -141,19 +142,19 @@ public class HeavyAttack : MonoBehaviour
         public void JumpSlamp()
         {
 
-        int randomNum = Random.Range(1, 100);
+        //int randomNum = Random.Range(1, 100);
 
-        if (TlelliHealth.HP > 0 && randomNum >= 80)
-        {
+        //if (TlelliHealth.HP > 0 && randomNum >= 80)
+        //{
 
-            slamLand = new Vector3(playerPos.position.x, playerPos.position.y, playerPos.position.z);
-            transform.position = Vector3.MoveTowards(transform.position, slamLand, jumpSpeed);
+            //slamLand = new Vector3(playerPos.position.x, playerPos.position.y, playerPos.position.z);
+            
 
             if (playerInRange)
             {
 
                 TlelliHealth.HurtFlame(attackDamage);
-                playerKnockback.startKnockBack(5f);
+                playerKnockback.startKnockBack(10f);
             }
 
 
@@ -163,7 +164,7 @@ public class HeavyAttack : MonoBehaviour
             }
 
 
-        }
+        //}
         
 
            
