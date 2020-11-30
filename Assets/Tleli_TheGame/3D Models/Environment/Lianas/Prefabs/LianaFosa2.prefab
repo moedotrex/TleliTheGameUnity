@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1599468935318969238}
   - component: {fileID: 2422284661892486195}
   - component: {fileID: 466501176136458489}
+  - component: {fileID: 3989244454662919556}
   m_Layer: 0
   m_Name: LianaFosa2
   m_TagString: Untagged
@@ -58,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -381709611464999423, guid: 91876047125232d4a86008966b2ea037, type: 3}
+  - {fileID: -3892322345982124739, guid: fca052540584f164396b2a620af9ffa5, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &3989244454662919556
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123909196025282860}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2883876890897220837, guid: 91876047125232d4a86008966b2ea037, type: 3}

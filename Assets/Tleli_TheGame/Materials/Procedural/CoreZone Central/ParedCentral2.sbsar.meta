@@ -1,0 +1,256 @@
+fileFormatVersion: 2
+guid: 1de5f51d005c6d748aa2121fe5b27e4d
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 232528478, guid: 43a8bbf65be290d44ba52b94476242b9, type: 3}
+  version: 29
+  projectContext: 2
+  mGraphInstanceData:
+  - graphLabel: RuinsCentral
+    prototypeName: Ruins
+    graphDescIndex: 0
+    generateAllOutputs: 1
+    generateMipMaps: 1
+    preset: " <sbspreset pkgurl=\"pkg://Ruins\" label=\"\" >\n  <presetinput identifier=\"$outputsize\"
+      uid=\"238264850\" type=\"8\" value=\"9,9\" />\n  <presetinput identifier=\"$randomseed\"
+      uid=\"1497478208\" type=\"4\" value=\"7023\" />\n  <presetinput identifier=\"tile\"
+      uid=\"1739960667\" type=\"4\" value=\"6\" />\n  <presetinput identifier=\"offset\"
+      uid=\"1739956392\" type=\"1\" value=\"0.26,0\" />\n  <presetinput identifier=\"aolevelsmid\"
+      uid=\"1739878936\" type=\"0\" value=\"1\" />\n  <presetinput identifier=\"outputcolor\"
+      uid=\"1739194889\" type=\"3\" value=\"0.198247,0.205306,0.254717,1\" />\n 
+      <presetinput identifier=\"luminosity\" uid=\"1739213351\" type=\"0\" value=\"0.24\"
+      />\n  <presetinput identifier=\"rocktype\" uid=\"1739517119\" type=\"4\" value=\"1\"
+      />\n  <presetinput identifier=\"levelouthigh_1\" uid=\"1739067338\" type=\"0\"
+      value=\"0.05\" />\n  <presetinput identifier=\"x_amount_1\" uid=\"1739131345\"
+      type=\"4\" value=\"21\" />\n  <presetinput identifier=\"levelinmid\" uid=\"1739311982\"
+      type=\"0\" value=\"0.44\" />\n </sbspreset>\n"
+    shaderName: Universal Render Pipeline/Lit
+    materialProperties:
+      shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+      shaderKeywords: _HEIGHTMAP _METALLICSPECGLOSSMAP _NORMALMAP _OCCLUSIONMAP _ROUGHNESSMAP
+        _SPECULARHIGHLIGHTS_OFF
+      lightmapFlags: 4
+      enableInstancingVariants: 0
+      doubleSidedGI: 0
+      customRenderQueue: 2050
+      texEnvs:
+      - name: _BaseMap
+        texture: {fileID: -3321497331244547994, guid: 1de5f51d005c6d748aa2121fe5b27e4d,
+          type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _BumpMap
+        texture: {fileID: -5785991365464815640, guid: 1de5f51d005c6d748aa2121fe5b27e4d,
+          type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _EmissionMap
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _MainTex
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _MetallicGlossMap
+        texture: {fileID: 1753482221075599855, guid: 1de5f51d005c6d748aa2121fe5b27e4d,
+          type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _OcclusionMap
+        texture: {fileID: -8741269434886304065, guid: 1de5f51d005c6d748aa2121fe5b27e4d,
+          type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: _SpecGlossMap
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      floats:
+      - name: _AlphaClip
+        float: 0
+      - name: _Blend
+        float: 0
+      - name: _BumpScale
+        float: 1
+      - name: _Cull
+        float: 2
+      - name: _Cutoff
+        float: 0.5
+      - name: _DstBlend
+        float: 0
+      - name: _EnvironmentReflections
+        float: 1
+      - name: _GlossMapScale
+        float: 0
+      - name: _Glossiness
+        float: 0
+      - name: _GlossyReflections
+        float: 0
+      - name: _Metallic
+        float: 0
+      - name: _OcclusionStrength
+        float: 1
+      - name: _QueueOffset
+        float: 0
+      - name: _ReceiveShadows
+        float: 1
+      - name: _Smoothness
+        float: 1
+      - name: _SmoothnessTextureChannel
+        float: 0
+      - name: _SpecularHighlights
+        float: 0
+      - name: _SrcBlend
+        float: 1
+      - name: _Surface
+        float: 0
+      - name: _WorkflowMode
+        float: 1
+      - name: _ZWrite
+        float: 1
+      colors:
+      - name: _BaseColor
+        color: {r: 1, g: 1, b: 1, a: 1}
+      - name: _Color
+        color: {r: 1, g: 1, b: 1, a: 1}
+      - name: _EmissionColor
+        color: {r: 0, g: 0, b: 0, a: 1}
+      - name: _SpecColor
+        color: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    outputDescList:
+    - outputName: baseColor
+      identifier: basecolor
+      usageName: baseColor
+      channelStr: baseColor
+      label: Base Color
+      usage: 1
+      bImage: 1
+      bNumerical: 0
+      bLinear: 0
+    - outputName: normal
+      identifier: normal
+      usageName: normal
+      channelStr: normal
+      label: Normal
+      usage: 7
+      bImage: 1
+      bNumerical: 0
+      bLinear: 1
+    - outputName: roughness
+      identifier: roughness
+      usageName: roughness
+      channelStr: roughness
+      label: Roughness
+      usage: 15
+      bImage: 1
+      bNumerical: 0
+      bLinear: 1
+    - outputName: metallic
+      identifier: metallic
+      usageName: metallic
+      channelStr: metallic
+      label: Metallic
+      usage: 34
+      bImage: 1
+      bNumerical: 0
+      bLinear: 1
+    - outputName: height
+      identifier: height
+      usageName: height
+      channelStr: height
+      label: Height
+      usage: 9
+      bImage: 1
+      bNumerical: 0
+      bLinear: 1
+    - outputName: ambientOcclusion
+      identifier: ambientocclusion
+      usageName: ambientOcclusion
+      channelStr: ambientOcclusion
+      label: Ambient Occlusion
+      usage: 5
+      bImage: 1
+      bNumerical: 0
+      bLinear: 1
+    texturePackingList:
+    - targetName: baseColor
+      components:
+      - sourceName: baseColor
+        from: 0
+        to: 3
+    - targetName: normal
+      components:
+      - sourceName: normal
+        from: 0
+        to: 3
+    - targetName: roughness
+      components:
+      - sourceName: roughness
+        from: 0
+        to: 3
+    - targetName: metallic
+      components:
+      - sourceName: smoothness
+        from: 0
+        to: 3
+    - targetName: height
+      components:
+      - sourceName: height
+        from: 0
+        to: 3
+    - targetName: ambientOcclusion
+      components:
+      - sourceName: ambientOcclusion
+        from: 0
+        to: 3
+    textureParameters:
+    - textureName: RuinsCentral - baseColor
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: RuinsCentral - normal
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: RuinsCentral - roughness
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: RuinsCentral - metallic
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: RuinsCentral - height
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: RuinsCentral - ambientOcclusion
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    colorSpaceList: []
+    inputTextureMap: []
+    targetSettingList:
+    - label: Default
+      bOverride: 0
+      bLockRatio: 1
+      textureWidth: 512
+      textureHeight: 512
+      textureFormatMode: 0
+      normalCompressed: 0
+      bGenerateOnLoad: 1
+    material: {fileID: 8198465642642920986, guid: 1de5f51d005c6d748aa2121fe5b27e4d,
+      type: 3}
+    generatedTextures:
+    - {fileID: -3321497331244547994, guid: 1de5f51d005c6d748aa2121fe5b27e4d, type: 3}
+    - {fileID: -5785991365464815640, guid: 1de5f51d005c6d748aa2121fe5b27e4d, type: 3}
+    - {fileID: 3266055195692339909, guid: 1de5f51d005c6d748aa2121fe5b27e4d, type: 3}
+    - {fileID: 1753482221075599855, guid: 1de5f51d005c6d748aa2121fe5b27e4d, type: 3}
+    - {fileID: -3587943264626538501, guid: 1de5f51d005c6d748aa2121fe5b27e4d, type: 3}
+    - {fileID: -8741269434886304065, guid: 1de5f51d005c6d748aa2121fe5b27e4d, type: 3}

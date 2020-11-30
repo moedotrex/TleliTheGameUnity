@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6428898182698190624}
   - component: {fileID: 7969070340086057093}
   - component: {fileID: 5292613610059512911}
+  - component: {fileID: 7906742774222594}
   m_Layer: 0
   m_Name: LianaArco2
   m_TagString: Untagged
@@ -58,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -381709611464999423, guid: 37624e21e05713a429b246b00a3351ed, type: 3}
+  - {fileID: -3892322345982124739, guid: fca052540584f164396b2a620af9ffa5, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &7906742774222594
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5941330348814179738}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4567737163521631352, guid: 37624e21e05713a429b246b00a3351ed, type: 3}

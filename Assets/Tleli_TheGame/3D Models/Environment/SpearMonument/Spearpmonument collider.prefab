@@ -1,7 +1,7 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!65 &323333196638077217
-BoxCollider:
+--- !u!64 &5759289101250446786
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -10,11 +10,12 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.4999995, y: 1.9, z: 3.5}
-  m_Center: {x: 0, y: 0.95, z: 0}
---- !u!65 &3602483501778084334
-BoxCollider:
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5464826230552859169, guid: 82cfb494407ed2f449b84f7210a06955, type: 3}
+--- !u!64 &6400592280300155666
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -23,9 +24,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.21425, y: 1, z: 3.214251}
-  m_Center: {x: -0.0000012516974, y: 14.5, z: 0.0000017285347}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5857787667209067095, guid: 82cfb494407ed2f449b84f7210a06955, type: 3}
 --- !u!65 &5081623871303591687
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -119,19 +121,6 @@ BoxCollider:
   m_Size: {x: 0.39999986, y: 0.25, z: 0.40000004}
   m_Center: {x: -1.1515404, y: 2.0249999, z: 1.1515406}
 --- !u!65 &1938253331115389891
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6968742822493258417}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.0999997, y: 14, z: 2.1}
-  m_Center: {x: 0, y: 7, z: 0}
---- !u!65 &6895958859708830858
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -266,11 +255,59 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.16225041
       objectReference: {fileID: 0}
+    - target: {fileID: -8555774511177049742, guid: 82cfb494407ed2f449b84f7210a06955,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 4141981223713704560, guid: 77cb8a779d2df164794966ae52b3e767,
+        type: 3}
+    - target: {fileID: -5596677422587355612, guid: 82cfb494407ed2f449b84f7210a06955,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 4141981223713704560, guid: 77cb8a779d2df164794966ae52b3e767,
+        type: 3}
+    - target: {fileID: -5102902176241550533, guid: 82cfb494407ed2f449b84f7210a06955,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 4141981223713704560, guid: 77cb8a779d2df164794966ae52b3e767,
+        type: 3}
+    - target: {fileID: -4142722472705746676, guid: 82cfb494407ed2f449b84f7210a06955,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 4141981223713704560, guid: 77cb8a779d2df164794966ae52b3e767,
+        type: 3}
+    - target: {fileID: -2452767292020981563, guid: 82cfb494407ed2f449b84f7210a06955,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 4141981223713704560, guid: 77cb8a779d2df164794966ae52b3e767,
+        type: 3}
     - target: {fileID: 919132149155446097, guid: 82cfb494407ed2f449b84f7210a06955,
         type: 3}
       propertyPath: m_Name
       value: SpearMonument_low
       objectReference: {fileID: 0}
+    - target: {fileID: 2049841505215202728, guid: 82cfb494407ed2f449b84f7210a06955,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 4141981223713704560, guid: 77cb8a779d2df164794966ae52b3e767,
+        type: 3}
+    - target: {fileID: 4753730993906254631, guid: 82cfb494407ed2f449b84f7210a06955,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 4141981223713704560, guid: 77cb8a779d2df164794966ae52b3e767,
+        type: 3}
+    - target: {fileID: 4897162216099299901, guid: 82cfb494407ed2f449b84f7210a06955,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 4141981223713704560, guid: 77cb8a779d2df164794966ae52b3e767,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82cfb494407ed2f449b84f7210a06955, type: 3}
 --- !u!4 &3579235495492518486 stripped
