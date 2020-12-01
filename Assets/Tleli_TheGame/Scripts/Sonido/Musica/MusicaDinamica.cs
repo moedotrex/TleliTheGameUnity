@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MusicaDinamica : MonoBehaviour
 {
-    FMOD.Studio.EventInstance Music; //cambio de música
-    FMOD.Studio.EventInstance Ambiente;
+    public FMOD.Studio.EventInstance Music; //cambio de música
+    public FMOD.Studio.EventInstance Ambiente;
 
     /*[FMODUnity.EventRef]
     public string inputAmbiente;
@@ -19,8 +19,11 @@ public class MusicaDinamica : MonoBehaviour
     {
         Music = FMODUnity.RuntimeManager.CreateInstance("event:/OverworldMusic"); //ADRIAN cambio a nombre de evento en FMOD respectivo
         Music.start();
+        Music.setVolume(PlayerPrefs.GetFloat("GameVolume", 1f));
+
         Ambiente = FMODUnity.RuntimeManager.CreateInstance("event:/Ambiente");
         Ambiente.start();
+        
     }
 
 

@@ -6,16 +6,22 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public bool GameIsPaused;
+    public string screen;
     public GameObject pauseMenuUI;
+    public GameObject settingsMenuUI;
     public LightCombo lightAttack;
     public HeavyCombo heavyAttack;
     public PlayerController player;
+
+    MusicaDinamica ambient;
+
 
     void Start()
     {
         lightAttack = GameObject.Find("Player").GetComponent<LightCombo>();
         heavyAttack = GameObject.Find("Player").GetComponent<HeavyCombo>();
         player = GameObject.Find("Player").GetComponent<PlayerController>();
+        ambient = GameObject.Find("GameManager").GetComponent<MusicaDinamica>();
 
     }
     void Update()
@@ -23,9 +29,13 @@ public class UIManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (GameIsPaused)
+            if (GameIsPaused && screen == "pause")
             {
                 Resume();
+            }
+            else if (GameIsPaused && screen == "settings")
+            {
+                ReturnToPause();
             }
             else
             {
@@ -61,6 +71,7 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0f;
         GameIsPaused = true;
         Cursor.lockState = CursorLockMode.Confined;
+        screen = "pause";
     }
 
     public void Restart()
@@ -68,6 +79,21 @@ public class UIManager : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        ambient.Music.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         SceneManager.LoadScene("MainTest_Scene");
+    }
+
+    public void Settings()
+    {
+        pauseMenuUI.SetActive(false);
+        settingsMenuUI.SetActive(true);
+        screen = "settings";
+    }
+
+    void ReturnToPause()
+    {
+        pauseMenuUI.SetActive(true);
+        settingsMenuUI.SetActive(false);
+        screen = "pause";
     }
 }
