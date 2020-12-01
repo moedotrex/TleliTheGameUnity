@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3866049987126402954}
   - component: {fileID: 3584953367977602782}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: MuleKick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21f2e2d6fc2aa9449bf5a649980fb739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAttacks: 3
+  timeBetweenAttacks: 10
   attackDamage: 30
   attackDamageSlam: 1
   KBforce: 50

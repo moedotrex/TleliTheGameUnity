@@ -36,6 +36,8 @@ public class LightCombo : MonoBehaviour
     public bool lunging;
     public bool gotCharged;
 
+    public PlayerController Tleli;
+
     ParticleSystem slash;   //------
     TlelliSonido SendLAttack; //ADRIAN
     TleliDeath tleliDeath; //Stop actions when Tleli is Dead. By Emil.
@@ -53,8 +55,15 @@ public class LightCombo : MonoBehaviour
 
     void Update()
     {
+
+
         if (Input.GetMouseButtonDown(0) && combonum < 3 && !tleliDeath.isDead)
         {
+            if (Tleli.isGrounded == true)
+            {
+                Tleli.canMove = 60;
+            }
+
             if (Time.time >= nextAttackTime)
             {
                 daggerAnim.SetActive(true);

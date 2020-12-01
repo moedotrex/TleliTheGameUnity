@@ -51,7 +51,7 @@ public class HeavyAttack : MonoBehaviour
 
             if (timer >= timeBetweenAttacks && playerInRange && isDisplaced == false )
 
-            {
+       {
             int randomNum = Random.Range(1, 100);
             slamCounter++;
             if (randomNum <= 66)
