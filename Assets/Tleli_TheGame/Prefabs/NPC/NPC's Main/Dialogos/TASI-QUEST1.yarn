@@ -2,10 +2,10 @@
 tags:
 ---
 <<if $die is false>>
-Hey you! You look like someone who cares for others, since you are traveling with a youngling. You got a minute to help me out?
+Hey you! You look like someone who cares for others, since you are traveling with a youngling. I need hekp with the Upis!! You got a minute to help me out?
 [[Sorry, Im a little busy at the moment|TASI.QUEST2]]
 [[Sure, what seems to be the problem?|TASI.QUEST3]]
-[[Upis?  The creatures wondering around?|TASI.QUEST4]]
+[[Upis? those little blue spirits?|TASI.QUEST4]]
 <<else>>
 [[TASI.IDLE]]
 <<endif>>
@@ -22,8 +22,8 @@ Oh man, thanks for your time anyways.
 title: TASI.QUEST3
 tags:
 ---
-I was wondering around with the Upis until we heard this loud rumble, much louder than the usual monsters that are around, it might be the Henchmen…. rumor has ir hes been corrupted…..I got scared so I hid, but when I came back up the Upis where gone. I think they got scared and ran away….. will you help me find them? 
-[[I till help you out, don’t worry. |TASI.QUEST5]]
+I was wondering around with the Upis until we heard this loud rumble, much louder than the usual monsters that are around, it might be the Henchmen…. rumor has it hes been corrupted…..I got scared so I hid, but when I came back up the Upis where gone. I think they got scared and ran away….. will you help me find them? 
+[[I will help you out, don’t worry. |TASI.QUEST5]]
 [[I dont think I have the time, Im sorry.|TASI.QUEST2]]
 <<set $die to false>>
 ===
@@ -47,12 +47,8 @@ Thank you so much!!
 title: TASI.IDLE
 tags:
 ---
-You have such beautiful hair! Very vibrant
-<<wait 2>>
-Do you think the guardian is doing okay?
-<<wait 2>>
-I hear noises every now and then, rumbling and movement…..scary
-<<wait 2>>
+You be carefull out there...
+
 ===
 
 title: TASI.DONE

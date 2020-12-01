@@ -37,7 +37,7 @@ public class PlayerDash : MonoBehaviour
         { 
         if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownTime <= 0 && !tleliDeath.isDead)
         {
-                Tleli.canMove = 30;
+                Tleli.canMove = 20;
                 animator.SetTrigger("DashPress");
                 StartCoroutine(Dash());
             dashCooldownTime = dashCooldown;               

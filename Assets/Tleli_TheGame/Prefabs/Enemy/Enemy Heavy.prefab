@@ -156,8 +156,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.6937864, y: 2.1495764, z: 1.013088}
-  m_Center: {x: 0.028990258, y: 0.039788447, z: 0.63153845}
+  m_Size: {x: 2.23, y: 2.1495764, z: 1.18}
+  m_Center: {x: 0.028990258, y: 0.2, z: 0.76}
 --- !u!65 &4219402306929305351
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -212,6 +212,8 @@ MonoBehaviour:
   slamCounter: 0
   speed: 0
   jumpSpeed: 10
+  jumpRadio: 10
+  isAnimating: 0
   isDisplaced: 0
 --- !u!114 &-103767145486128493
 MonoBehaviour:
@@ -226,6 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velRotacion: 0.3
+  jumpRadio: 0
   radioDef: 10
   movSpeed: 2
   EnemySpawn: {x: 0, y: 0, z: 0}
@@ -312,6 +315,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3232887733713315530, guid: a23c9f7f42d1e7d49a28bdeb6ad30604,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.137
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a23c9f7f42d1e7d49a28bdeb6ad30604,
         type: 3}
