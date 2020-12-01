@@ -131,7 +131,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1.95
+  m_StoppingDistance: 1.8
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -152,11 +152,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velRotacion: 20
-  radioDef: 10
-  movSpeed: 5
-  knockbackForce: 1000
+  radioDef: 5
+  movSpeed: 4
   EnemySpawn: {x: 0, y: 0, z: 0}
   isAttacking: 0
+  alertIcon: {fileID: 8190261532161272791, guid: 8a3b5c9fc8f29ca49ba590b065d4801d,
+    type: 3}
 --- !u!114 &675025483163537253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +172,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   currentHealth: 0
+  imPoisonous: 0
+  cloudSpawner: {fileID: 7039557453951838944, guid: df4a1fd991dae47428eead02fd0332d2,
+    type: 3}
+  flameSpawner: {fileID: 7039557453951838944, guid: df4a1fd991dae47428eead02fd0332d2,
+    type: 3}
   ogColor: {r: 0.42481834, g: 0.28969374, b: 0.5849056, a: 1}
 --- !u!114 &675025483163537263
 MonoBehaviour:
@@ -186,6 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 1.5
   attackDamage: 20
+  isDisplaced: 0
 --- !u!65 &675025483163537262
 BoxCollider:
   m_ObjectHideFlags: 0

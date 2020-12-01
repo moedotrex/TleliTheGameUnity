@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class DestroyAfterSeconds : MonoBehaviour
 {
+
+    public float timetodestroy;
    void Update()
     {
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, timetodestroy);
     }
 }

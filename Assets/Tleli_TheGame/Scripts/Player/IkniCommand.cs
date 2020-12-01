@@ -8,6 +8,7 @@ public class IkniCommand : MonoBehaviour
 
     TwinkyFollow ikniFollow;
     IkniSlowAction ikniSlowAOE;
+    TleliDeath tleliDeath;
     public float timeforCommand;
     public float slowCD;
     float inSlowCD;
@@ -21,6 +22,7 @@ public class IkniCommand : MonoBehaviour
         inSlowCD = 0f;
         ikniFollow = GameObject.FindGameObjectWithTag("Ikni").GetComponent<TwinkyFollow>();
         ikniSlowAOE = GameObject.FindGameObjectWithTag("Ikni").GetComponent<IkniSlowAction>();
+        tleliDeath = GetComponent<TleliDeath>(); //Stop actions when Tleli is Dead. By Emil.
     }
 
 
@@ -41,7 +43,7 @@ public class IkniCommand : MonoBehaviour
 
         if (Input.GetKeyUp("q"))
         {
-            if (timeHeld <= timeforCommand && inSlowCD <= 0f)
+            if (timeHeld <= timeforCommand && inSlowCD <= 0f && !tleliDeath.isDead)
             {
                 Debug.Log("shortpress");
                 ikniSlowAOE.SlowInk();

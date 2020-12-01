@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
 
 public class LightCombo : MonoBehaviour
@@ -37,18 +36,34 @@ public class LightCombo : MonoBehaviour
     public bool lunging;
     public bool gotCharged;
 
+    public PlayerController Tleli;
+
+    ParticleSystem slash;   //------
+    TlelliSonido SendLAttack; //ADRIAN
+    TleliDeath tleliDeath; //Stop actions when Tleli is Dead. By Emil.
+
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
         moveScript = GetComponent<PlayerController>();
+        tleliDeath = GetComponent<TleliDeath>();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
         currentDamage = Damage;
+        slash = GameObject.Find("WeaponSlash").GetComponent<ParticleSystem>();   //------
+        SendLAttack = GetComponent<TlelliSonido>(); //ADRIAN
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && combonum < 3)
+
+
+        if (Input.GetMouseButtonDown(0) && combonum < 3 && !tleliDeath.isDead)
         {
+            if (Tleli.isGrounded == true)
+            {
+                Tleli.canMove = 60;
+            }
+
             if (Time.time >= nextAttackTime)
             {
                 daggerAnim.SetActive(true);
@@ -57,11 +72,17 @@ public class LightCombo : MonoBehaviour
                 combonum++;
                 currentDamage += 2f;
                 reset = 0f;
+
+
+                if (combonum == 1)   //------
+                {
+                    StartCoroutine(Slash());
+                }
             }
 
             if (target != null)
-            { 
-            FaceTarget();
+            {
+                FaceTarget();
             }
         }
         if (combonum > 0)
@@ -87,26 +108,26 @@ public class LightCombo : MonoBehaviour
             intResetTime = resetTime;
         }
 
-        if (gotCharged) // ya adquirio el poder? 
+        if (gotCharged && !tleliDeath.isDead) // ya adquirio el poder? 
         {
             if (Input.GetMouseButton(0))
-        {
-            LAttackTimer += Time.deltaTime;
-        }
-        if (LAttackTimer >= LAttackTime && !Input.GetMouseButton(1) )
-        {
-            animator.SetBool("Lcharge", true);
-            moveScript.isDisplaced = true;
-            if (target != null)
             {
-                FaceTarget();
+                LAttackTimer += Time.deltaTime;
             }
-        }
-        if (Input.GetMouseButtonUp(0) || Input.GetMouseButton(1))
-        {            
-            animator.SetBool("Lcharge", false);
-            LAttackTimer = 0;
-        }
+            if (LAttackTimer >= LAttackTime && !Input.GetMouseButton(1))
+            {
+                animator.SetBool("Lcharge", true);
+                moveScript.isDisplaced = true;
+                if (target != null)
+                {
+                    FaceTarget();
+                }
+            }
+            if (Input.GetMouseButtonUp(0) || Input.GetMouseButton(1))
+            {
+                animator.SetBool("Lcharge", false);
+                LAttackTimer = 0;
+            }
         }
 
         if (lunging == true)
@@ -120,10 +141,12 @@ public class LightCombo : MonoBehaviour
                 DestroyOnCollision wall = hit.transform.GetComponent<DestroyOnCollision>();
                 EnemyHealth enemy = hit.transform.GetComponent<EnemyHealth>();
                 EnemyController mov = hit.transform.GetComponent<EnemyController>();
+                HeavyController Hmov = hit.transform.GetComponent<HeavyController>();
                 if (enemy != null)
                 {
+                    Hmov.StartKnockBack();
                     enemy.HurtEnemy(currentDamage + 10f);
-                    mov.StartKnockBack();
+                    //mov.StartKnockBack();
                 }
                 if (wall != null)
                 {
@@ -137,6 +160,9 @@ public class LightCombo : MonoBehaviour
     {
         shootRay.origin = transform.position;
         shootRay.direction = transform.forward;
+
+        SendLAttack.LAttack = true; //ADRIAN
+
         Debug.DrawRay(transform.position, transform.forward, Color.red);
         if (Physics.Raycast(shootRay, out hit, rayRange, mask))
         {
@@ -217,5 +243,11 @@ public class LightCombo : MonoBehaviour
             yield return null;
             moveScript.isDisplaced = false;
         }
+    }
+
+    IEnumerator Slash()   //------
+    {
+        yield return new WaitForSeconds(0.15f);
+        slash.Emit(1);
     }
 }

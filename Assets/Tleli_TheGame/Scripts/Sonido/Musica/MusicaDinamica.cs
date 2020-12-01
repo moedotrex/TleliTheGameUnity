@@ -17,7 +17,7 @@ public class MusicaDinamica : MonoBehaviour
 
     void Start()
     {
-        Music = FMODUnity.RuntimeManager.CreateInstance("event:/Music");
+        Music = FMODUnity.RuntimeManager.CreateInstance("event:/OverworldMusic"); //ADRIAN cambio a nombre de evento en FMOD respectivo
         Music.start();
         Ambiente = FMODUnity.RuntimeManager.CreateInstance("event:/Ambiente");
         Ambiente.start();

@@ -8,17 +8,25 @@ public class EnemyAttack : MonoBehaviour
     public float attackDamage = 1;
 
     GameObject player;
-    TlelliFlameHealth TlelliHealth;
+    // TlelliFlameHealth TlelliHealth;
+    TleliHealth TlelliHealth;
     tleliKnockBack playerKnockback;
     bool playerInRange;
     float timer;
     public bool isDisplaced;
     //crear evento para detectar tiempo de anim gethit y death
 
+    ChomperAnimationController chomperController; //Draaek
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        TlelliHealth = player.GetComponent<TlelliFlameHealth>();
+
+        chomperController = GetComponentInChildren<ChomperAnimationController>(); //Draaek
+
+        // TlelliHealth = player.GetComponent<TlelliFlameHealth>();
+        TlelliHealth = player.GetComponent<TleliHealth>();
+
         playerKnockback = player.GetComponent<tleliKnockBack>();
     }
 
@@ -38,15 +46,22 @@ public class EnemyAttack : MonoBehaviour
     {
         timer = 0f;
 
-        if (TlelliHealth.HP > 0)
+        if (TlelliHealth.flame > 0)
         {
-            TlelliHealth.SetHPDamage(attackDamage);
-            playerKnockback.startKnockBack();
+            chomperController.LightAtkTrigger(); //Draaek
+            TlelliHealth.HurtFlame(attackDamage);
+            playerKnockback.startKnockBack(5f);
         }
-       /* if (TlelliHealth.HP < 0)
+
+        if (TlelliHealth.flame <= 0)
         {
-       Poner una barrera para que deje de atacar
-        }*/
+            TlelliHealth.SetHPDamage(1);
+        }
+
+        /* if (TlelliHealth.HP < 0)
+         {
+        Poner una barrera para que deje de atacar
+         }*/
     }
 
     //¿jugador en rango de ataque?
@@ -66,5 +81,4 @@ public class EnemyAttack : MonoBehaviour
             playerInRange = false;
         }
     }
-
 }
