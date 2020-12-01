@@ -67,9 +67,9 @@ public class HeavyAttack : MonoBehaviour
         {
             int randomNum = Random.Range(1, 100);
 
-            if (randomNum <= 66)
+            if (randomNum <= 100)
             {
-                Debug.Log("nojala");
+                Debug.Log("golpe");
 
                 isAnimating = true;
                 timer = 0f;
@@ -127,8 +127,7 @@ public class HeavyAttack : MonoBehaviour
 
             if (TlelliHealth.flame > 0 && playerInRange)
             {
-                
-
+        
                 TlelliHealth.HurtFlame(attackDamage);
                 playerKnockback.startKnockBack(15f);
             }
@@ -158,7 +157,7 @@ public class HeavyAttack : MonoBehaviour
             }
 
 
-            if (TlelliHealth.flame <= 0)
+            if (TlelliHealth.flame <= 0 && playerInRange)
             {
                 TlelliHealth.SetHPDamage(1);
             }

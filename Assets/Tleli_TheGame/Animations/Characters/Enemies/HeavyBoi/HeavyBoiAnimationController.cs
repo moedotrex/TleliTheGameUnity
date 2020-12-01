@@ -6,11 +6,13 @@ public class HeavyBoiAnimationController : MonoBehaviour
 {
     Animator heavyBoiAnimator;
     HeavyAttack attack;
+    HeavyController jumpSmash;
     // Start is called before the first frame update
     void Start()
     {
         heavyBoiAnimator = this.gameObject.GetComponent<Animator>();
         attack = GetComponentInParent<HeavyAttack>();
+        jumpSmash = GetComponentInParent<HeavyController>();
     }
 
     public void JumpTrigger()
@@ -41,8 +43,21 @@ public class HeavyBoiAnimationController : MonoBehaviour
 
     }
 
+    void JumpEnd()
+    {
+
+        jumpSmash.JumpAnimOff();
+        attack.JumpSlamp();
+
+    }
+
     void turnOffAnim()
     {
         attack.isAnimating = false;
+    }
+
+    void jumpEndOnly()
+    {
+        jumpSmash.JumpAnimOff();
     }
 }
