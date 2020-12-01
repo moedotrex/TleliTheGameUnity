@@ -7,12 +7,24 @@ public class EnemyHealth : MonoBehaviour
 
     public float health;
     public float currentHealth;
+    TlelliFlameHealth flama; //Added by Emil. Necessary for changing camera into Battle Mode.
 
-   public  Color ogColor;
+    public bool imPoisonous;
+    public GameObject cloudSpawner;
+    public GameObject flameSpawner;
+
+    public Color ogColor;
+    ParticleSystem particles;
+
+    ChomperAnimationController chomperController; //Draaek
 
     void Start()
     {
         currentHealth = health;
+        flama = GameObject.FindGameObjectWithTag("Player").GetComponent<TlelliFlameHealth>();
+        particles = GetComponentInChildren<ParticleSystem>();
+
+        chomperController = GetComponentInChildren<ChomperAnimationController>(); //Draaek
     }
 
 
@@ -20,6 +32,15 @@ public class EnemyHealth : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
+            chomperController.IsDeadBoolParameter(true);
+            Instantiate(flameSpawner, transform.position, Quaternion.identity);
+
+            if (imPoisonous)
+            {
+                Instantiate(cloudSpawner, transform.position, Quaternion.identity);
+            }
+
+            flama.BattleMode(false);
             Destroy(gameObject);
         }
     }
@@ -28,8 +49,18 @@ public class EnemyHealth : MonoBehaviour
     {
         //  GameObject.Instantiate(blood, transform.position, Quaternion.identity);
 
+        if (Random.Range(0, 10) > 5)
+        {
+            chomperController.IsHitTrigger();
+        }
+
+        else
+        {
+            chomperController.IsHitAltTrigger();
+        }
         currentHealth -= damage;
-       // Debug.Log(transform.name + "takes" + damage + "damage.");
+        particles.Emit((int)currentHealth);
+        // Debug.Log(transform.name + "takes" + damage + "damage.");
         StartCoroutine(HurtEnemyCoroutine());
     }
 
@@ -41,7 +72,6 @@ public class EnemyHealth : MonoBehaviour
         {
             Renderer r = layer.GetComponent<Renderer>();
             r.material.color = Color.red;
-
         }
 
         yield return new WaitForSeconds(0.1f);
@@ -52,5 +82,5 @@ public class EnemyHealth : MonoBehaviour
             r.material.color = ogColor;
 
         }
-    }    
+    }
 }

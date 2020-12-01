@@ -9,6 +9,7 @@ public class HeavyCombo : MonoBehaviour
 
     List<string> animList = new List<string>(new string[] { "HAttack_1", "HAttack_2" }); 
     Animator animator;
+    TleliDeath tleliDeath; //Stop actions when Tleli is Dead. By Emil.
     int combonum;
     float reset;
     public float attackRate;
@@ -31,12 +32,13 @@ public class HeavyCombo : MonoBehaviour
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
+        tleliDeath = GetComponent<TleliDeath>();
     }
 
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && combonum < 2)
+        if (Input.GetMouseButtonDown(1) && combonum < 2 && !tleliDeath.isDead)
         {
             if (Time.time >= nextAttackTime)
             {

@@ -6,6 +6,9 @@ using UnityEngine.Rendering;
 public class PlayerDash : MonoBehaviour
 {
     PlayerController moveScript;
+    TleliDeath tleliDeath;
+
+    public PlayerController Tleli;
 
     public float dashSpeed;
     public float dashTime;
@@ -22,7 +25,9 @@ public class PlayerDash : MonoBehaviour
     void Start()
     {
         moveScript = GetComponent<PlayerController>();
+        tleliDeath = GetComponent<TleliDeath>(); //Stop actions when Tleli is Dead. By Emil.
         animator = GetComponentInChildren<Animator>();
+        
     }
 
     void Update()
@@ -30,9 +35,11 @@ public class PlayerDash : MonoBehaviour
         dashCooldownTime -= Time.deltaTime;
         if (gotDash == true) 
         { 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownTime <= 0)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownTime <= 0 && !tleliDeath.isDead)
         {
-            StartCoroutine(Dash());
+                Tleli.canMove = 20;
+                animator.SetTrigger("DashPress");
+                StartCoroutine(Dash());
             dashCooldownTime = dashCooldown;               
         }
         }
@@ -47,9 +54,10 @@ public class PlayerDash : MonoBehaviour
             moveDir = Quaternion.Euler(0f, transform.eulerAngles.y, 0f) * Vector3.forward; //direccion tomada de player Y transform 
             moveScript.characterController.Move(moveDir * dashSpeed * Time.deltaTime);
             moveScript.isDisplaced = true;
+            yield return null;
             animator.SetTrigger("Dash"); //animation loop
-            yield return null; 
             moveScript.isDisplaced = false;
+            moveScript.velocidad.y = -5f;
         }
     }
 }

@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 	public float aceleracion = 0.08f;      //aceleracion en el aire.
 	private float vel;
 	bool isMoving;
-	Vector3 velocidad;
+	[HideInInspector] public Vector3 velocidad;
 	float _deltaVelocidad = 0f;
 
 	public Transform groundCheck;
@@ -28,34 +28,47 @@ public class PlayerController : MonoBehaviour
 	public float saltoTime;
 	private bool isJumping;
 
-	private int extraJumps;
+    public int canMove = 0;
+    float rotacionDefault;
+
+
+    int extraJumps;
 	public int extraJumpsValue;
 
-	public CharacterController characterController;
+	[HideInInspector] public CharacterController characterController;
 	public Transform cam;
-	
-	public Vector3 moveDir;
-	public bool isDisplaced;
-	PlayerDash dashCount;
 
-	public TleliAnimationController tleliAnimationController;
+	[HideInInspector] public Vector3 moveDir;
+	[HideInInspector] public bool isDisplaced;
+	PlayerDash dashCount;
+	
+	TleliAnimationController tleliAnimationController;
+	TleliDeath tleliDeath;
 
 	void Start()
 	{
 		characterController = GetComponent<CharacterController>();
+		tleliDeath = GetComponent<TleliDeath>();
+		tleliAnimationController = GetComponentInChildren<TleliAnimationController>();
 		dashCount = GetComponent<PlayerDash>();
 		extraJumps = extraJumpsValue;
 		velInicial = velBase;
 		saltoInicial = Salto;
+
+        rotacionDefault = tempRotacion;
 	}
 
 	void Update()
 	{
-		isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        
+
+
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
 		if (isGrounded && velocidad.y < 0)
 		{
 			velocidad.y = -10f;
+			tleliAnimationController.LandTrigger();
 		}
 
 		float vertical = Input.GetAxisRaw("Vertical");
@@ -68,15 +81,19 @@ public class PlayerController : MonoBehaviour
 			velocidad.y += gravedad * Time.deltaTime;
 
 		//salto
+		if(!tleliDeath.isDead)// Stop actions when Tleli is Dead. By Emil.
+		{ 
 		if (Input.GetButtonDown("Jump") && isGrounded)
 		{
 			GetComponent<FMODUnity.StudioEventEmitter>().Play();
 			isJumping = true;
 			saltoTimeCounter = saltoTime;
 			velocidad.y = Mathf.Sqrt(Salto * -2f * gravedad);
-			tleliAnimationController.JumpTakeOffTrigger();
-		}
-		//doble salto
+			//leliAnimationController.JumpTakeOffTrigger();
+				tleliAnimationController.JumpTakeOffbool(true);
+
+			}
+			//doble salto
 			if (Input.GetButtonDown("Jump") && extraJumps > 0)
 			{
 				GetComponent<FMODUnity.StudioEventEmitter>().Play();
@@ -96,6 +113,7 @@ public class PlayerController : MonoBehaviour
 
 		if (Input.GetButton("Jump") && isJumping == true)
 		{
+
 			if (saltoTimeCounter > 0)
 			{
 				velocidad.y = Mathf.Sqrt(Salto * -2f * gravedad);
@@ -135,8 +153,8 @@ public class PlayerController : MonoBehaviour
 		{
 			velBase = velMax;
 		}
-
-		if (isGrounded == true) //regresa a tierra
+			}
+			if (isGrounded == true) //regresa a tierra
 		{
 			velBase = velInicial;
 			Salto = saltoInicial;
@@ -144,11 +162,29 @@ public class PlayerController : MonoBehaviour
 
 				if (tleliAnimationController.CheckFallLoop())
 				{
+                    canMove = 10;
 					tleliAnimationController.JumpLandTrigger();
 				}
 		}
 
-		vel = velBase;
+
+            if (canMove > 0)
+            {
+                canMove -= 1;
+                velBase = 1;
+                tempRotacion = 10;
+            }
+
+            if (isJumping == true)
+            {
+                velBase = 5.5f;
+            }
+
+            else { tempRotacion = rotacionDefault; }
+
+            vel = velBase;
+		if(!tleliDeath.isDead)// Stop actions when Tleli is Dead. By Emil.
+			{ 
 		if (direction.magnitude >= 0.1f)
 		{
 			float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
@@ -171,10 +207,11 @@ public class PlayerController : MonoBehaviour
 			tleliAnimationController.SetForwardSpeedParameter(0f);
 			}
 		}
-
+		}
 		if (velocidad.y<0)
         {
 			tleliAnimationController.JumpFallLoopBoolParameter(false);
+			tleliAnimationController.JumpTakeOffbool(false);
 		}
 
 		if (velocidad.y>0)
@@ -182,6 +219,7 @@ public class PlayerController : MonoBehaviour
 			tleliAnimationController.JumpFallLoopBoolParameter(true);
         }
 		
+        
 	}
 
 	public float GetVelocity()

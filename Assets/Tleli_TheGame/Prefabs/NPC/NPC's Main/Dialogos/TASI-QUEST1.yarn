@@ -1,0 +1,58 @@
+﻿title: TASI.QUEST1
+tags:
+---
+<<if $die is false>>
+Hey you! You look like someone who cares for others, since you are traveling with a youngling. I need hekp with the Upis!! You got a minute to help me out?
+[[Sorry, Im a little busy at the moment|TASI.QUEST2]]
+[[Sure, what seems to be the problem?|TASI.QUEST3]]
+[[Upis? those little blue spirits?|TASI.QUEST4]]
+<<else>>
+[[TASI.IDLE]]
+<<endif>>
+
+===
+
+title: TASI.QUEST2
+tags:
+---
+Oh man, thanks for your time anyways.
+<<set $die to false>>
+===
+
+title: TASI.QUEST3
+tags:
+---
+I was wondering around with the Upis until we heard this loud rumble, much louder than the usual monsters that are around, it might be the Henchmen…. rumor has it hes been corrupted…..I got scared so I hid, but when I came back up the Upis where gone. I think they got scared and ran away….. will you help me find them? 
+[[I will help you out, don’t worry. |TASI.QUEST5]]
+[[I dont think I have the time, Im sorry.|TASI.QUEST2]]
+<<set $die to false>>
+===
+
+title: TASI.QUEST4
+tags:
+---
+Yes! Upis are the wonderful small beings native from The Deep, they don’t hurt anybody, but right now I’m worried some of them might be in danger.
+[[That can’t be good, what hapened?|TASI.QUEST3]]
+<<set $die to false>>
+===
+
+title: TASI.QUEST5
+tags:
+---
+Thank you so much!!
+<<AceptarMisionUno GameManager>>
+<<set $die to true>>
+===
+
+title: TASI.IDLE
+tags:
+---
+You be carefull out there...
+
+===
+
+title: TASI.DONE
+tags:
+---
+YOU DID IT! Thank you so much you have no idea how much this mean to me!
+===

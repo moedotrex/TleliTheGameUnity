@@ -11,7 +11,8 @@ public class HPFlameValuesUI: MonoBehaviour
 
     public Image FlameBar;
     public Image HPBar;
-    TlelliFlameHealth tlelli;
+    // TlelliFlameHealth tlelli;
+    TleliHealth tlelli;
     float FlameCurrentValue;
     float HPCurrentValue;
     Text HPtxt;
@@ -22,7 +23,9 @@ public class HPFlameValuesUI: MonoBehaviour
 
     void Start()   //Recuperar valor de vida de Tlelli
     {
-        tlelli = GameObject.FindGameObjectWithTag("Player").GetComponent<TlelliFlameHealth>();
+       // tlelli = GameObject.FindGameObjectWithTag("Player").GetComponent<TlelliFlameHealth>();
+       tlelli = GameObject.FindGameObjectWithTag("Player").GetComponent<TleliHealth>();
+
         HPCurrentValue = tlelli.GetHP();
         FlameCurrentValue = tlelli.GetFlame();
         flameTxt = GameObject.Find("ShowFlame").GetComponent<Text>();
@@ -38,9 +41,9 @@ public class HPFlameValuesUI: MonoBehaviour
             FlameBar.fillAmount = FlameCurrentValue;
         }
 
-        if (HPCurrentValue != tlelli.GetHP() / 100)    //Sólo actualizar barra si el valor de vida cambió
+        if (HPCurrentValue != tlelli.GetHP() / 2)    //Sólo actualizar barra si el valor de vida cambió
         {     
-            HPCurrentValue = tlelli.GetHP() / 100;
+            HPCurrentValue = tlelli.GetHP() / 2;
             HPBar.fillAmount = HPCurrentValue;
         }
 
