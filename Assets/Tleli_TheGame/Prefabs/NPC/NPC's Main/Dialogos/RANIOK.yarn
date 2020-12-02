@@ -13,18 +13,18 @@ Sometimes I look up at the sky and wonder… are those stars?
 title: Raniok.dos
 tags:
 ---
-I don't know if those are stars or not, but from time to time, I pretend they are and make a wish... Do you think that makes a difference?
+I don't know if those are really stars or not, and yet I pretend they are real and make a wish…. Do you think it makes a difference?
 [[I’d like to think so!|Raniok.cuat]]
-[[I Dont think so...|Raniok.cinq]]
+[[I Don't think so...|Raniok.cinq]]
 <<set $die to false>>
 ===
 
 title: Raniok.tre
 tags:
 ---
-I miss them so much...from time to time, I pretend they are and make a wish... Do you think that makes a difference?
+I miss them so much… from time to time, I pretend they are real and make a wish…. Do you think it makes a difference?
 [[I’d like to think so!|Raniok.cuat]]
-[[I Dont think so...|Raniok.cinq]]
+[[I Don't think so….|Raniok.cinq]]
 <<set $die to false>>
 ===
 
@@ -38,7 +38,7 @@ Me too, girl. It’s nice to hear someone finally agrees.
 title: Raniok.cinq
 tags:
 ---
-Hm, I guess you’re right. It’s pretty stupid anyways. 
+Hm, you’re probably right. It’s pretty stupid anyways. 
 <<set $die to true>>
 ===
 
@@ -46,9 +46,9 @@ title: Raniok.stars
 tags:
 ---
 <<if $ok is false>>
-So, what is your story?
-[[Like everyone else I have nightmares of my past, but no clear clues yet|Raniok.stars1]]
-[[Not sure, but 1 had a strange dream this morning, I was in a crowd, and a boy was there|Raniok.stars2]]
+How are you feeling?
+[[Mostly tired, I keep having these weird nightmares that won't let me rest|Raniok.stars1]]
+[[Not great, I had a strange dream this morning, I was in a crowd, and a little kid was there.|Raniok.stars2]]
 <<else>>
 [[Raniok.wonder]]
 <<endif>>
@@ -57,19 +57,20 @@ So, what is your story?
 title: Raniok.stars1
 tags:
 ---
-That must be horrible...I hope you can put that puzzle together soon.
+That must be horrible…. I hope you discover what it is that torments you.
 <<set $ok to true>>
 ===
 
 title: Raniok.stars2
 tags:
 ---
-You could start putting those puzzle pieces together, maybe you will understand better with time...
+Dreams tend to be confusing, but they might also reveal something to you….
 <<set $ok to true>>
 ===
 
 title: Raniok.wonder
 tags:
 ---
-Twinkly Twinkly little star~....
+Twinkle Twinkle little star~....
 ===
+

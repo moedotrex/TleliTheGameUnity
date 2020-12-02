@@ -2,8 +2,8 @@
 tags:
 ---
 <<if $die is false>>
-CAW! CAW! Oh sorry! Did I scare you? I was just practicing my flying. I saw a weird hole on the ground the other day. I want to go over there but it would be dangerous if I can’t fly back
-[[No worries|MOE.one]]
+CAW! CAW! Oh sorry! Did I scare you? I was just practicing. I saw a weird hole on the ground the other day. I want to fly over there but it would be dangerous if I can’t make it back.
+[[No worries.|MOE.one]]
 <<else>>
 [[MOE.conv]]
 <<endif>>
@@ -19,27 +19,28 @@ Bye bye~
 title: MOE.conv
 tags:
 ---
-Its you! CAW! CAW! 
-[[Are you scared of the monsters?|MOE.two]]
+It 's you! CAW! CAW! 
+[[Aren't you scared of the monsters?|MOE.two]]
 [[Why do you want to go beyond the hole?|MOE.three]]
-[[Have you tried climbign these giant mushrooms?|MOE.forr]]
+[[Have you ever climbed on these giant mushrooms?|MOE.forr]]
 ===
 
 title: MOE.two
 tags:
 ---
-OHH yes! Im no good at combat so flying is my only escape, I have to master it.
+OHH yes! I'm no good at fighting so flying away is my only option, I have to master it.
 
 ===
 
 title: MOE.three
 tags:
 ---
-Oh, A friend of mine went looking for an object, he hasnt returned....Im a little worried something happened to him.
+Oh, A friend of mine went looking for something and hasn't returned…. I'm worried something might have happened to him.
 ===
 
 title: MOE.forr
 tags:
 ---
-YESS! CAW CAW! they are so much fun! some of them are a little too tall for me tho.. 
+YESS! CAW CAW! they are so much fun! some of them are still a little too tall for me tho... 
 ===
+

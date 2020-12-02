@@ -4,8 +4,8 @@ tags:
 <<if $die is false>>
 You seem quite somber, young girl. Is something troubling you?
 [[Do you feel safe here?|PAKI.one]]
-[[I'm alright I guess|PAKI.two]]
-[[Not really..|PAKI.tree]]
+[[I'm alright I guess.|PAKI.two]]
+[[You could say that...|PAKI.tree]]
 <<else>>
 [[PAKI.conv]]
 <<endif>>
@@ -15,8 +15,8 @@ title: PAKI.one
 tags:
 ---
 I like it here. It’s nice and quiet... Can’t remember the last time I felt so much peace...you?
-[[I'm alright|PAKI.two]]
-[[Not really..|PAKI.tree]]
+[[I'm alright.|PAKI.two]]
+[[Not really...|PAKI.tree]]
 <<set $die to false>>
 ===
 
@@ -24,49 +24,48 @@ title: PAKI.two
 tags:
 ---
 You got a little one with you, Is he a sibling?
-[[No.. hes my companion, we tag along together|PAKI.forr]]
-[[We look out for eachother, hes my friend|PAKI.forr]]
+[[No... just companion, he tags along.|PAKI.forr]]
+[[We look out for each other, he's my friend|PAKI.forr]]
 <<set $die to false>>
 ===
 
 title: PAKI.tree
 tags:
 ---
-Really? is it your past life?
-[[Yeah, could be..|PAKI.two]]
-[[The monsters scare me a little..|PAKI.help]]
+Really? Is it your past life?
+[[Could be...|PAKI.two]]
+[[I don't know, i just hope the dreams stop.|PAKI.help]]
 <<set $die to false>>
 ===
 
 title: PAKI.forr
 tags:
 ---
-Thats good, having somebody is important and healthy..
+I see, keeping company is always good!
 [[Do you have anyone here?|PAKI.six]]
-[[See you around|PAKI.sev]]
+[[See you around.|PAKI.sev]]
 <<set $die to false>>
 ===
 
 title: PAKI.six
 tags:
 ---
-I do know the Cheiftan, hes a very caring person and nice as well.
+There's the Chieftain, he's very caring and capable as well.
 [[Later!|PAKI.sev]]
-[[He sure seems like it|PAKI.sev]]
 <<set $die to false>>
 ===
 
 title: PAKI.sev
 tags:
 ---
-Ill see you around!
+I’ll see you around!
 <<set $die to true>>
 ===
 
 title: PAKI.help
 tags:
 ---
-They sure are scary, but not worries!
+They sure can be scary, but don't worry! i'm sure they'll stop soon.
 <<set $die to true>>
 ===
 
@@ -74,7 +73,7 @@ They sure are scary, but not worries!
 title: PAKI.conv
 tags:
 ---
-Hows the trip going?
+How's the trip going?
 [[Do you remember who you used to be?|PAKI.eee]]
 [[Have you been to the caves?|PAKI.ooo]]
 [[Have a nice one!|PAKI.sss]]
@@ -83,17 +82,17 @@ Hows the trip going?
 title: PAKI.eee
 tags:
 ---
-I was a profesional dancer, I loved to dance! I still do, tho I dont do it anymore infront of a crowd.
+Oh! I was a professional dancer, I loved to dance! I still do, though I guess I don't have an audience anymore.
 ===
 
 title: PAKI.ooo
 tags:
 ---
-Oh my no, horrible creatures in there, besides out here we have good company and a LOT of shrooms haha~
+Oh my no, there are horrible creatures in there. Besides, out here we have good company, and a LOT of shrooms haha~
 ===
 
 title: PAKI.sss
 tags:
 ---
-You too kiddo. 
+You too!
 ===
