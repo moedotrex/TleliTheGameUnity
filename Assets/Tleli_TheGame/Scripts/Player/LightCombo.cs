@@ -74,10 +74,10 @@ public class LightCombo : MonoBehaviour
                 reset = 0f;
 
 
-                if (combonum == 1)   //------
+                /*if (combonum == 1)   //------ COMMENTED TO REDUCE ERRORS. DO NOT REMOVE.
                 {
                     StartCoroutine(Slash());
-                }
+                }*/
             }
 
             if (target != null)
@@ -98,11 +98,6 @@ public class LightCombo : MonoBehaviour
             }
         }
 
-        if (combonum == 4)
-        {
-            intResetTime = 4f;
-            combonum = 0;
-        }
         else
         {
             intResetTime = resetTime;
@@ -117,6 +112,7 @@ public class LightCombo : MonoBehaviour
             if (LAttackTimer >= LAttackTime && !Input.GetMouseButton(1))
             {
                 animator.SetBool("Lcharge", true);
+                Debug.Log(animator.GetBool("Lcharge"));
                 moveScript.isDisplaced = true;
                 if (target != null)
                 {
@@ -126,7 +122,9 @@ public class LightCombo : MonoBehaviour
             if (Input.GetMouseButtonUp(0) || Input.GetMouseButton(1))
             {
                 animator.SetBool("Lcharge", false);
+                Debug.Log(animator.GetBool("Lcharge"));
                 LAttackTimer = 0;
+                moveScript.isDisplaced = false;
             }
         }
 
