@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class EnableMMap : MonoBehaviour
-{
+{/*
     RawImage minimap;
     // Start is called before the first frame update
     void Start()
@@ -20,5 +20,5 @@ public class EnableMMap : MonoBehaviour
         {
             minimap.enabled = !minimap.enabled;
         }
-    }
+    }*/
 }
