@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MAT_ShroomStem3
+  m_Shader: {fileID: -6465566751694194690, guid: 247ec58ab1c200a479d84178ada291fb,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_45B4DE71:
+        m_Texture: {fileID: 2800000, guid: e40a5f19cb3ee604dad1f16ad9bfb1d8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_54438476:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_90C9203D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_90CD9A0B:
+        m_Texture: {fileID: 2800000, guid: b1242e1a51edd114e91ed2fb27034788, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_BD305425:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_CE347D4D:
+        m_Texture: {fileID: -4735379244703418890, guid: 16b67aff8ef3bdb46902567c5fb1cd5a,
+          type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_D3CB43BE:
+        m_Texture: {fileID: 2800000, guid: aa15853d5bf639a46aecf18173de6d6c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_EF94E7B8:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Boolean_22EC64F: 0
+    - Boolean_25308C13: 1
+    - Boolean_3998A2FA: 0
+    - Boolean_58480D43: 1
+    - Boolean_5F3DFE21: 0
+    - Boolean_6B12D7DA: 1
+    - Boolean_86F2B5B: 0
+    - Boolean_AB3361F: 1
+    - Boolean_B11E34F6: 0
+    - Boolean_B2D82E09: 0
+    - Boolean_BFAAFC3A: 0
+    - Boolean_C6D6F89D: 0
+    - Boolean_D1EDB5CE: 0
+    - Boolean_D7DAEA24: 1
+    - Boolean_DC11FC75: 1
+    - Boolean_EEBCC7E9: 1
+    - Vector1_1465047B: 1
+    - Vector1_1F0EBF33: 1
+    - Vector1_22768129: 0.37
+    - Vector1_2471C3E8: 0
+    - Vector1_44437D32: 0.64
+    - Vector1_4996DAB4: 1
+    - Vector1_513565C9: 1
+    - Vector1_51DDDCE7: 1
+    - Vector1_56291164: 0
+    - Vector1_58941B33: 1
+    - Vector1_5C22B761: 1
+    - Vector1_5D3E1A7E: 1
+    - Vector1_6C014B71: 0
+    - Vector1_7D9266B1: 0
+    - Vector1_7DA00E6A: 1
+    - Vector1_91111764: 0
+    - Vector1_A2DFB54D: 1
+    - Vector1_A32376B8: 0
+    - Vector1_A5280577: 0
+    - Vector1_B031DEA2: 0
+    - Vector1_CB4A3B4C: 0
+    - Vector1_D49A5279: 0.98
+    - Vector1_D545B73C: 0
+    - Vector1_DA13CB76: 1
+    - Vector1_DB44B3E9: 0
+    - Vector1_E521CBB0: 0
+    - Vector1_F5263237: 0
+    - Vector1_F54008CB: 1
+    m_Colors:
+    - Color_2951E45B: {r: 0.7450981, g: 0.15294117, b: 0.34175438, a: 0}
+    - Color_6D57DF08: {r: 0.2169812, g: 1.82311, b: 2, a: 0}
+    - Color_81334E39: {r: 0.28746885, g: 0.42256325, b: 0.6415094, a: 0}
+    - Vector2_3856E7A3: {r: 1, g: 1, b: 0, a: 0}
+    - Vector2_48C8E1AC: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_568F7EA8: {r: 1, g: 1, b: 0, a: 0}
+    - Vector2_64C122DA: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_69B82972: {r: 1, g: 1, b: 0, a: 0}
+    - Vector2_764A83B6: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_8DF83B89: {r: 1, g: 1, b: 0, a: 0}
+    - Vector2_D9E6CE3D: {r: 1, g: 1, b: 0, a: 0}
+    - Vector2_E772E976: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_F901E1F8: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &679897745614296719
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
