@@ -76,7 +76,7 @@ public class LightCombo : MonoBehaviour
                 reset = 0f;
 
 
-                if (combonum == 1)   //------ COMMENTED TO REDUCE ERRORS. DO NOT REMOVE.
+                if (combonum == 1 || combonum == 2)   //------ COMMENTED TO REDUCE ERRORS. DO NOT REMOVE.
                 {
                     StartCoroutine(Slash());
                 }
