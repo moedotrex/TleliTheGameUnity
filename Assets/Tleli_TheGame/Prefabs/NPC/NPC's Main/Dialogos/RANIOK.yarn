@@ -1,7 +1,7 @@
 ﻿title: Raniok.uno
 tags:
 ---
-<<if $die is false>>
+<<if $dieRan is false>>
 Sometimes I look up at the sky and wonder… are those stars?
 [[How so? |Raniok.dos]]
 [[Like the ones we had before?|Raniok.tre]]
@@ -16,7 +16,7 @@ tags:
 I don't know if those are really stars or not, and yet I pretend they are real and make a wish…. Do you think it makes a difference?
 [[I’d like to think so!|Raniok.cuat]]
 [[I Don't think so...|Raniok.cinq]]
-<<set $die to false>>
+<<set $dieRan to false>>
 ===
 
 title: Raniok.tre
@@ -25,21 +25,21 @@ tags:
 I miss them so much… from time to time, I pretend they are real and make a wish…. Do you think it makes a difference?
 [[I’d like to think so!|Raniok.cuat]]
 [[I Don't think so….|Raniok.cinq]]
-<<set $die to false>>
+<<set $dieRan to false>>
 ===
 
 title: Raniok.cuat
 tags:
 ---
 Me too, girl. It’s nice to hear someone finally agrees. 
-<<set $die to true>>
+<<set $dieRan to true>>
 ===
 
 title: Raniok.cinq
 tags:
 ---
 Hm, you’re probably right. It’s pretty stupid anyways. 
-<<set $die to true>>
+<<set $dieRan to true>>
 ===
 
 title: Raniok.stars

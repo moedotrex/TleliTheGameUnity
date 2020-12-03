@@ -1,7 +1,7 @@
 ﻿title: CHEIFTAN
 tags:
 ---
-<<if $die is false>>
+<<if $dieChef is false>>
 Welcome, welcome, It's a pleasure to meet you! I am the head of this settlement, they call me the CHIEFTAIN, if there's anything you need please feel free to ask me.
 [[What can you tell me about this place?|CHEIFTAN.one]]
 [[What do you know about the monsters?|CHEIFTAN.two]]
@@ -17,7 +17,7 @@ tags:
 Most of what you see now was already here when we arrived. We are not sure who, or what, built it, but it is now what I and the townsfolk call home.  Here come souls of people who lived another life, though most of us don't remember much about it.
 [[What do you know about the monsters?|CHEIFTAN.two]]
 [[Do you know any way out?|CHEIFTAN.tree]]
-<<set $die to false>>
+<<set $dieChef to false>>
 ===
 
 title: CHEIFTAN.two
@@ -26,7 +26,7 @@ tags:
 Oh, the monsters... They used to be just like us, Nenemis who wandered into this realm without any idea of what was happening. However, they got overwhelmed by their frustrations, to the point where Amana took over them and morphed them into unrecognizable beings. 
 [[What can you tell me about this place?|CHEIFTAN.one]]
 [[Do you know of a way out?|CHEIFTAN.tree]]
-<<set $die to false>>
+<<set $dieChef to false>>
 ===
 
 title: CHEIFTAN.tree
@@ -36,7 +36,7 @@ Among the townsfolk there are rumors of an exit. See those big doors behind you?
 [[What can you tell me about this place?|CHEIFTAN.one]]
 [[What do you know about the monsters?|CHEIFTAN.two]]
 [[Maybe I can find those keys...|CHEIFTAN.fiv]]
-<<set $die to false>>
+<<set $dieChef to false>>
 ===
 
 title: CHEIFTAN.fiv
@@ -45,7 +45,7 @@ tags:
 Wait... You aren't seriously thinking of going out there, are you? It's madness! Most who wander into the caves never come back. Please, stay. It may not be much but we all welcome you into our home.
 [[I appreciate the offer, but we need to leave, no matter how dangerous.|CHEIFTAN.no]]
 [[Got any advice for us?|CHEIFTAN.ok]]
-<<set $die to false>>
+<<set $dieChef to false>>
 ===
 
 title: CHEIFTAN.ok
@@ -53,14 +53,14 @@ tags:
 ---
 You should talk to the townspeople, some of them might know more about the caves... please be careful.
 [[Thanks! we will.|CHEIFTAN.no]]
-<<set $die to false>>
+<<set $dieChef to false>>
 ===
 
 title: CHEIFTAN.no
 tags:
 ---
 ... If I can't change your mind, then... Stay safe, will you? This place has been... weird, lately. Dangerous. Not only because of the monsters, but it feels like... something has woken up.
-<<set $die to true>>
+<<set $dieChef to true>>
 ===
 
 

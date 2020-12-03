@@ -1,7 +1,7 @@
 ﻿title: TASI.QUEST1
 tags:
 ---
-<<if $die is false>>
+<<if $dieTas is false>>
 Oh hi! By the looks of your companion I can tell you are used to caring for little ones. I need help searching for Upis!! Could you lend me a hand?
 [[Sorry, I'm a little busy at the moment.|TASI.QUEST2]]
 [[Sure, what seems to be the problem?|TASI.QUEST3]]
@@ -16,7 +16,7 @@ title: TASI.QUEST2
 tags:
 ---
 I see, let me know if you change your mind.
-<<set $die to false>>
+<<set $dieTas to false>>
 ===
 
 title: TASI.QUEST3
@@ -25,7 +25,7 @@ tags:
 I was wandering around with the Upis when suddenly we heard this loud rumble, much louder than the usual monsters, it might be the Henchmen… rumor has it he's been corrupted… I got scared and hid, but when I came back up the Upis where all gone. They must have gotten lost in the ruins…. Will you help me find them? 
 [[Don’t worry, I'll help you out. |TASI.QUEST5]]
 [[I don't think I have the time, sorry.|TASI.QUEST2]]
-<<set $die to false>>
+<<set $dieTas to false>>
 ===
 
 title: TASI.QUEST4
@@ -33,7 +33,7 @@ tags:
 ---
 Yes! Upis are wonderful small beings born in The Deep, I care for them since they are cute and harmless, but right now I’m worried some of them might be in danger.
 [[Danger? what happened?|TASI.QUEST3]]
-<<set $die to false>>
+<<set $dieTas to false>>
 ===
 
 title: TASI.QUEST5
@@ -41,7 +41,7 @@ tags:
 ---
 Thank you so much!!
 <<AceptarMisionUno GameManager>>
-<<set $die to true>>
+<<set $dieTas to true>>
 ===
 
 title: TASI.IDLE

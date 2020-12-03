@@ -1,7 +1,7 @@
 ﻿title: MOE.start
 tags:
 ---
-<<if $die is false>>
+<<if $dieMoe is false>>
 CAW! CAW! Oh sorry! Did I scare you? I was just practicing. I saw a weird hole on the ground the other day. I want to fly over there but it would be dangerous if I can’t make it back.
 [[No worries.|MOE.one]]
 <<else>>
@@ -13,7 +13,7 @@ title: MOE.one
 tags:
 ---
 Bye bye~
-<<set $die to true>>
+<<set $dieMoe to true>>
 ===
 
 title: MOE.conv

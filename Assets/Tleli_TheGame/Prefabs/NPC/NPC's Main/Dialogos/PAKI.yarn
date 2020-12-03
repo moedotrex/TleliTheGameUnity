@@ -1,7 +1,7 @@
 ﻿title: PAKI
 tags:
 ---
-<<if $die is false>>
+<<if $diePak is false>>
 You seem quite somber, young girl. Is something troubling you?
 [[Do you feel safe here?|PAKI.one]]
 [[I'm alright I guess.|PAKI.two]]
@@ -17,7 +17,7 @@ tags:
 I like it here. It’s nice and quiet... Can’t remember the last time I felt so much peace...you?
 [[I'm alright.|PAKI.two]]
 [[Not really...|PAKI.tree]]
-<<set $die to false>>
+<<set $diePak to false>>
 ===
 
 title: PAKI.two
@@ -26,7 +26,7 @@ tags:
 You got a little one with you, Is he a sibling?
 [[No... just companion, he tags along.|PAKI.forr]]
 [[We look out for each other, he's my friend|PAKI.forr]]
-<<set $die to false>>
+<<set $diePak to false>>
 ===
 
 title: PAKI.tree
@@ -35,7 +35,7 @@ tags:
 Really? Is it your past life?
 [[Could be...|PAKI.two]]
 [[I don't know, i just hope the dreams stop.|PAKI.help]]
-<<set $die to false>>
+<<set $diePak to false>>
 ===
 
 title: PAKI.forr
@@ -44,7 +44,7 @@ tags:
 I see, keeping company is always good!
 [[Do you have anyone here?|PAKI.six]]
 [[See you around.|PAKI.sev]]
-<<set $die to false>>
+<<set $diePak to false>>
 ===
 
 title: PAKI.six
@@ -52,21 +52,21 @@ tags:
 ---
 There's the Chieftain, he's very caring and capable as well.
 [[Later!|PAKI.sev]]
-<<set $die to false>>
+<<set $diePak to false>>
 ===
 
 title: PAKI.sev
 tags:
 ---
 I’ll see you around!
-<<set $die to true>>
+<<set $diePak to true>>
 ===
 
 title: PAKI.help
 tags:
 ---
 They sure can be scary, but don't worry! i'm sure they'll stop soon.
-<<set $die to true>>
+<<set $diePak to true>>
 ===
 
 

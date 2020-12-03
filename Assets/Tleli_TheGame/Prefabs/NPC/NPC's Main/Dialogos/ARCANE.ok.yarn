@@ -1,7 +1,7 @@
 ﻿title: ARCANE
 tags:
 ---
-<<if $die is false>>
+<<if $dieArc is false>>
 This place… we are all doomed... stuck here looking for the keys... and what for?
 [[You okay?|ARCANE.uno]]
 [[What are you talking about?|ARCANE.dos]]
@@ -15,7 +15,7 @@ tags:
 ---
 I am not. Can't you see!? This whole place is rotten, and the guardian is gone....
 [[The guardian?|ARCANE.dos]]
-<<set $die to false>>
+<<set $dieArc to false>>
 ===
 
 title: ARCANE.dos
@@ -23,7 +23,7 @@ tags:
 ---
 You must be new here eh? It’s been a long time since the great guardian of the Deep succumbed to the Amana. From there… it’s all been…. just so… 
 [[So....?|ARCANE.tre]]
-<<set $die to false>>
+<<set $dieArc to false>>
 ===
 
 title: ARCANE.tre
@@ -32,7 +32,7 @@ tags:
 …. Just so horrible. Listen, girl, you need to get out of here. Don't bother with the keys..
 [[Why?|ARCANE.qinq]]
 [[What did you see?|ARCANE.cuat]]
-<<set $die to false>>
+<<set $dieArc to false>>
 ===
 
 title: ARCANE.cuat
@@ -43,7 +43,7 @@ My friend… he was consumed by the Amana in his own attempt to recover the keys
 He's one of those things now….
 [[Thats horrible...|ARCANE.sept]]
 [[I need the keys, I have to get out of here.|ARCANE.sept]]
-<<set $die to false>>
+<<set $dieArc to false>>
 ===
 
 title: ARCANE.qinq
@@ -51,7 +51,7 @@ tags:
 ---
 The keys are the only way out of here, Chieftain said so.. but its not worth fighting those monsters….
 [[Did you try?|ARCANE.sept1]]
-<<set $die to false>>
+<<set $dieArc to false>>
 ===
 
 title: ARCANE.sept1
@@ -59,7 +59,7 @@ tags:
 ---
 I did... but the gatekeepers are simply too strong.
 [[We will see about that.|ARCANE.sept]]
-<<set $die to false>>
+<<set $dieArc to false>>
 ===
 
 
@@ -67,7 +67,7 @@ title: ARCANE.sept
 tags:
 ---
 Bless us all…
-<<set $die to true>>
+<<set $dieArc to true>>
 ===
 
 
@@ -78,7 +78,7 @@ You again...
 [[Any tips?|ARCANE.Jealous1]]
 [[You shouldn't stay out here, it's not safe..|ARCANE.Jealous2]]
 [[See you.|ARCANE.nov]]
-<<set $die to true>>
+<<set $dieArc to true>>
 ===
 
 title: ARCANE.Jealous1
