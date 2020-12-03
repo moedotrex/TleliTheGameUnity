@@ -22,12 +22,15 @@ public class PlayerDash : MonoBehaviour
     //private int dashValue =1; //para solo dashear una vez en el aire
 
 
+    ParticleSystem dashSmear;  //---Karime
+
     void Start()
     {
         moveScript = GetComponent<PlayerController>();
         tleliDeath = GetComponent<TleliDeath>(); //Stop actions when Tleli is Dead. By Emil.
         animator = GetComponentInChildren<Animator>();
-        
+
+        dashSmear = GameObject.Find("DashSmear").GetComponent<ParticleSystem>();  //---Karime
     }
 
     void Update()
@@ -40,8 +43,10 @@ public class PlayerDash : MonoBehaviour
                 Tleli.canMove = 20;
                 animator.SetTrigger("DashPress");
                 StartCoroutine(Dash());
-            dashCooldownTime = dashCooldown;               
-        }
+            dashCooldownTime = dashCooldown;
+                dashSmear.Emit(30);  //---Karime
+
+            }
         }
     }
 
