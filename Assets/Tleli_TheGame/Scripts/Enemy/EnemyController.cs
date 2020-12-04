@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
 
     Vector3 kbDirection;
     public Vector3 EnemySpawn;
+    bool atSpawn;
 
     Transform target;
     NavMeshAgent navAgent;
@@ -29,6 +30,9 @@ public class EnemyController : MonoBehaviour
     int alertActive;
     float reactionTime;
 
+    float currentX;
+    float currentY;
+
     ChomperAnimationController chomperController; //Draaek
 
     void Start()
@@ -44,7 +48,9 @@ public class EnemyController : MonoBehaviour
         navAgent = GetComponent<NavMeshAgent>();
         enemyStagger = GetComponent<EnemyAttack>();
         navAgent.speed = movSpeed;
-
+        atSpawn = true;
+        currentX = this.transform.position.x;
+        currentY = this.transform.position.y;
     }
 
     private void FixedUpdate()
@@ -73,6 +79,7 @@ public class EnemyController : MonoBehaviour
                 }
 
                 navAgent.SetDestination(target.position);
+                atSpawn = false;
 
                 chomperController.IsWalkingBoolParameter(true); //Draaek
 
@@ -99,6 +106,12 @@ public class EnemyController : MonoBehaviour
             alertActive = 0;
 
             flama.BattleMode(false); //Added by Emil. Necessary for changing camera into Battle Mode.
+        }
+
+        if (navAgent.remainingDistance < 0.8 && !isAttacking && !atSpawn) //Draaek. This code ensures enemy returns to idle on spawn point
+        {
+            chomperController.IsWalkingBoolParameter(false);
+            atSpawn = true;
         }
     }
 

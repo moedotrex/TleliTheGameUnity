@@ -36,6 +36,7 @@ public class HeavyController : MonoBehaviour
     float knockbackForce;
 
     bool jumping;
+    bool atSpawn;
 
     public GameObject alertIcon;
     int alertActive;
@@ -61,6 +62,7 @@ public class HeavyController : MonoBehaviour
         navAgent.acceleration = movAcce;
         movSpeedDef = movSpeed;
         movAcceDef = movAcce;
+        atSpawn = true;
     }
 
     private void FixedUpdate()
@@ -99,7 +101,7 @@ public class HeavyController : MonoBehaviour
                 heavyBoiAnimationController.IsWalkingBoolParameter(true); //moe
                 BuscarRadio = radioGrande;
                 isAttacking = true;
-
+                atSpawn = false;
 
 
 
@@ -145,7 +147,7 @@ public class HeavyController : MonoBehaviour
             }
         }
 
-            if (distance >= BuscarRadio && isAttacking == true)
+        if (distance >= BuscarRadio && isAttacking == true)
         {
             reactionTime = 0f;
             BuscarRadio = radioDef;
@@ -155,6 +157,12 @@ public class HeavyController : MonoBehaviour
             alertActive = 0;
 
             flama.BattleMode(false); //Added by Emil. Necessary for changing camera into Battle Mode.
+        }
+
+        if (navAgent.remainingDistance < 2.3 && !isAttacking && !atSpawn) //Draaek. This code ensures enemy returns to idle on spawn point
+        {
+            heavyBoiAnimationController.IsWalkingBoolParameter(false);
+            atSpawn = true;
         }
     }
 
