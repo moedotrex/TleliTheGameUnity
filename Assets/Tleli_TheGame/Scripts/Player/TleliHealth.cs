@@ -29,6 +29,12 @@ public class TleliHealth : MonoBehaviour
 
     TleliAnimationController tleliAnimationController;
 
+    TlelliSonido SendDamageSound; //ADRIAN llamar script para madarle el dolor
+    public int MaxDamageSoundThreshold =80;
+    public int MinDamageSoundThreshold = 20;
+    public int DamageSoundThresholdQuantity =20 ;
+
+    int DamageThreshold;
 
     void Start()
     {
@@ -38,6 +44,9 @@ public class TleliHealth : MonoBehaviour
         flameIntensity = Remap(flame, 0, maxFlame, flameMinIntensity, flameMaxIntensity);         //Hacer un "remap" de los valores de la vida de Tlelli (0-100) a los valores de flama (0-5)
         getPCscritp(); //VACA obtener script de player controller
         isBattling = false;
+
+        SendDamageSound = GetComponent<TlelliSonido>();//ADRIAN
+        DamageThreshold = MaxDamageSoundThreshold;
     }
 
 
@@ -74,7 +83,13 @@ public class TleliHealth : MonoBehaviour
         {
             flame = maxFlame;
         }
-       
+
+        if (flame > DamageThreshold + DamageSoundThresholdQuantity)
+        {
+
+            DamageThreshold = (DamageThreshold + DamageSoundThresholdQuantity < MaxDamageSoundThreshold) ? DamageThreshold + DamageSoundThresholdQuantity : MaxDamageSoundThreshold;
+        }
+
     }
 
     public void SetFlameDamage(float dam)
@@ -82,6 +97,17 @@ public class TleliHealth : MonoBehaviour
         if (flame > 0)
         {
             flame -= dam * Time.deltaTime;
+
+            if (flame < DamageThreshold)
+            {
+
+                if (flame >= MinDamageSoundThreshold)
+                {
+                    SendDamageSound.playerisHurt = true;
+                }
+
+                DamageThreshold = (DamageThreshold - DamageSoundThresholdQuantity > MinDamageSoundThreshold) ? DamageThreshold - DamageSoundThresholdQuantity : MinDamageSoundThreshold;
+            }
         }
         else
         {
