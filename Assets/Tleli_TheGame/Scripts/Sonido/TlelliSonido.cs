@@ -10,6 +10,7 @@ public class TlelliSonido : MonoBehaviour
 
     private FMOD.Studio.EventInstance GroundTypeRef; //ADRIAN: al parecer no puedes manipular variables de FMOD sin hacer una instancia de evento
     
+
     [FMODUnity.EventRef]
     public string inputwalksound;
 
@@ -128,21 +129,26 @@ public class TlelliSonido : MonoBehaviour
 
     private void HitsGround()
     {
-        //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Land", GroundType);
         GroundTypeRef.setParameterByName("Land", GroundType);
         GroundType = 3;
         if (isGrounded)
         {
             if (!GroundSoundLock)
             {
-                //FMODUnity.RuntimeManager.PlayOneShot("event:/Land");
-                GroundTypeRef.start();
+                GroundTypeRef.start(); //en vez de usar el runtime manager, solo se debe invocar con la ejecucion de la instancia
                 GroundSoundLock = true;
-                
             }
         }else if (!isGrounded)
         {
             GroundSoundLock = false;
+        }
+    }
+
+    private void Jump()
+    {
+        if (Input.GetButtonDown("Jump") && controller.isGrounded)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/TleliStuff/TleliDash");
         }
     }
     //

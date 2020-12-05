@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
 		//salto
 		if (Input.GetButtonDown("Jump") && isGrounded)
 		{
-			GetComponent<FMODUnity.StudioEventEmitter>().Play();
+			//GetComponent<FMODUnity.StudioEventEmitter>().Play();
 			isJumping = true;
 			saltoTimeCounter = saltoTime;
 			velocidad.y = Mathf.Sqrt(Salto * -2f * gravedad);
