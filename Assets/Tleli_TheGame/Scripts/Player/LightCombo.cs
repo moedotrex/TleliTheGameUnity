@@ -61,10 +61,10 @@ public class LightCombo : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && combonum < 3 && !tleliDeath.isDead)
         {
-            if (Tleli.isGrounded == true)
+            /*if (Tleli.isGrounded == true)
             {
                 Tleli.canMove = 60;
-            }
+            }*/
 
             if (Time.time >= nextAttackTime)
             {
@@ -72,7 +72,7 @@ public class LightCombo : MonoBehaviour
                 nextAttackTime = Time.time + attackRate;
                 animator.SetTrigger(animList[combonum]);
                 combonum++;
-                currentDamage += 2f;
+                //currentDamage += 2f;
                 reset = 0f;
 
 
@@ -93,9 +93,10 @@ public class LightCombo : MonoBehaviour
             reset += Time.deltaTime;
             if (reset > intResetTime)
             {
-                animator.SetTrigger("Reset_LightCombo");
                 combonum = 0;
-                currentDamage = Damage;
+                animator.SetTrigger("Reset_LightCombo");
+                
+                //currentDamage = Damage;
                 daggerAnim.SetActive(false);
                 Debug.Log("combo reset");
             }
@@ -115,8 +116,8 @@ public class LightCombo : MonoBehaviour
             if (LAttackTimer >= LAttackTime && !Input.GetMouseButton(1))
             {
                 animator.SetBool("Lcharge", true);
-                Debug.Log(animator.GetBool("Lcharge"));
-                moveScript.isDisplaced = true;
+                //Debug.Log(animator.GetBool("Lcharge"));
+               // moveScript.isDisplaced = true;
                 if (target != null)
                 {
                     FaceTarget();
@@ -125,9 +126,9 @@ public class LightCombo : MonoBehaviour
             if (Input.GetMouseButtonUp(0) || Input.GetMouseButton(1))
             {
                 animator.SetBool("Lcharge", false);
-                Debug.Log(animator.GetBool("Lcharge"));
+                //Debug.Log(animator.GetBool("Lcharge"));
                 LAttackTimer = 0;
-                moveScript.isDisplaced = false;
+               // moveScript.isDisplaced = false;
             }
         }
 

@@ -33,9 +33,10 @@ public class PlayerController : MonoBehaviour
 
 
     int extraJumps;
+	int currentJump;
 	public int extraJumpsValue;
 
-	[HideInInspector] public CharacterController characterController;
+		 public CharacterController characterController;
 	public Transform cam;
 
 	[HideInInspector] public Vector3 moveDir;
@@ -60,9 +61,6 @@ public class PlayerController : MonoBehaviour
 
 	void Update()
 	{
-        
-
-
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
 		if (isGrounded && velocidad.y < 0)
@@ -75,112 +73,120 @@ public class PlayerController : MonoBehaviour
 		float horizontal = Input.GetAxisRaw("Horizontal");
 
 		if (isDisplaced == false) //si se dashea no se puede controlar la direccion hasta que termine y la gravedad no se crece por la duracion de este
-		{ 
+		{
 			//gravedad
 			Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 			velocidad.y += gravedad * Time.deltaTime;
 
-		//salto
-		if(!tleliDeath.isDead)// Stop actions when Tleli is Dead. By Emil.
-		{ 
-		if (Input.GetButtonDown("Jump") && isGrounded)
-		{
-			GetComponent<FMODUnity.StudioEventEmitter>().Play();
-			isJumping = true;
-			saltoTimeCounter = saltoTime;
-			velocidad.y = Mathf.Sqrt(Salto * -2f * gravedad);
-			//leliAnimationController.JumpTakeOffTrigger();
-				tleliAnimationController.JumpTakeOffbool(true);
-
-			}
-			//doble salto
-			if (Input.GetButtonDown("Jump") && extraJumps > 0)
+			//salto
+			if (!tleliDeath.isDead)// Stop actions when Tleli is Dead. By Emil.
 			{
-				GetComponent<FMODUnity.StudioEventEmitter>().Play();
-				isJumping = true;
-				saltoTimeCounter = saltoTime;
-				velocidad.y = Mathf.Sqrt(Salto * -2f * gravedad);
-				extraJumps--;
-			}
+				/*if (Input.GetButtonDown("Jump") && isGrounded)
+				{
+					GetComponent<FMODUnity.StudioEventEmitter>().Play();
+					isJumping = true;
+					saltoTimeCounter = saltoTime;
+					velocidad.y = Mathf.Sqrt(Salto * -2f * gravedad);
+					//leliAnimationController.JumpTakeOffTrigger();
+						tleliAnimationController.JumpTakeOffbool(true);
 
-			else if (Input.GetButtonDown("Jump") && isGrounded && extraJumps == 0)
-			{
-				GetComponent<FMODUnity.StudioEventEmitter>().Play();
-				isJumping = true;
-				saltoTimeCounter = saltoTime;
-				velocidad.y = Mathf.Sqrt(Salto * -2f * gravedad);
-			}
+				}*/
+				if (Input.GetButtonDown("Jump") && extraJumps > 0)
+				{
+					canMove = 0;
+					extraJumps--;
+					currentJump++;
+					decideJump();
+					GetComponent<FMODUnity.StudioEventEmitter>().Play();
+					isJumping = true;
+					saltoTimeCounter = saltoTime;
+					tleliAnimationController.JumpTakeOffbool(true);
+					//velocidad.y = Mathf.Sqrt(Salto * -2f * gravedad);
+					//tleliAnimationController.DoubleJumpTrigger();
+				}
 
-		if (Input.GetButton("Jump") && isJumping == true)
-		{
+				else if (Input.GetButtonDown("Jump") && isGrounded && extraJumps == 0)
+				{
+					GetComponent<FMODUnity.StudioEventEmitter>().Play();
+					isJumping = true;
+					saltoTimeCounter = saltoTime;
+					//velocidad.y = Mathf.Sqrt(Salto * -2f * gravedad);
+				}
 
-			if (saltoTimeCounter > 0)
-			{
-				velocidad.y = Mathf.Sqrt(Salto * -2f * gravedad);
-				saltoTimeCounter -= Time.deltaTime;
-			}
-			else
-			{
-				isJumping = false;
-			}
-		}
-		if (Input.GetButtonUp("Jump"))
-		{
-			isJumping = false;
-		}
+				if (Input.GetButton("Jump") && isJumping == true)
+				{
 
-		characterController.Move(velocidad * Time.deltaTime);
+					if (saltoTimeCounter > 0)
+					{
+						velocidad.y = Mathf.Sqrt(Salto * -2f * gravedad);
+						saltoTimeCounter -= Time.deltaTime;
+					}
+					else
+					{
+						isJumping = false;
+					}
+				}
 
-		if (isJumping == true) // acelera la velocidad = se cubre mas distancia con salto
-		{
-			//velBase += aceleracion;
-			if (isMoving == true) //acelerar solo si se mueve, problemas con el segundo salto
-			{
-				velBase += aceleracion * Time.deltaTime;
-			} 
-		}
+				if (Input.GetButtonUp("Jump"))
+				{
+					isJumping = false;
+				}
 
-		if (isJumping == true && extraJumps < extraJumpsValue)
-		{
-			Salto = segundoSalto;
-			if (velBase >= velSegundoSalto)
-            {
-				velBase = velSegundoSalto;
-            }
-		}
+				characterController.Move(velocidad * Time.deltaTime);
 
-		if (velBase > velMax) // para no exceder limite de velocidad xD
-		{
-			velBase = velMax;
-		}
+				if (isJumping == true) // acelera la velocidad = se cubre mas distancia con salto
+				{
+					//velBase += aceleracion;
+					if (isMoving == true) //acelerar solo si se mueve, problemas con el segundo salto
+					{
+						velBase += aceleracion * Time.deltaTime;
+					}
+				}
+
+				if (isJumping == true && extraJumps < extraJumpsValue)
+				{
+					Salto = segundoSalto;
+					if (velBase >= velSegundoSalto)
+					{
+						velBase = velSegundoSalto;
+					}
+				}
+
+				if (velBase > velMax) // para no exceder limite de velocidad xD
+				{
+					velBase = velMax;
+				}
 			}
 			if (isGrounded == true) //regresa a tierra
-		{
-			velBase = velInicial;
-			Salto = saltoInicial;
-			extraJumps = extraJumpsValue;
+			{
+				velBase = velInicial;
+				Salto = saltoInicial;
+				extraJumps = extraJumpsValue;
+				currentJump = 0;
 
 				if (tleliAnimationController.CheckFallLoop())
 				{
-                    canMove = 10;
+					canMove = 10;
 					tleliAnimationController.JumpLandTrigger();
 				}
-		}
+			}
 
 
-            if (canMove > 0)
-            {
-                canMove -= 1;
-                velBase = 1;
-                tempRotacion = 10;
-            }
+			if (canMove > 0)
+			{
+				canMove -= 1;
+				velBase = 1;
+				tempRotacion = 10;
+			}
 
-            if (isJumping == true)
-            {
-                velBase = 5.5f;
-            }
+		
 
-            else { tempRotacion = rotacionDefault; }
+		/*if (isJumping == true)
+		{
+			velBase = 5.5f;
+		} */
+
+		else { tempRotacion = rotacionDefault; }
 
             vel = velBase;
 		if(!tleliDeath.isDead)// Stop actions when Tleli is Dead. By Emil.
@@ -222,6 +228,21 @@ public class PlayerController : MonoBehaviour
         
 	}
 
+	public void decideJump()
+    {
+
+		if (currentJump == 0)
+        {
+			Debug.Log("singlejump");
+			
+        }
+		if (currentJump == 1)
+        {
+			Debug.Log("doublejump");
+		}
+
+	}
+
 	public float GetVelocity()
 	{
 		return _deltaVelocidad;
@@ -231,4 +252,10 @@ public float GetJumpVelocity()
 	{
 		return velocidad.y;
 	}
+
+	/*private void OnDrawGizmosSelected()
+	{
+		Gizmos.color = Color.red;
+		Gizmos.DrawWireSphere(transform.position, 0.1f);
+	}*/
 }

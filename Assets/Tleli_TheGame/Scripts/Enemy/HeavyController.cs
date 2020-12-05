@@ -97,7 +97,7 @@ public class HeavyController : MonoBehaviour
 
 
                 navAgent.SetDestination(target.position);
-                Debug.Log("is walking");
+                //Debug.Log("is walking");
                 heavyBoiAnimationController.IsWalkingBoolParameter(true); //moe
                 BuscarRadio = radioGrande;
                 isAttacking = true;

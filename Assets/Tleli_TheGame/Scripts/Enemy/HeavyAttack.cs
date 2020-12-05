@@ -74,10 +74,6 @@ public class HeavyAttack : MonoBehaviour
                 isAnimating = true;
                 timer = 0f;
                 heavyBoiAnimationController.LightAttackTrigger(); //moe
-                
-
-                
-
             }
 
             if (randomNum > 66)

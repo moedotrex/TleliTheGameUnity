@@ -136,9 +136,13 @@ public class EnemyController : MonoBehaviour
     IEnumerator stopMovCoroutine(float time)
     {
         navAgent.speed = 0f;
+        navAgent.acceleration = 0;
+
         chomperController.IsWalkingBoolParameter(false); //Draaek
         yield return new WaitForSeconds(time);
         navAgent.speed = movSpeed;
+        navAgent.acceleration = 8f;
+
         chomperController.IsWalkingBoolParameter(true); //Draaek
     }
 
