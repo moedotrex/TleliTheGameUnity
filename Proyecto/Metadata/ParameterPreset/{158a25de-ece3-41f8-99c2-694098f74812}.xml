@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.00.00">
-	<object class="ParameterPreset" id="{4a82b5ab-e2e2-4e29-927a-2ca9f6e81867}">
+	<object class="ParameterPreset" id="{158a25de-ece3-41f8-99c2-694098f74812}">
 		<property name="name">
-			<value>LandT</value>
+			<value>menu sounds</value>
 		</property>
 		<relationship name="folder">
 			<destination>{d8e7dcd7-c11a-4b5e-8452-954c57188cfc}</destination>
 		</relationship>
 		<relationship name="parameter">
-			<destination>{fd7f4015-f0b1-4f8a-913e-4e7adc0f9b60}</destination>
+			<destination>{ab89d46c-986a-4b15-b66e-56155b975afc}</destination>
 		</relationship>
 	</object>
-	<object class="GameParameter" id="{fd7f4015-f0b1-4f8a-913e-4e7adc0f9b60}">
+	<object class="GameParameter" id="{ab89d46c-986a-4b15-b66e-56155b975afc}">
 		<property name="parameterType">
 			<value>1</value>
 		</property>
 		<property name="maximum">
-			<value>3</value>
+			<value>4</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>
