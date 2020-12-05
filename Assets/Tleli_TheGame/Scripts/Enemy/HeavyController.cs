@@ -11,8 +11,13 @@ public class HeavyController : MonoBehaviour
     float radioGrande;
     public float radioDef = 10f;
     public float movSpeed;
+    float movSpeedDef;
+    float movSpeedMod = 20f;
+    float movAcceMod = 5f;
+    float movAcceDef;
     public float movAcce = 8;
-
+    public bool isJumping =false;
+    public Vector3 velocidad;
 
     Vector3 slamLand;
     Vector3 kbDirection;
@@ -31,6 +36,7 @@ public class HeavyController : MonoBehaviour
     float knockbackForce;
 
     bool jumping;
+    bool atSpawn;
 
     public GameObject alertIcon;
     int alertActive;
@@ -54,6 +60,9 @@ public class HeavyController : MonoBehaviour
         enemyStagger = GetComponent<HeavyAttack>();
         navAgent.speed = movSpeed;
         navAgent.acceleration = movAcce;
+        movSpeedDef = movSpeed;
+        movAcceDef = movAcce;
+        atSpawn = true;
     }
 
     private void FixedUpdate()
@@ -73,7 +82,7 @@ public class HeavyController : MonoBehaviour
     {
         float distance = Vector3.Distance(target.position, transform.position);
 
-        if (distance <= BuscarRadio)
+        if (distance <= BuscarRadio && isJumping ==false)
         {
 
             reactionTime += Time.deltaTime;
@@ -88,22 +97,46 @@ public class HeavyController : MonoBehaviour
 
 
                 navAgent.SetDestination(target.position);
-                Debug.Log("is walking");
+                //Debug.Log("is walking");
                 heavyBoiAnimationController.IsWalkingBoolParameter(true); //moe
                 BuscarRadio = radioGrande;
                 isAttacking = true;
+                atSpawn = false;
 
-                if (distance >= jumpRadio && distance <= radioGrande)
+
+
+                if (distance >= jumpRadio && distance <= radioGrande && isJumping == false)
                 {
+
                     int randomNum = Random.Range(1, 100);
                     if(randomNum >= 99)
                     {
-                        JumpStart();
+                        isJumping = true;
+                       
                     }
+                }
+
+                if(isJumping == true)
+                {
+                    
+                    Debug.Log("Funcionaelsaltin");
+                    
+                    
+                    heavyBoiAnimationController.JumpTrigger(); //moe 
+                    stopMov(5f);
+                    navAgent.speed= movSpeedMod;
+                    navAgent.acceleration = movAcceMod;
+                    navAgent.SetDestination(target.position);
+                    
+                   // slamLand = new Vector3(target.position.x, target.position.y, target.position.z);
+                   // transform.position = Vector3.MoveTowards(transform.position, slamLand, 100 * Time.deltaTime);
+
+
                 }
 
                 if (distance <= navAgent.stoppingDistance)
                 {
+                   
                     FaceTarget();
                     navAgent.SetDestination(target.position);
                 }
@@ -114,7 +147,7 @@ public class HeavyController : MonoBehaviour
             }
         }
 
-            if (distance >= BuscarRadio && isAttacking == true)
+        if (distance >= BuscarRadio && isAttacking == true)
         {
             reactionTime = 0f;
             BuscarRadio = radioDef;
@@ -124,6 +157,12 @@ public class HeavyController : MonoBehaviour
             alertActive = 0;
 
             flama.BattleMode(false); //Added by Emil. Necessary for changing camera into Battle Mode.
+        }
+
+        if (navAgent.remainingDistance < 2.3 && !isAttacking && !atSpawn) //Draaek. This code ensures enemy returns to idle on spawn point
+        {
+            heavyBoiAnimationController.IsWalkingBoolParameter(false);
+            atSpawn = true;
         }
     }
 
@@ -166,31 +205,19 @@ public class HeavyController : MonoBehaviour
         StartCoroutine(KnockBack());
     }
 
-    public void JumpStart()
+    public void JumpAnimOff()
     {
-        slamLand = new Vector3(target.position.x, target.position.y, target.position.z);
-        Debug.Log("Funcionaelsalto!!!!");
-
-        movSpeed = +500f;
-        movAcce = +500f;
-
-
-
-        /*valoraltura = 
-       
-       
+        isJumping = false;
+        navAgent.speed = movSpeedDef;
+        navAgent.acceleration= movAcceDef;
         
-        posY++;
-        if posY >= valordealtura;
-            posy--;*/
-
 
 
     }
 
     IEnumerator slowMovCoroutine(float time)
     {
-        navAgent.speed = movSpeed * 0.75f;
+        navAgent.speed = movSpeed* 0.75f;
         yield return new WaitForSeconds(time);
         navAgent.speed = movSpeed;
 
@@ -215,21 +242,7 @@ public class HeavyController : MonoBehaviour
         velRotacion = 20f;
     }
 
-    IEnumerator JumpAtack()
-    {
-        jumping= true;
-        navAgent.speed = 200;
-        navAgent.angularSpeed = 0;
-        navAgent.acceleration = 50;
- 
-        yield return new WaitForSeconds(2f);
-
-        jumping= false;
-        navAgent.speed = movSpeed;
-        navAgent.angularSpeed = 120f;
-        navAgent.acceleration = 8f;
-        
-    }
+  
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("AOE_Slow"))

@@ -33,7 +33,7 @@ public class TlelliSonido : MonoBehaviour
         CallHit(); //ADRIAN
         CallAttack(); //ADRIAN
 
-        print("L is " + LAttack);
+        //print("L is " + LAttack);
 
         isGrounded = controller.isGrounded;
 

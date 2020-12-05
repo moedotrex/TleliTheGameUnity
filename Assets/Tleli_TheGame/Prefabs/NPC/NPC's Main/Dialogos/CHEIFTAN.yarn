@@ -1,11 +1,11 @@
 ﻿title: CHEIFTAN
 tags:
 ---
-<<if $die is false>>
-Welcome, welcome, It's a pleasure to meet you. I am the Chief of this settlement, they call me the CHEIFTAN ,if there is anything you need please feel free to ask me.
+<<if $dieChef is false>>
+Welcome, welcome, It's a pleasure to meet you! I am the head of this settlement, they call me the CHIEFTAIN, if there's anything you need please feel free to ask me.
 [[What can you tell me about this place?|CHEIFTAN.one]]
 [[What do you know about the monsters?|CHEIFTAN.two]]
-[[Do you know any way out?|CHEIFTAN.tree]]
+[[Do you know of a way out?|CHEIFTAN.tree]]
 <<else>>
 [[CHEIFTAN.conv]]
 <<endif>>
@@ -14,53 +14,53 @@ Welcome, welcome, It's a pleasure to meet you. I am the Chief of this settlement
 title: CHEIFTAN.one
 tags:
 ---
-It's the place we are in, of course. Most of what you see now was already here when we arrived. We are not sure who, or what, built it, but it is now what I and the townsfolk call home.  Here come all of the souls of the people who lived another life, although most of us don't remember anything about it.
+Most of what you see now was already here when we arrived. We are not sure who, or what, built it, but it is now what I and the townsfolk call home.  Here come souls of people who lived another life, though most of us don't remember much about it.
 [[What do you know about the monsters?|CHEIFTAN.two]]
 [[Do you know any way out?|CHEIFTAN.tree]]
-<<set $die to false>>
+<<set $dieChef to false>>
 ===
 
 title: CHEIFTAN.two
 tags:
 ---
-Oh, the monsters... They used to be just like us, Nenemis who wandered into this realm without any idea of what was happening. However, they got overwhelmed by their frustrations, to the point were Amana took over and they morphed into beings no longer recognizable. 
+Oh, the monsters... They used to be just like us, Nenemis who wandered into this realm without any idea of what was happening. However, they got overwhelmed by their frustrations, to the point where Amana took over them and morphed them into unrecognizable beings. 
 [[What can you tell me about this place?|CHEIFTAN.one]]
-[[Do you know any way out?|CHEIFTAN.tree]]
-<<set $die to false>>
+[[Do you know of a way out?|CHEIFTAN.tree]]
+<<set $dieChef to false>>
 ===
 
 title: CHEIFTAN.tree
 tags:
 ---
-Among the townsfolk there is a rumour about an exist. See those big doors behind you? They are sealed shut, but people say there is a way of opening them with two long lost keys. Rumour has it there were two gatekeepers who had the keys, but nobody knows what happened to them. One day, they left to explore the caves to our east; but never came back...
+Among the townsfolk there are rumors of an exit. See those big doors behind you? They are sealed shut, but they say there is a way of opening them using two lost keys. Rumor has it there were two gatekeepers who held the keys, but nobody knows what happened to them. One day, they left to explore the caves to our east and never came back...
 [[What can you tell me about this place?|CHEIFTAN.one]]
 [[What do you know about the monsters?|CHEIFTAN.two]]
-[[Maybe I can get those keys Myself..|CHEIFTAN.fiv]]
-<<set $die to false>>
+[[Maybe I can find those keys...|CHEIFTAN.fiv]]
+<<set $dieChef to false>>
 ===
 
 title: CHEIFTAN.fiv
 tags:
 ---
-Wait... You aren't seriously thinking of going out there, are you? Its madness! Most of the people who go to those caves never come back. Please, stay. It may not be much, but we will all welcome you here to our small community. 
-[[I appreciate the help, but we have to leave at all costs.|CHEIFTAN.no]]
-[[Got any tips for us?|CHEIFTAN.ok]]
-<<set $die to false>>
+Wait... You aren't seriously thinking of going out there, are you? It's madness! Most who wander into the caves never come back. Please, stay. It may not be much but we all welcome you into our home.
+[[I appreciate the offer, but we need to leave, no matter how dangerous.|CHEIFTAN.no]]
+[[Got any advice for us?|CHEIFTAN.ok]]
+<<set $dieChef to false>>
 ===
 
 title: CHEIFTAN.ok
 tags:
 ---
-Talk to the townspeople, some of them might know about the creatures in the caves... you two sure are crazy.
-[[Thanks! we will|CHEIFTAN.no]]
-<<set $die to false>>
+You should talk to the townspeople, some of them might know more about the caves... please be careful.
+[[Thanks! we will.|CHEIFTAN.no]]
+<<set $dieChef to false>>
 ===
 
 title: CHEIFTAN.no
 tags:
 ---
-... If I can't change your mind, then... Stay safe, will you? This place has been... weird, lately. Dangerous. Not only because of the monsters, but it feels like... something woke up.
-<<set $die to true>>
+... If I can't change your mind, then... Stay safe, will you? This place has been... weird, lately. Dangerous. Not only because of the monsters, but it feels like... something has woken up.
+<<set $dieChef to true>>
 ===
 
 
@@ -68,26 +68,27 @@ title: CHEIFTAN.conv
 tags:
 ---
 You are here! and ALIVE! I am glad you are back. Did you happen to find anything?
-[[Not yet, but working on it|CHEIFTAN.eee]]
-[[We found the keys|CHEIFTAN.ooo]]
+[[Not yet, but  I'm working on it.|CHEIFTAN.eee]]
+[[We found the keys!|CHEIFTAN.ooo]]
 ===
 
 title: CHEIFTAN.eee
 tags:
 ---
-Dont overwork yourself! remember the Amana is among us, stay safe!
+Don't overwork yourself! remember the Amana lurks among us, stay safe!
 ===
 
 title: CHEIFTAN.ooo
 tags:
 ---
-Impressive! Did you... did you happen to see anything about the gatekeepers?
-[[The mosnters we fought... they didnt look like any other mosnter around here..|CHEIFTAN.aaa]]
-[[I think I did... two of them, btu im not sure|CHEIFTAN.aaa]]
+You did! Did you... did you happen to see anything about the gatekeepers?
+[[The monsters we fought... they didn't look like any other monster around here..|CHEIFTAN.aaa]]
+[[I think I did... two of them, but i'm not sure.|CHEIFTAN.aaa]]
 ===
 
 title: CHEIFTAN.aaa
 tags:
 ---
-Oh... I see. Well, thank you for finding them. The doors lie behind you, in the corner of this hill . We don't know what is in there, but... be careful. 
+Oh... I see. Well, thank you for finding them. The doors lie behind you, in the corner of this hill. We don't know what's in there, stay alert. 
 ===
+

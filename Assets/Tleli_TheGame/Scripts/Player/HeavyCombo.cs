@@ -17,12 +17,16 @@ public class HeavyCombo : MonoBehaviour
     float intResetTime;
     public float resetTime;
 
+    public PlayerController Tleli;
+
     Ray shootRay;
     RaycastHit hit;
     public float range;
     public LayerMask mask;
 
     public float Damage;
+
+    public GameObject macahuitlAnim;
 
     ///
     public float HAttackTime = 2;
@@ -38,14 +42,11 @@ public class HeavyCombo : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && combonum < 2 && !tleliDeath.isDead)
+        if (Input.GetMouseButtonDown(1) && combonum < 2 && !tleliDeath.isDead && Tleli.isGrounded)
         {
             if (Time.time >= nextAttackTime)
             {
-
-                shootRay.origin = transform.position;
-                shootRay.direction = transform.forward;
-
+                macahuitlAnim.SetActive(true);
                 nextAttackTime = Time.time + attackRate;
                 animator.SetTrigger(animList[combonum]);
                 combonum++;
@@ -53,19 +54,6 @@ public class HeavyCombo : MonoBehaviour
 
                 Debug.DrawRay(transform.position, transform.forward, Color.red);
 
-
-                if (Physics.Raycast(shootRay, out hit, range, mask))
-                {
-
-                    EnemyHealth enemy = hit.transform.GetComponent<EnemyHealth>();
-                    EnemyController mov = hit.transform.GetComponent<EnemyController>();
-
-                    if (enemy != null)
-                    {
-                        enemy.HurtEnemy(Damage);
-                        mov.stopMov(0.2f);
-                    }
-                }
             }
         }
 
@@ -76,6 +64,8 @@ public class HeavyCombo : MonoBehaviour
             {
                 animator.SetTrigger("Reset_HeavyCombo");
                 combonum = 0;
+                macahuitlAnim.SetActive(false);
+
                 Debug.Log("combo reset");
             }
         }
@@ -94,19 +84,40 @@ public class HeavyCombo : MonoBehaviour
             HAttackTimer += Time.deltaTime;
         }
 
-       /* if (HAttackTimer >= HAttackTime)
-        {
-            //UnityEngine.Debug.Log("HEAVY!");
-            animator.SetBool("HCharge", true);
+        
 
+            /* if (HAttackTimer >= HAttackTime)
+             {
+                 //UnityEngine.Debug.Log("HEAVY!");
+                 animator.SetBool("HCharge", true);
+
+             }
+
+             if (Input.GetMouseButtonUp(1))
+             {
+                 //UnityEngine.Debug.Log("RELEASE H!");
+                 animator.SetBool("HCharge", false);
+                 HAttackTimer = 0;
+             }*/
+            ///----------------------------------------------------------------
         }
 
-        if (Input.GetMouseButtonUp(1))
+    public void Attack()
+    {
+        shootRay.origin = transform.position;
+        shootRay.direction = transform.forward;
+
+        if (Physics.Raycast(shootRay, out hit, range, mask))
         {
-            //UnityEngine.Debug.Log("RELEASE H!");
-            animator.SetBool("HCharge", false);
-            HAttackTimer = 0;
-        }*/
-        ///----------------------------------------------------------------
+
+            EnemyHealth enemy = hit.transform.GetComponent<EnemyHealth>();
+            EnemyController mov = hit.transform.GetComponent<EnemyController>();
+
+            if (enemy != null)
+            {
+                enemy.HurtEnemy(Damage);
+                mov.StartKnockBack();
+            }
+        }
     }
 }

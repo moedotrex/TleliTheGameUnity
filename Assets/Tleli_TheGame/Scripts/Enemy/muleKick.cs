@@ -55,7 +55,7 @@ public class muleKick : MonoBehaviour
     {
 
         timer = 0f;
-        if (TlelliHealth.HP > 0 && playerInRange)
+        if (TlelliHealth.flame > 0 && playerInRange)
         {
             
             TlelliHealth.HurtFlame(attackDamage);
@@ -66,6 +66,9 @@ public class muleKick : MonoBehaviour
         {
             TlelliHealth.SetHPDamage(1);
         }
+
+        
+        
         /* if (TlelliHealth.HP < 0)
          {
         Poner una barrera para que deje de atacar
