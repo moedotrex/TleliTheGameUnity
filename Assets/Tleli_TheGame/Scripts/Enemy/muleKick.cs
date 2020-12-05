@@ -11,7 +11,9 @@ public class muleKick : MonoBehaviour
     public float beforeKickTime;
 
     GameObject player;
-    TlelliFlameHealth TlelliHealth;
+    //TlelliFlameHealth TlelliHealth;
+    TleliHealth TlelliHealth;
+
     tleliKnockBack playerKnockback;
 
     bool playerInRange;
@@ -22,7 +24,8 @@ public class muleKick : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        TlelliHealth = player.GetComponent<TlelliFlameHealth>();
+        //TlelliHealth = player.GetComponent<TlelliFlameHealth>();
+        TlelliHealth = player.GetComponent<TleliHealth>();
 
         //playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         //slamLand = new Vector3(playerPos.position.x, playerPos.position.y, playerPos.position.z);
@@ -37,31 +40,35 @@ public class muleKick : MonoBehaviour
         timer += Time.deltaTime;
 
 
-        if (playerInRange)
+        if (timer >= timeBetweenAttacks && playerInRange)
+
         {
-            waitKick();
-            if (timer >= timeBetweenAttacks && playerInRange && isDisplaced == false)
 
-            {
-               
-                Attack();
-
-            }
+            Attack();
 
         }
+
     }
 
 
     void Attack()
     {
+
         timer = 0f;
-        
-        if (TlelliHealth.HP > 0 && playerInRange)
+        if (TlelliHealth.flame > 0 && playerInRange)
         {
             
-            TlelliHealth.SetHPDamage(attackDamage);
+            TlelliHealth.HurtFlame(attackDamage);
             playerKnockback.startKnockBack(KBforce);
         }
+
+        if (TlelliHealth.flame <= 0)
+        {
+            TlelliHealth.SetHPDamage(1);
+        }
+
+        
+        
         /* if (TlelliHealth.HP < 0)
          {
         Poner una barrera para que deje de atacar

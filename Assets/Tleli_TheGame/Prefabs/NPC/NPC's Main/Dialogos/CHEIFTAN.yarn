@@ -1,0 +1,94 @@
+﻿title: CHEIFTAN
+tags:
+---
+<<if $dieChef is false>>
+Welcome, welcome, It's a pleasure to meet you! I am the head of this settlement, they call me the CHIEFTAIN, if there's anything you need please feel free to ask me.
+[[What can you tell me about this place?|CHEIFTAN.one]]
+[[What do you know about the monsters?|CHEIFTAN.two]]
+[[Do you know of a way out?|CHEIFTAN.tree]]
+<<else>>
+[[CHEIFTAN.conv]]
+<<endif>>
+===
+
+title: CHEIFTAN.one
+tags:
+---
+Most of what you see now was already here when we arrived. We are not sure who, or what, built it, but it is now what I and the townsfolk call home.  Here come souls of people who lived another life, though most of us don't remember much about it.
+[[What do you know about the monsters?|CHEIFTAN.two]]
+[[Do you know any way out?|CHEIFTAN.tree]]
+<<set $dieChef to false>>
+===
+
+title: CHEIFTAN.two
+tags:
+---
+Oh, the monsters... They used to be just like us, Nenemis who wandered into this realm without any idea of what was happening. However, they got overwhelmed by their frustrations, to the point where Amana took over them and morphed them into unrecognizable beings. 
+[[What can you tell me about this place?|CHEIFTAN.one]]
+[[Do you know of a way out?|CHEIFTAN.tree]]
+<<set $dieChef to false>>
+===
+
+title: CHEIFTAN.tree
+tags:
+---
+Among the townsfolk there are rumors of an exit. See those big doors behind you? They are sealed shut, but they say there is a way of opening them using two lost keys. Rumor has it there were two gatekeepers who held the keys, but nobody knows what happened to them. One day, they left to explore the caves to our east and never came back...
+[[What can you tell me about this place?|CHEIFTAN.one]]
+[[What do you know about the monsters?|CHEIFTAN.two]]
+[[Maybe I can find those keys...|CHEIFTAN.fiv]]
+<<set $dieChef to false>>
+===
+
+title: CHEIFTAN.fiv
+tags:
+---
+Wait... You aren't seriously thinking of going out there, are you? It's madness! Most who wander into the caves never come back. Please, stay. It may not be much but we all welcome you into our home.
+[[I appreciate the offer, but we need to leave, no matter how dangerous.|CHEIFTAN.no]]
+[[Got any advice for us?|CHEIFTAN.ok]]
+<<set $dieChef to false>>
+===
+
+title: CHEIFTAN.ok
+tags:
+---
+You should talk to the townspeople, some of them might know more about the caves... please be careful.
+[[Thanks! we will.|CHEIFTAN.no]]
+<<set $dieChef to false>>
+===
+
+title: CHEIFTAN.no
+tags:
+---
+... If I can't change your mind, then... Stay safe, will you? This place has been... weird, lately. Dangerous. Not only because of the monsters, but it feels like... something has woken up.
+<<set $dieChef to true>>
+===
+
+
+title: CHEIFTAN.conv
+tags:
+---
+You are here! and ALIVE! I am glad you are back. Did you happen to find anything?
+[[Not yet, but  I'm working on it.|CHEIFTAN.eee]]
+[[We found the keys!|CHEIFTAN.ooo]]
+===
+
+title: CHEIFTAN.eee
+tags:
+---
+Don't overwork yourself! remember the Amana lurks among us, stay safe!
+===
+
+title: CHEIFTAN.ooo
+tags:
+---
+You did! Did you... did you happen to see anything about the gatekeepers?
+[[The monsters we fought... they didn't look like any other monster around here..|CHEIFTAN.aaa]]
+[[I think I did... two of them, but i'm not sure.|CHEIFTAN.aaa]]
+===
+
+title: CHEIFTAN.aaa
+tags:
+---
+Oh... I see. Well, thank you for finding them. The doors lie behind you, in the corner of this hill. We don't know what's in there, stay alert. 
+===
+

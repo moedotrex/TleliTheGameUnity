@@ -9,15 +9,15 @@ using UnityEngine.UI;
 public class TleliHealth : MonoBehaviour
 
 {
-    public float maxHP = 100;        
-    public float maxFlame = 100;     
+    public float maxHP = 100;
+    public float maxFlame = 100;
     float flameMaxIntensity = 65;           //Valor máximo de la flama en shader (brightness)
     float flameMinIntensity = 35;
 
     [HideInInspector] public float HP;
     [HideInInspector] public float flame;
     float flameIntensity;
-      
+
     //public float attack;      
     public float flameDamage;
 
@@ -74,7 +74,7 @@ public class TleliHealth : MonoBehaviour
         {
             flame = maxFlame;
         }
-       
+
     }
 
     public void SetFlameDamage(float dam)
@@ -94,31 +94,41 @@ public class TleliHealth : MonoBehaviour
 
     public void HurtFlame(float dmg)
     {
-        flame -= dmg;
-    }
-
-    
-    public void SetHPDamage(float attackStrength)
-    {
-        if (invincibilityFrames.isDisplaced == false) {
+        if (invincibilityFrames.isDisplaced == false)
+        {
 
             if (invincibilityCounter <= 0)
             {
-                invincibilityCounter = invincibilityLenght;             
+                invincibilityCounter = invincibilityLenght;
+                flame -= dmg;
+                tleliAnimationController.IsHitTrigger();
+            }
+        }
+    }
+
+
+    public void SetHPDamage(float attackStrength)
+    {
+        if (invincibilityFrames.isDisplaced == false)
+        {
+
+            if (invincibilityCounter <= 0)
+            {
+                invincibilityCounter = invincibilityLenght;
                 /*float damage = attackStrength * (100 / (100 + flame));
                 damage = Mathf.Round(damage * 100f) / 100f;*/
                 tleliAnimationController.IsHitTrigger();
 
-            HP -= attackStrength;
-            if (HP < 0)
-            {
-                HP = 0;
+                HP -= attackStrength;
+                if (HP < 0)
+                {
+                    HP = 0;
                     //tleliAnimationController.IsDeadTrigger(); The Dead Trigger is now a Bool. This animation is played in the TleliDeath script. Changed by Emil.
-            }
+                }
 
-        Text damageTxt = GameObject.Find("ShowDamage").GetComponent<Text>();
-        damageTxt.text = "- " + attackStrength;
-        }
+                Text damageTxt = GameObject.Find("ShowDamage").GetComponent<Text>();
+                damageTxt.text = "- " + attackStrength;
+            }
         }
 
     }
@@ -168,13 +178,13 @@ public class TleliHealth : MonoBehaviour
 
     }
 
-     //public void DeathTleli() This method wasn't used. Now the Dead Trigger is a Bool
-     // {
-     //     if (HP <= 0)
-     //     {
-     //         tleliAnimationController.IsDeadTrigger();
-     //     }
-     // }
+    //public void DeathTleli() This method wasn't used. Now the Dead Trigger is a Bool
+    // {
+    //     if (HP <= 0)
+    //     {
+    //         tleliAnimationController.IsDeadTrigger();
+    //     }
+    // }
 
     //VACA
     public void getPCscritp()

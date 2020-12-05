@@ -6,65 +6,106 @@ public class EnemyAttack : MonoBehaviour
 {
     public float timeBetweenAttacks = 3f;
     public float attackDamage = 1;
-    public float attackDamageSlam = 1;
-    public float KBforce;
+    public float HeavyAttackDamage = 1;
+
 
     GameObject player;
-    TlelliFlameHealth TlelliHealth;
+    // TlelliFlameHealth TlelliHealth;
+    TleliHealth TlelliHealth;
     tleliKnockBack playerKnockback;
-
+    EnemyController enemyController;
     bool playerInRange;
     float timer;
-    public bool isDisplaced;
+    [HideInInspector] public bool isDisplaced;
+    [HideInInspector] public bool isAnimating;
     //crear evento para detectar tiempo de anim gethit y death
+
+    ChomperAnimationController chomperController; //Draaek
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        TlelliHealth = player.GetComponent<TlelliFlameHealth>();
 
-        //playerPos = GameObject.FindGameObjectWithTag("Player").transform;
-        //slamLand = new Vector3(playerPos.position.x, playerPos.position.y, playerPos.position.z);
+        chomperController = GetComponentInChildren<ChomperAnimationController>(); //Draaek
+        enemyController = GetComponent<EnemyController>();
+
+        // TlelliHealth = player.GetComponent<TlelliFlameHealth>();
+        TlelliHealth = player.GetComponent<TleliHealth>();
 
         playerKnockback = player.GetComponent<tleliKnockBack>();
-
     }
 
 
     void Update()
     {
-        timer += Time.deltaTime;
+        if (isAnimating == false)
+        {
+            timer += Time.deltaTime;
+        }
 
+        if (timer >= timeBetweenAttacks && playerInRange && isDisplaced == false)
+        {
 
-        if (timer >= timeBetweenAttacks && playerInRange)
-
-            if (timer >= timeBetweenAttacks && playerInRange && isDisplaced == false)
-
+            int randomNum = Random.Range(0, 100);
+            
+            if (randomNum <= 50)
             {
-                Attack();
 
+                //  Attack();
+                timer = 0f;
+                isAnimating = true;
+                enemyController.stopMov(2.14f);
+
+                chomperController.LightAtkTrigger(); //Draaek
+            }
+
+            if (randomNum > 51)
+            {
+
+                //  Attack();
+                timer = 0f;
+                isAnimating = true;
+                enemyController.stopMov(1.17f);
+
+                chomperController.HeavyAtkTrigger(); //Draaek
             }
 
 
+        }
     }
 
 
-    void Attack()
+    public void Attack()
     {
         timer = 0f;
 
-        if (TlelliHealth.HP > 0)
+        if (TlelliHealth.flame > 0 && playerInRange)
         {
-            TlelliHealth.SetHPDamage(attackDamage);
-            playerKnockback.startKnockBack(KBforce);
+            TlelliHealth.HurtFlame(attackDamage);
+            playerKnockback.startKnockBack(7f);
         }
-        /* if (TlelliHealth.HP < 0)
-         {
-        Poner una barrera para que deje de atacar
-         }*/
+
+        if (TlelliHealth.flame <= 0 && playerInRange)
+        {
+            TlelliHealth.SetHPDamage(1);
+        }
     }
 
+    public void HeavyAttack()
+    {
+        timer = 0f;
 
+        if (TlelliHealth.flame > 0 && playerInRange)
+        {
+            TlelliHealth.HurtFlame(attackDamage);
+            playerKnockback.startKnockBack(10f);
+        }
+
+        if (TlelliHealth.flame <= 0 && playerInRange)
+        {
+            TlelliHealth.SetHPDamage(1);
+        }
+    }
 
     //¿jugador en rango de ataque?
     void OnTriggerEnter(Collider other)
@@ -84,4 +125,8 @@ public class EnemyAttack : MonoBehaviour
         }
     }
 
+    void AnimationOff()
+    {
+        isAnimating = false;
+    }
 }

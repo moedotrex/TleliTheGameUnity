@@ -6,12 +6,14 @@ public class TleliAnimationController : MonoBehaviour
 {
     Animator tleliAnimator;
     LightCombo tleliCombat;
+    HeavyCombo tleliHeavyCombat;
 
     // Start is called before the first frame update
     void Start()
     {
         tleliAnimator = this.gameObject.GetComponent<Animator>();
         tleliCombat = GetComponentInParent<LightCombo>();
+        tleliHeavyCombat = GetComponentInParent<HeavyCombo>();
     }
 
     public void SetForwardSpeedParameter(float forwardSpeed)
@@ -27,6 +29,11 @@ public class TleliAnimationController : MonoBehaviour
     public void JumpLandTrigger()
     {
         tleliAnimator.SetTrigger("JumpLand");
+    }
+
+    public void DoubleJumpTrigger()
+    {
+        tleliAnimator.SetTrigger("DoubleJump");
     }
 
     public bool CheckFallLoop()
@@ -108,8 +115,15 @@ public class TleliAnimationController : MonoBehaviour
     {
         tleliCombat.Attack();
     }
+
+    public void heavyAnimationHit()
+    {
+        tleliHeavyCombat.Attack();
+    }
+
     public void chargedLightHit()
     {
+        Debug.Log("wrtrvt");
         if (tleliCombat.lunging == false)
         {
             tleliCombat.lunging = true;

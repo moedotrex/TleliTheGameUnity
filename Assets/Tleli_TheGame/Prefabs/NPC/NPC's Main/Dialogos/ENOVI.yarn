@@ -1,0 +1,123 @@
+﻿title: ENOVI.start
+tags:
+---
+<<if $dieEnov is false>>
+What are you looking at?
+[[Nothing.|ENOVI.uno]]
+[[Why the aggression?|ENOVI.dos]]
+<<else>>
+[[ENOVI.Jealous]]
+<<endif>>
+===
+
+title: ENOVI.uno
+tags:
+---
+That's what I thought.
+<<set $dieEnov to false>>
+===
+
+title: ENOVI.dos
+tags:
+---
+I heard you’re attempting to open the gate, huh? Good luck with that.
+[[Word travels fast.|ENOVI.tre]]
+[[I am.|ENOVI.cuat]]
+<<set $dieEnov to false>>
+===
+
+title: ENOVI.tre
+tags:
+---
+It sure does.
+[[I see.|ENOVI.qinq]]
+<<set $dieEnov to false>>
+===
+
+title: ENOVI.cuat
+tags:
+---
+Ha! And how does a silly little girl like you expect to do that? You have no idea what awaits you behind those doors.
+[[What do you mean?|ENOVI.zeiz]]
+<<set $dieEnov to false>>
+===
+
+title: ENOVI.qinq
+tags:
+---
+So, are you going?
+[[That's the plan.|ENOVI.cuat]]
+[[You're not?|ENOVI.sept1]]
+<<set $dieEnov to false>>
+===
+
+title: ENOVI.sept1
+tags:
+---
+I'm not stupid enough to go out there, besides, you wont make it past the ruins thats for sure.
+[[We will see.|ENOVI.sept]]
+<<set $dieEnov to false>>
+===
+
+title: ENOVI.zeiz
+tags:
+---
+Don’t you think we’ve tried? The keys have been lost in those old ruins since forever. If you enter, you’d be dead faster than me saying “Upi!”.
+[[Well I won't know unless I try.|ENOVI.oct]]
+[[Somebody has to get the job done.|ENOVI.sept]]
+<<set $dieEnov to false>>
+===
+
+title: ENOVI.sept
+tags:
+---
+Hmp....
+<<set $dieEnov to true>>
+===
+
+title: ENOVI.oct
+tags:
+---
+It’s not like you’d have a chance anyways.
+[[We will see.|ENOVI.nov]]
+[[I don't know yet.|ENOVI.dec]]
+<<set $dieEnov to false>>
+===
+
+title: ENOVI.nov
+tags:
+---
+Ugh… bye!
+<<set $dieEnov to true>>
+===
+
+title: ENOVI.dec
+tags:
+---
+Thought so.
+<<set $dieEnov to true>>
+===
+
+
+title: ENOVI.Jealous
+tags:
+---
+What now?
+[[What do you do around here?|ENOVI.Jealous1]]
+[[Do you know anybody here?|ENOVI.Jealous2]]
+[[See you|ENOVI.nov]]
+<<set $dieEnov to true>>
+===
+
+title: ENOVI.Jealous1
+tags:
+---
+None of your business.
+
+===
+
+title: ENOVI.Jealous2
+tags:
+---
+I only know my grandmother. But pfft look at us, how can anyone recognize anybody?
+===

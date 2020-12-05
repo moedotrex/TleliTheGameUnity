@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
 
 public class LightCombo : MonoBehaviour
@@ -37,7 +36,10 @@ public class LightCombo : MonoBehaviour
     public bool lunging;
     public bool gotCharged;
 
+    public PlayerController Tleli;
+
     ParticleSystem slash;   //------
+    ParticleSystem trails;
     TlelliSonido SendLAttack; //ADRIAN
     TleliDeath tleliDeath; //Stop actions when Tleli is Dead. By Emil.
 
@@ -49,32 +51,41 @@ public class LightCombo : MonoBehaviour
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
         currentDamage = Damage;
         slash = GameObject.Find("WeaponSlash").GetComponent<ParticleSystem>();   //------
+        trails = GameObject.Find("WeaponTrails").GetComponent<ParticleSystem>();
         SendLAttack = GetComponent<TlelliSonido>(); //ADRIAN
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && combonum < 3 && !tleliDeath.isDead)
+
+
+        if (Input.GetMouseButtonDown(0) && combonum < 4 && !tleliDeath.isDead && Tleli.isGrounded)
         {
+            /*if (Tleli.isGrounded == true)
+            {
+                Tleli.canMove = 60;
+            }*/
+
             if (Time.time >= nextAttackTime)
             {
                 daggerAnim.SetActive(true);
                 nextAttackTime = Time.time + attackRate;
                 animator.SetTrigger(animList[combonum]);
                 combonum++;
-                currentDamage += 2f;
+                //currentDamage += 2f;
                 reset = 0f;
-                
 
-                if (combonum == 1)   //------
+
+                if (combonum == 1 || combonum == 2)   //------ COMMENTED TO REDUCE ERRORS. DO NOT REMOVE.
                 {
-                    StartCoroutine(Slash());  
+                    StartCoroutine(Slash());
                 }
+                trails.Emit(20);
             }
 
             if (target != null)
-            { 
-            FaceTarget();
+            {
+                FaceTarget();
             }
         }
         if (combonum > 0)
@@ -82,44 +93,43 @@ public class LightCombo : MonoBehaviour
             reset += Time.deltaTime;
             if (reset > intResetTime)
             {
-                animator.SetTrigger("Reset_LightCombo");
                 combonum = 0;
-                currentDamage = Damage;
+                animator.SetTrigger("Reset_LightCombo");
+                
+                //currentDamage = Damage;
                 daggerAnim.SetActive(false);
                 Debug.Log("combo reset");
             }
         }
 
-        if (combonum == 4)
-        {
-            intResetTime = 4f;
-            combonum = 0;
-        }
         else
         {
             intResetTime = resetTime;
         }
 
-        if (gotCharged && !tleliDeath.isDead) // ya adquirio el poder? 
+        if (gotCharged && !tleliDeath.isDead && Tleli.isGrounded) // ya adquirio el poder? 
         {
             if (Input.GetMouseButton(0))
-        {
-            LAttackTimer += Time.deltaTime;
-        }
-        if (LAttackTimer >= LAttackTime && !Input.GetMouseButton(1) )
-        {
-            animator.SetBool("Lcharge", true);
-            moveScript.isDisplaced = true;
-            if (target != null)
             {
-                FaceTarget();
+                LAttackTimer += Time.deltaTime;
             }
-        }
-        if (Input.GetMouseButtonUp(0) || Input.GetMouseButton(1))
-        {            
-            animator.SetBool("Lcharge", false);
-            LAttackTimer = 0;
-        }
+            if (LAttackTimer >= LAttackTime && !Input.GetMouseButton(1))
+            {
+                animator.SetBool("Lcharge", true);
+                //Debug.Log(animator.GetBool("Lcharge"));
+               // moveScript.isDisplaced = true;
+                if (target != null)
+                {
+                    FaceTarget();
+                }
+            }
+            if (Input.GetMouseButtonUp(0) || Input.GetMouseButton(1))
+            {
+                animator.SetBool("Lcharge", false);
+                //Debug.Log(animator.GetBool("Lcharge"));
+                LAttackTimer = 0;
+               // moveScript.isDisplaced = false;
+            }
         }
 
         if (lunging == true)
@@ -133,10 +143,12 @@ public class LightCombo : MonoBehaviour
                 DestroyOnCollision wall = hit.transform.GetComponent<DestroyOnCollision>();
                 EnemyHealth enemy = hit.transform.GetComponent<EnemyHealth>();
                 EnemyController mov = hit.transform.GetComponent<EnemyController>();
+                HeavyController Hmov = hit.transform.GetComponent<HeavyController>();
                 if (enemy != null)
                 {
+                    Hmov.StartKnockBack();
                     enemy.HurtEnemy(currentDamage + 10f);
-                    mov.StartKnockBack();
+                    //mov.StartKnockBack();
                 }
                 if (wall != null)
                 {
@@ -162,7 +174,6 @@ public class LightCombo : MonoBehaviour
             {
                 enemy.HurtEnemy(currentDamage);
                 mov.StartKnockBack();
-                mov.stopMov(1f);
             }
         }
     }
