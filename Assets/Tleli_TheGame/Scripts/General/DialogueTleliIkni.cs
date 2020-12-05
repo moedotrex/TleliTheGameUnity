@@ -9,12 +9,10 @@ public class DialogueTleliIkni : MonoBehaviour
     public string[] dialogos;
     public string[] personaje;
     private int dialogosIndex = 0;
-    public 
     bool TimeStarted = false;
     private float timer = 0f;
     public float pausaTime;
 
-    public string eventName;
     public Text taskText;
 
     // Start is called before the first frame update
@@ -50,36 +48,6 @@ public class DialogueTleliIkni : MonoBehaviour
 
             thisCollider.enabled = false;
             changeDialogue();
-
-            /*
-            switch (this.eventName)
-            {
-                case "TleliIntro":
-                    thisCollider.enabled = false;
-                    changeDialogue();
-                    break;
-                case "Dialogue_TleliIkni1":
-                    thisCollider.enabled = false;
-                    changeDialogue();
-                    break;
-                case "Dialogue_TleliIkni2":
-                    thisCollider.enabled = false;
-                    changeDialogue();
-                    break;
-                case "Dialogue_Ikni":
-                    thisCollider.enabled = false;
-                    changeDialogue();
-                    break;
-                case "Dialogue_FindIkni":
-                    thisCollider.enabled = false;
-                    changeDialogue();
-                    break;
-                case "Dialogue-EndCave":
-                    thisCollider.enabled = false;
-                    changeDialogue();
-                    break;
-            }
-            */
         }
     }
 
