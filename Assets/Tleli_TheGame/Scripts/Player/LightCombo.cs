@@ -59,7 +59,7 @@ public class LightCombo : MonoBehaviour
     {
 
 
-        if (Input.GetMouseButtonDown(0) && combonum < 4 && !tleliDeath.isDead)
+        if (Input.GetMouseButtonDown(0) && combonum < 4 && !tleliDeath.isDead && Tleli.isGrounded)
         {
             /*if (Tleli.isGrounded == true)
             {
@@ -107,7 +107,7 @@ public class LightCombo : MonoBehaviour
             intResetTime = resetTime;
         }
 
-        if (gotCharged && !tleliDeath.isDead) // ya adquirio el poder? 
+        if (gotCharged && !tleliDeath.isDead && Tleli.isGrounded) // ya adquirio el poder? 
         {
             if (Input.GetMouseButton(0))
             {

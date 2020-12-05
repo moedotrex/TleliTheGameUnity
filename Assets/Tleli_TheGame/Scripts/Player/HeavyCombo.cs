@@ -17,6 +17,8 @@ public class HeavyCombo : MonoBehaviour
     float intResetTime;
     public float resetTime;
 
+    public PlayerController Tleli;
+
     Ray shootRay;
     RaycastHit hit;
     public float range;
@@ -40,7 +42,7 @@ public class HeavyCombo : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && combonum < 2 && !tleliDeath.isDead)
+        if (Input.GetMouseButtonDown(1) && combonum < 2 && !tleliDeath.isDead && Tleli.isGrounded)
         {
             if (Time.time >= nextAttackTime)
             {
