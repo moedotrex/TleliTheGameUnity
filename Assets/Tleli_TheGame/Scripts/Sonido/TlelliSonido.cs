@@ -8,32 +8,50 @@ public class TlelliSonido : MonoBehaviour
     public GameObject player;
     PlayerController controller;
 
-
+    private FMOD.Studio.EventInstance GroundTypeRef; //ADRIAN: al parecer no puedes manipular variables de FMOD sin hacer una instancia de evento
+    
     [FMODUnity.EventRef]
     public string inputwalksound;
 
+
     bool playerismoving;
-    public bool playerisHurt; //ADRIAN
+    //ADRIAN
+
+    public bool FlameIsDamaged; 
+    public bool FlameIsDepleted = false;
+    public bool FlameIsFull = false;
     public bool LAttack;
+    public bool Dash;
+    public bool GroundSound;
+    private bool GroundSoundLock;
     private bool isGrounded;
     public float walkingspeed;
-
+    private int GroundType;
+    //
     void Start()
     {
-        
+        GroundTypeRef= FMODUnity.RuntimeManager.CreateInstance("event:/Land");
+
         controller = player.GetComponent<PlayerController>();
         player = GameObject.FindWithTag("Player");
         
         InvokeRepeating("CallFootSteps", 0, walkingspeed);
-    }
+       
+}
 
     // Update is called once per frame
     void Update()
     {
-        CallHit(); //ADRIAN
-        CallAttack(); //ADRIAN
+        //ADRIAN
+        CallHit(); 
+        CallAttack();
+        CallDepletion();
+        CallFulFillment();
+        CallDash();
+        HitsGround();
+        //
 
-        print("L is " + LAttack);
+        //print("L is " + LAttack);
 
         isGrounded = controller.isGrounded;
 
@@ -45,8 +63,6 @@ public class TlelliSonido : MonoBehaviour
         {
             playerismoving = false;
         }
-
-
 
     }
 
@@ -62,29 +78,74 @@ public class TlelliSonido : MonoBehaviour
 
     public void CallHit()
     {
-        if(playerisHurt)
+        if(FlameIsDamaged)
         {
            
-            FMODUnity.RuntimeManager.PlayOneShot("event:/TleliIsHurt");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/TleliStuff/TleliIsHurt");
 
-            playerisHurt = false;
+            FlameIsDamaged = false;
 
         }
 
     }
 
-   public void CallAttack()
+   private void CallAttack()
     {
         if (LAttack)
         {
-
-            FMODUnity.RuntimeManager.PlayOneShot("event:/LAttackSwings");
-
-           LAttack = false;
-
+            FMODUnity.RuntimeManager.PlayOneShot("event:/TleliStuff/LAttackSwings");
+            LAttack = false;
         }
     }
 
+    //ADRIAN
+    private void CallDepletion() 
+    {
+        if (FlameIsDepleted)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/TleliStuff/TleliFlamaVacia");
+            FlameIsDepleted = false;
+        }
+    }
+    
+    private void CallFulFillment()
+    {
+        if (FlameIsFull)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/TleliStuff/TleliFlamaLlena");
+            FlameIsFull = false;
+        }
+    }
+
+    private void CallDash()
+    {
+        if(Dash)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/TleliStuff/TleliDash");
+            Dash = false;
+        }
+    }
+
+    private void HitsGround()
+    {
+        //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Land", GroundType);
+        GroundTypeRef.setParameterByName("Land", GroundType);
+        GroundType = 3;
+        if (isGrounded)
+        {
+            if (!GroundSoundLock)
+            {
+                //FMODUnity.RuntimeManager.PlayOneShot("event:/Land");
+                GroundTypeRef.start();
+                GroundSoundLock = true;
+                
+            }
+        }else if (!isGrounded)
+        {
+            GroundSoundLock = false;
+        }
+    }
+    //
 
     private void OnDisable()
     {

@@ -17,12 +17,14 @@ public class PlayerDash : MonoBehaviour
     //public GameObject player;
     Vector3 moveDir;
     //private int dashValue =1; //para solo dashear una vez en el aire
+    TlelliSonido SendSound;//ADRIAN
 
 
     void Start()
     {
         moveScript = GetComponent<PlayerController>();
         animator = GetComponentInChildren<Animator>();
+        SendSound = GetComponent<TlelliSonido>();//ADRIAN
     }
 
     void Update()
@@ -34,7 +36,9 @@ public class PlayerDash : MonoBehaviour
         {
                 animator.SetTrigger("DashPress");
                 StartCoroutine(Dash());
-            dashCooldownTime = dashCooldown;               
+                dashCooldownTime = dashCooldown;
+                SendSound.Dash = true;
+                
         }
         }
     }

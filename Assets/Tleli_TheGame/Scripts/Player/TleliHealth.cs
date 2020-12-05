@@ -29,12 +29,15 @@ public class TleliHealth : MonoBehaviour
 
     TleliAnimationController tleliAnimationController;
 
-    TlelliSonido SendDamageSound; //ADRIAN llamar script para madarle el dolor
+    //ADRIAN va
+    TlelliSonido SendSound; 
     public int MaxDamageSoundThreshold =80;
-    public int MinDamageSoundThreshold = 20;
-    public int DamageSoundThresholdQuantity =20 ;
-
+    public int MinDamageSoundThreshold = 15;
+    public int DamageSoundThresholdQuantity = 20;
     int DamageThreshold;
+    bool FlameDepletionLock;
+    bool FlameFulfillmentLock;
+    //
 
     void Start()
     {
@@ -45,7 +48,7 @@ public class TleliHealth : MonoBehaviour
         getPCscritp(); //VACA obtener script de player controller
         isBattling = false;
 
-        SendDamageSound = GetComponent<TlelliSonido>();//ADRIAN
+        SendSound = GetComponent<TlelliSonido>();//ADRIAN
         DamageThreshold = MaxDamageSoundThreshold;
     }
 
@@ -78,13 +81,29 @@ public class TleliHealth : MonoBehaviour
     public void RecoverFlame(float recover)
     {
         flame += recover;
+        FlameDepletionLock = true;
 
         if (flame > maxFlame)
         {
             flame = maxFlame;
+            if (!FlameFulfillmentLock)
+            {
+                SendSound.FlameIsFull = true; //ADRIAN
+                FlameFulfillmentLock = true;//ADRIAN
+            }
         }
 
-        if (flame > DamageThreshold + DamageSoundThresholdQuantity)
+        if(flame < maxFlame)
+        {
+            FlameFulfillmentLock = false;//ADRIAN
+        }
+        else
+        {
+            FlameFulfillmentLock = true;//ADRIAN 
+        }
+
+
+            if (flame > DamageThreshold + DamageSoundThresholdQuantity)
         {
 
             DamageThreshold = (DamageThreshold + DamageSoundThresholdQuantity < MaxDamageSoundThreshold) ? DamageThreshold + DamageSoundThresholdQuantity : MaxDamageSoundThreshold;
@@ -97,13 +116,14 @@ public class TleliHealth : MonoBehaviour
         if (flame > 0)
         {
             flame -= dam * Time.deltaTime;
+            
 
             if (flame < DamageThreshold)
             {
 
                 if (flame >= MinDamageSoundThreshold)
                 {
-                    SendDamageSound.playerisHurt = true;
+                    SendSound.FlameIsDamaged = true;
                 }
 
                 DamageThreshold = (DamageThreshold - DamageSoundThresholdQuantity > MinDamageSoundThreshold) ? DamageThreshold - DamageSoundThresholdQuantity : MinDamageSoundThreshold;
@@ -112,6 +132,11 @@ public class TleliHealth : MonoBehaviour
         else
         {
             flame = 0;
+            if (!FlameDepletionLock) { 
+                SendSound.FlameIsDepleted = true;
+                FlameDepletionLock = true;
+            }
+
         }
 
         FlameUpdateMaterial();
