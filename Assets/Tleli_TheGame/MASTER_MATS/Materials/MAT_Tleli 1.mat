@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5436306885463062339
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
@@ -7,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MAT_Tleli
+  m_Name: MAT_Tleli 1
   m_Shader: {fileID: -6465566751694194690, guid: 9f45429299728c742aafd4c6567b5462,
     type: 3}
   m_ShaderKeywords: 
@@ -21,7 +34,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_2013B10B:
-        m_Texture: {fileID: 2800000, guid: 4eb0f0fca279d444ba2e23b0e080faf3, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_45B4DE71:
@@ -37,19 +50,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_90CD9A0B:
-        m_Texture: {fileID: 2800000, guid: 7319ae28240f6e742a6881116fb10370, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_9DC02D3C:
-        m_Texture: {fileID: 2800000, guid: e3105e5b257bf3a4ca51bed671b0a410, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_BD305425:
-        m_Texture: {fileID: 2800000, guid: 1537e1405f672654f9558ebda200b0b1, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_CE347D4D:
-        m_Texture: {fileID: 2800000, guid: 9126cf563a526b2489e7578c3623cfac, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_D3CB43BE:
@@ -61,7 +74,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_F887CFDD:
-        m_Texture: {fileID: 2800000, guid: 3d861f9696beab8488e20f01e616f21b, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -95,21 +108,21 @@ Material:
     m_Floats:
     - Boolean_22EC64F: 0
     - Boolean_25308C13: 1
-    - Boolean_3998A2FA: 1
+    - Boolean_3998A2FA: 0
     - Boolean_58480D43: 1
     - Boolean_5F3DFE21: 1
     - Boolean_6B12D7DA: 1
     - Boolean_86F2B5B: 0
     - Boolean_AB3361F: 1
     - Boolean_B11E34F6: 0
-    - Boolean_B2D82E09: 1
+    - Boolean_B2D82E09: 0
     - Boolean_BFAAFC3A: 0
     - Boolean_C6D6F89D: 0
     - Boolean_D1EDB5CE: 0
     - Boolean_D7DAEA24: 0
     - Boolean_DC11FC75: 1
     - Boolean_EEBCC7E9: 1
-    - Boolean_FA9640AB: 0
+    - Boolean_FA9640AB: 1
     - Vector1_1465047B: 1
     - Vector1_1F0EBF33: 1
     - Vector1_22768129: 1
@@ -177,16 +190,3 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
---- !u!114 &8192303927947189323
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
