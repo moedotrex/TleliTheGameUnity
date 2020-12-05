@@ -59,7 +59,7 @@ public class LightCombo : MonoBehaviour
     {
 
 
-        if (Input.GetMouseButtonDown(0) && combonum < 3 && !tleliDeath.isDead)
+        if (Input.GetMouseButtonDown(0) && combonum < 4 && !tleliDeath.isDead)
         {
             /*if (Tleli.isGrounded == true)
             {
