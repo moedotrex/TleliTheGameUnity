@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 	int currentJump;
 	public int extraJumpsValue;
 
-		 public CharacterController characterController;
+	public CharacterController characterController;
 	public Transform cam;
 
 	[HideInInspector] public Vector3 moveDir;
@@ -81,28 +81,26 @@ public class PlayerController : MonoBehaviour
 			//salto
 			if (!tleliDeath.isDead)// Stop actions when Tleli is Dead. By Emil.
 			{
-				/*if (Input.GetButtonDown("Jump") && isGrounded)
+				if (Input.GetButtonDown("Jump") && isGrounded)
 				{
 					GetComponent<FMODUnity.StudioEventEmitter>().Play();
 					isJumping = true;
 					saltoTimeCounter = saltoTime;
 					velocidad.y = Mathf.Sqrt(Salto * -2f * gravedad);
-					//leliAnimationController.JumpTakeOffTrigger();
-						tleliAnimationController.JumpTakeOffbool(true);
+					tleliAnimationController.JumpTakeOffbool(true);
 
-				}*/
-				if (Input.GetButtonDown("Jump") && extraJumps > 0)
+				}
+				if (Input.GetButtonDown("Jump") && extraJumps > 0 && !isJumping)
 				{
 					canMove = 0;
 					extraJumps--;
 					currentJump++;
-					decideJump();
+					//decideJump();
 					GetComponent<FMODUnity.StudioEventEmitter>().Play();
 					isJumping = true;
 					saltoTimeCounter = saltoTime;
-					tleliAnimationController.JumpTakeOffbool(true);
+					tleliAnimationController.DoubleJumpTrigger();
 					//velocidad.y = Mathf.Sqrt(Salto * -2f * gravedad);
-					//tleliAnimationController.DoubleJumpTrigger();
 				}
 
 				else if (Input.GetButtonDown("Jump") && isGrounded && extraJumps == 0)
@@ -115,7 +113,6 @@ public class PlayerController : MonoBehaviour
 
 				if (Input.GetButton("Jump") && isJumping == true)
 				{
-
 					if (saltoTimeCounter > 0)
 					{
 						velocidad.y = Mathf.Sqrt(Salto * -2f * gravedad);
@@ -179,40 +176,40 @@ public class PlayerController : MonoBehaviour
 				tempRotacion = 10;
 			}
 
-		
 
 		/*if (isJumping == true)
 		{
 			velBase = 5.5f;
 		} */
 
-		else { tempRotacion = rotacionDefault; }
+			else { tempRotacion = rotacionDefault; }
 
             vel = velBase;
-		if(!tleliDeath.isDead)// Stop actions when Tleli is Dead. By Emil.
+
+			if(!tleliDeath.isDead)// Stop actions when Tleli is Dead. By Emil.
 			{ 
-		if (direction.magnitude >= 0.1f)
-		{
-			float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-			float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref velRotacion, tempRotacion);
+				if (direction.magnitude >= 0.1f)
+				{
+					float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+					float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref velRotacion, tempRotacion);
 
-			transform.rotation = Quaternion.Euler(0f, angle, 0f);
+					transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
-			moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-			characterController.Move(moveDir.normalized * vel * Time.deltaTime);
+					moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+					characterController.Move(moveDir.normalized * vel * Time.deltaTime);
 
-				_deltaVelocidad = vel * Time.deltaTime;
-			isMoving = true;
+					_deltaVelocidad = vel * Time.deltaTime;
+					isMoving = true;
 
-			tleliAnimationController.SetForwardSpeedParameter(1f);
-		}
+					tleliAnimationController.SetForwardSpeedParameter(1f);
+				}
 
-		if (direction.magnitude <= 0f)
-		{
-			isMoving = false;
-			tleliAnimationController.SetForwardSpeedParameter(0f);
+				if (direction.magnitude <= 0f)
+				{
+					isMoving = false;
+					tleliAnimationController.SetForwardSpeedParameter(0f);
+				}
 			}
-		}
 		}
 		if (velocidad.y<0)
         {
@@ -224,8 +221,6 @@ public class PlayerController : MonoBehaviour
         {
 			tleliAnimationController.JumpFallLoopBoolParameter(true);
         }
-		
-        
 	}
 
 	public void decideJump()
