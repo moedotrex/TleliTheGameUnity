@@ -23,7 +23,7 @@ public class EnemyController : MonoBehaviour
     public bool isAttacking;
 
     MusicaDinamica activa;
-    bool knockback;
+    [HideInInspector]  public bool knockback;
     float knockbackForce;
 
     public GameObject alertIcon;

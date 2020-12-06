@@ -375,6 +375,7 @@ MonoBehaviour:
   movSpeed: 5.5
   EnemySpawn: {x: 0, y: 0, z: 0}
   isAttacking: 0
+  knockback: 0
   alertIcon: {fileID: 8190261532161272791, guid: 8a3b5c9fc8f29ca49ba590b065d4801d,
     type: 3}
 --- !u!114 &5630176385537067463
@@ -396,7 +397,8 @@ MonoBehaviour:
     type: 3}
   flameSpawner: {fileID: 7039557453951838944, guid: df4a1fd991dae47428eead02fd0332d2,
     type: 3}
-  ogColor: {r: 0.43529415, g: 0.44705886, b: 0.20392159, a: 1}
+  imDead: 0
+  TimeofDeath: 3
 --- !u!114 &5630176385537067469
 MonoBehaviour:
   m_ObjectHideFlags: 0

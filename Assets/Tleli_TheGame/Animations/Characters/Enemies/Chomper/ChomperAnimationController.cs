@@ -6,12 +6,14 @@ public class ChomperAnimationController : MonoBehaviour
 {
     Animator chomperAnimator;
     EnemyAttack enemyCombat;
+    EnemyHealth enemyHealth;
 
     // Start is called before the first frame update
     void Start()
     {
         chomperAnimator = this.gameObject.GetComponent<Animator>();
         enemyCombat = GetComponentInParent<EnemyAttack>();
+        enemyHealth = GetComponentInParent<EnemyHealth>();
     }
 
     public void IsHitTrigger()
@@ -22,6 +24,11 @@ public class ChomperAnimationController : MonoBehaviour
     public void IsHitAltTrigger()
     {
         chomperAnimator.SetTrigger("isHitAlt");
+    }
+
+    public void IsDeadTrigger()
+    {
+        chomperAnimator.SetTrigger("IsDeadT");
     }
 
     public void IsWalkingBoolParameter(bool isWalking)
@@ -57,6 +64,11 @@ public class ChomperAnimationController : MonoBehaviour
     public void turnOffAnim()
     {
         enemyCombat.isAnimating = false;
+    }
+
+    public void Die()
+    {
+        enemyHealth.actuallyDie();
     }
 
 }

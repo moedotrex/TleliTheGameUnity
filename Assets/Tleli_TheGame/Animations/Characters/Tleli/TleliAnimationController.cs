@@ -7,6 +7,7 @@ public class TleliAnimationController : MonoBehaviour
     Animator tleliAnimator;
     LightCombo tleliCombat;
     HeavyCombo tleliHeavyCombat;
+    PlayerController tleliMovement;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +15,7 @@ public class TleliAnimationController : MonoBehaviour
         tleliAnimator = this.gameObject.GetComponent<Animator>();
         tleliCombat = GetComponentInParent<LightCombo>();
         tleliHeavyCombat = GetComponentInParent<HeavyCombo>();
+        tleliMovement = GetComponentInParent<PlayerController>();
     }
 
     public void SetForwardSpeedParameter(float forwardSpeed)
@@ -123,7 +125,6 @@ public class TleliAnimationController : MonoBehaviour
 
     public void chargedLightHit()
     {
-        Debug.Log("wrtrvt");
         if (tleliCombat.lunging == false)
         {
             tleliCombat.lunging = true;
@@ -131,6 +132,19 @@ public class TleliAnimationController : MonoBehaviour
         else
         {
             tleliCombat.lunging = false;
+        }
+    }
+
+    public void isAnimating()
+    {
+
+        if (tleliMovement.isAnimating == false)
+        {
+            tleliMovement.isAnimating = true;
+        }
+        else
+        {
+            tleliMovement.isAnimating = false;
         }
     }
 }

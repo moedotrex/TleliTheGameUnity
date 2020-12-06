@@ -170,13 +170,22 @@ public class LightCombo : MonoBehaviour
         {
             EnemyHealth enemy = hit.transform.GetComponent<EnemyHealth>();
             EnemyController mov = hit.transform.GetComponent<EnemyController>();
+            HeavyEnemyHealth hEnemy = hit.transform.GetComponent<HeavyEnemyHealth>();
+            HeavyController hEnemyMov = hit.transform.GetComponent<HeavyController>();
+
             if (enemy != null)
             {
                 enemy.HurtEnemy(currentDamage);
                 mov.StartKnockBack();
             }
-        }
+            else if (hEnemy != null)
+            {
+                hEnemy.HurtEnemy(currentDamage);
+                // hEnemyMov.StartKnockBack();
+            }
     }
+    }
+
 
     public void FaceTarget()
     {

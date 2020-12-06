@@ -8,12 +8,16 @@ public class EnemyHealth : MonoBehaviour
     public float health;
     public float currentHealth;
     TlelliFlameHealth flama; //Added by Emil. Necessary for changing camera into Battle Mode.
+    EnemyController enemyMov;
 
     public bool imPoisonous;
     public GameObject cloudSpawner;
     public GameObject flameSpawner;
+    public bool imDead;
 
-    public Color ogColor;
+    public float TimeofDeath;
+
+    //public Color ogColor;
     ParticleSystem particles;
 
     ChomperAnimationController chomperController; //Draaek
@@ -23,6 +27,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = health;
         flama = GameObject.FindGameObjectWithTag("Player").GetComponent<TlelliFlameHealth>();
         particles = GetComponentInChildren<ParticleSystem>();
+        enemyMov = GetComponent<EnemyController>();
 
         chomperController = GetComponentInChildren<ChomperAnimationController>(); //Draaek
     }
@@ -30,24 +35,23 @@ public class EnemyHealth : MonoBehaviour
 
     void Update()
     {
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && imDead == false)
         {
-            chomperController.IsDeadBoolParameter(true);
-            Instantiate(flameSpawner, transform.position, Quaternion.identity);
+            imDead = true;
+           // chomperController.IsDeadBoolParameter(true);
+            chomperController.IsDeadTrigger();
+            enemyMov.enabled = false;
 
-            if (imPoisonous)
-            {
-                Instantiate(cloudSpawner, transform.position, Quaternion.identity);
-            }
-
-            flama.BattleMode(false);
-            Destroy(gameObject);
         }
+
+   
     }
 
     public void HurtEnemy(float damage)
     {
         //  GameObject.Instantiate(blood, transform.position, Quaternion.identity);
+        currentHealth -= damage;
+        particles.Emit((int)currentHealth);
 
         if (Random.Range(0, 10) > 5)
         {
@@ -58,29 +62,49 @@ public class EnemyHealth : MonoBehaviour
         {
             chomperController.IsHitAltTrigger();
         }
-        currentHealth -= damage;
-        particles.Emit((int)currentHealth);
         // Debug.Log(transform.name + "takes" + damage + "damage.");
-        StartCoroutine(HurtEnemyCoroutine());
+        //StartCoroutine(HurtEnemyCoroutine());
     }
 
-    IEnumerator HurtEnemyCoroutine()
+    /* IEnumerator HurtEnemyCoroutine()
+     {
+         Component[] rend = gameObject.GetComponentsInChildren<Renderer>();
+
+         foreach (Component layer in rend)
+         {
+             Renderer r = layer.GetComponent<Renderer>();
+             r.material.color = Color.red;
+         }
+
+         yield return new WaitForSeconds(0.1f);
+
+         foreach (Component layer in rend)
+         {
+             Renderer r = layer.GetComponent<Renderer>();
+             r.material.color = ogColor;
+
+         }
+     }*/
+
+    public void actuallyDie()
     {
-        Component[] rend = gameObject.GetComponentsInChildren<Renderer>();
+        Debug.Log("ided");
+        StartCoroutine(imAtuallyDying());
+    }
 
-        foreach (Component layer in rend)
+    IEnumerator imAtuallyDying()
+    {
+        yield return new WaitForSeconds(TimeofDeath);
+
+        Instantiate(flameSpawner, transform.position, Quaternion.identity);
+
+        if (imPoisonous)
         {
-            Renderer r = layer.GetComponent<Renderer>();
-            r.material.color = Color.red;
+            Instantiate(cloudSpawner, transform.position, Quaternion.identity);
         }
 
-        yield return new WaitForSeconds(0.1f);
+        flama.BattleMode(false);
 
-        foreach (Component layer in rend)
-        {
-            Renderer r = layer.GetComponent<Renderer>();
-            r.material.color = ogColor;
-
-        }
+        Destroy(gameObject);
     }
 }
