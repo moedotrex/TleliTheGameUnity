@@ -56,7 +56,7 @@ public class EnableMMap : MonoBehaviour
         }
         else
         {
-            Debug.Log("Tleli esta arriba");
+            //Debug.Log("Tleli esta arriba");
             MapToShow = UpperMap;
             LowerMap.SetActive(false);
             //MapToShow.SetActive(true);

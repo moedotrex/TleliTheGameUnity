@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{63e47bc3-a94c-4796-b4fa-ed22f10a6de1}">
 		<property name="name">
-			<value>Jump</value>
+			<value>TleliJump</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
 		</property>
 		<relationship name="folder">
-			<destination>{b280674f-cdae-4b42-a6b0-d71ab463e8a7}</destination>
+			<destination>{18a5cc8b-9415-4e55-856f-562884bd9c60}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{27254c13-9b7b-4fd9-b6e2-58dff91d74a4}</destination>
@@ -167,7 +167,7 @@
 			<value>0</value>
 		</property>
 		<property name="maximum">
-			<value>0</value>
+			<value>2</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{0b73ae45-7516-49bc-bc5a-cf5acb43fd21}</destination>
@@ -192,10 +192,10 @@
 	<object class="MixerBusPanner" id="{961c3cc6-7cfa-4cc8-ab72-bd426d755ec4}" />
 	<object class="ParameterCondition" id="{77c7222f-2ada-4b5c-a1fe-17e6a7be4dbb}">
 		<property name="minimum">
-			<value>1</value>
+			<value>3</value>
 		</property>
 		<property name="maximum">
-			<value>1</value>
+			<value>3</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{0b73ae45-7516-49bc-bc5a-cf5acb43fd21}</destination>

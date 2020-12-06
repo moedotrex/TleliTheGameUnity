@@ -9,29 +9,30 @@ public class TlelliSonido : MonoBehaviour
     PlayerController controller;
 
     private FMOD.Studio.EventInstance GroundTypeRef; //ADRIAN: al parecer no puedes manipular variables de FMOD sin hacer una instancia de evento
-    
+    private FMOD.Studio.EventInstance JumpTypeRef;
 
     [FMODUnity.EventRef]
     public string inputwalksound;
 
 
     bool playerismoving;
-    
+
     //ADRIAN
-    public bool FlameIsDamaged; 
-    public bool FlameIsDepleted = false;
-    public bool FlameIsFull = false;
-    public bool LAttack;
-    public bool Dash;
-    public bool GroundSound;
-    private bool GroundSoundLock;
-    private bool isGrounded;
+    [HideInInspector] public bool FlameIsDamaged;
+    [HideInInspector] public bool FlameIsDepleted = false;
+    [HideInInspector] public bool FlameIsFull = false;
+    [HideInInspector] public bool LAttack;
+    [HideInInspector] public bool Dash;
+    [HideInInspector] public bool GroundSound;
+    [HideInInspector] private bool GroundSoundLock;
+    [HideInInspector] private bool isGrounded;
     public float walkingspeed;
     private int GroundType;
     //
     void Start()
     {
-        GroundTypeRef= FMODUnity.RuntimeManager.CreateInstance("event:/Land");
+        GroundTypeRef = FMODUnity.RuntimeManager.CreateInstance("event:/Land");
+        JumpTypeRef = FMODUnity.RuntimeManager.CreateInstance("event:/TleliStuff/TleliJump");
 
         controller = player.GetComponent<PlayerController>();
         player = GameObject.FindWithTag("Player");
@@ -50,6 +51,8 @@ public class TlelliSonido : MonoBehaviour
         CallFulFillment();
         CallDash();
         HitsGround();
+        Jump();
+        DoubleJump();
         //
 
         //print("L is " + LAttack);
@@ -146,12 +149,26 @@ public class TlelliSonido : MonoBehaviour
 
     private void Jump()
     {
+        JumpTypeRef.setParameterByName("Jump_Variation", GroundType);
+        GroundType = 3;
+        //ADRIAN
         if (Input.GetButtonDown("Jump") && controller.isGrounded)
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/TleliStuff/TleliDash");
+            JumpTypeRef.start();
+        }
+        
+        //
+    }
+
+    private void DoubleJump()
+    {
+        if (Input.GetButtonDown("Jump") && controller.extraJumps >= 0 && !controller.isGrounded && controller.isJumping)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/TleliStuff/TleliDoubleJump");
+            print("AAAAWOOOOOOOOOOOOOOOOOOOOOOOOGA");
         }
     }
-    //
+    
 
     private void OnDisable()
     {

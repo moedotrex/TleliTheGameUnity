@@ -26,13 +26,13 @@ public class PlayerController : MonoBehaviour
 	public bool isGrounded;
 	private float saltoTimeCounter;
 	public float saltoTime;
-	private bool isJumping;
+	[HideInInspector] public bool isJumping;
 
     public int canMove = 0;
     float rotacionDefault;
 
 
-    int extraJumps;
+	[HideInInspector] public int extraJumps;
 	int currentJump;
 	public int extraJumpsValue;
 
@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
 			{
 				if (Input.GetButtonDown("Jump") && isGrounded)
 				{
-					GetComponent<FMODUnity.StudioEventEmitter>().Play();
+					//GetComponent<FMODUnity.StudioEventEmitter>().Play();
 					isJumping = true;
 					saltoTimeCounter = saltoTime;
 					velocidad.y = Mathf.Sqrt(Salto * -2f * gravedad);
@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
 					extraJumps--;
 					currentJump++;
 					//decideJump();
-					GetComponent<FMODUnity.StudioEventEmitter>().Play();
+					//GetComponent<FMODUnity.StudioEventEmitter>().Play();
 					isJumping = true;
 					saltoTimeCounter = saltoTime;
 					tleliAnimationController.DoubleJumpTrigger();

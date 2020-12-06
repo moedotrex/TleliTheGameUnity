@@ -5,7 +5,7 @@
 			<value>TleliDoubleJump</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{18a5cc8b-9415-4e55-856f-562884bd9c60}</destination>
@@ -120,6 +120,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{63dcf387-237d-406a-bb84-19bb40470d92}">
+		<property name="volume">
+			<value>-13.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -146,7 +149,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{61817b4a-6cab-4a64-ad85-f28925237ede}">
 		<property name="volume">
-			<value>-6</value>
+			<value>-14.5</value>
 		</property>
 		<property name="name">
 			<value>Audio 2</value>
@@ -173,6 +176,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{cbeb23f4-e261-4226-adb1-780836b9e104}">
+		<property name="volume">
+			<value>-14</value>
+		</property>
 		<property name="name">
 			<value>Audio 3</value>
 		</property>
@@ -189,7 +195,6 @@
 	<object class="MixerBusEffectChain" id="{52bd658e-6ad4-442e-833d-35737593692e}">
 		<relationship name="effects">
 			<destination>{7d1db836-a98b-45b5-b48c-6016938d417f}</destination>
-			<destination>{07b4d141-ae54-44ed-adf1-4cf9696f956f}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{3005ef5c-703b-4af6-a451-24ae36bb8982}" />
@@ -213,7 +218,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{ee8196de-682a-405f-9735-e9082c87f089}" />
 	<object class="MixerBusFader" id="{7d1db836-a98b-45b5-b48c-6016938d417f}" />
-	<object class="SpatialiserEffect" id="{07b4d141-ae54-44ed-adf1-4cf9696f956f}" />
 	<object class="MixerBusFader" id="{5ac783fd-f4cb-4c14-83ee-ccc0d7df988e}" />
 	<object class="MixerBusFader" id="{de40d0ed-c0b5-40a4-b176-c72d10bfe7fa}" />
 	<object class="MixerBusFader" id="{52b9cb1b-7aac-48cc-a4b4-7179e129bc30}" />
