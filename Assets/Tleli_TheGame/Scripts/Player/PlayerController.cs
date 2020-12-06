@@ -26,13 +26,13 @@ public class PlayerController : MonoBehaviour
 	public bool isGrounded;
 	private float saltoTimeCounter;
 	public float saltoTime;
-	[HideInInspector] public bool isJumping;
+	public bool isJumping;
 
-    public int canMove = 0;
-    float rotacionDefault;
+	public int canMove = 0;
+	float rotacionDefault;
 
 
-	[HideInInspector] public int extraJumps;
+	public int extraJumps;
 	int currentJump;
 	public int extraJumpsValue;
 
@@ -41,8 +41,9 @@ public class PlayerController : MonoBehaviour
 
 	[HideInInspector] public Vector3 moveDir;
 	[HideInInspector] public bool isDisplaced;
+	[HideInInspector] public bool isAnimating = false;
 	PlayerDash dashCount;
-	
+
 	TleliAnimationController tleliAnimationController;
 	TleliDeath tleliDeath;
 
@@ -56,12 +57,12 @@ public class PlayerController : MonoBehaviour
 		velInicial = velBase;
 		saltoInicial = Salto;
 
-        rotacionDefault = tempRotacion;
+		rotacionDefault = tempRotacion;
 	}
 
 	void Update()
 	{
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+		isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
 		if (isGrounded && velocidad.y < 0)
 		{
@@ -72,7 +73,7 @@ public class PlayerController : MonoBehaviour
 		float vertical = Input.GetAxisRaw("Vertical");
 		float horizontal = Input.GetAxisRaw("Horizontal");
 
-		if (isDisplaced == false) //si se dashea no se puede controlar la direccion hasta que termine y la gravedad no se crece por la duracion de este
+		if (isDisplaced == false || isAnimating == false) //si se dashea no se puede controlar la direccion hasta que termine y la gravedad no se crece por la duracion de este
 		{
 			//gravedad
 			Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
@@ -105,7 +106,7 @@ public class PlayerController : MonoBehaviour
 
 				else if (Input.GetButtonDown("Jump") && isGrounded && extraJumps == 0)
 				{
-					GetComponent<FMODUnity.StudioEventEmitter>().Play();
+					//GetComponent<FMODUnity.StudioEventEmitter>().Play();
 					isJumping = true;
 					saltoTimeCounter = saltoTime;
 					//velocidad.y = Mathf.Sqrt(Salto * -2f * gravedad);
@@ -177,17 +178,17 @@ public class PlayerController : MonoBehaviour
 			}
 
 
-		/*if (isJumping == true)
-		{
-			velBase = 5.5f;
-		} */
+			/*if (isJumping == true)
+			{
+				velBase = 5.5f;
+			} */
 
 			else { tempRotacion = rotacionDefault; }
 
-            vel = velBase;
+			vel = velBase;
 
-			if(!tleliDeath.isDead)// Stop actions when Tleli is Dead. By Emil.
-			{ 
+			if (!tleliDeath.isDead)// Stop actions when Tleli is Dead. By Emil.
+			{
 				if (direction.magnitude >= 0.1f)
 				{
 					float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
@@ -211,28 +212,28 @@ public class PlayerController : MonoBehaviour
 				}
 			}
 		}
-		if (velocidad.y<0)
-        {
+		if (velocidad.y < 0)
+		{
 			tleliAnimationController.JumpFallLoopBoolParameter(false);
 			tleliAnimationController.JumpTakeOffbool(false);
 		}
 
-		if (velocidad.y>0)
-        {
+		if (velocidad.y > 0)
+		{
 			tleliAnimationController.JumpFallLoopBoolParameter(true);
-        }
+		}
 	}
 
 	public void decideJump()
-    {
+	{
 
 		if (currentJump == 0)
-        {
+		{
 			Debug.Log("singlejump");
-			
-        }
+
+		}
 		if (currentJump == 1)
-        {
+		{
 			Debug.Log("doublejump");
 		}
 
@@ -243,7 +244,7 @@ public class PlayerController : MonoBehaviour
 		return _deltaVelocidad;
 	}
 
-public float GetJumpVelocity()
+	public float GetJumpVelocity()
 	{
 		return velocidad.y;
 	}
