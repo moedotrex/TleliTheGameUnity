@@ -119,7 +119,7 @@ public class HeavyController : MonoBehaviour
                 if(isJumping == true)
                 {
                     
-                    Debug.Log("Funcionaelsaltin");
+                    //Debug.Log("Funcionaelsaltin");
                     
                     
                     heavyBoiAnimationController.JumpTrigger(); //moe 
@@ -210,9 +210,6 @@ public class HeavyController : MonoBehaviour
         isJumping = false;
         navAgent.speed = movSpeedDef;
         navAgent.acceleration= movAcceDef;
-        
-
-
     }
 
     IEnumerator slowMovCoroutine(float time)
