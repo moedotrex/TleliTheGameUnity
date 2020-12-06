@@ -16,8 +16,8 @@ public class TlelliSonido : MonoBehaviour
 
 
     bool playerismoving;
+    
     //ADRIAN
-
     public bool FlameIsDamaged; 
     public bool FlameIsDepleted = false;
     public bool FlameIsFull = false;

@@ -86,20 +86,24 @@ public class TleliHealth : MonoBehaviour
         if (flame > maxFlame)
         {
             flame = maxFlame;
+            
+            //ADRIAN
             if (!FlameFulfillmentLock)
             {
-                SendSound.FlameIsFull = true; //ADRIAN
-                FlameFulfillmentLock = true;//ADRIAN
+                SendSound.FlameIsFull = true;
+                FlameFulfillmentLock = true;
             }
+            //
         }
 
-        if(flame < maxFlame)
+        //ADRIAN
+        if (flame < maxFlame)
         {
-            FlameFulfillmentLock = false;//ADRIAN
+            FlameFulfillmentLock = false;
         }
         else
         {
-            FlameFulfillmentLock = true;//ADRIAN 
+            FlameFulfillmentLock = true;
         }
 
 
@@ -108,7 +112,7 @@ public class TleliHealth : MonoBehaviour
 
             DamageThreshold = (DamageThreshold + DamageSoundThresholdQuantity < MaxDamageSoundThreshold) ? DamageThreshold + DamageSoundThresholdQuantity : MaxDamageSoundThreshold;
         }
-
+        //
     }
 
     public void SetFlameDamage(float dam)
@@ -117,7 +121,7 @@ public class TleliHealth : MonoBehaviour
         {
             flame -= dam * Time.deltaTime;
             
-
+            //ADRIAN
             if (flame < DamageThreshold)
             {
 
@@ -128,15 +132,18 @@ public class TleliHealth : MonoBehaviour
 
                 DamageThreshold = (DamageThreshold - DamageSoundThresholdQuantity > MinDamageSoundThreshold) ? DamageThreshold - DamageSoundThresholdQuantity : MinDamageSoundThreshold;
             }
+            //
         }
         else
         {
             flame = 0;
+
+            //ADRIAN
             if (!FlameDepletionLock) { 
                 SendSound.FlameIsDepleted = true;
                 FlameDepletionLock = true;
             }
-
+            //
         }
 
         FlameUpdateMaterial();
