@@ -5,7 +5,7 @@
 			<value>NatureDarkAmbience</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{ab3023fd-ac86-4c0d-bd63-d67285b69a00}</destination>
@@ -31,9 +31,6 @@
 		</relationship>
 		<relationship name="timeline">
 			<destination>{7d81f252-b7fb-49d5-aa55-c0b87df4d3f3}</destination>
-		</relationship>
-		<relationship name="parameters">
-			<destination>{abc1dcf4-41a8-4caa-9f4a-c66b0035bfdf}</destination>
 		</relationship>
 		<relationship name="banks">
 			<destination>{984c04bc-e8c6-4031-87ac-84f4d8cb6f38}</destination>
@@ -82,11 +79,6 @@
 		<relationship name="modules">
 			<destination>{21f98b03-3969-4351-94c8-b07ba8109514}</destination>
 			<destination>{2e2a4c4a-139f-4e03-889e-331fd13db51a}</destination>
-		</relationship>
-	</object>
-	<object class="ParameterProxy" id="{abc1dcf4-41a8-4caa-9f4a-c66b0035bfdf}">
-		<relationship name="preset">
-			<destination>{60a9893c-98a3-4b1e-9200-1642f3cbc933}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{0a271350-15d7-4146-a1b3-a05cdcea9fbc}">
@@ -159,7 +151,6 @@
 	<object class="MixerBusEffectChain" id="{be5bfd2b-272f-408e-bc6c-edcdb02194cc}">
 		<relationship name="effects">
 			<destination>{4a4102c2-640b-4552-9bf0-b42b26ede119}</destination>
-			<destination>{5fd125fd-62ab-4d36-8403-ef4d637a4ac8}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{f2bcf44e-7f29-4a2d-a7e8-34a001ae7264}" />
@@ -193,7 +184,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{69a9907b-55ec-45aa-81c7-00b946d330f0}" />
 	<object class="MixerBusFader" id="{4a4102c2-640b-4552-9bf0-b42b26ede119}" />
-	<object class="SpatialiserEffect" id="{5fd125fd-62ab-4d36-8403-ef4d637a4ac8}" />
 	<object class="AutomationPoint" id="{abe216e3-6703-4ec9-9642-2160a72610cb}">
 		<property name="position">
 			<value>64</value>
