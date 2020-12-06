@@ -5,10 +5,10 @@ using UnityEngine;
 public class TleliDeath : MonoBehaviour
 {
     public Transform[] checkpoints;
-    public float defaultRespawnTime=5;
+    public float defaultRespawnTime = 5;
     float respawnTime;
-    public bool isDead=false;
-    
+    public bool isDead = false;
+
     Transform playerTransform;
     TleliHealth tleliHealth;
     TleliAnimationController tleliAnimation;
@@ -27,18 +27,24 @@ public class TleliDeath : MonoBehaviour
     {
         if (tleliHealth.HP <= 0)
         {
-           
+            if (!isDead)
+            {
+                //tleliAnimation.IsDeadBool(true);
+                tleliAnimation.IsDeadTrigger();
+            }
+
             isDead = true;
-            tleliAnimation.IsDeadBool(isDead);
+
             respawnTime -= Time.deltaTime;
             if (respawnTime <= 0)
             {
+                tleliAnimation.ResumeAnims();
                 Transform newPlayerTransform = NearestCheckpoint(playerTransform);
                 playerTransform.position = newPlayerTransform.position;
                 tleliHealth.HP = tleliHealth.maxHP;
                 tleliHealth.flame = tleliHealth.maxFlame;
                 isDead = false;
-                tleliAnimation.IsDeadBool(isDead);
+                //tleliAnimation.IsDeadBool(isDead);
                 respawnTime = defaultRespawnTime;
             }
         }
@@ -48,8 +54,8 @@ public class TleliDeath : MonoBehaviour
     Transform NearestCheckpoint(Transform oldPlayerTransform)
     {
         int nearest = 0;
-        for(int i=0; i < checkpoints.Length; i++)
-            {
+        for (int i = 0; i < checkpoints.Length; i++)
+        {
             Vector3 currentNearest = new Vector3(checkpoints[nearest].position.x, checkpoints[nearest].position.y, checkpoints[nearest].position.z);
             Vector3 test = new Vector3(checkpoints[i].position.x, checkpoints[i].position.y, checkpoints[i].position.z);
             float distCurrentNearest = Mathf.Abs(Vector3.Distance(oldPlayerTransform.position, currentNearest));
@@ -64,5 +70,5 @@ public class TleliDeath : MonoBehaviour
 
         return checkpoints[nearest];
     }
-    }
+}
 

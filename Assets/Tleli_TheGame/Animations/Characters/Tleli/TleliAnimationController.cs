@@ -23,6 +23,11 @@ public class TleliAnimationController : MonoBehaviour
         tleliAnimator.SetFloat("ForwardSpeed", forwardSpeed);
     }
 
+    public void BrakeTrigger()
+    {
+        tleliAnimator.SetTrigger("Brake");
+    }
+
     public void JumpTakeOffbool(bool jumpTakeOff)
     {
         tleliAnimator.SetBool("JumpTakeOff", jumpTakeOff);
@@ -54,10 +59,26 @@ public class TleliAnimationController : MonoBehaviour
         tleliAnimator.SetTrigger("IsHit");
     }
 
-    public void IsDeadBool(bool isDead)
+    /*public void IsDeadBool(bool isDead)
     {
            tleliAnimator.SetBool("isDead", isDead);
+    }*/
+
+    public void PauseAnims()
+    {
+        tleliAnimator.speed = 0;
     }
+
+    public void ResumeAnims()
+    {
+        tleliAnimator.speed = 1;
+    }
+
+    public void IsDeadTrigger()
+    {
+        tleliAnimator.SetTrigger("IsDead");
+    }
+
     public void DashTrigger()
     {
         tleliAnimator.SetTrigger("Dash");
