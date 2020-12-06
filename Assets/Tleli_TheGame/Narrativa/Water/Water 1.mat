@@ -8,13 +8,13 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Water 1
-  m_Shader: {fileID: -6465566751694194690, guid: 2c57412847e33a34097fa23534580c0d,
+  m_Shader: {fileID: -6465566751694194690, guid: e6ac722f1ed5e49429718b0dbb0cba7a,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2450
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -44,6 +44,15 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_817967ED_Texture_1:
+        m_Texture: {fileID: 7522940008755507396, guid: 195f9995dc652b94eb44677182654bcc,
+          type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_94C8785E_Texture_1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -52,6 +61,7 @@ Material:
     - Boolean_9749C36A: 0
     - Vector1_21BDA47E: 4.01
     - Vector1_4DC33816: 6
+    - Vector1_71C29621: 3
     - Vector1_7C2853D8: 0
     - Vector1_975309D4: 20
     - Vector1_D7E52810: 0.2
