@@ -17,6 +17,9 @@ public class EnemyHealth : MonoBehaviour
 
     public float TimeofDeath;
 
+    public bool isIkniEvent = false;
+    public GameEvent ikniEvent;
+
     //public Color ogColor;
     ParticleSystem particles;
 
@@ -90,6 +93,12 @@ public class EnemyHealth : MonoBehaviour
     {
         Debug.Log("ided");
         StartCoroutine(imAtuallyDying());
+
+        //CHEQUEO SI SON ENEMIGOS DE EVENTO IKNI
+        if (isIkniEvent)
+        {
+            ikniEvent.TutorialSaveIkni();
+        }
     }
 
     IEnumerator imAtuallyDying()
@@ -104,7 +113,6 @@ public class EnemyHealth : MonoBehaviour
         }
 
         flama.BattleMode(false);
-
         Destroy(gameObject);
     }
 }

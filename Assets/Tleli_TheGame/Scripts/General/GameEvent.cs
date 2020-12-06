@@ -11,10 +11,13 @@ public class GameEvent : MonoBehaviour
     public Text taskText;
     int llaves = 0;
     public GameObject ikniFollow;
+    public float esperaLlave;
+    public int ikniEnemies = 3;
 
     // Start is called before the first frame update
     void Start()
     {
+        print("Enemigos faltantes: " + ikniEnemies);
     }
 
     // Update is called once per frame
@@ -22,6 +25,7 @@ public class GameEvent : MonoBehaviour
     {
     }
 
+    /*
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -88,6 +92,32 @@ public class GameEvent : MonoBehaviour
                     SceneManager.LoadScene("BossCutscene");
                     break;
             }
+        }
+    }
+    */
+
+    public void LlaveHeavyBoi()
+    {
+        switch (llaves)
+        {
+            case 0:
+                taskText.text = "Get the other key defeating the Miniboss - (1/2)";
+                llaves++;
+                break;
+            case 1:
+                taskText.text = "Return to the settlement - (2/2)";
+                llaves++;
+                break;
+        }
+    }
+
+    public void TutorialSaveIkni()
+    {
+        ikniEnemies--;
+        print("Enemigos faltantes: "+ikniEnemies);
+        if (ikniEnemies == (ikniEnemies - ikniEnemies))
+        {
+            print("SALVASTE A IKNI!!!");
         }
     }
 

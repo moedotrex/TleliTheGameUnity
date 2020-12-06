@@ -13,6 +13,8 @@ public class HeavyEnemyHealth : MonoBehaviour
     public GameObject cloudSpawner;
     public GameObject flameSpawner;
 
+    public GameEvent eventLlave;
+
     //public Color ogColor;
     ParticleSystem particles;
 
@@ -30,6 +32,7 @@ public class HeavyEnemyHealth : MonoBehaviour
 
     void Update()
     {
+        //MUERTE
         if (currentHealth <= 0)
         {
             //chomperController.IsDeadBoolParameter(true);
@@ -42,6 +45,9 @@ public class HeavyEnemyHealth : MonoBehaviour
 
             flama.BattleMode(false);
             Destroy(gameObject);
+
+            //OBTENER LLAVE
+            eventLlave.LlaveHeavyBoi();
         }
     }
 
