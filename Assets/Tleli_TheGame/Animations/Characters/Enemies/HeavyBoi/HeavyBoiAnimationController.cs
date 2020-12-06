@@ -33,6 +33,16 @@ public class HeavyBoiAnimationController : MonoBehaviour
     public void KickTrigger()
     {
         heavyBoiAnimator.SetTrigger("KickTrigger");
+
+    }
+    public void IsHitTrigger()
+    {
+        heavyBoiAnimator.SetTrigger("isHit");
+    }
+
+    public void IsDeadTrigger()
+    {
+        heavyBoiAnimator.SetTrigger("IsDead");
     }
 
     void AttackSwing()
