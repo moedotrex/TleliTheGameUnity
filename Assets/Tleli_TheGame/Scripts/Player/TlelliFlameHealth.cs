@@ -124,7 +124,7 @@ public class TlelliFlameHealth : MonoBehaviour
                 tleliAnimationController.IsHitTrigger(); // VACA cambiar animacion cuando reciba daño y no cuando entre en trigger
 
 
-                SendHurt.playerisHurt = true;
+                SendHurt.FlameIsDamaged = true;
                 
 
                 HP -= damage;
