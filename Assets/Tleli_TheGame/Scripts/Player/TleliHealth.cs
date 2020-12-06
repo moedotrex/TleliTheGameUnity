@@ -81,7 +81,7 @@ public class TleliHealth : MonoBehaviour
     public void RecoverFlame(float recover)
     {
         flame += recover;
-        FlameDepletionLock = true;
+        FlameDepletionLock = false;
 
         if (flame > maxFlame)
         {

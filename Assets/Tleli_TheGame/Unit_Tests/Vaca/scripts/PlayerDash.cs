@@ -24,6 +24,8 @@ public class PlayerDash : MonoBehaviour
 
     ParticleSystem dashSmear;  //---Karime
 
+    TlelliSonido SendSound;//ADRIAN
+
     void Start()
     {
         moveScript = GetComponent<PlayerController>();
@@ -31,6 +33,7 @@ public class PlayerDash : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
 
         dashSmear = GameObject.Find("DashSmear").GetComponent<ParticleSystem>();  //---Karime
+        SendSound = GetComponent<TlelliSonido>();//ADRIAN
     }
 
     void Update()
@@ -45,6 +48,7 @@ public class PlayerDash : MonoBehaviour
                 StartCoroutine(Dash());
             dashCooldownTime = dashCooldown;
                 dashSmear.Emit(30);  //---Karime
+                SendSound.Dash = true;//ADRIAN
 
             }
         }
