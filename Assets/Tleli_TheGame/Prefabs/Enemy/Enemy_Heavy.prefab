@@ -1725,7 +1725,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3188439238685770525}
   m_LocalRotation: {x: -0.8114905, y: -0, z: -0, w: 0.58436555}
-  m_LocalPosition: {x: 0, y: -0.259, z: -0.076}
+  m_LocalPosition: {x: 0, y: 0.294, z: -0.261}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 7082685626529973030}
@@ -1739,7 +1739,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3188439238685770525}
   serializedVersion: 6
-  lengthInSec: 1
+  lengthInSec: 2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -1867,7 +1867,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1921,7 +1921,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.58040816, b: 0, a: 1}
+      maxColor: {r: 0.9245283, g: 0.54443425, b: 0.02180491, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -2305,7 +2305,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.75
+      scalar: 0.31
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -2358,7 +2358,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 8
+    type: 0
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -2445,7 +2445,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.0001
+      value: 1.92
       mode: 0
       spread: 0
       speed:
@@ -3060,8 +3060,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.98564017, g: 1, b: 0, a: 1}
-        key1: {r: 1, g: 0.3420409, b: 0, a: 1}
+        key0: {r: 0.3064373, g: 0.31132078, b: 0, a: 1}
+        key1: {r: 1, g: 0.4109216, b: 0.0990566, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -9199,7 +9199,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 40
-  currentHealth: 0
   imPoisonous: 0
   cloudSpawner: {fileID: 7039557453951838944, guid: df4a1fd991dae47428eead02fd0332d2,
     type: 3}

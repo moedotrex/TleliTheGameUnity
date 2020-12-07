@@ -137,11 +137,7 @@ public class HeavyController : MonoBehaviour
 
                 }
 
-                if (isTleliDead.isDead == true)
-                {
-                    navAgent.SetDestination(EnemySpawn);
-                    isAttacking = false;
-                }
+               
 
                 if (distance <= navAgent.stoppingDistance)
                 {
@@ -166,6 +162,12 @@ public class HeavyController : MonoBehaviour
             alertActive = 0;
 
             flama.BattleMode(false); //Added by Emil. Necessary for changing camera into Battle Mode.
+        }
+
+        if (isTleliDead.isDead == true)
+        {
+            navAgent.SetDestination(EnemySpawn);
+            isAttacking = false;
         }
 
         if (navAgent.remainingDistance < 2.3 && !isAttacking && !atSpawn) //Draaek. This code ensures enemy returns to idle on spawn point
