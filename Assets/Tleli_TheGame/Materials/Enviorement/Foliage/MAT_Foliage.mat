@@ -106,10 +106,16 @@ Material:
     - _bHasAO: 0
     - _bHasAlpha: 0
     - _bHasNormalMap: 0
+    - _bHasWind: 1
     - _contrast: 1
     - _contrast_1: 1
     - _hue: 0
     - _normalStrength: 1
+    - _windDensity: 0.2
+    - _windDistance: 0.19
+    - _windInterpolation: 1.7
+    - _windSpeed: 1
+    - _windStrength: 0.3
     m_Colors:
     - _BaseColor: {r: 0.26637593, g: 0.7735849, b: 0.502761, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
