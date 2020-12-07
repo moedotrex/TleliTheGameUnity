@@ -8,10 +8,12 @@ public class TleliDeath : MonoBehaviour
     public float defaultRespawnTime = 5;
     float respawnTime;
     public bool isDead = false;
+    private bool DeadSoundLock;
 
     Transform playerTransform;
     TleliHealth tleliHealth;
     TleliAnimationController tleliAnimation;
+    TlelliSonido SendSound;//ADRIAN
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,7 @@ public class TleliDeath : MonoBehaviour
         tleliAnimation = GetComponentInChildren<TleliAnimationController>();
         playerTransform = GetComponent<Transform>();
         tleliHealth = GetComponent<TleliHealth>();
+        SendSound = GetComponent<TlelliSonido>();//ADRIAN
         respawnTime = defaultRespawnTime;
     }
 
@@ -30,10 +33,16 @@ public class TleliDeath : MonoBehaviour
             if (!isDead)
             {
                 //tleliAnimation.IsDeadBool(true);
-                tleliAnimation.IsDeadTrigger();
+                    tleliAnimation.IsDeadTrigger();
             }
 
             isDead = true;
+
+            if (DeadSoundLock == false)
+            {
+                SendSound.TleliIsDead = true;
+                DeadSoundLock = true;
+            }
 
             respawnTime -= Time.deltaTime;
             if (respawnTime <= 0)

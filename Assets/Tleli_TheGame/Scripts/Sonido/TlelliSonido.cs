@@ -23,6 +23,7 @@ public class TlelliSonido : MonoBehaviour
     [HideInInspector] public bool FlameIsFull = false;
     [HideInInspector] public bool LAttack;
     [HideInInspector] public bool Dash;
+    [HideInInspector] public bool TleliIsDead;
     [HideInInspector] public bool GroundSound;
     [HideInInspector] private bool GroundSoundLock;
     [HideInInspector] private bool isGrounded;
@@ -53,6 +54,7 @@ public class TlelliSonido : MonoBehaviour
         HitsGround();
         Jump();
         DoubleJump();
+        TleliDies();
         //
 
         //print("L is " + LAttack);
@@ -165,7 +167,16 @@ public class TlelliSonido : MonoBehaviour
         if (Input.GetButtonDown("Jump") && controller.extraJumps >= 0 && !controller.isGrounded && controller.isJumping)
         {
             FMODUnity.RuntimeManager.PlayOneShot("event:/TleliStuff/TleliDoubleJump");
-            print("AAAAWOOOOOOOOOOOOOOOOOOOOOOOOGA");
+            //print("AAAAWOOOOOOOOOOOOOOOOOOOOOOOOGA");
+        }
+    }
+
+    private void TleliDies()
+    {
+        if(TleliIsDead)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/TleliStuff/TleliDeath");
+            TleliIsDead = false;
         }
     }
     

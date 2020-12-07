@@ -5,7 +5,7 @@
 			<value>TleliDeath</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{18a5cc8b-9415-4e55-856f-562884bd9c60}</destination>
@@ -113,7 +113,6 @@
 	<object class="MixerBusEffectChain" id="{c1c966e3-d8d3-4fe8-85f6-4188ba05de35}">
 		<relationship name="effects">
 			<destination>{24aae35d-85c6-4c74-9525-2c393e314369}</destination>
-			<destination>{4727a215-6991-4660-8c9e-3b08736ed3ff}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{556655f4-8006-40d2-a5cb-bd975f1464d7}" />
@@ -125,6 +124,5 @@
 	</object>
 	<object class="MixerBusPanner" id="{d7f8bf71-a2bc-4da9-b225-898d03cf9c36}" />
 	<object class="MixerBusFader" id="{24aae35d-85c6-4c74-9525-2c393e314369}" />
-	<object class="SpatialiserEffect" id="{4727a215-6991-4660-8c9e-3b08736ed3ff}" />
 	<object class="MixerBusFader" id="{95ba011f-a5b1-4b52-b3af-4a2f5c27d33e}" />
 </objects>
