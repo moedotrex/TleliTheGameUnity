@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class MusicaDinamica : MonoBehaviour
 {
     public FMOD.Studio.EventInstance Music; //cambio de música
     public FMOD.Studio.EventInstance Ambiente;
-
+    public int MusicDef;
     public int musicSelect;
     /*[FMODUnity.EventRef]
     public string inputAmbiente;
@@ -15,14 +16,16 @@ public class MusicaDinamica : MonoBehaviour
 
     public bool tlelliEnCombate;
     public float VolumeMusic = 1f;
+    
 
     void Start()
     {
+       
         Music = FMODUnity.RuntimeManager.CreateInstance("event:/OverworldMusic"); //ADRIAN cambio a nombre de evento en FMOD respectivo
         Music.start();
         Music.setVolume(PlayerPrefs.GetFloat("GameVolume", VolumeMusic));
-
-        Ambiente = FMODUnity.RuntimeManager.CreateInstance("event:/Ambiente");
+        
+        Ambiente = FMODUnity.RuntimeManager.CreateInstance("event:/AmbientesSelect");
         Ambiente.start();
         
     }
@@ -30,6 +33,7 @@ public class MusicaDinamica : MonoBehaviour
 
     void Update()
     {
+
 
         if (tlelliEnCombate == true)
         {
@@ -39,21 +43,32 @@ public class MusicaDinamica : MonoBehaviour
 
         if (tlelliEnCombate == false)
         {
-            Music.setParameterByName("Music", 1);
-            
+            Music.setParameterByName("Music", MusicDef);
+
         }
 
-        switch (musicSelect)
-        {
+        switch(MusicDef){
             case 0:
+                 Music.setParameterByName("Music", 0);
+                break;
+
+            case 1:
                 Music.setParameterByName("Music", 1);
                 break;
-            case 1:
-                Music.setParameterByName("Music", 2);
+            case 3:
+                Music.setParameterByName("Music", 3);
                 break;
+            case 4:
+                Music.setParameterByName("Music", 4);
+                break;
+
+            case 5:
+                Music.setParameterByName("Music", 5);
+                break;
+
         }
-        
-    }
+
+        }
 
     
     
