@@ -34,6 +34,7 @@ public class EnemyController : MonoBehaviour
     float currentY;
 
     ChomperAnimationController chomperController; //Draaek
+    TleliDeath isTleliDead;
 
     void Start()
     {
@@ -51,7 +52,11 @@ public class EnemyController : MonoBehaviour
         atSpawn = true;
         currentX = this.transform.position.x;
         currentY = this.transform.position.y;
+        isTleliDead = GameObject.FindGameObjectWithTag("Player").GetComponent<TleliDeath>();
+
     }
+
+  
 
     private void FixedUpdate()
     {
@@ -65,7 +70,7 @@ public class EnemyController : MonoBehaviour
     {
         float distance = Vector3.Distance(target.position, transform.position);
 
-        if (distance <= BuscarRadio)
+        if (distance <= BuscarRadio && isTleliDead.isDead == false)
         {
 
             reactionTime += Time.deltaTime;
@@ -106,6 +111,12 @@ public class EnemyController : MonoBehaviour
             alertActive = 0;
 
             flama.BattleMode(false); //Added by Emil. Necessary for changing camera into Battle Mode.
+        }
+
+        if (isTleliDead.isDead == true )
+        {
+            navAgent.SetDestination(EnemySpawn);
+            isAttacking = false;
         }
 
         if (navAgent.remainingDistance < 0.8 && !isAttacking && !atSpawn) //Draaek. This code ensures enemy returns to idle on spawn point

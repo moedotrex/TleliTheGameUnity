@@ -44,6 +44,8 @@ public class HeavyController : MonoBehaviour
 
     HeavyBoiAnimationController heavyBoiAnimationController; //moe
 
+    TleliDeath isTleliDead; //moe
+
     void Start()
     {
         heavyBoiAnimationController = GetComponentInChildren<HeavyBoiAnimationController>(); //moe
@@ -63,6 +65,7 @@ public class HeavyController : MonoBehaviour
         movSpeedDef = movSpeed;
         movAcceDef = movAcce;
         atSpawn = true;
+        isTleliDead = GameObject.FindGameObjectWithTag("Player").GetComponent<TleliDeath>(); //moe
     }
 
     private void FixedUpdate()
@@ -82,7 +85,7 @@ public class HeavyController : MonoBehaviour
     {
         float distance = Vector3.Distance(target.position, transform.position);
 
-        if (distance <= BuscarRadio && isJumping ==false)
+        if (distance <= BuscarRadio && isJumping ==false && isTleliDead.isDead == false)
         {
 
             reactionTime += Time.deltaTime;
@@ -132,6 +135,12 @@ public class HeavyController : MonoBehaviour
                    // transform.position = Vector3.MoveTowards(transform.position, slamLand, 100 * Time.deltaTime);
 
 
+                }
+
+                if (isTleliDead.isDead == true)
+                {
+                    navAgent.SetDestination(EnemySpawn);
+                    isAttacking = false;
                 }
 
                 if (distance <= navAgent.stoppingDistance)
