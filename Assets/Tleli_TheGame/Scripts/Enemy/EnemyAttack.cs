@@ -16,8 +16,10 @@ public class EnemyAttack : MonoBehaviour
     EnemyController enemyController;
     bool playerInRange;
     float timer;
-    [HideInInspector] public bool isDisplaced;
-    [HideInInspector] public bool isAnimating;
+    //[HideInInspector] public bool isDisplaced;
+     public bool isDisplaced;
+    //[HideInInspector] public bool isAnimating;
+     public bool isAnimating;
     //crear evento para detectar tiempo de anim gethit y death
 
     ChomperAnimationController chomperController; //Draaek
