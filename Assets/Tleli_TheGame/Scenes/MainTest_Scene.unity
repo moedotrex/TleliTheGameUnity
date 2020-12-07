@@ -7506,6 +7506,11 @@ PrefabInstance:
       propertyPath: eventLlave
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7524102183996236523, guid: 871c7ed056ce782448d48abce318926f,
+        type: 3}
+      propertyPath: TimeofDeath
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7567390014838704893, guid: 871c7ed056ce782448d48abce318926f,
         type: 3}
       propertyPath: timeBetweenAttacks
@@ -12199,7 +12204,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1605245786}
-  m_LocalRotation: {x: -0.0030999922, y: -0.000000017217896, z: -0.000000008950805,
+  m_LocalRotation: {x: -0.003099988, y: -0.00000001720899, z: -0.000000008950833,
     w: -0.99999523}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -72624,7 +72629,7 @@ PrefabInstance:
     - target: {fileID: 7082685626529973025, guid: 871c7ed056ce782448d48abce318926f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7082685626529973025, guid: 871c7ed056ce782448d48abce318926f,
         type: 3}
@@ -72690,6 +72695,11 @@ PrefabInstance:
         type: 3}
       propertyPath: eventLlave
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7524102183996236523, guid: 871c7ed056ce782448d48abce318926f,
+        type: 3}
+      propertyPath: TimeofDeath
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7567390014838704893, guid: 871c7ed056ce782448d48abce318926f,
         type: 3}

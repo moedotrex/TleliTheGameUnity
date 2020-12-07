@@ -8,44 +8,39 @@ public class HeavyEnemyHealth : MonoBehaviour
     public float health;
     float currentHealth;
     TlelliFlameHealth flama; //Added by Emil. Necessary for changing camera into Battle Mode.
+    HeavyController enemyMov;
 
-    public bool imPoisonous;
-    public GameObject cloudSpawner;
+    public bool imDead;
+    public float TimeofDeath;
+
+    //public GameObject cloudSpawner;
     public GameObject flameSpawner;
-
+    
     public GameEvent eventLlave;
 
     //public Color ogColor;
     ParticleSystem particles;
 
-    ChomperAnimationController chomperController; //Draaek
+    HeavyBoiAnimationController heavyBoiController; //Draaek
 
     void Start()
     {
         currentHealth = health;
         flama = GameObject.FindGameObjectWithTag("Player").GetComponent<TlelliFlameHealth>();
         particles = GetComponentInChildren<ParticleSystem>();
-
-        //chomperController = GetComponentInChildren<ChomperAnimationController>(); //Draaek
+        enemyMov = GetComponent<HeavyController>();
+        heavyBoiController = GetComponentInChildren<HeavyBoiAnimationController>(); //Draaek
     }
 
 
     void Update()
     {
         //MUERTE
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && imDead == false)
         {
-            //chomperController.IsDeadBoolParameter(true);
-            Instantiate(flameSpawner, transform.position, Quaternion.identity);
-
-            if (imPoisonous)
-            {
-                Instantiate(cloudSpawner, transform.position, Quaternion.identity);
-            }
-
-            flama.BattleMode(false);
-            Destroy(gameObject);
-
+            imDead = true;
+            heavyBoiController.IsDeadTrigger();
+            enemyMov.enabled = false;
             //OBTENER LLAVE
             eventLlave.LlaveHeavyBoi();
         }
@@ -53,20 +48,28 @@ public class HeavyEnemyHealth : MonoBehaviour
 
     public void HurtEnemy(float damage)
     {
-        //  GameObject.Instantiate(blood, transform.position, Quaternion.identity);
-        currentHealth -= damage;
-        particles.Emit((int)currentHealth);
 
-       /* if (Random.Range(0, 10) > 5)
+        if (imDead == false)
         {
-            chomperController.IsHitTrigger();
+            //  GameObject.Instantiate(blood, transform.position, Quaternion.identity);
+            currentHealth -= damage;
+            particles.Emit((int)currentHealth);
+            heavyBoiController.IsHitTrigger();
         }
+    }
 
-        else
-        {
-            chomperController.IsHitAltTrigger();
-        }*/
-        // Debug.Log(transform.name + "takes" + damage + "damage.");
-        //StartCoroutine(HurtEnemyCoroutine());
+    public void actuallyDie()
+    {
+        StartCoroutine(imAtuallyDying());
+    }
+
+    IEnumerator imAtuallyDying()
+    {
+        yield return new WaitForSeconds(TimeofDeath);
+
+        Instantiate(flameSpawner, transform.position, Quaternion.identity);
+        
+        flama.BattleMode(false);
+        Destroy(gameObject);
     }
 }
