@@ -10,7 +10,7 @@ public class GameEvent : MonoBehaviour
     public string eventName;
     public Text taskText;
     int llaves = 0;
-    public GameObject ikniFollow;
+    public TwinkyFollow ikniFollow;
     public float esperaLlave;
     public int ikniEnemies = 3;
 
@@ -18,6 +18,11 @@ public class GameEvent : MonoBehaviour
     void Start()
     {
         print("Enemigos faltantes: " + ikniEnemies);
+
+        ikniFollow.speed = 0f;
+        ikniFollow.Hold = true;
+        ikniFollow.following = false;
+        ikniFollow.tleliCloseness = 30f;
     }
 
     // Update is called once per frame
@@ -118,6 +123,11 @@ public class GameEvent : MonoBehaviour
         if (ikniEnemies == (ikniEnemies - ikniEnemies))
         {
             print("SALVASTE A IKNI!!!");
+
+            ikniFollow.speed = 6f;
+            ikniFollow.Hold = false;
+            ikniFollow.following = true;
+            ikniFollow.tleliCloseness = 15f;
         }
     }
 
