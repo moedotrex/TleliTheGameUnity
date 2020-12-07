@@ -24,6 +24,7 @@ public class TlelliSonido : MonoBehaviour
     [HideInInspector] public bool LAttack;
     [HideInInspector] public bool Dash;
     [HideInInspector] public bool TleliIsDead;
+    [HideInInspector] public bool TleliResurrects;
     [HideInInspector] public bool GroundSound;
     [HideInInspector] private bool GroundSoundLock;
     [HideInInspector] private bool isGrounded;
@@ -55,6 +56,7 @@ public class TlelliSonido : MonoBehaviour
         Jump();
         DoubleJump();
         TleliDies();
+        TleliResurrected();
         //
 
         //print("L is " + LAttack);
@@ -177,6 +179,15 @@ public class TlelliSonido : MonoBehaviour
         {
             FMODUnity.RuntimeManager.PlayOneShot("event:/TleliStuff/TleliDeath");
             TleliIsDead = false;
+        }
+    }
+
+    private void TleliResurrected()
+    {
+        if (TleliResurrects)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/TleliStuff/TleliResurrects");
+            TleliResurrects = false;
         }
     }
     

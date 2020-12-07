@@ -55,6 +55,7 @@ public class TleliDeath : MonoBehaviour
                 isDead = false;
                 //tleliAnimation.IsDeadBool(isDead);
                 respawnTime = defaultRespawnTime;
+                SendSound.TleliResurrects = true;
             }
         }
     }
