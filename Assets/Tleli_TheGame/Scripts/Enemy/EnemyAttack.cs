@@ -14,6 +14,7 @@ public class EnemyAttack : MonoBehaviour
     TleliHealth TlelliHealth;
     tleliKnockBack playerKnockback;
     EnemyController enemyController;
+    EnemyHealth enemyHealth;
     bool playerInRange;
     float timer;
     //[HideInInspector] public bool isDisplaced;
@@ -35,6 +36,8 @@ public class EnemyAttack : MonoBehaviour
         TlelliHealth = player.GetComponent<TleliHealth>();
 
         playerKnockback = player.GetComponent<tleliKnockBack>();
+        enemyHealth = player.GetComponent<EnemyHealth>();
+
     }
 
 
@@ -45,7 +48,7 @@ public class EnemyAttack : MonoBehaviour
             timer += Time.deltaTime;
         }
 
-        if (timer >= timeBetweenAttacks && playerInRange && isDisplaced == false)
+        if (timer >= timeBetweenAttacks && playerInRange && !isDisplaced && !enemyHealth.imDead)
         {
 
             int randomNum = Random.Range(0, 100);
