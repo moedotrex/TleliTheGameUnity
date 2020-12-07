@@ -6,7 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
 
     public float health;
-    public float currentHealth;
+    [HideInInspector] public float currentHealth;
     TlelliFlameHealth flama; //Added by Emil. Necessary for changing camera into Battle Mode.
     EnemyController enemyMov;
 
@@ -41,17 +41,16 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0 && imDead == false)
         {
             imDead = true;
-           // chomperController.IsDeadBoolParameter(true);
+            // chomperController.IsDeadBoolParameter(true);
             chomperController.IsDeadTrigger();
             enemyMov.enabled = false;
-
-        }
-
-   
+        }   
     }
 
     public void HurtEnemy(float damage)
     {
+        if (imDead == false)
+        { 
         //  GameObject.Instantiate(blood, transform.position, Quaternion.identity);
         currentHealth -= damage;
         particles.Emit((int)currentHealth);
@@ -64,6 +63,7 @@ public class EnemyHealth : MonoBehaviour
         else
         {
             chomperController.IsHitAltTrigger();
+        }
         }
         // Debug.Log(transform.name + "takes" + damage + "damage.");
         //StartCoroutine(HurtEnemyCoroutine());

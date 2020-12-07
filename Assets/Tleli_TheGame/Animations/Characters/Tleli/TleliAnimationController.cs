@@ -133,6 +133,11 @@ public class TleliAnimationController : MonoBehaviour
         tleliAnimator.SetTrigger("ChargeLightAttack");
     }
 
+    public void isGroundedBoolParameter(bool IsGrounded)
+    {
+        tleliAnimator.SetBool("IsGrounded", IsGrounded);
+    }
+
 
     public void lightAnimationHit()
     {

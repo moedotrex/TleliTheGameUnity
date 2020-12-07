@@ -144,12 +144,17 @@ public class LightCombo : MonoBehaviour
                 EnemyHealth enemy = hit.transform.GetComponent<EnemyHealth>();
                 EnemyController mov = hit.transform.GetComponent<EnemyController>();
                 HeavyController Hmov = hit.transform.GetComponent<HeavyController>();
+
                 if (enemy != null)
                 {
-                    Hmov.StartKnockBack();
-                    enemy.HurtEnemy(currentDamage + 10f);
-                    //mov.StartKnockBack();
+                    if (enemy.imDead == false)
+                    { 
+                        Hmov.StartKnockBack();
+                        enemy.HurtEnemy(currentDamage + 10f);
+                        //mov.StartKnockBack();
+                    }
                 }
+
                 if (wall != null)
                 {
                     Debug.Log("wall hit");
@@ -175,8 +180,11 @@ public class LightCombo : MonoBehaviour
 
             if (enemy != null)
             {
-                enemy.HurtEnemy(currentDamage);
-                mov.StartKnockBack();
+                if (enemy.imDead == false)
+                {
+                    enemy.HurtEnemy(currentDamage);
+                    mov.StartKnockBack();
+                }
             }
             else if (hEnemy != null)
             {

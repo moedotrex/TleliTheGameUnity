@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour
 	public float aceleracion = 0.08f;      //aceleracion en el aire.
 	private float vel;
 	bool isMoving;
-	[HideInInspector] public Vector3 velocidad;
+	//[HideInInspector] public Vector3 velocidad;
+	 public Vector3 velocidad;
 	float _deltaVelocidad = 0f;
 
 	public Transform groundCheck;
@@ -67,7 +68,7 @@ public class PlayerController : MonoBehaviour
 		if (isGrounded && velocidad.y < 0)
 		{
 			velocidad.y = -10f;
-			tleliAnimationController.LandTrigger();
+			//tleliAnimationController.LandTrigger();
 		}
 
 		float vertical = Input.GetAxisRaw("Vertical");
@@ -161,6 +162,8 @@ public class PlayerController : MonoBehaviour
 				Salto = saltoInicial;
 				extraJumps = extraJumpsValue;
 				currentJump = 0;
+				tleliAnimationController.isGroundedBoolParameter(true);
+
 
 				if (tleliAnimationController.CheckFallLoop())
 				{
@@ -175,6 +178,11 @@ public class PlayerController : MonoBehaviour
 				canMove -= 1;
 				velBase = 1;
 				tempRotacion = 10;
+			}
+
+			if (isGrounded == false)
+            {
+				tleliAnimationController.isGroundedBoolParameter(false);
 			}
 
 
