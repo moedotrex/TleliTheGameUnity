@@ -8,6 +8,7 @@ public class TleliAnimationController : MonoBehaviour
     LightCombo tleliCombat;
     HeavyCombo tleliHeavyCombat;
     PlayerController tleliMovement;
+    TlelliSonido SendEvent;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,8 @@ public class TleliAnimationController : MonoBehaviour
         tleliCombat = GetComponentInParent<LightCombo>();
         tleliHeavyCombat = GetComponentInParent<HeavyCombo>();
         tleliMovement = GetComponentInParent<PlayerController>();
+        SendEvent = GetComponentInParent<TlelliSonido>();
+
     }
 
     public void SetForwardSpeedParameter(float forwardSpeed)
@@ -168,6 +171,19 @@ public class TleliAnimationController : MonoBehaviour
         }
     }
 
+    private void LACSoundStart()
+    {
+        SendEvent.LACharge = true;
+    }
+    public void LACSound()
+    {
+        SendEvent.LACharge = false;
+    }
+
+    public void DoubleJumpSound()
+    {
+        SendEvent.DoubleJump();
+    }
     public void isAnimating()
     {
 

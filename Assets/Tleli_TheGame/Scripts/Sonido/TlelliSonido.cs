@@ -24,6 +24,7 @@ public class TlelliSonido : MonoBehaviour
     [HideInInspector] public bool FlameIsFull = false;
     [HideInInspector] public bool LAttack;
     [HideInInspector] public bool LACharge;
+    [HideInInspector] public bool LAChargeLock;
     [HideInInspector] public bool Dash;
     [HideInInspector] public bool TleliIsDead;
     [HideInInspector] public bool TleliResurrects;
@@ -58,7 +59,7 @@ public class TlelliSonido : MonoBehaviour
         CallDash();
         HitsGround();
         Jump();
-        DoubleJump();
+        //DoubleJump();
         TleliDies();
         TleliResurrected();
         //
@@ -114,11 +115,19 @@ public class TlelliSonido : MonoBehaviour
     {
         if (LACharge)
         {
-            //FMODUnity.RuntimeManager.PlayOneShot("event:/TleliStuff/LAttackSwings");
-            GroundTypeRef.start();
+         
+            if (!LAChargeLock)
+            {
+                LAChargeInst.start();
+                LAChargeLock = true;
+            }
+
+        }
+        else
+        {
+            LAChargeInst.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             LACharge = false;
-        }else{
-            GroundTypeRef.release();
+            LAChargeLock = false;
         }
     }
     //ADRIAN
@@ -179,13 +188,14 @@ public class TlelliSonido : MonoBehaviour
         //
     }
 
-    private void DoubleJump()
+    public void DoubleJump()
     {
-        if (Input.GetButtonDown("Jump") && controller.extraJumps >= 0 && !controller.isGrounded && controller.isJumping)
+        /*if (Input.GetButtonDown("Jump") && controller.extraJumps >= 0 && !controller.isGrounded && controller.isJumping)
         {
             FMODUnity.RuntimeManager.PlayOneShot("event:/TleliStuff/TleliDoubleJump");
-            //print("AAAAWOOOOOOOOOOOOOOOOOOOOOOOOGA");
-        }
+            
+        }*/
+        FMODUnity.RuntimeManager.PlayOneShot("event:/TleliStuff/TleliDoubleJump");
     }
 
     private void TleliDies()

@@ -118,9 +118,10 @@ public class LightCombo : MonoBehaviour
             if (LAttackTimer >= LAttackTime && !Input.GetMouseButton(1))
             {
                 animator.SetBool("Lcharge", true);
+                //SendLAttack.LACharge = true;
                 //Debug.Log(animator.GetBool("Lcharge"));
                 // moveScript.isDisplaced = true;
-                SendLAttack.LACharge = true;
+
                 if (target != null)
                 {
                     FaceTarget();
@@ -131,7 +132,8 @@ public class LightCombo : MonoBehaviour
                 animator.SetBool("Lcharge", false);
                 //Debug.Log(animator.GetBool("Lcharge"));
                 LAttackTimer = 0;
-               // moveScript.isDisplaced = false;
+                //endLAttack.LACharge = false;
+                // moveScript.isDisplaced = false;
             }
         }
 
