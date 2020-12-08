@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 4033322470799450982}
   - component: {fileID: 4033322470799450981}
   - component: {fileID: 4033322470799450980}
-  - component: {fileID: 4033322470799450979}
+  - component: {fileID: 5408461923261160711}
+  - component: {fileID: -9014258835260993669}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
@@ -148,29 +149,46 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.88, y: 1.18, z: 1.2}
   m_Center: {x: 0, y: -0.42, z: 0.03}
---- !u!114 &4033322470799450979
+--- !u!114 &5408461923261160711
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4033322470799450978}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/Monstruo Inactivo
-  PlayEvent: 1
-  StopEvent: 2
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
+--- !u!114 &-9014258835260993669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4033322470799450978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f9a8828c4347e440a011ababea84c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectSound: 
+  SonidoLight: 
+  SonidoCharged: 
+  SonidoNotice: 
+  SonidoDeath: 
 --- !u!95 &4033322469562527850
 Animator:
   serializedVersion: 3

@@ -35,7 +35,7 @@ public class EnemySounds : MonoBehaviour
     public void HeavyAttack()
     {
 
-        Debug.Log("SonidoSlam");
+        
         Sonido1.Event = SonidoAttack;
         Sonido1.Play();
 
@@ -43,21 +43,21 @@ public class EnemySounds : MonoBehaviour
 
    public void HeavySlam()
     {
-        Debug.Log("SonidoSlam");
+       
         Sonido1.Event = SonidoSlam;
         Sonido1.Play();
     }
 
     public void ReactionHeavy()
     {
-        Debug.Log("SonidoSlam");
+        
         Sonido1.Event = SonidoNotice;
         Sonido1.Play();
     }
 
     public void heavyDead()
     {
-        Debug.Log("SonidoSlam");
+       
         Sonido1.Event = SonidoDeath;
         Sonido1.Play();
     }

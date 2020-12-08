@@ -35,17 +35,7 @@ public class MusicaDinamica : MonoBehaviour
     {
 
 
-        if (tlelliEnCombate == true)
-        {
-            Music.setParameterByName("Music", 6);
-           
-        }
-
-        if (tlelliEnCombate == false)
-        {
-            Music.setParameterByName("Music", MusicDef);
-
-        }
+       
 
         switch(MusicDef){
             case 0:
@@ -54,6 +44,9 @@ public class MusicaDinamica : MonoBehaviour
 
             case 1:
                 Music.setParameterByName("Music", 1);
+                break;
+            case 2:
+                Music.setParameterByName("Music", 2);
                 break;
             case 3:
                 Music.setParameterByName("Music", 3);

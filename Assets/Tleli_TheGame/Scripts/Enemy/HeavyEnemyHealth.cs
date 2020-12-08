@@ -22,6 +22,7 @@ public class HeavyEnemyHealth : MonoBehaviour
     ParticleSystem particles;
 
     HeavyBoiAnimationController heavyBoiController; //Draaek
+    EnemySounds SendSound;
 
     void Start()
     {
@@ -30,6 +31,7 @@ public class HeavyEnemyHealth : MonoBehaviour
         particles = GetComponentInChildren<ParticleSystem>();
         enemyMov = GetComponent<HeavyController>();
         heavyBoiController = GetComponentInChildren<HeavyBoiAnimationController>(); //Draaek
+        SendSound = GetComponent<EnemySounds>();
     }
 
 
@@ -39,6 +41,7 @@ public class HeavyEnemyHealth : MonoBehaviour
         if (currentHealth <= 0 && imDead == false)
         {
             imDead = true;
+            SendSound.heavyDead();
             heavyBoiController.IsDeadTrigger();
             enemyMov.enabled = false;
             //OBTENER LLAVE
