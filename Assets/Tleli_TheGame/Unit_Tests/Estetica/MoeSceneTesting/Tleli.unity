@@ -271,6 +271,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2091393313}
     m_Modifications:
+    - target: {fileID: 2542798504329910506, guid: 0eba830bd65b95e44bbf2dc9af40e287,
+        type: 3}
+      propertyPath: dialogueRunner
+      value: 
+      objectReference: {fileID: 635322430}
+    - target: {fileID: 2542798504329910506, guid: 0eba830bd65b95e44bbf2dc9af40e287,
+        type: 3}
+      propertyPath: helpText
+      value: 
+      objectReference: {fileID: 4186425215851800009}
+    - target: {fileID: 2542798504329910506, guid: 0eba830bd65b95e44bbf2dc9af40e287,
+        type: 3}
+      propertyPath: cajaDialogue
+      value: 
+      objectReference: {fileID: 418202028}
     - target: {fileID: 2649080548329451407, guid: 0eba830bd65b95e44bbf2dc9af40e287,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8991,7 +9006,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607382719}
+<<<<<<< Updated upstream
   m_LocalRotation: {x: -0.00310053, y: -0.0000000016465016, z: -0.000000032573798,
+=======
+  m_LocalRotation: {x: -0.00310053, y: 0.0000000018485278, z: -0.000000032584637,
+>>>>>>> Stashed changes
     w: -0.99999523}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
