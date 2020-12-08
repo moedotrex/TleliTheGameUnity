@@ -39,6 +39,7 @@ public class HeavyAttack : MonoBehaviour
     ParticleSystem trails; // Jules
     ParticleSystem trailsL; // Jules
 
+    EnemySounds SendSound;
     void Start()
     {
         
@@ -57,6 +58,8 @@ public class HeavyAttack : MonoBehaviour
 
         trails = GameObject.Find("ClawRTrails").GetComponent<ParticleSystem>(); // Jules
         trailsL = GameObject.Find("ClawLTrails").GetComponent<ParticleSystem>();
+
+        SendSound = GetComponent<EnemySounds>();
     }
 
 
@@ -78,17 +81,14 @@ public class HeavyAttack : MonoBehaviour
 
                 isAnimating = true;
                 timer = 0f;
+                
                 heavyBoiAnimationController.LightAttackTrigger(); //moe
+                SendSound.HeavyAttack();
                 StartCoroutine(Trails()); //Jules
                 StartCoroutine(TrailsL()); //Jules
             }
 
-            if (randomNum > 66)
-            {
-                //heavyBoiAnimationController.LightAttackTrigger(); //moe
-                //timer = 0f;
-
-            }
+           
         }
 
         float distance = Vector3.Distance(target.position, transform.position);

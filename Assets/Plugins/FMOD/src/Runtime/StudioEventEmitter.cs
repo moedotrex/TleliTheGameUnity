@@ -119,7 +119,7 @@ namespace FMODUnity
                 return;
             }
 
-            if (!eventDescription.isValid())
+            if (!eventDescription.isValid() || hasTriggered)
             {
                 Lookup();
             }

@@ -21,7 +21,7 @@ public class ChomperSounds : MonoBehaviour
         soundEvent = FMODUnity.RuntimeManager.CreateInstance(selectSound);
         soundEvent.start();
         Sonido1 = gameObject.GetComponent<FMODUnity.StudioEventEmitter>();
-
+       
     }
 
     // Update is called once per frame

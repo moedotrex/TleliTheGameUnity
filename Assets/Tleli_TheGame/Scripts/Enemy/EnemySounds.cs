@@ -1,51 +1,60 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
+
 
 public class EnemySounds : MonoBehaviour
 {
     [FMODUnity.EventRef]
     public string selectSound;
-    FMOD.Studio.EventInstance soundEvent;
+    
+    private FMOD.Studio.EventInstance soundEvent;
+
     FMODUnity.StudioEventEmitter Sonido1;
+    
     public string SonidoAttack;
     public string SonidoSlam;
     public string SonidoNotice;
     public string SonidoDeath;
 
 
+  
+
     // Start is called before the first frame update
     void Start()
     {
         soundEvent = FMODUnity.RuntimeManager.CreateInstance(selectSound);
-        soundEvent.start();
+     
+        
         Sonido1 = gameObject.GetComponent<FMODUnity.StudioEventEmitter>();
+        
 
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        // FMODUnity.RuntimeManager.AttachInstanceToGameObject(GetComponent<Transform>();
-        //HeavyAttack();
+        //soundEvent.set3DAttributes(FMODUnity.RuntimeManager.To3DAttributes(gameObject));
+
+    
 
     }
+    // Update is called once per frame
+
 
     public void HeavyAttack()
     {
-
         
-        Sonido1.Event = SonidoAttack;
-        Sonido1.Play();
+       Sonido1.Event = SonidoAttack;
+         Sonido1.Play();
 
     }
 
-   public void HeavySlam()
+    public void HeavySlam()
     {
-       
+      
         Sonido1.Event = SonidoSlam;
-        Sonido1.Play();
+              Sonido1.Play();
     }
 
     public void ReactionHeavy()

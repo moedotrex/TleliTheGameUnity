@@ -9360,7 +9360,7 @@ MonoBehaviour:
   CollisionTag: Player
   parameter: Music
   TriggerEvent: 3
-  value: 6
+  value: 7
 --- !u!114 &2607170631372618090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9376,7 +9376,7 @@ MonoBehaviour:
   CollisionTag: Player
   parameter: Music
   TriggerEvent: 4
-  value: 11
+  value: 9
 --- !u!114 &4214475664859439092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9392,7 +9392,7 @@ MonoBehaviour:
   CollisionTag: 
   parameter: Music
   TriggerEvent: 2
-  value: 11
+  value: 9
 --- !u!1 &7544540791597144820
 GameObject:
   m_ObjectHideFlags: 0
@@ -10772,7 +10772,6 @@ MonoBehaviour:
   TimeofDeath: 3
   flameSpawner: {fileID: 7039557453951838944, guid: df4a1fd991dae47428eead02fd0332d2,
     type: 3}
-  eventLlave: {fileID: 0}
 --- !u!114 &1941987325818411488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10796,7 +10795,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8745073079944644098}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 

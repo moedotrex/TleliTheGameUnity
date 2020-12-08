@@ -22,6 +22,8 @@ public class HeavyEnemyHealth : MonoBehaviour
     HeavyBoiAnimationController heavyBoiController; //Draaek
     EnemySounds SendSound;
 
+
+
     void Start()
     {
         currentHealth = health;

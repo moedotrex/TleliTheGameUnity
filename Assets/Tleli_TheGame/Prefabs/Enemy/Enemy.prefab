@@ -105,7 +105,6 @@ MonoBehaviour:
   imDead: 0
   TimeofDeath: 3
   isIkniEvent: 0
-  ikniEvent: {fileID: 0}
 --- !u!114 &4033322470799450982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: 
+  Event: event:/ChomperEnemy/ChomperAttack
   PlayEvent: 0
   StopEvent: 0
   AllowFadeout: 1
@@ -170,8 +169,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: -1
-  OverrideMaxDistance: -1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!114 &-9014258835260993669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,11 +183,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f9a8828c4347e440a011ababea84c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectSound: 
-  SonidoLight: 
-  SonidoCharged: 
-  SonidoNotice: 
-  SonidoDeath: 
+  selectSound: event:/ChomperEnemy/ChomperNotice
+  SonidoLight: event:/ChomperEnemy/ChomperAttack
+  SonidoCharged: event:/ChomperEnemy/ChomperCharged
+  SonidoNotice: event:/ChomperEnemy/ChomperNotice
+  SonidoDeath: event:/ChomperEnemy/ChomperDead
 --- !u!95 &4033322469562527850
 Animator:
   serializedVersion: 3
