@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Water 2
+  m_Name: MAT_Waterfall_cutscene
   m_Shader: {fileID: -6465566751694194690, guid: d0ce74fcb61db99488777f8521e99f4b,
     type: 3}
   m_ShaderKeywords: 
@@ -44,27 +44,18 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_817967ED_Texture_1:
-        m_Texture: {fileID: 7522940008755507396, guid: 195f9995dc652b94eb44677182654bcc,
-          type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_94C8785E_Texture_1:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Boolean_9749C36A: 0
-    - Vector1_21BDA47E: 5.55
-    - Vector1_4DC33816: 10
-    - Vector1_71C29621: 2
-    - Vector1_7C2853D8: 0
-    - Vector1_975309D4: 8
-    - Vector1_D7E52810: 0.2
+    - Boolean_9749C36A: 1
+    - Vector1_21BDA47E: 3
+    - Vector1_4DC33816: 7
+    - Vector1_71C29621: 3
+    - Vector1_7C2853D8: 0.3
+    - Vector1_975309D4: 7
+    - Vector1_D7E52810: 0.25
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -87,8 +78,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_69D52054: {r: 0.43609828, g: 1.2351363, b: 1.8867924, a: 0}
-    - Vector2_53BE37E6: {r: 0, g: 0, b: 0, a: 0}
+    - Color_69D52054: {r: 0.3063196, g: 0.7928272, b: 1.7207954, a: 0}
+    - Vector2_53BE37E6: {r: 0, g: 0.3, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
