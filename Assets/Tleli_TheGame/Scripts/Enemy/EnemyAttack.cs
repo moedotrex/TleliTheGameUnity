@@ -27,6 +27,7 @@ public class EnemyAttack : MonoBehaviour
 
     ParticleSystem trails; // Jules
     ParticleSystem trailsL; // Jules
+    ChomperSounds SendSound;
 
     void Start()
     {
@@ -40,6 +41,8 @@ public class EnemyAttack : MonoBehaviour
 
         playerKnockback = player.GetComponent<tleliKnockBack>();
         enemyHealth = GetComponent<EnemyHealth>();
+
+        SendSound = GetComponent<ChomperSounds>();
 
         trails = GameObject.Find("SpikeTrailsR").GetComponent<ParticleSystem>(); // Jules
         trailsL = GameObject.Find("SpikeTrailsL").GetComponent<ParticleSystem>();
@@ -65,7 +68,7 @@ public class EnemyAttack : MonoBehaviour
                 timer = 0f;
                 isAnimating = true;
                 enemyController.stopMov(2.14f);
-
+                SendSound.Chompligth();
                 chomperController.LightAtkTrigger(); //Draaek
             }
 
@@ -76,7 +79,7 @@ public class EnemyAttack : MonoBehaviour
                 timer = 0f;
                 isAnimating = true;
                 enemyController.stopMov(1.17f);
-
+                SendSound.ChompCharged();
                 chomperController.HeavyAtkTrigger(); //Draaek
             }
 

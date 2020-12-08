@@ -19,10 +19,12 @@ public class EnemyHealth : MonoBehaviour
 
     public bool isIkniEvent = false;
 
+
     //public Color ogColor;
     ParticleSystem particles;
 
     ChomperAnimationController chomperController; //Draaek
+    ChomperSounds SendSound;
 
     void Start()
     {
@@ -32,6 +34,7 @@ public class EnemyHealth : MonoBehaviour
         enemyMov = GetComponent<EnemyController>();
 
         chomperController = GetComponentInChildren<ChomperAnimationController>(); //Draaek
+        SendSound = GetComponent<ChomperSounds>();
     }
 
 
@@ -41,7 +44,9 @@ public class EnemyHealth : MonoBehaviour
         {
             imDead = true;
             // chomperController.IsDeadBoolParameter(true);
+            SendSound.ChompDead();
             chomperController.IsDeadTrigger();
+
             enemyMov.enabled = false;
         }
     }

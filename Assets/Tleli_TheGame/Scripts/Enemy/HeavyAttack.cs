@@ -55,11 +55,11 @@ public class HeavyAttack : MonoBehaviour
         
 
         playerKnockback = player.GetComponent<tleliKnockBack>();
-
+        SendSound = GetComponent<EnemySounds>();
         trails = GameObject.Find("ClawRTrails").GetComponent<ParticleSystem>(); // Jules
         trailsL = GameObject.Find("ClawLTrails").GetComponent<ParticleSystem>();
 
-        SendSound = GetComponent<EnemySounds>();
+        
     }
 
 
@@ -81,9 +81,9 @@ public class HeavyAttack : MonoBehaviour
 
                 isAnimating = true;
                 timer = 0f;
-                
-                heavyBoiAnimationController.LightAttackTrigger(); //moe
                 SendSound.HeavyAttack();
+                heavyBoiAnimationController.LightAttackTrigger(); //moe
+                
                 StartCoroutine(Trails()); //Jules
                 StartCoroutine(TrailsL()); //Jules
             }

@@ -34,6 +34,7 @@ public class EnemyController : MonoBehaviour
     float currentY;
 
     ChomperAnimationController chomperController; //Draaek
+    ChomperSounds SendSound;
     TleliDeath isTleliDead;
 
     void Start()
@@ -53,6 +54,7 @@ public class EnemyController : MonoBehaviour
         currentX = this.transform.position.x;
         currentY = this.transform.position.y;
         isTleliDead = GameObject.FindGameObjectWithTag("Player").GetComponent<TleliDeath>();
+        SendSound = GetComponent<ChomperSounds>();
 
     }
 
@@ -79,7 +81,9 @@ public class EnemyController : MonoBehaviour
             {
                 if (alertActive < 1)
                 {
+
                     Instantiate(alertIcon, transform.position, Quaternion.identity);
+                    SendSound.ReactionChomp();
                     alertActive++;
                 }
 

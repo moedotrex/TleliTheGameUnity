@@ -9,6 +9,7 @@ public class ChomperSounds : MonoBehaviour
     public string selectSound;
     FMOD.Studio.EventInstance soundEvent;
     FMODUnity.StudioEventEmitter Sonido1;
+
     public string SonidoLight;
     public string SonidoCharged;
     public string SonidoNotice;
@@ -19,18 +20,12 @@ public class ChomperSounds : MonoBehaviour
     void Start()
     {
         soundEvent = FMODUnity.RuntimeManager.CreateInstance(selectSound);
-        soundEvent.start();
+        
         Sonido1 = gameObject.GetComponent<FMODUnity.StudioEventEmitter>();
        
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        // FMODUnity.RuntimeManager.AttachInstanceToGameObject(GetComponent<Transform>();
-        //HeavyAttack();
-
-    }
+  
 
     public void Chompligth()
     {
