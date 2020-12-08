@@ -14,9 +14,9 @@ public class NpcCameraController : MonoBehaviour
     {
         Cursor.visible = false;
         cam = GameObject.FindGameObjectWithTag("CameraBrain").GetComponent<CinemachineFreeLook>();
-        lightAttack = GameObject.Find("Player").GetComponent<LightCombo>();
-        heavyAttack = GameObject.Find("Player").GetComponent<HeavyCombo>();
-        player = GameObject.Find("Player").GetComponent<PlayerController>();
+        lightAttack = GameObject.FindGameObjectWithTag("Player").GetComponent<LightCombo>();
+        heavyAttack = GameObject.FindGameObjectWithTag("Player").GetComponent<HeavyCombo>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
