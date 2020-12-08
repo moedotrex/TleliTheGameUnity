@@ -19,7 +19,13 @@ public class GameEvent : MonoBehaviour
     public TwinkyFollow ikniFollow;
     public static bool gotDash = false;
     public PlayerDash tleli;
+
     public LightCombo tleliLA;
+    public static bool gotBreakWalls = false;
+    public Image breakWallsUnlock;
+    public static bool unlockedBreakWalls = false;
+    private float timer = 0f;
+    public float pausaTime;
 
     // Start is called before the first frame update
     void Start()
@@ -49,14 +55,38 @@ public class GameEvent : MonoBehaviour
         {
             LlaveHeavyBoi();
         }
+        if (gotBreakWalls)
+        {
+            tleliLA.gotCharged = true;
+        }
+
+        //GOT CHARGE ATTACK
+        if (unlockedBreakWalls)
+        {
+            print("Break Walls obtenido. Mostrar imagen dash now");
+            breakWallsUnlock.enabled = true;
+            timer += Time.deltaTime;
+
+            if (timer >= pausaTime)
+            {
+                timer = 0f;
+                breakWallsUnlock.enabled = false;
+                unlockedBreakWalls = false;
+            }
+        }
     }
+
+    /*
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("ChargedLA"))
         {
+            print("Break Walls obtenido. Mostrar imagen dash now");
             tleliLA.gotCharged = true;
+            ShowUnlock.gotBreakWalls = true;
         }
+        */
             /*
             if (other.CompareTag("Player"))
             {
@@ -124,7 +154,7 @@ public class GameEvent : MonoBehaviour
                 }
             }
             */
-        }
+        //}
 
     public void LlaveHeavyBoi()
     {

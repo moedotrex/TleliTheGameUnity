@@ -17,6 +17,8 @@ public class DialogueTleliIkni : MonoBehaviour
     public bool isDialogoIkni = false;
 
     public Image dashUnlock;
+    //public Image breakWallsUnlock;
+    //public static bool unlockedBreakWalls = false;
 
     public Text taskText;
 
@@ -70,11 +72,26 @@ public class DialogueTleliIkni : MonoBehaviour
                     }
                     */
                     taskText.text = " ";
-
-
                 }
             }
         }
+
+        //GOT BREAK WALLS
+        /*
+        if (unlockedBreakWalls)
+        {
+            print("Break Walls obtenido. Mostrar imagen dash now");
+            breakWallsUnlock.enabled = true;
+            timer += Time.deltaTime;
+
+            if (timer >= pausaTime)
+            {
+                timer = 0f;
+                breakWallsUnlock.enabled = false;
+                unlockedBreakWalls = false;
+            }
+        }
+        */
     }
 
     void OnTriggerEnter(Collider other)
