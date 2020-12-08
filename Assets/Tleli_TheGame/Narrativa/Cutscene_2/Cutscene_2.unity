@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1570,8 +1570,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 751063728}
-  m_LocalRotation: {x: 0.011351754, y: 0.49429527, z: -0.006455526, w: 0.869196}
-  m_LocalPosition: {x: 3.7426987, y: -1.7576885, z: 2.3820915}
+  m_LocalRotation: {x: 0.027996084, y: 0.38166744, z: -0.011566525, w: 0.9238032}
+  m_LocalPosition: {x: 1, y: -1.5723171, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 809043360}
@@ -3704,7 +3704,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560939909}
-  m_LocalRotation: {x: -0.0000024148856, y: -0.7658437, z: 0.0011487773, w: 0.6403374}
+  m_LocalRotation: {x: -0.000003153225, y: -0.99999666, z: 0.0015000103, w: 0.68922323}
   m_LocalPosition: {x: -52.2, y: -18.7, z: -37.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -3769,6 +3769,14 @@ PlayableDirector:
     value: {fileID: 2141721980}
   - key: {fileID: -2981946560956973104, guid: f7cce8f88a2f006449dc000447a73dc1, type: 2}
     value: {fileID: 756407949}
+  - key: {fileID: 2642596329176692796, guid: f7cce8f88a2f006449dc000447a73dc1, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -5243236573837134629, guid: f7cce8f88a2f006449dc000447a73dc1, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 4383866891153104489, guid: f7cce8f88a2f006449dc000447a73dc1, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5776853765963572904, guid: f7cce8f88a2f006449dc000447a73dc1, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - 3039b981ed700d348a516e67d73369e5: {fileID: 530530977}
