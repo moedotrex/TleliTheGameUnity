@@ -10,6 +10,8 @@ public class HeavyCombo : MonoBehaviour
     List<string> animList = new List<string>(new string[] { "HAttack_1", "HAttack_2" }); 
     Animator animator;
     TleliDeath tleliDeath; //Stop actions when Tleli is Dead. By Emil.
+    TlelliSonido SendSound; //ADRIAN
+
     int combonum;
     float reset;
     public float attackRate;
@@ -37,6 +39,7 @@ public class HeavyCombo : MonoBehaviour
     {
         animator = GetComponentInChildren<Animator>();
         tleliDeath = GetComponent<TleliDeath>();
+        SendSound = GetComponent<TlelliSonido>(); //ADRIAN
     }
 
 
@@ -51,6 +54,7 @@ public class HeavyCombo : MonoBehaviour
                 animator.SetTrigger(animList[combonum]);
                 combonum++;
                 reset = 0f;
+                SendSound.CallHASound();
 
                 Debug.DrawRay(transform.position, transform.forward, Color.red);
 

@@ -79,6 +79,8 @@ public class TlelliSonido : MonoBehaviour
 
     }
 
+    
+
     //ADRIAN metodo para reproducir sonido de perdida de flama
     private void CallFootSteps()
     {
@@ -102,7 +104,12 @@ public class TlelliSonido : MonoBehaviour
 
     }
 
-   private void CallAttack()
+    public void CallHASound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/TleliStuff/HAttackSwings");
+    }
+
+    private void CallAttack()
     {
         if (LAttack)
         {
@@ -131,6 +138,7 @@ public class TlelliSonido : MonoBehaviour
         }
     }
 
+    
     public void CallLACRelease()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/TleliStuff/LACRelease");
@@ -145,6 +153,8 @@ public class TlelliSonido : MonoBehaviour
         }
     }
     
+
+
     private void CallFulFillment()
     {
         if (FlameIsFull)
