@@ -9045,6 +9045,7 @@ GameObject:
   - component: {fileID: 6262817852489574259}
   - component: {fileID: 2759524955008323248}
   - component: {fileID: 7524102183996236523}
+  - component: {fileID: 136567591317314755}
   m_Layer: 9
   m_Name: Enemy_Heavy
   m_TagString: Enemy
@@ -9181,6 +9182,22 @@ MonoBehaviour:
   flameSpawner: {fileID: 7039557453951838944, guid: df4a1fd991dae47428eead02fd0332d2,
     type: 3}
   eventLlave: {fileID: 0}
+--- !u!114 &136567591317314755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7082685626529973025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0e04e2572f9a940a47465f6f3c2f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  parameter: 
+  TriggerEvent: 3
+  value: 0
 --- !u!1 &7103159767498135816
 GameObject:
   m_ObjectHideFlags: 0
@@ -10329,6 +10346,7 @@ GameObject:
   - component: {fileID: 1857922231113947417}
   - component: {fileID: 3534025136217183935}
   - component: {fileID: 7002045930594532683}
+  - component: {fileID: 7087855800404615362}
   m_Layer: 0
   m_Name: MusicTrigger
   m_TagString: Untagged
@@ -10370,7 +10388,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8330248667476084548}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
@@ -10393,7 +10411,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8330248667476084548}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
@@ -10416,7 +10434,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8330248667476084548}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
@@ -10432,6 +10450,22 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 0
   OverrideMaxDistance: 0
+--- !u!114 &7087855800404615362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8330248667476084548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0e04e2572f9a940a47465f6f3c2f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  parameter: Music
+  TriggerEvent: 3
+  value: 6
 --- !u!1 &8333325412963491799
 GameObject:
   m_ObjectHideFlags: 0

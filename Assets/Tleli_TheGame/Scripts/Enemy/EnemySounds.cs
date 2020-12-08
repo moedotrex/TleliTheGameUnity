@@ -8,13 +8,19 @@ public class EnemySounds : MonoBehaviour
     [FMODUnity.EventRef]
     public string selectSound;
     FMOD.Studio.EventInstance soundEvent;
+    FMODUnity.StudioEventEmitter Sonido1;
+    public string SonidoAttack;
+    public string SonidoSlam;
+    public string SonidoNotice;
+    public string SonidoDeath;
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
         soundEvent = FMODUnity.RuntimeManager.CreateInstance(selectSound);
         soundEvent.start();
+        Sonido1 = gameObject.GetComponent<FMODUnity.StudioEventEmitter>();
 
     }
 
@@ -22,32 +28,38 @@ public class EnemySounds : MonoBehaviour
     void Update()
     {
         // FMODUnity.RuntimeManager.AttachInstanceToGameObject(GetComponent<Transform>();
-        HeavyAttack();
+        //HeavyAttack();
 
     }
 
     public void HeavyAttack()
     {
 
-        // FMODUnity.RuntimeManager.PlayOneShot("event:/HeavyEnemy/HeavyEnemyAttack");
-        soundEvent.start();
-       
+        Debug.Log("SonidoSlam");
+        Sonido1.Event = SonidoAttack;
+        Sonido1.Play();
+
     }
 
    public void HeavySlam()
     {
         Debug.Log("SonidoSlam");
-        FMODUnity.RuntimeManager.PlayOneShot("event:/HeavyEnemy/HeavyEnemySpecialAttack");
+        Sonido1.Event = SonidoSlam;
+        Sonido1.Play();
     }
 
     public void ReactionHeavy()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/HeavyEnemy/HeavyEnemyNoticeTleli");
+        Debug.Log("SonidoSlam");
+        Sonido1.Event = SonidoNotice;
+        Sonido1.Play();
     }
 
     public void heavyDead()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/HeavyEnemy/HeavyEnemyDeath");
+        Debug.Log("SonidoSlam");
+        Sonido1.Event = SonidoDeath;
+        Sonido1.Play();
     }
 
 }
