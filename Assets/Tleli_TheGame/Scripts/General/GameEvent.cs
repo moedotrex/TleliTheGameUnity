@@ -9,7 +9,7 @@ public class GameEvent : MonoBehaviour
 {
     public string eventName;
     public Text taskText;
-    int llaves = 0;
+    public int llaves = 0;
     public TwinkyFollow ikniFollow;
     public float esperaLlave;
     public int ikniEnemies = 3;
