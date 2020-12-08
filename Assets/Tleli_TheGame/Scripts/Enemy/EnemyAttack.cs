@@ -25,6 +25,9 @@ public class EnemyAttack : MonoBehaviour
 
     ChomperAnimationController chomperController; //Draaek
 
+    ParticleSystem trails; // Jules
+    ParticleSystem trailsL; // Jules
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -38,6 +41,8 @@ public class EnemyAttack : MonoBehaviour
         playerKnockback = player.GetComponent<tleliKnockBack>();
         enemyHealth = GetComponent<EnemyHealth>();
 
+        trails = GameObject.Find("SpikeTrailsR").GetComponent<ParticleSystem>(); // Jules
+        trailsL = GameObject.Find("SpikeTrailsL").GetComponent<ParticleSystem>();
     }
 
 
@@ -102,13 +107,19 @@ public class EnemyAttack : MonoBehaviour
 
         if (TlelliHealth.flame > 0 && playerInRange)
         {
+            StartCoroutine(Trails()); //Jules
+            StartCoroutine(TrailsL()); //Jules
             TlelliHealth.HurtFlame(attackDamage);
             playerKnockback.startKnockBack(10f);
+            
         }
 
         if (TlelliHealth.flame <= 0 && playerInRange)
         {
+            StartCoroutine(Trails()); //Jules
+            StartCoroutine(TrailsL()); //Jules
             TlelliHealth.SetHPDamage(1);
+            
         }
     }
 
@@ -133,5 +144,17 @@ public class EnemyAttack : MonoBehaviour
     void AnimationOff()
     {
         isAnimating = false;
+    }
+
+    IEnumerator Trails()
+    {
+        yield return new WaitForSeconds(0.1f);
+        trails.Emit(5);
+    }
+
+    IEnumerator TrailsL()
+    {
+        yield return new WaitForSeconds(0.1f);
+        trailsL.Emit(5);
     }
 }
