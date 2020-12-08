@@ -9042,7 +9042,6 @@ GameObject:
   - component: {fileID: 7082685626529973029}
   - component: {fileID: 7082685626529973032}
   - component: {fileID: 7082685626529973028}
-  - component: {fileID: 7082685626529973031}
   - component: {fileID: 6262817852489574259}
   - component: {fileID: 2759524955008323248}
   - component: {fileID: 7524102183996236523}
@@ -9068,6 +9067,7 @@ Transform:
   - {fileID: 1480282559531834360}
   - {fileID: 3188439238685770524}
   - {fileID: 1507265871973781446}
+  - {fileID: 3485980861595063897}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 207.431, z: 0}
@@ -9119,29 +9119,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9052604, y: 2.1999323, z: 1.249093}
   m_Center: {x: 0.04746498, y: 0.17886084, z: -0.062286843}
---- !u!114 &7082685626529973031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7082685626529973025}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/Monstruo Inactivo
-  PlayEvent: 1
-  StopEvent: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!114 &6262817852489574259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9199,11 +9176,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 40
-  imPoisonous: 0
-  cloudSpawner: {fileID: 7039557453951838944, guid: df4a1fd991dae47428eead02fd0332d2,
-    type: 3}
+  imDead: 0
+  TimeofDeath: 0
   flameSpawner: {fileID: 7039557453951838944, guid: df4a1fd991dae47428eead02fd0332d2,
     type: 3}
+  eventLlave: {fileID: 0}
 --- !u!1 &7103159767498135816
 GameObject:
   m_ObjectHideFlags: 0
@@ -10339,6 +10316,122 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.7020838, y: 0.0077708364, z: 0.33254138}
     m_Extent: {x: 0.24939948, y: 0.42458892, z: 0.59972966}
   m_DirtyAABB: 0
+--- !u!1 &8330248667476084548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3485980861595063897}
+  - component: {fileID: 5222087657199732039}
+  - component: {fileID: 1857922231113947417}
+  - component: {fileID: 3534025136217183935}
+  - component: {fileID: 7002045930594532683}
+  m_Layer: 0
+  m_Name: MusicTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3485980861595063897
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8330248667476084548}
+  m_LocalRotation: {x: -0, y: -0.97148544, z: -0, w: -0.23709944}
+  m_LocalPosition: {x: -0.019, y: 0.5651857, z: -0.039}
+  m_LocalScale: {x: 0.7301398, y: 0.73014015, z: 0.7301398}
+  m_Children: []
+  m_Father: {fileID: 7082685626529973030}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &5222087657199732039
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8330248667476084548}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 6
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1857922231113947417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8330248667476084548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/HeavyMusic
+  PlayEvent: 3
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 1
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!114 &3534025136217183935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8330248667476084548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/HeavyMusic
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 1
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!114 &7002045930594532683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8330248667476084548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/HeavyMusicOutro
+  PlayEvent: 2
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &8333325412963491799
 GameObject:
   m_ObjectHideFlags: 0

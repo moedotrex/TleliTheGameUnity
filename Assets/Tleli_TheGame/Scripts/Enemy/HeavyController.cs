@@ -45,6 +45,7 @@ public class HeavyController : MonoBehaviour
     HeavyBoiAnimationController heavyBoiAnimationController; //moe
 
     TleliDeath isTleliDead; //moe
+    EnemySounds SendSound;
 
     void Start()
     {
@@ -66,6 +67,7 @@ public class HeavyController : MonoBehaviour
         movAcceDef = movAcce;
         atSpawn = true;
         isTleliDead = GameObject.FindGameObjectWithTag("Player").GetComponent<TleliDeath>(); //moe
+        SendSound = GetComponent<EnemySounds>();
     }
 
     private void FixedUpdate()
@@ -94,6 +96,7 @@ public class HeavyController : MonoBehaviour
             {
                 if (alertActive < 1)
                 {
+                    SendSound.ReactionHeavy();
                     Instantiate(alertIcon, transform.position, Quaternion.identity);
                     alertActive++;
                 }
@@ -126,6 +129,7 @@ public class HeavyController : MonoBehaviour
                     
                     
                     heavyBoiAnimationController.JumpTrigger(); //moe 
+                    SendSound.HeavySlam();
                     stopMov(5f);
                     navAgent.speed= movSpeedMod;
                     navAgent.acceleration = movAcceMod;
