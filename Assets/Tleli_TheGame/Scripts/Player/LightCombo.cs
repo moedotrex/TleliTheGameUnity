@@ -61,10 +61,10 @@ public class LightCombo : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && combonum < 4 && !tleliDeath.isDead && Tleli.isGrounded)
         {
-            /*if (Tleli.isGrounded == true)
+            if (Tleli.isGrounded == true)
             {
-                Tleli.canMove = 60;
-            }*/
+                Tleli.canMove = 0.5f;
+            }
 
             if (Time.time >= nextAttackTime)
             {

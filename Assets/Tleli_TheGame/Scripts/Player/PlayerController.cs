@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 	public float saltoTime;
 	public bool isJumping;
 
-	public int canMove = 0;
+	public float canMove = 0;
 	float rotacionDefault;
 
 
@@ -158,7 +158,8 @@ public class PlayerController : MonoBehaviour
 			}
 			if (isGrounded == true) //regresa a tierra
 			{
-				velBase = velInicial;
+                
+                velBase = velInicial;
 				Salto = saltoInicial;
 				extraJumps = extraJumpsValue;
 				currentJump = 0;
@@ -167,17 +168,18 @@ public class PlayerController : MonoBehaviour
 
 				if (tleliAnimationController.CheckFallLoop())
 				{
-					canMove = 10;
-					tleliAnimationController.JumpLandTrigger();
+                    canMove = 0.05f;
+                    tleliAnimationController.JumpLandTrigger();
 				}
-			}
+
+            }
 
 
 			if (canMove > 0)
 			{
-				canMove -= 1;
-				velBase = 1;
-				tempRotacion = 10;
+				canMove -= Time.deltaTime;
+                velBase = 0.2f;
+				tempRotacion = 100;
 			}
 
 			if (isGrounded == false)

@@ -36,7 +36,7 @@ public class EnemyAttack : MonoBehaviour
         TlelliHealth = player.GetComponent<TleliHealth>();
 
         playerKnockback = player.GetComponent<tleliKnockBack>();
-        enemyHealth = player.GetComponent<EnemyHealth>();
+        enemyHealth = GetComponent<EnemyHealth>();
 
     }
 
