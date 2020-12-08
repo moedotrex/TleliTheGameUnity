@@ -178,6 +178,7 @@ public class TleliAnimationController : MonoBehaviour
     public void LACSound()
     {
         SendEvent.LACharge = false;
+        SendEvent.CallLACRelease();
     }
 
     public void DoubleJumpSound()

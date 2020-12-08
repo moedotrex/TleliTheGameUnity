@@ -130,6 +130,11 @@ public class TlelliSonido : MonoBehaviour
             LAChargeLock = false;
         }
     }
+
+    public void CallLACRelease()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/TleliStuff/LACRelease");
+    }
     //ADRIAN
     private void CallDepletion() 
     {
