@@ -36,6 +36,9 @@ public class HeavyAttack : MonoBehaviour
     public bool isDisplaced;
     //crear evento para detectar tiempo de anim gethit y death
 
+    ParticleSystem trails; // Jules
+    ParticleSystem trailsL; // Jules
+
     void Start()
     {
         
@@ -52,6 +55,8 @@ public class HeavyAttack : MonoBehaviour
 
         playerKnockback = player.GetComponent<tleliKnockBack>();
 
+        trails = GameObject.Find("ClawRTrails").GetComponent<ParticleSystem>(); // Jules
+        trailsL = GameObject.Find("ClawLTrails").GetComponent<ParticleSystem>();
     }
 
 
@@ -74,6 +79,8 @@ public class HeavyAttack : MonoBehaviour
                 isAnimating = true;
                 timer = 0f;
                 heavyBoiAnimationController.LightAttackTrigger(); //moe
+                StartCoroutine(Trails()); //Jules
+                StartCoroutine(TrailsL()); //Jules
             }
 
             if (randomNum > 66)
@@ -188,5 +195,16 @@ public class HeavyAttack : MonoBehaviour
     {
         isAnimating = false;
     }
-    
+
+    IEnumerator Trails()
+    {
+        yield return new WaitForSeconds(0.4f);
+        trails.Emit(20);
+    }
+
+    IEnumerator TrailsL()
+    {
+        yield return new WaitForSeconds(1.3f);
+        trailsL.Emit(20);
+    }
 }
