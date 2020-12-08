@@ -42,6 +42,7 @@ public class LightCombo : MonoBehaviour
     ParticleSystem trails;
     TlelliSonido SendLAttack; //ADRIAN
     TleliDeath tleliDeath; //Stop actions when Tleli is Dead. By Emil.
+    
 
     void Start()
     {
@@ -53,6 +54,7 @@ public class LightCombo : MonoBehaviour
         slash = GameObject.Find("WeaponSlash").GetComponent<ParticleSystem>();   //------
         trails = GameObject.Find("WeaponTrails").GetComponent<ParticleSystem>();
         SendLAttack = GetComponent<TlelliSonido>(); //ADRIAN
+        
     }
 
     void Update()
@@ -117,7 +119,8 @@ public class LightCombo : MonoBehaviour
             {
                 animator.SetBool("Lcharge", true);
                 //Debug.Log(animator.GetBool("Lcharge"));
-               // moveScript.isDisplaced = true;
+                // moveScript.isDisplaced = true;
+                SendLAttack.LACharge = true;
                 if (target != null)
                 {
                     FaceTarget();

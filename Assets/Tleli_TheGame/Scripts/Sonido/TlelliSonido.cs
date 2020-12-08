@@ -10,6 +10,7 @@ public class TlelliSonido : MonoBehaviour
 
     private FMOD.Studio.EventInstance GroundTypeRef; //ADRIAN: al parecer no puedes manipular variables de FMOD sin hacer una instancia de evento
     private FMOD.Studio.EventInstance JumpTypeRef;
+    private FMOD.Studio.EventInstance LAChargeInst;
 
     [FMODUnity.EventRef]
     public string inputwalksound;
@@ -22,6 +23,7 @@ public class TlelliSonido : MonoBehaviour
     [HideInInspector] public bool FlameIsDepleted = false;
     [HideInInspector] public bool FlameIsFull = false;
     [HideInInspector] public bool LAttack;
+    [HideInInspector] public bool LACharge;
     [HideInInspector] public bool Dash;
     [HideInInspector] public bool TleliIsDead;
     [HideInInspector] public bool TleliResurrects;
@@ -35,6 +37,7 @@ public class TlelliSonido : MonoBehaviour
     {
         GroundTypeRef = FMODUnity.RuntimeManager.CreateInstance("event:/Land");
         JumpTypeRef = FMODUnity.RuntimeManager.CreateInstance("event:/TleliStuff/TleliJump");
+        LAChargeInst = FMODUnity.RuntimeManager.CreateInstance("event:/TleliStuff/TleliLACharge");
 
         controller = player.GetComponent<PlayerController>();
         player = GameObject.FindWithTag("Player");
@@ -49,6 +52,7 @@ public class TlelliSonido : MonoBehaviour
         //ADRIAN
         CallHit(); 
         CallAttack();
+        CallLACharge();
         CallDepletion();
         CallFulFillment();
         CallDash();
@@ -106,6 +110,17 @@ public class TlelliSonido : MonoBehaviour
         }
     }
 
+    private void CallLACharge()
+    {
+        if (LACharge)
+        {
+            //FMODUnity.RuntimeManager.PlayOneShot("event:/TleliStuff/LAttackSwings");
+            GroundTypeRef.start();
+            LACharge = false;
+        }else{
+            GroundTypeRef.release();
+        }
+    }
     //ADRIAN
     private void CallDepletion() 
     {
