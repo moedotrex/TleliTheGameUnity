@@ -79,7 +79,7 @@ public class UIManager : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
-        ambient.Music.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        //ambient.Music.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         SceneManager.LoadScene("MainTest_Scene");
     }
 
