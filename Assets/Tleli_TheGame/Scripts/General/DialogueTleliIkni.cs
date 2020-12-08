@@ -26,6 +26,7 @@ public class DialogueTleliIkni : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //TRIGGER DE LIBERAR A IKNI+OBTENER DASH
         if (isDialogoIkni == true && dialogoIkniSalvado == 1)
         {
             Collider thisCollider = this.GetComponent<Collider>();
@@ -34,6 +35,7 @@ public class DialogueTleliIkni : MonoBehaviour
             changeDialogue();
         }
 
+        //CONTADOR PARA ESPERAR CIERTO TIEMPO ENTRE DIÁLOGOS
         if (TimeStarted)
         {
             timer += Time.deltaTime;

@@ -15,8 +15,6 @@ public class HeavyEnemyHealth : MonoBehaviour
 
     //public GameObject cloudSpawner;
     public GameObject flameSpawner;
-    
-    public GameEvent eventLlave;
 
     //public Color ogColor;
     ParticleSystem particles;
@@ -44,8 +42,6 @@ public class HeavyEnemyHealth : MonoBehaviour
             SendSound.heavyDead();
             heavyBoiController.IsDeadTrigger();
             enemyMov.enabled = false;
-            //OBTENER LLAVE
-            eventLlave.LlaveHeavyBoi();
         }
     }
 
@@ -64,6 +60,8 @@ public class HeavyEnemyHealth : MonoBehaviour
     public void actuallyDie()
     {
         StartCoroutine(imAtuallyDying());
+        //OBTENER LLAVE
+        GameEvent.gotLlave = true;
     }
 
     IEnumerator imAtuallyDying()
