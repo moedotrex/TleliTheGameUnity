@@ -17,11 +17,14 @@ public class IkniCommand : MonoBehaviour
     public bool whichAction;
     float timeHeld;
 
+    IkniAnimationController ikniAnim;
+
     void Start()
     {
         inSlowCD = 0f;
         ikniFollow = GameObject.FindGameObjectWithTag("Ikni").GetComponent<TwinkyFollow>();
         ikniSlowAOE = GameObject.FindGameObjectWithTag("Ikni").GetComponent<IkniSlowAction>();
+        ikniAnim = GameObject.FindGameObjectWithTag("Ikni").GetComponentInChildren<IkniAnimationController>();
         tleliDeath = GetComponent<TleliDeath>(); //Stop actions when Tleli is Dead. By Emil.
     }
 
@@ -48,6 +51,7 @@ public class IkniCommand : MonoBehaviour
                 Debug.Log("shortpress");
                 ikniSlowAOE.SlowInk();
                 inSlowCD = slowCD;
+                ikniAnim.InkingTrigger();
             }
 
             timeHeld = 0f;

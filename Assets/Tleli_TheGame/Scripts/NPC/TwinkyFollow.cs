@@ -19,14 +19,15 @@ public class TwinkyFollow : MonoBehaviour
     Transform target;
 
     AlertChange changeAlert;
+    float actualDistanceToPlat;
 
     void Start()
     {
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        
         following = true;
         target = PlayerManager.instance.player.transform;
         changeAlert = GetComponentInChildren<AlertChange>();
-
+        InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
     void Update()
@@ -50,37 +51,39 @@ public class TwinkyFollow : MonoBehaviour
         GameObject[] platforms = GameObject.FindGameObjectsWithTag("InvisPlatform");
         float shortestDistance = Mathf.Infinity;
         GameObject nearestPlat = null;
-
+        
         foreach (GameObject plat in platforms)
         {
             float distanceToPlat = Vector3.Distance(transform.position, plat.transform.position);
-
             if (distanceToPlat < shortestDistance)
             {
                 shortestDistance = distanceToPlat;
                 nearestPlat = plat;
-            }
-
-            if (nearestPlat != null && shortestDistance <= platCloseness)
-            {
-                if (!alertActive)
-                {
-                    alertIcon.SetActive(true);
-                    alertActive = true;
-                }
                 changeAlert.platDistance(distanceToPlat);
-                Debug.Log("asdasdad");
-                // target = nearestPlat.transform;
             }
+           // giveMeTheDistance(distanceToPlat);
+        }
 
-            else
-            {
-                //target = null;
-                alertIcon.SetActive(false);
-                alertActive = false;
+        if (nearestPlat != null && shortestDistance <= platCloseness)
+        {
+                alertIcon.SetActive(true);
+                alertActive = true;
+            
+           
+            // target = nearestPlat.transform;
+        }
 
-            }
-        } 
+        else
+        {
+            //target = null;
+            alertIcon.SetActive(false);
+            alertActive = false;
+        }
+    }
+
+    void giveMeTheDistance(float dist)
+    {
+        actualDistanceToPlat = dist;
     }
 
 

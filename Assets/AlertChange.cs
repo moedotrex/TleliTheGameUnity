@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AlertChange : MonoBehaviour
 {
-    public Renderer rend;
+    //public Renderer rend;
     Animator myAnim;
 
     private void Start()
@@ -34,10 +34,10 @@ public class AlertChange : MonoBehaviour
 
         print("Distancia: " + dist);
 
-        if (dist > 7.5f )
+        if (dist > 5f )
         {
             GetComponentInChildren<Renderer>().material.color = Color.cyan;
-            
+            myAnim.speed = 1;
         }
 
         if (dist <= 5f )
@@ -46,7 +46,7 @@ public class AlertChange : MonoBehaviour
             myAnim.speed = 2;
         }
 
-        if (dist <= 3f)
+        if (dist <= 2.5f)
         {
             GetComponentInChildren<Renderer>().material.color = Color.red;
             myAnim.speed = 3;
