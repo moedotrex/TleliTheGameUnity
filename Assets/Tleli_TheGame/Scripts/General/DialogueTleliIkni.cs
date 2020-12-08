@@ -16,6 +16,8 @@ public class DialogueTleliIkni : MonoBehaviour
     public static int dialogoIkniSalvado = 0;
     public bool isDialogoIkni = false;
 
+    public Image dashUnlock;
+
     public Text taskText;
 
     // Start is called before the first frame update
@@ -32,7 +34,15 @@ public class DialogueTleliIkni : MonoBehaviour
             Collider thisCollider = this.GetComponent<Collider>();
             thisCollider.enabled = false;
             dialogoIkniSalvado = 2;
+
+            dashUnlock.enabled = true;
             changeDialogue();
+        }
+
+        if (dialogosIndex == dialogos.Length && dialogoIkniSalvado == 2)
+        {
+            GameEvent.gotDash = true;
+            print("Dash obtenido. Mostrar imagen dash now");
         }
 
         //CONTADOR PARA ESPERAR CIERTO TIEMPO ENTRE DIÁLOGOS
@@ -51,11 +61,17 @@ public class DialogueTleliIkni : MonoBehaviour
                 }
                 else if (dialogosIndex == dialogos.Length)
                 {
+                    /*
                     if (dialogoIkniSalvado == 2)
                     {
                         GameEvent.gotDash = true;
+                        dashUnlock.enabled = true;
+                        print("Dash obtenido. Mostrar imagen dash now");
                     }
+                    */
                     taskText.text = " ";
+
+
                 }
             }
         }
