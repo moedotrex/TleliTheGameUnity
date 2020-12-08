@@ -10,9 +10,13 @@ public class GameEvent : MonoBehaviour
     public string eventName;
     public Text taskText;
     public int llaves = 0;
-    public TwinkyFollow ikniFollow;
     public float esperaLlave;
-    public int ikniEnemies = 3;
+
+    public static int ikniEnemies = 3;
+    public static bool ikniSalvado = false;
+    public TwinkyFollow ikniFollow;
+    public static bool gotDash = false;
+    public PlayerDash tleli;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +32,15 @@ public class GameEvent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (ikniEnemies < 3 && ikniSalvado==false)
+        {
+            TutorialSaveIkni();
+        }
+        if (gotDash)
+        {
+            tleli.gotDash = true;
+            gotDash = false;
+        }
     }
 
     /*
@@ -101,6 +114,7 @@ public class GameEvent : MonoBehaviour
     }
     */
 
+        /*
     public void LlaveHeavyBoi()
     {
         switch (llaves)
@@ -115,10 +129,11 @@ public class GameEvent : MonoBehaviour
                 break;
         }
     }
+    */
 
     public void TutorialSaveIkni()
     {
-        ikniEnemies--;
+        //ikniEnemies--;
         print("Enemigos faltantes: "+ikniEnemies);
         if (ikniEnemies == (ikniEnemies - ikniEnemies))
         {
@@ -128,6 +143,10 @@ public class GameEvent : MonoBehaviour
             ikniFollow.Hold = false;
             ikniFollow.following = true;
             ikniFollow.tleliCloseness = 15f;
+
+            ikniSalvado = true;
+
+            DialogueTleliIkni.dialogoIkniSalvado++;
         }
     }
 

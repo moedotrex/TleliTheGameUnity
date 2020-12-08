@@ -13,6 +13,9 @@ public class DialogueTleliIkni : MonoBehaviour
     private float timer = 0f;
     public float pausaTime;
 
+    public static int dialogoIkniSalvado = 0;
+    public bool isDialogoIkni = false;
+
     public Text taskText;
 
     // Start is called before the first frame update
@@ -23,6 +26,14 @@ public class DialogueTleliIkni : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isDialogoIkni == true && dialogoIkniSalvado == 1)
+        {
+            Collider thisCollider = this.GetComponent<Collider>();
+            thisCollider.enabled = false;
+            dialogoIkniSalvado = 2;
+            changeDialogue();
+        }
+
         if (TimeStarted)
         {
             timer += Time.deltaTime;
@@ -36,22 +47,30 @@ public class DialogueTleliIkni : MonoBehaviour
                 {
                     changeDialogue();
                 }
+                else if (dialogosIndex == dialogos.Length)
+                {
+                    if (dialogoIkniSalvado == 2)
+                    {
+                        GameEvent.gotDash = true;
+                    }
+                    taskText.text = " ";
+                }
             }
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+
+        if (other.CompareTag("Player") && isDialogoIkni == false)
         {
             Collider thisCollider = this.GetComponent<Collider>();
-
             thisCollider.enabled = false;
             changeDialogue();
         }
     }
 
-    void changeDialogue()
+    public void changeDialogue()
     {
         taskText.text = dialogos[dialogosIndex];
 
