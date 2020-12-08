@@ -1767,6 +1767,7 @@ MonoBehaviour:
   LAttack: 0
   Dash: 0
   TleliIsDead: 0
+  TleliResurrects: 0
   GroundSound: 0
   walkingspeed: 0.3
 --- !u!114 &106496590
@@ -2919,6 +2920,8 @@ GameObject:
   - component: {fileID: 165077364}
   - component: {fileID: 165077363}
   - component: {fileID: 165077362}
+  - component: {fileID: 165077368}
+  - component: {fileID: 165077367}
   m_Layer: 0
   m_Name: Estetica_HUB
   m_TagString: Untagged
@@ -2952,8 +2955,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.7, y: 0.82, z: 1}
+  m_Center: {x: 0, y: -0.06, z: 0}
 --- !u!23 &165077364
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3009,12 +3012,38 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165077361}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.85, y: 53.55, z: -27.7}
-  m_LocalScale: {x: 205.99, y: 114.380104, z: 138.43285}
+  m_LocalPosition: {x: 19.8, y: 57.36, z: -27.7}
+  m_LocalScale: {x: 205.99, y: 112.3, z: 152.4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &165077367
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165077361}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.69, y: 0.66, z: 0.45}
+  m_Center: {x: -0.31, y: 0.08, z: 0.33}
+--- !u!65 &165077368
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165077361}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.23, y: 0.18, z: 0.22}
+  m_Center: {x: -0.46, y: -0.26, z: 0}
 --- !u!1 &170633161
 GameObject:
   m_ObjectHideFlags: 0
@@ -5729,7 +5758,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 292772126}
-  m_LocalRotation: {x: -0.03085215, y: -0.000000006449321, z: -1.9907019e-10, w: 0.999524}
+  m_LocalRotation: {x: -0.03085215, y: 0.000000006449321, z: 1.9907019e-10, w: 0.999524}
   m_LocalPosition: {x: 91.261, y: 52.907, z: -19.509}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -6494,7 +6523,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334706773}
-  m_LocalRotation: {x: -0.030852156, y: -0.000000007519384, z: -0.0000001392366, w: 0.999524}
+  m_LocalRotation: {x: -0.030852156, y: -0.0000000010700631, z: -0.00000013903754,
+    w: 0.999524}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -12872,6 +12902,7 @@ GameObject:
   - component: {fileID: 744487391}
   - component: {fileID: 744487390}
   - component: {fileID: 744487389}
+  - component: {fileID: 744487394}
   m_Layer: 0
   m_Name: Estetica_COREDerecho
   m_TagString: Untagged
@@ -12905,8 +12936,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.9, z: 0.57}
+  m_Center: {x: 0, y: 0, z: 0.2}
 --- !u!23 &744487391
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12962,12 +12993,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744487388}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -90.7, y: 19.7, z: 20.5}
-  m_LocalScale: {x: 166.96413, y: 159.24081, z: 85.134544}
+  m_LocalPosition: {x: -90.7, y: 22.2, z: 9.1}
+  m_LocalScale: {x: 160, y: 135.2, z: 85.134544}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &744487394
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744487388}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.55, y: 0.74, z: 0.6}
+  m_Center: {x: -0.25, y: -0.17, z: -0.35}
 --- !u!1 &745786246
 GameObject:
   m_ObjectHideFlags: 0
@@ -14109,6 +14153,7 @@ MonoBehaviour:
   LAttack: 0
   Dash: 0
   TleliIsDead: 0
+  TleliResurrects: 0
   GroundSound: 0
   walkingspeed: 0.3
 --- !u!114 &820018630
@@ -15262,8 +15307,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 888400568}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -114.5, y: 8.3, z: -25.1}
-  m_LocalScale: {x: 166.96413, y: 159.24081, z: 52.21967}
+  m_LocalPosition: {x: -96.5, y: 8.3, z: -25.1}
+  m_LocalScale: {x: 172, y: 84.7, z: 153.4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -23906,6 +23951,7 @@ GameObject:
   - component: {fileID: 1399173528}
   - component: {fileID: 1399173527}
   - component: {fileID: 1399173526}
+  - component: {fileID: 1399173531}
   m_Layer: 0
   m_Name: Estetica_COREIzquierdo
   m_TagString: Untagged
@@ -23996,12 +24042,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399173525}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -51.1, y: -1, z: -104.5}
-  m_LocalScale: {x: 216.59462, y: 287.09695, z: 155.8381}
+  m_LocalPosition: {x: -51.1, y: -1, z: -99.2}
+  m_LocalScale: {x: 216.59462, y: 179.8, z: 85.2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1399173531
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399173525}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.47, y: 0.64, z: 0.57}
+  m_Center: {x: -0.38, y: -0.05, z: 0.78}
 --- !u!1 &1401318684
 GameObject:
   m_ObjectHideFlags: 0
@@ -32695,8 +32754,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1886646164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 105.5, y: 28.2, z: 18.9}
-  m_LocalScale: {x: 111.490746, y: 28.987133, z: 60.651302}
+  m_LocalPosition: {x: 105.5, y: 28.2, z: 12.2}
+  m_LocalScale: {x: 111.490746, y: 28.987133, z: 66}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
