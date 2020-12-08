@@ -54,7 +54,7 @@ public class HeavyCombo : MonoBehaviour
                 animator.SetTrigger(animList[combonum]);
                 combonum++;
                 reset = 0f;
-                SendSound.CallHASound();
+                //SendSound.CallHASound();
 
                 Debug.DrawRay(transform.position, transform.forward, Color.red);
 

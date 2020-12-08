@@ -181,6 +181,11 @@ public class TleliAnimationController : MonoBehaviour
         SendEvent.CallLACRelease();
     }
 
+    public void HACSound()
+    {
+        SendEvent.CallHASound();
+    }
+
     public void DoubleJumpSound()
     {
         SendEvent.DoubleJump();
