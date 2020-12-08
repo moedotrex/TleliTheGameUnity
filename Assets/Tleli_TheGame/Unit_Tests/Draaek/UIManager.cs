@@ -18,10 +18,11 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        lightAttack = GameObject.Find("Player").GetComponent<LightCombo>();
-        heavyAttack = GameObject.Find("Player").GetComponent<HeavyCombo>();
-        player = GameObject.Find("Player").GetComponent<PlayerController>();
+        lightAttack = GameObject.FindGameObjectWithTag("Player").GetComponent<LightCombo>();
+        heavyAttack = GameObject.FindGameObjectWithTag("Player").GetComponent<HeavyCombo>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         ambient = GameObject.Find("GameManager").GetComponent<MusicaDinamica>();
+
 
     }
     void Update()
