@@ -220,6 +220,16 @@ public class PlayerController : MonoBehaviour
 					isMoving = false;
 					tleliAnimationController.SetForwardSpeedParameter(0f);
 				}
+
+				if (isMoving)
+                {
+					if (direction.magnitude < 0.1f) // moe, tleli brake anim
+					{
+						tleliAnimationController.BrakeTrigger();
+					}
+				} 
+
+				
 			}
 		}
 		if (velocidad.y < 0)
