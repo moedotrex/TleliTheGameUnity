@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/WaterfallAmbience
+  Event: event:/propAudio/WaterfallAmbience
   PlayEvent: 1
   StopEvent: 0
   AllowFadeout: 1
@@ -53,4 +53,4 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 1
   OverrideMinDistance: 1
-  OverrideMaxDistance: 90.38
+  OverrideMaxDistance: 40
