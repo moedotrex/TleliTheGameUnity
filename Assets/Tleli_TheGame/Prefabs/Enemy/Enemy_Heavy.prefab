@@ -10732,7 +10732,7 @@ GameObject:
   - component: {fileID: 2402569960191757449}
   m_Layer: 9
   m_Name: Enemy_Heavy
-  m_TagString: HeavyEnemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10864,9 +10864,11 @@ MonoBehaviour:
   health: 40
   imDead: 0
   TimeofDeath: 3
+  imDestroyer: 0
   flameSpawner: {fileID: 7039557453951838944, guid: df4a1fd991dae47428eead02fd0332d2,
     type: 3}
   mat: {fileID: 2100000, guid: c780e00a1a22542438bfb4bee6bda3bd, type: 2}
+  hitCounter: 0
 --- !u!114 &1941987325818411488
 MonoBehaviour:
   m_ObjectHideFlags: 0
