@@ -191,10 +191,10 @@ public class PlayerController : MonoBehaviour
 				}
 
 
-				/*if (isJumping == true)
+				if (isJumping == true)
 				{
 					velBase = 5.5f;
-				} */
+				} 
 
 				else { tempRotacion = rotacionDefault; }
 
