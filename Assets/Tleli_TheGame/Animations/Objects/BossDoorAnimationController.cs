@@ -15,10 +15,7 @@ public class BossDoorAnimationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey("x"))
-        {
-            doorAnimator.SetTrigger("GotBossKeys");
-        }
+       
     }
 
     public void BossKeysTrigger()
