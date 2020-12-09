@@ -29,12 +29,14 @@ public class LightCombo : MonoBehaviour
     PlayerController moveScript;
 
     public GameObject daggerAnim;
+    public GameObject spearAnim;
     private Transform target;
     float attRange = 6f;
     float velRotacion = 200F;
 
     public bool lunging;
     public bool gotCharged;
+    public bool imHolding;
 
     public PlayerController Tleli;
 
@@ -42,7 +44,7 @@ public class LightCombo : MonoBehaviour
     ParticleSystem trails;
     TlelliSonido SendLAttack; //ADRIAN
     TleliDeath tleliDeath; //Stop actions when Tleli is Dead. By Emil.
-    
+
 
     void Start()
     {
@@ -54,13 +56,11 @@ public class LightCombo : MonoBehaviour
         slash = GameObject.Find("WeaponSlash").GetComponent<ParticleSystem>();   //------
         trails = GameObject.Find("WeaponTrails").GetComponent<ParticleSystem>();
         SendLAttack = GetComponent<TlelliSonido>(); //ADRIAN
-        
+
     }
 
     void Update()
     {
-
-
         if (Input.GetMouseButtonDown(0) && combonum < 4 && !tleliDeath.isDead && Tleli.isGrounded)
         {
             if (Tleli.isGrounded == true)
@@ -70,6 +70,7 @@ public class LightCombo : MonoBehaviour
 
             if (Time.time >= nextAttackTime)
             {
+                animator.SetBool("Reset_LightComboBool", false);
                 daggerAnim.SetActive(true);
                 nextAttackTime = Time.time + attackRate;
                 animator.SetTrigger(animList[combonum]);
@@ -96,8 +97,11 @@ public class LightCombo : MonoBehaviour
             if (reset > intResetTime)
             {
                 combonum = 0;
-                animator.SetTrigger("Reset_LightCombo");
-                
+                moveScript.isAnimating = false;
+                //animator.SetTrigger("Reset_LightCombo");
+                animator.SetBool("Reset_LightComboBool", true);
+
+
                 //currentDamage = Damage;
                 daggerAnim.SetActive(false);
                 Debug.Log("combo reset");
@@ -115,12 +119,19 @@ public class LightCombo : MonoBehaviour
             {
                 LAttackTimer += Time.deltaTime;
             }
+
             if (LAttackTimer >= LAttackTime && !Input.GetMouseButton(1))
             {
+                moveScript.isAnimating = true;
+                moveScript.imHolding = true;
                 animator.SetBool("Lcharge", true);
+                spearAnim.SetActive(true);
+
+
+
                 //SendLAttack.LACharge = true;
                 //Debug.Log(animator.GetBool("Lcharge"));
-                // moveScript.isDisplaced = true;
+
 
                 if (target != null)
                 {
@@ -129,11 +140,13 @@ public class LightCombo : MonoBehaviour
             }
             if (Input.GetMouseButtonUp(0) || Input.GetMouseButton(1))
             {
+                moveScript.isAnimating = false;
+                moveScript.imHolding = false;
                 animator.SetBool("Lcharge", false);
                 //Debug.Log(animator.GetBool("Lcharge"));
                 LAttackTimer = 0;
                 //endLAttack.LACharge = false;
-                // moveScript.isDisplaced = false;
+
             }
         }
 
@@ -153,7 +166,7 @@ public class LightCombo : MonoBehaviour
                 if (enemy != null)
                 {
                     if (enemy.imDead == false)
-                    { 
+                    {
                         Hmov.StartKnockBack();
                         enemy.HurtEnemy(currentDamage + 10f);
                         //mov.StartKnockBack();
@@ -168,6 +181,8 @@ public class LightCombo : MonoBehaviour
             }
         }
     }
+
+
     public void Attack()
     {
         shootRay.origin = transform.position;
@@ -196,9 +211,8 @@ public class LightCombo : MonoBehaviour
                 hEnemy.HurtEnemy(currentDamage);
                 // hEnemyMov.StartKnockBack();
             }
+        }
     }
-    }
-
 
     public void FaceTarget()
     {
@@ -250,9 +264,10 @@ public class LightCombo : MonoBehaviour
         {
             moveDir = Quaternion.Euler(0f, transform.eulerAngles.y, 0f) * Vector3.forward; //direccion tomada de player Y transform 
             moveScript.characterController.Move(moveDir * 5f * Time.deltaTime);
-            moveScript.isDisplaced = true;
+
+            // moveScript.isDisplaced = true;
             yield return null;
-            moveScript.isDisplaced = false;
+            //moveScript.isDisplaced = false;
         }
     }
 
@@ -261,7 +276,8 @@ public class LightCombo : MonoBehaviour
         float startTime = Time.time;
         while (Time.time < startTime + animDuration)
         {
-            moveDir = Quaternion.Euler(0f, transform.eulerAngles.y, 0f) * Vector3.forward;
+            // moveDir = Quaternion.Euler(0f, transform.eulerAngles.y, 0f) * Vector3.forward;
+            moveDir = Camera.main.transform.forward; //direccion tomada de la camara
             moveScript.characterController.Move(moveDir * 15f * Time.deltaTime);
             moveScript.isDisplaced = true;
             yield return null;
@@ -273,5 +289,10 @@ public class LightCombo : MonoBehaviour
     {
         yield return new WaitForSeconds(0.15f);
         slash.Emit(1);
+    }
+
+    public void turnOffSpear()
+    {
+        spearAnim.SetActive(false);
     }
 }
