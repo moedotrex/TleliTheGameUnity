@@ -279,6 +279,7 @@ MonoBehaviour:
   LAttack: 0
   LACharge: 0
   LAChargeLock: 0
+  ThudOccurs: 0
   Dash: 0
   TleliIsDead: 0
   TleliResurrects: 0
@@ -358,7 +359,7 @@ MonoBehaviour:
   dashSpeed: 20
   dashTime: 0.3
   dashCooldown: 0.8
-  gotDash: 1
+  gotDash: 0
 --- !u!114 &6261791151582133854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,9 +413,10 @@ MonoBehaviour:
   daggerAnim: {fileID: 3756558803609654400}
   spearAnim: {fileID: 846756278522305671}
   lunging: 0
-  gotCharged: 1
+  gotCharged: 0
   imHolding: 0
   Tleli: {fileID: 6261791151582133855}
+  isAnimating: 0
 --- !u!114 &6261791151582133847
 MonoBehaviour:
   m_ObjectHideFlags: 0
