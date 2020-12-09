@@ -20,6 +20,7 @@ public class DialogueTleliIkni : MonoBehaviour
     public int esteDialogoLlave = 0;
 
     public Text taskText;
+    public Image dialogueBox;
 
     // Start is called before the first frame update
     void Start()
@@ -61,6 +62,7 @@ public class DialogueTleliIkni : MonoBehaviour
                     }
 
                     taskText.text = " ";
+                    dialogueBox.enabled = false;
                 } else if (dialogosIndex < dialogos.Length)
                 {
                     changeDialogue();
@@ -73,6 +75,7 @@ public class DialogueTleliIkni : MonoBehaviour
         {
             print("la llave que obtuve: " + GameEvent.llaves);
             print("este diálogo: " + GameEvent.llaves);
+
             changeDialogue();
         }
     }
@@ -84,12 +87,14 @@ public class DialogueTleliIkni : MonoBehaviour
         {
             Collider thisCollider = this.GetComponent<Collider>();
             thisCollider.enabled = false;
+
             changeDialogue();
         }
     }
 
     public void changeDialogue()
     {
+        dialogueBox.enabled = true;
         taskText.text = dialogos[dialogosIndex];
 
         Color tleliTextColor = new Color(1f, 0.7098039f, 0.4980392f, 1f);
