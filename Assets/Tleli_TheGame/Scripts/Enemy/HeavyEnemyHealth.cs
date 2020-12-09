@@ -34,11 +34,8 @@ public class HeavyEnemyHealth : MonoBehaviour
         enemyMov = GetComponent<HeavyController>();
         heavyBoiController = GetComponentInChildren<HeavyBoiAnimationController>(); //Draaek
         SendSound = GetComponent<EnemySounds>();
-<<<<<<< Updated upstream
-=======
         dLevel = -1.5f;
         mat.SetFloat("_desintegrate", dLevel);
->>>>>>> Stashed changes
         hitCounter = 0;
     }
 
@@ -73,15 +70,8 @@ public class HeavyEnemyHealth : MonoBehaviour
 
             if (hitCounter < 1)
             {
-<<<<<<< Updated upstream
-
                 heavyBoiController.IsHitTrigger();
                 hitCounter++;
-
-=======
-                heavyBoiController.IsHitTrigger();
-                hitCounter++;
->>>>>>> Stashed changes
             }
         }
     }
