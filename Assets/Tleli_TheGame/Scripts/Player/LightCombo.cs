@@ -171,6 +171,7 @@ public class LightCombo : MonoBehaviour
                     {
                         Hmov.StartKnockBack();
                         enemy.HurtEnemy(currentDamage + 10f);
+                        SendLAttack.CallThud();
                         //mov.StartKnockBack();
                     }
                 }
@@ -206,11 +207,14 @@ public class LightCombo : MonoBehaviour
                 {
                     enemy.HurtEnemy(currentDamage);
                     mov.StartKnockBack();
+                    //SendLAttack.ThudOccurs=true;
+                    SendLAttack.CallThud();
                 }
             }
             else if (hEnemy != null)
             {
                 hEnemy.HurtEnemy(currentDamage);
+                SendLAttack.CallThud();
                 // hEnemyMov.StartKnockBack();
             }
         }
