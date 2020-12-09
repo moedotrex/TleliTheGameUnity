@@ -55,7 +55,7 @@ public class HeavyEnemyHealth : MonoBehaviour
             //  GameObject.Instantiate(blood, transform.position, Quaternion.identity);
             currentHealth -= damage;
             particles.Emit((int)currentHealth);
-            heavyBoiController.IsHitTrigger();
+            //heavyBoiController.IsHitTrigger();
         }
     }
 
