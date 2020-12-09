@@ -16,6 +16,9 @@ public class DialogueTleliIkni : MonoBehaviour
     public static int dialogoIkniSalvado = 0;
     public bool isDialogoIkni = false;
 
+    public static int cualLlave = 0;
+    public int esteDialogoLlave = 0;
+
     public Text taskText;
 
     // Start is called before the first frame update
@@ -64,6 +67,14 @@ public class DialogueTleliIkni : MonoBehaviour
                     changeDialogue();
                 }
             }
+        }
+
+        //CAMBIO DIALOGOS KEYS
+        if (GameEvent.llaves == esteDialogoLlave)
+        {
+            print("la llave que obtuve: " + GameEvent.llaves);
+            print("este diálogo: " + GameEvent.llaves);
+            changeDialogue();
         }
     }
 

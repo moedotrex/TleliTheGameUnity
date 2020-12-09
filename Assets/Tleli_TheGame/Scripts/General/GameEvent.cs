@@ -13,6 +13,9 @@ public class GameEvent : MonoBehaviour
     public static int llaves = 0;
     public static bool gotLlave = false;
     public float esperaLlave;
+    //public static bool gotLlave = false;
+    public Image llaveUnlock;
+    public static bool unlockedLlave = false;
 
     public static int ikniEnemies = 3;
     public static bool ikniSalvado = false;
@@ -93,22 +96,45 @@ public class GameEvent : MonoBehaviour
                 unlockedDash = false;
             }
         }
+
+        //GOT KEY
+        if (unlockedLlave)
+        {
+            print("Llave obtenida. Mostrar imagen llave now");
+            llaveUnlock.enabled = true;
+            timer += Time.deltaTime;
+
+            if (timer >= pausaTime)
+            {
+                timer = 0f;
+                llaveUnlock.enabled = false;
+                unlockedLlave = false;
+            }
+        }
     }
 
     public void LlaveHeavyBoi()
     {
         llaves++;
+        unlockedLlave = true;
+        gotLlave = false;
+        /*
         switch (llaves)
         {
             case 1:
-                taskText.text = "Get the other key defeating the Miniboss - (1/2)";
+                unlockedLlave = true;
+                DialogueTleliIkni.cualLlave = 1;
+                //taskText.text = "Get the other key defeating the Miniboss - (1/2)";
                 break;
             case 2:
-                taskText.text = "Return to the settlement - (2/2)";
+                unlockedLlave = true;
+                DialogueTleliIkni.cualLlave = 2;
+                //taskText.text = "Return to the settlement - (2/2)";
                 print("BOSS DOOR ABIERTA");
                 break;
         }
-        gotLlave = false;
+        */
+        //gotLlave = false;
     }
 
     public void TutorialSaveIkni()
