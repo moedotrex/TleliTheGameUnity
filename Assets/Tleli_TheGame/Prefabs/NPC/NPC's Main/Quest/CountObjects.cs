@@ -31,7 +31,7 @@ public class CountObjects : MonoBehaviour
             objUI.GetComponent<Text>().text = "All Objects Collected";
         }
         */
-        if (UpisCount == 10)
+        if (UpisCount == 13)
         {
             Debug.Log("Gotem");
             Destroy(objToDestroy);
