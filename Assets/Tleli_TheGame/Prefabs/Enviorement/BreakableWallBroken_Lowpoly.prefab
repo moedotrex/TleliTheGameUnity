@@ -491,6 +491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1181026244978663430}
   - component: {fileID: 413379480494039470}
+  - component: {fileID: 19407242107576844}
   m_Layer: 0
   m_Name: BreakableWallBroken_Lowpoly
   m_TagString: Untagged
@@ -526,6 +527,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timetodestroy: 5
+--- !u!114 &19407242107576844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956824690969131708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Wallbreack
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &2285264712848519523
 GameObject:
   m_ObjectHideFlags: 0
