@@ -143,10 +143,16 @@ public class TleliAnimationController : MonoBehaviour
         tleliAnimator.SetTrigger("ChargeLightAttack");
     }
 
+    public void lightComboResetBoolParameter(bool bool_ResetLightCombo)
+    {
+        tleliAnimator.SetBool("bool_ResetLightCombo", bool_ResetLightCombo);
+    }
+
     public void isGroundedBoolParameter(bool IsGrounded)
     {
         tleliAnimator.SetBool("IsGrounded", IsGrounded);
     }
+
 
 
     public void lightAnimationHit()
@@ -202,4 +208,14 @@ public class TleliAnimationController : MonoBehaviour
             tleliMovement.isAnimating = false;
         }
     }
+    public void isAnimatingFalse()
+    {
+        tleliMovement.isAnimating = false;
+    }
+
+    public void turnOffSpear()
+    {
+        tleliCombat.turnOffSpear();
+    }
+
 }

@@ -39,7 +39,7 @@ public class PlayerDash : MonoBehaviour
     void Update()
     {
         dashCooldownTime -= Time.deltaTime;
-        if (gotDash == true) 
+        if (gotDash == true && !moveScript.imHolding) 
         { 
         if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownTime <= 0 && !tleliDeath.isDead)
         {

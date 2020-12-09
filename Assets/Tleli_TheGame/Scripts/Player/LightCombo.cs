@@ -70,8 +70,9 @@ public class LightCombo : MonoBehaviour
 
             if (Time.time >= nextAttackTime)
             {
-                animator.SetBool("Reset_LightComboBool", false);
                 daggerAnim.SetActive(true);
+                animator.SetBool("bool_ResetLightCombo", false);
+
                 nextAttackTime = Time.time + attackRate;
                 animator.SetTrigger(animList[combonum]);
                 combonum++;
@@ -99,7 +100,7 @@ public class LightCombo : MonoBehaviour
                 combonum = 0;
                 moveScript.isAnimating = false;
                 //animator.SetTrigger("Reset_LightCombo");
-                animator.SetBool("Reset_LightComboBool", true);
+                animator.SetBool("bool_ResetLightCombo", true);
 
 
                 //currentDamage = Damage;
@@ -143,6 +144,7 @@ public class LightCombo : MonoBehaviour
                 moveScript.isAnimating = false;
                 moveScript.imHolding = false;
                 animator.SetBool("Lcharge", false);
+                StartCoroutine(turnOffSpearCoroutine());
                 //Debug.Log(animator.GetBool("Lcharge"));
                 LAttackTimer = 0;
                 //endLAttack.LACharge = false;
@@ -294,5 +296,12 @@ public class LightCombo : MonoBehaviour
     public void turnOffSpear()
     {
         spearAnim.SetActive(false);
+    }
+
+    IEnumerator turnOffSpearCoroutine()
+    {
+        yield return new WaitForSeconds(0.5f);
+        spearAnim.SetActive(false);
+
     }
 }
