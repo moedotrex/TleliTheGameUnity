@@ -25,6 +25,7 @@ public class TlelliSonido : MonoBehaviour
     [HideInInspector] public bool LAttack;
     [HideInInspector] public bool LACharge;
     [HideInInspector] public bool LAChargeLock;
+    [HideInInspector] public bool ThudOccurs;
     [HideInInspector] public bool Dash;
     [HideInInspector] public bool TleliIsDead;
     [HideInInspector] public bool TleliResurrects;
@@ -62,6 +63,7 @@ public class TlelliSonido : MonoBehaviour
         //DoubleJump();
         TleliDies();
         TleliResurrected();
+        //CallThud();
         //
 
         //print("L is " + LAttack);
@@ -118,6 +120,17 @@ public class TlelliSonido : MonoBehaviour
         }
     }
 
+    public void CallThud()
+    {
+        /*if (ThudOccurs)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Thuds");
+            print("owie");
+            ThudOccurs = false;
+        }*/
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Thuds");
+        print("owie");
+    }
     private void CallLACharge()
     {
         if (LACharge)
@@ -153,7 +166,10 @@ public class TlelliSonido : MonoBehaviour
         }
     }
     
-
+    public void CollectFlameSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/propAudio/CollectFlame");
+    }
 
     private void CallFulFillment()
     {

@@ -36,7 +36,6 @@ public class DialogueTleliIkni : MonoBehaviour
             thisCollider.enabled = false;
             dialogoIkniSalvado = 2;
 
-            //dashUnlock.enabled = true;
             changeDialogue();
         }
 

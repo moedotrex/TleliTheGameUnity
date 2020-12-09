@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5843247507462207728}
   - component: {fileID: 8571359373218565178}
   - component: {fileID: 6378103640774196983}
+  - component: {fileID: 7167478876844889614}
+  - component: {fileID: 1064664012560006860}
   m_Layer: 0
   m_Name: Upi_low
   m_TagString: Untagged
@@ -92,3 +94,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16af93afc6f5f834482dfa5bfdd6a3f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7167478876844889614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7922792305059687919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c52af23a73e7c4da881c058cde4383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &1064664012560006860
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7922792305059687919}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5103602
+  m_Height: 1.0207206
+  m_Direction: 1
+  m_Center: {x: -0.00029248, y: -0.010545731, z: 0.010031283}

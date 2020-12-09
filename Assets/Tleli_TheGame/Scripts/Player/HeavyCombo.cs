@@ -54,7 +54,6 @@ public class HeavyCombo : MonoBehaviour
                 animator.SetTrigger(animList[combonum]);
                 combonum++;
                 reset = 0f;
-                //SendSound.CallHASound();
 
                 Debug.DrawRay(transform.position, transform.forward, Color.red);
 
@@ -116,11 +115,20 @@ public class HeavyCombo : MonoBehaviour
 
             EnemyHealth enemy = hit.transform.GetComponent<EnemyHealth>();
             EnemyController mov = hit.transform.GetComponent<EnemyController>();
+            HeavyEnemyHealth hEnemy = hit.transform.GetComponent<HeavyEnemyHealth>();
+            HeavyController hEnemyMov = hit.transform.GetComponent<HeavyController>();
 
             if (enemy != null)
             {
                 enemy.HurtEnemy(Damage);
                 mov.StartKnockBack();
+                SendSound.CallThud();
+            }
+            else if (hEnemy != null)
+            {
+                hEnemy.HurtEnemy(Damage);
+                SendSound.CallThud();
+                // hEnemyMov.StartKnockBack();
             }
         }
     }

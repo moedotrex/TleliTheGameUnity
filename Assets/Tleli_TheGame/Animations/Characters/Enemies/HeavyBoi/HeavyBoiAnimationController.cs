@@ -62,10 +62,9 @@ public class HeavyBoiAnimationController : MonoBehaviour
 
     void JumpEnd()
     {
-
         jumpSmash.JumpAnimOff();
         attack.JumpSlamp();
-
+        attack.isAnimating = false;
     }
 
     void turnOffAnim()
@@ -76,6 +75,7 @@ public class HeavyBoiAnimationController : MonoBehaviour
     void jumpEndOnly()
     {
         jumpSmash.JumpAnimOff();
+        attack.isAnimating = false;
     }
 
     public void Die()
