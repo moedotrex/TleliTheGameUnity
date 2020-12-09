@@ -23,7 +23,7 @@ public class HeavyAttack : MonoBehaviour
     GameObject player;
     //TlelliFlameHealth TlelliHealth;
     TleliHealth TlelliHealth;
-
+    HeavyEnemyHealth myHealth;
     
     tleliKnockBack playerKnockback;
 
@@ -45,21 +45,17 @@ public class HeavyAttack : MonoBehaviour
         
         target = PlayerManager.instance.player.transform;
         heavyBoiAnimationController = GetComponentInChildren<HeavyBoiAnimationController>(); //moe
-
         player = GameObject.FindGameObjectWithTag("Player");
         // TlelliHealth = player.GetComponent<TlelliFlameHealth>();
         TlelliHealth = player.GetComponent<TleliHealth>();
-
+        myHealth = GetComponent<HeavyEnemyHealth>();
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
-
-        
-
         playerKnockback = player.GetComponent<tleliKnockBack>();
+
         SendSound = GetComponent<EnemySounds>();
+
         trails = GameObject.Find("ClawRTrails").GetComponent<ParticleSystem>(); // Jules
         trailsL = GameObject.Find("ClawLTrails").GetComponent<ParticleSystem>();
-
-        
     }
 
 
@@ -70,7 +66,7 @@ public class HeavyAttack : MonoBehaviour
             timer += Time.deltaTime;
         }
 
-        if (timer >= timeBetweenAttacks && playerInRange && isDisplaced == false)
+        if (timer >= timeBetweenAttacks && playerInRange && isDisplaced == false && !myHealth.imDead)
 
         {
             int randomNum = Random.Range(1, 100);
@@ -83,9 +79,10 @@ public class HeavyAttack : MonoBehaviour
                 timer = 0f;
                 SendSound.HeavyAttack();
                 heavyBoiAnimationController.LightAttackTrigger(); //moe
+                myHealth.hitCounter = 0;
                 
-                StartCoroutine(Trails()); //Jules
-                StartCoroutine(TrailsL()); //Jules
+               // StartCoroutine(Trails()); //Jules
+               // StartCoroutine(TrailsL()); //Jules
             }
 
            
@@ -108,8 +105,7 @@ public class HeavyAttack : MonoBehaviour
             timer = 0f;
 
             if (TlelliHealth.flame > 0 && playerInRange)
-            {
-                
+            {   
                 TlelliHealth.HurtFlame(attackDamage);
                 playerKnockback.startKnockBack(10f);
             }
