@@ -81,8 +81,8 @@ public class HeavyAttack : MonoBehaviour
                 heavyBoiAnimationController.LightAttackTrigger(); //moe
                 myHealth.hitCounter = 0;
                 
-               // StartCoroutine(Trails()); //Jules
-               // StartCoroutine(TrailsL()); //Jules
+               StartCoroutine(Trails()); //Jules
+               StartCoroutine(TrailsL()); //Jules
             }
 
            
