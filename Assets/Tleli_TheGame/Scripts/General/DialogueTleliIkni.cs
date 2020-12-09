@@ -16,10 +16,6 @@ public class DialogueTleliIkni : MonoBehaviour
     public static int dialogoIkniSalvado = 0;
     public bool isDialogoIkni = false;
 
-    public Image dashUnlock;
-    //public Image breakWallsUnlock;
-    //public static bool unlockedBreakWalls = false;
-
     public Text taskText;
 
     // Start is called before the first frame update
@@ -37,14 +33,8 @@ public class DialogueTleliIkni : MonoBehaviour
             thisCollider.enabled = false;
             dialogoIkniSalvado = 2;
 
-            dashUnlock.enabled = true;
+            //dashUnlock.enabled = true;
             changeDialogue();
-        }
-
-        if (dialogosIndex == dialogos.Length && dialogoIkniSalvado == 2)
-        {
-            GameEvent.gotDash = true;
-            print("Dash obtenido. Mostrar imagen dash now");
         }
 
         //CONTADOR PARA ESPERAR CIERTO TIEMPO ENTRE DIÁLOGOS
@@ -57,41 +47,24 @@ public class DialogueTleliIkni : MonoBehaviour
                 dialogosIndex++;
                 TimeStarted = false;
                 timer = 0f;
-                if (dialogosIndex < dialogos.Length)
+
+                if (dialogosIndex == dialogos.Length)
                 {
-                    changeDialogue();
-                }
-                else if (dialogosIndex == dialogos.Length)
-                {
-                    /*
+
                     if (dialogoIkniSalvado == 2)
                     {
                         GameEvent.gotDash = true;
-                        dashUnlock.enabled = true;
-                        print("Dash obtenido. Mostrar imagen dash now");
+                        GameEvent.unlockedDash = true;
+                        dialogoIkniSalvado = 3;
                     }
-                    */
+
                     taskText.text = " ";
+                } else if (dialogosIndex < dialogos.Length)
+                {
+                    changeDialogue();
                 }
             }
         }
-
-        //GOT BREAK WALLS
-        /*
-        if (unlockedBreakWalls)
-        {
-            print("Break Walls obtenido. Mostrar imagen dash now");
-            breakWallsUnlock.enabled = true;
-            timer += Time.deltaTime;
-
-            if (timer >= pausaTime)
-            {
-                timer = 0f;
-                breakWallsUnlock.enabled = false;
-                unlockedBreakWalls = false;
-            }
-        }
-        */
     }
 
     void OnTriggerEnter(Collider other)
