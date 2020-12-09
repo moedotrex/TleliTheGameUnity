@@ -153,7 +153,10 @@ public class TlelliSonido : MonoBehaviour
         }
     }
     
-
+    public void CollectFlameSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/propAudio/CollectFlame");
+    }
 
     private void CallFulFillment()
     {

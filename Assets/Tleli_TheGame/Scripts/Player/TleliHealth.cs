@@ -82,6 +82,7 @@ public class TleliHealth : MonoBehaviour
     {
         flame += recover;
         FlameDepletionLock = false;
+        SendSound.CollectFlameSound();
 
         if (flame > maxFlame)
         {
