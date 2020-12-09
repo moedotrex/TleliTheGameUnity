@@ -22,7 +22,7 @@ public class HeavyEnemyHealth : MonoBehaviour
     HeavyBoiAnimationController heavyBoiController; //Draaek
     EnemySounds SendSound;
 
-
+    public int hitCounter;
 
     void Start()
     {
@@ -32,6 +32,7 @@ public class HeavyEnemyHealth : MonoBehaviour
         enemyMov = GetComponent<HeavyController>();
         heavyBoiController = GetComponentInChildren<HeavyBoiAnimationController>(); //Draaek
         SendSound = GetComponent<EnemySounds>();
+        hitCounter = 0;
     }
 
 
@@ -56,6 +57,14 @@ public class HeavyEnemyHealth : MonoBehaviour
             currentHealth -= damage;
             particles.Emit((int)currentHealth);
             //heavyBoiController.IsHitTrigger();
+
+            if (hitCounter < 1)
+            {
+
+                heavyBoiController.IsHitTrigger();
+                hitCounter++;
+
+            }
         }
     }
 
