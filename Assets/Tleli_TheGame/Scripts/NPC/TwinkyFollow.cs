@@ -24,7 +24,7 @@ public class TwinkyFollow : MonoBehaviour
     void Start()
     {
         
-        following = true;
+        //following = true;
         target = PlayerManager.instance.player.transform;
         changeAlert = GetComponentInChildren<AlertChange>();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);

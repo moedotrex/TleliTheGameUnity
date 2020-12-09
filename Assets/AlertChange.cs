@@ -32,7 +32,7 @@ public class AlertChange : MonoBehaviour
        // dam = (1 / dist) * flameDamage;
        // SetFlameDamage(dam);
 
-        print("Distancia: " + dist);
+        //print("Distancia: " + dist);
 
         if (dist > 5f )
         {

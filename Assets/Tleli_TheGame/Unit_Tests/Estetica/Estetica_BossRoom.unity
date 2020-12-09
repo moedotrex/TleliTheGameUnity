@@ -16553,8 +16553,10 @@ MonoBehaviour:
     m_Bits: 1536
   Damage: 3
   daggerAnim: {fileID: 164652037}
+  spearAnim: {fileID: 0}
   lunging: 0
   gotCharged: 0
+  imHolding: 0
   Tleli: {fileID: 800123096}
 --- !u!114 &800123089
 MonoBehaviour:
@@ -16716,6 +16718,7 @@ MonoBehaviour:
   isGrounded: 0
   saltoTime: 0.25
   isJumping: 0
+  imHolding: 0
   canMove: 10
   extraJumps: 0
   extraJumpsValue: 1
@@ -22432,6 +22435,7 @@ MonoBehaviour:
   - T
   pausaTime: 4
   isDialogoIkni: 0
+  esteDialogoLlave: 5
   taskText: {fileID: 1789757797}
 --- !u!1 &1303507678
 GameObject:
