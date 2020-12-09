@@ -45,6 +45,8 @@ public class LightCombo : MonoBehaviour
     TlelliSonido SendLAttack; //ADRIAN
     TleliDeath tleliDeath; //Stop actions when Tleli is Dead. By Emil.
 
+    public bool isAnimating = false;
+
 
     void Start()
     {
@@ -61,6 +63,8 @@ public class LightCombo : MonoBehaviour
 
     void Update()
     {
+      if (!isAnimating)
+        { 
         if (Input.GetMouseButtonDown(0) && combonum < 3 && !tleliDeath.isDead && Tleli.isGrounded)
         {
             if (Tleli.isGrounded == true)
@@ -114,41 +118,42 @@ public class LightCombo : MonoBehaviour
             intResetTime = resetTime;
         }
 
-        if (gotCharged && !tleliDeath.isDead && Tleli.isGrounded) // ya adquirio el poder? 
-        {
-            if (Input.GetMouseButton(0))
+            if (gotCharged && !tleliDeath.isDead && Tleli.isGrounded) // ya adquirio el poder? 
             {
-                LAttackTimer += Time.deltaTime;
-            }
-
-            if (LAttackTimer >= LAttackTime && !Input.GetMouseButton(1))
-            {
-                moveScript.isAnimating = true;
-                moveScript.imHolding = true;
-                animator.SetBool("Lcharge", true);
-                spearAnim.SetActive(true);
-
-
-
-                //SendLAttack.LACharge = true;
-                //Debug.Log(animator.GetBool("Lcharge"));
-
-
-                if (target != null)
+                if (Input.GetMouseButton(0))
                 {
-                    FaceTarget();
+                    LAttackTimer += Time.deltaTime;
                 }
-            }
-            if (Input.GetMouseButtonUp(0) || Input.GetMouseButton(1))
-            {
-                moveScript.isAnimating = false;
-                moveScript.imHolding = false;
-                animator.SetBool("Lcharge", false);
-                StartCoroutine(turnOffSpearCoroutine());
-                //Debug.Log(animator.GetBool("Lcharge"));
-                LAttackTimer = 0;
-                //endLAttack.LACharge = false;
 
+                if (LAttackTimer >= LAttackTime && !Input.GetMouseButton(1))
+                {
+                    moveScript.isAnimating = true;
+                    moveScript.imHolding = true;
+                    animator.SetBool("Lcharge", true);
+                    spearAnim.SetActive(true);
+
+
+
+                    //SendLAttack.LACharge = true;
+                    //Debug.Log(animator.GetBool("Lcharge"));
+
+
+                    if (target != null)
+                    {
+                        FaceTarget();
+                    }
+                }
+                if (Input.GetMouseButtonUp(0) || Input.GetMouseButton(1))
+                {
+                    moveScript.isAnimating = false;
+                    moveScript.imHolding = false;
+                    animator.SetBool("Lcharge", false);
+                    StartCoroutine(turnOffSpearCoroutine());
+                    //Debug.Log(animator.GetBool("Lcharge"));
+                    LAttackTimer = 0;
+                    //endLAttack.LACharge = false;
+
+                }
             }
         }
 
