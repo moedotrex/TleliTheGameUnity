@@ -9,9 +9,12 @@ public class HeavyEnemyHealth : MonoBehaviour
     float currentHealth;
     TlelliFlameHealth flama; //Added by Emil. Necessary for changing camera into Battle Mode.
     HeavyController enemyMov;
+    SpawnBrokenWall door;
 
     public bool imDead;
     public float TimeofDeath;
+
+    public bool imDestroyer;
 
     //public GameObject cloudSpawner;
     public GameObject flameSpawner;
@@ -37,6 +40,7 @@ public class HeavyEnemyHealth : MonoBehaviour
         dLevel = -1.5f;
         mat.SetFloat("_desintegrate", dLevel);
         hitCounter = 0;
+        door = GameObject.FindGameObjectWithTag("SpecialDoor").GetComponent<SpawnBrokenWall>();
     }
 
 
@@ -50,6 +54,12 @@ public class HeavyEnemyHealth : MonoBehaviour
             SendSound.heavyDead();
             heavyBoiController.IsDeadTrigger();
             enemyMov.enabled = false;
+
+            if(imDestroyer)
+            {
+                door.SpawnObject();
+            }
+
         }
         if (imDead == true)
         {
