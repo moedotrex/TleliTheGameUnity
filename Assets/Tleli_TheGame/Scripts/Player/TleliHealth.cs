@@ -14,6 +14,11 @@ public class TleliHealth : MonoBehaviour
     float flameMaxIntensity = 65;           //Valor máximo de la flama en shader (brightness)
     float flameMinIntensity = 35;
 
+    bool damaged;
+    public Image damageImage;
+    public Color flashColor = new Color(1f, 0f, 0f, 0.2f);
+    public float flashSpeed = 5f;
+
     [HideInInspector] public float HP;
     [HideInInspector] public float flame;
     float flameIntensity;
@@ -60,6 +65,17 @@ public class TleliHealth : MonoBehaviour
         {
             invincibilityCounter -= Time.deltaTime;
         }
+
+        if (damaged)
+        {
+            Debug.Log("DAMAGED");
+            damageImage.color = flashColor;
+        }
+        else
+        {
+            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+        }
+        damaged = false;
     }
 
 
@@ -161,6 +177,7 @@ public class TleliHealth : MonoBehaviour
                 invincibilityCounter = invincibilityLenght;
                 flame -= dmg;
                 tleliAnimationController.IsHitTrigger();
+                damaged = true;
             }
         }
     }
@@ -177,6 +194,7 @@ public class TleliHealth : MonoBehaviour
                 /*float damage = attackStrength * (100 / (100 + flame));
                 damage = Mathf.Round(damage * 100f) / 100f;*/
                 tleliAnimationController.IsHitTrigger();
+                damaged = true;
 
                 HP -= attackStrength;
                 if (HP < 0)
