@@ -16,6 +16,7 @@ public class GameEvent : MonoBehaviour
     //public static bool gotLlave = false;
     public Image llaveUnlock;
     public static bool unlockedLlave = false;
+    public static bool isGettingKey = false;
 
     public static int ikniEnemies = 3;
     public static bool ikniSalvado = false;
@@ -60,6 +61,7 @@ public class GameEvent : MonoBehaviour
         if (gotLlave)
         {
             LlaveHeavyBoi();
+            isGettingKey = true;
         }
         if (gotBreakWalls)
         {

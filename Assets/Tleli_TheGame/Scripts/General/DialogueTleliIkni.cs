@@ -63,6 +63,7 @@ public class DialogueTleliIkni : MonoBehaviour
                     }
 
                     taskText.text = " ";
+                    GameEvent.isGettingKey = false;
                     dialogueBoxx.SetActive(false);
                     //dialogueBox.enabled = false;
                 } else if (dialogosIndex < dialogos.Length)
@@ -73,7 +74,7 @@ public class DialogueTleliIkni : MonoBehaviour
         }
 
         //CAMBIO DIALOGOS KEYS
-        if (GameEvent.llaves == esteDialogoLlave)
+        if (GameEvent.llaves == esteDialogoLlave && GameEvent.isGettingKey)
         {
             print("la llave que obtuve: " + GameEvent.llaves);
             print("este diálogo: " + GameEvent.llaves);
