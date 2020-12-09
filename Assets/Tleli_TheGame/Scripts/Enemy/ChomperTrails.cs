@@ -21,7 +21,7 @@ public class ChomperTrails : MonoBehaviour
 
     void AttackTrails ()
     {
-        trailsL.Emit(5);
-        trailsR.Emit(5);
+        trailsL.Emit(20);
+        trailsR.Emit(20);
     }
 }

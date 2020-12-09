@@ -18,6 +18,8 @@ public class HeavyEnemyHealth : MonoBehaviour
 
     //public Color ogColor;
     ParticleSystem particles;
+    public Material mat;
+    float dLevel;
 
     HeavyBoiAnimationController heavyBoiController; //Draaek
     EnemySounds SendSound;
@@ -32,12 +34,18 @@ public class HeavyEnemyHealth : MonoBehaviour
         enemyMov = GetComponent<HeavyController>();
         heavyBoiController = GetComponentInChildren<HeavyBoiAnimationController>(); //Draaek
         SendSound = GetComponent<EnemySounds>();
+<<<<<<< Updated upstream
+=======
+        dLevel = -1.5f;
+        mat.SetFloat("_desintegrate", dLevel);
+>>>>>>> Stashed changes
         hitCounter = 0;
     }
 
 
     void Update()
     {
+        
         //MUERTE
         if (currentHealth <= 0 && imDead == false)
         {
@@ -45,6 +53,11 @@ public class HeavyEnemyHealth : MonoBehaviour
             SendSound.heavyDead();
             heavyBoiController.IsDeadTrigger();
             enemyMov.enabled = false;
+        }
+        if (imDead == true)
+        {
+            dLevel = Mathf.Lerp(dLevel, 0.69f, Time.deltaTime/1.69f);
+            mat.SetFloat("_desintegrate", dLevel);
         }
     }
 
@@ -60,21 +73,30 @@ public class HeavyEnemyHealth : MonoBehaviour
 
             if (hitCounter < 1)
             {
+<<<<<<< Updated upstream
 
                 heavyBoiController.IsHitTrigger();
                 hitCounter++;
 
+=======
+                heavyBoiController.IsHitTrigger();
+                hitCounter++;
+>>>>>>> Stashed changes
             }
         }
     }
 
     public void actuallyDie()
     {
+        StartCoroutine(dissolve());
         StartCoroutine(imAtuallyDying());
+       
     }
 
     IEnumerator imAtuallyDying()
     {
+        
+        
         yield return new WaitForSeconds(TimeofDeath);
 
         Instantiate(flameSpawner, transform.position, Quaternion.identity);
@@ -84,5 +106,11 @@ public class HeavyEnemyHealth : MonoBehaviour
 
         //OBTENER LLAVE
         GameEvent.gotLlave = true;
+    }
+
+    IEnumerator dissolve()
+    {
+        dLevel = 1.5f;
+        yield return new WaitForSeconds(1f);
     }
 }
