@@ -30,11 +30,11 @@ public class UIManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (GameIsPaused && screen == "pause")
+            /*if (GameIsPaused && screen == "pause")
             {
                 Resume();
             }
-            else if (GameIsPaused && screen == "settings")
+            else*/ if (GameIsPaused && screen == "settings")
             {
                 ReturnToPause();
             }
