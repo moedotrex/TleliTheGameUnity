@@ -62,8 +62,6 @@ public class HeavyEnemyHealth : MonoBehaviour
     public void actuallyDie()
     {
         StartCoroutine(imAtuallyDying());
-        //OBTENER LLAVE
-        GameEvent.gotLlave = true;
     }
 
     IEnumerator imAtuallyDying()
@@ -74,5 +72,8 @@ public class HeavyEnemyHealth : MonoBehaviour
         
         flama.BattleMode(false);
         Destroy(gameObject);
+
+        //OBTENER LLAVE
+        GameEvent.gotLlave = true;
     }
 }
