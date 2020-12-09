@@ -595,6 +595,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 2
   maxFlame: 100
+  damageImage: {fileID: 0}
+  flashColor: {r: 1, g: 0, b: 0, a: 0.2}
+  flashSpeed: 5
   HP: 0
   flame: 0
   flameDamage: 10
@@ -800,7 +803,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8268586303855877982}
   m_LocalRotation: {x: 0.37101328, y: 0.057784826, z: -0.18654184, w: 0.90786135}
-  m_LocalPosition: {x: 0.035713196, y: 0.821, z: -0.575}
+  m_LocalPosition: {x: 0.035713196, y: 0.879, z: -0.632}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6261791151582133852}
@@ -892,7 +895,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8334349458693282033}
   m_LocalRotation: {x: -0.024257815, y: -0.0218842, z: -0.19405667, w: 0.98044616}
-  m_LocalPosition: {x: 0.035713196, y: -0.10499573, z: -0.7420006}
+  m_LocalPosition: {x: 0.035713196, y: -0.10499573, z: -1.242}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6261791151582133852}
@@ -910,8 +913,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.5731577, g: 0.5931728, b: 0.754717, a: 1}
-  m_Intensity: 0.34
-  m_Range: 2.11
+  m_Intensity: 0.73
+  m_Range: 2.13
   m_SpotAngle: 156.79019
   m_InnerSpotAngle: 142.62561
   m_CookieSize: 10
