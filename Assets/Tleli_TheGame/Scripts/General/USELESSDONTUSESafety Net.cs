@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SafetyNet : MonoBehaviour
+public class USELESSDONTUSESafetyNet : MonoBehaviour
 {
-    public Transform destination;
+   /* public Transform destination; //JULES - DONT USE THIS CODE
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,5 +13,5 @@ public class SafetyNet : MonoBehaviour
             other.transform.position = destination.position;
             other.transform.rotation = destination.rotation;
         }
-    }
+    } */
 }
