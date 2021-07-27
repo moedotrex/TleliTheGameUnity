@@ -218,4 +218,15 @@ public class TleliAnimationController : MonoBehaviour
         tleliCombat.turnOffSpear();
     }
 
+    public void turnOnHeavy()
+    {
+        tleliHeavyCombat.turnOnHeavy();
+
+    }
+
+    public void turnOffHeavy()
+    {
+        tleliHeavyCombat.turnOffHeavy();
+    }
+
 }

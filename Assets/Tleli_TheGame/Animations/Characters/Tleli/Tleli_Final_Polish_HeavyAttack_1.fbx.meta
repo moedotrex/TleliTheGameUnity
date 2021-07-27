@@ -59,15 +59,23 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.61210763
-        functionName: heavyAnimationHit
+      - time: 0.20118862
+        functionName: turnOnHeavy
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 11500000, guid: 272966beacd33834894987bd6a171964,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.56
         functionName: HACSound
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.61210763
+        functionName: heavyAnimationHit
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

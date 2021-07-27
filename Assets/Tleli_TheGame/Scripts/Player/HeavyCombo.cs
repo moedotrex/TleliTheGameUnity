@@ -49,7 +49,7 @@ public class HeavyCombo : MonoBehaviour
         {
             if (Time.time >= nextAttackTime)
             {
-                macahuitlAnim.SetActive(true);
+                //macahuitlAnim.SetActive(true);
                 nextAttackTime = Time.time + attackRate;
                 animator.SetTrigger(animList[combonum]);
                 combonum++;
@@ -131,5 +131,15 @@ public class HeavyCombo : MonoBehaviour
                 // hEnemyMov.StartKnockBack();
             }
         }
+    }
+
+    public void turnOnHeavy()
+    {
+        macahuitlAnim.SetActive(true);
+    }
+
+    public void turnOffHeavy()
+    {
+        macahuitlAnim.SetActive(false);
     }
 }
