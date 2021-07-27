@@ -69,10 +69,10 @@ public class HeavyAttack : MonoBehaviour
         if (timer >= timeBetweenAttacks && playerInRange && isDisplaced == false && !myHealth.imDead)
 
         {
-            int randomNum = Random.Range(1, 100);
+            /*int randomNum = Random.Range(1, 100);
 
             if (randomNum <= 100)
-            {
+            {*/
                 Debug.Log("golpe");
 
                 isAnimating = true;
@@ -83,12 +83,12 @@ public class HeavyAttack : MonoBehaviour
                 
                StartCoroutine(Trails()); //Jules
                StartCoroutine(TrailsL()); //Jules
-            }
+            //}
 
            
         }
 
-        float distance = Vector3.Distance(target.position, transform.position);
+        /*float distance = Vector3.Distance(target.position, transform.position);
         {
             if (distance <= jumpRadio && timer >= slamCounter && isDisplaced == true)
             {
@@ -97,7 +97,7 @@ public class HeavyAttack : MonoBehaviour
                 heavyBoiAnimationController.JumpTrigger(); //moe 
                 JumpSlamp();
             }
-        }
+        }*/
     }
 
          public void Attack()
@@ -122,6 +122,7 @@ public class HeavyAttack : MonoBehaviour
 
         public void AttackSlam()
         {
+        Debug.Log("slam was called");
             timer = 0f;
 
             if (TlelliHealth.flame > 0 && playerInRange)
@@ -137,7 +138,7 @@ public class HeavyAttack : MonoBehaviour
             }
         }
 
-        public void JumpSlamp()
+        /*public void JumpSlamp()
         {
 
         //int randomNum = Random.Range(1, 100);
@@ -166,7 +167,7 @@ public class HeavyAttack : MonoBehaviour
         
 
            
-        }
+        }*/
 
         //¿jugador en rango de ataque?
         void OnTriggerEnter(Collider other)

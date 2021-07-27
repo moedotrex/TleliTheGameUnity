@@ -111,7 +111,7 @@ public class HeavyController : MonoBehaviour
 
 
 
-                if (distance >= jumpRadio && distance <= radioGrande && isJumping == false)
+                /*if (distance >= jumpRadio && distance <= radioGrande && isJumping == false)
                 {
 
                     int randomNum = Random.Range(1, 100);
@@ -139,7 +139,7 @@ public class HeavyController : MonoBehaviour
                    // transform.position = Vector3.MoveTowards(transform.position, slamLand, 100 * Time.deltaTime);
 
 
-                }
+                }*/
 
                
 
@@ -220,12 +220,12 @@ public class HeavyController : MonoBehaviour
         StartCoroutine(KnockBack());
     }
 
-    public void JumpAnimOff()
+    /*public void JumpAnimOff()
     {
         isJumping = false;
         navAgent.speed = movSpeedDef;
         navAgent.acceleration= movAcceDef;
-    }
+    }*/
 
     IEnumerator slowMovCoroutine(float time)
     {

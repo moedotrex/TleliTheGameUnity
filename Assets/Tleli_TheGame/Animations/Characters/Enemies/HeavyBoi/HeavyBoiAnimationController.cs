@@ -60,23 +60,23 @@ public class HeavyBoiAnimationController : MonoBehaviour
 
     }
 
-    void JumpEnd()
+    /*void JumpEnd()
     {
         jumpSmash.JumpAnimOff();
         attack.JumpSlamp();
         attack.isAnimating = false;
-    }
+    }*/
 
     void turnOffAnim()
     {
         attack.isAnimating = false;
     }
 
-    void jumpEndOnly()
+    /*void jumpEndOnly()
     {
         jumpSmash.JumpAnimOff();
         attack.isAnimating = false;
-    }
+    }*/
 
     public void Die()
     {

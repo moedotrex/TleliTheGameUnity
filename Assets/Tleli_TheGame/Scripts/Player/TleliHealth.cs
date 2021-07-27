@@ -29,7 +29,7 @@ public class TleliHealth : MonoBehaviour
     public bool isBattling; //Added by Emil. Needed to zoom out camera when in battle.
 
     PlayerController invincibilityFrames;  //VACA
-    float invincibilityLenght = 1f; //vaca duracion de invulnerabilidad despues de recibir daño
+    float invincibilityLenght = 0.5f; //vaca duracion de invulnerabilidad despues de recibir daño
     float invincibilityCounter;
 
     TleliAnimationController tleliAnimationController;

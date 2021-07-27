@@ -22,7 +22,7 @@ public class SettingsManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ambient = GameObject.Find("GameManager").GetComponent<MusicaDinamica>();
+        ambient = GameObject.Find("MusicManager 2").GetComponent<MusicaDinamica>();
         camSensitivy.value = PlayerPrefs.GetFloat("CameraSensitivity",1f);
         volSlider.value = PlayerPrefs.GetFloat("GameVolume",1f);
         
@@ -35,7 +35,7 @@ public class SettingsManager : MonoBehaviour
 
 
         vol = volSlider.value;
-        ambient.Music.setVolume(vol);
+        ambient.Ambiente.setVolume(vol);
         
 
         PlayerPrefs.SetFloat("CameraSensitivity", holder);

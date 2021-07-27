@@ -30,11 +30,11 @@ public class UIManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            /*if (GameIsPaused && screen == "pause")
+            if (GameIsPaused && screen == "pause")
             {
                 Resume();
             }
-            else*/ if (GameIsPaused && screen == "settings")
+            else if (GameIsPaused && screen == "settings")
             {
                 ReturnToPause();
             }
@@ -96,5 +96,11 @@ public class UIManager : MonoBehaviour
         pauseMenuUI.SetActive(true);
         settingsMenuUI.SetActive(false);
         screen = "pause";
+    }
+
+    public void QuitGame()
+    {
+        //Application.Quit();
+        UnityEditor.EditorApplication.isPlaying = false;
     }
 }
