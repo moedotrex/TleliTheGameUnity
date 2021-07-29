@@ -57,6 +57,7 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1f;
         GameIsPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
     }
     void Pause()
@@ -72,6 +73,7 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0f;
         GameIsPaused = true;
         Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
         screen = "pause";
     }
 
@@ -100,7 +102,7 @@ public class UIManager : MonoBehaviour
 
     public void QuitGame()
     {
-        //Application.Quit();
-        UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
+        //UnityEditor.EditorApplication.isPlaying = false;
     }
 }
