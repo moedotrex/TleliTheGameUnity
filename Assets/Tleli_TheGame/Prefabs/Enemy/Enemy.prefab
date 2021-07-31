@@ -104,7 +104,7 @@ MonoBehaviour:
   flameSpawner: {fileID: 7039557453951838944, guid: df4a1fd991dae47428eead02fd0332d2,
     type: 3}
   imDead: 0
-  TimeofDeath: 3
+  TimeofDeath: 1.5
   isIkniEvent: 0
 --- !u!114 &4033322470799450982
 MonoBehaviour:
@@ -208,18 +208,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4033322469562527849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4267253810269263429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65b77408f0a361443b2f09582cc9fe95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3615186718456659067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,6 +218,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73508ba6b417bd348b58a45a4fb55724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4033322469562527849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4267253810269263429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65b77408f0a361443b2f09582cc9fe95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7870002860861640358

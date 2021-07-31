@@ -18,7 +18,7 @@ public class GameEvent : MonoBehaviour
     public static bool unlockedLlave = false;
     public static bool isGettingKey = false;
 
-    public static int ikniEnemies = 3;
+    public static int ikniEnemies = 2;
     public static bool ikniSalvado = false;
     public TwinkyFollow ikniFollow;
 
@@ -48,7 +48,7 @@ public class GameEvent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ikniEnemies < 3 && ikniSalvado == false)
+        if (ikniEnemies < 2 && ikniSalvado == false)
         {
             TutorialSaveIkni();
         }
