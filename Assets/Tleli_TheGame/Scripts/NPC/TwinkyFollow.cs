@@ -46,7 +46,7 @@ public class TwinkyFollow : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, TWaypoint.position, speed * Time.deltaTime);
     }
 
-    void UpdateTarget()
+    /*void UpdateTarget()
     {
         GameObject[] platforms = GameObject.FindGameObjectsWithTag("InvisPlatform");
         float shortestDistance = Mathf.Infinity;
@@ -92,7 +92,7 @@ public class TwinkyFollow : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, tleliCloseness);
-    }
+    }*/
 
 
 }
