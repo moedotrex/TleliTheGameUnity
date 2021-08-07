@@ -63,8 +63,9 @@ public class HeavyEnemyHealth : MonoBehaviour
         }
         if (imDead == true)
         {
-            dLevel = Mathf.Lerp(dLevel, 0.69f, Time.deltaTime/1.69f);
-            mat.SetFloat("_desintegrate", dLevel);
+            //COMENTADO POR ERROR AL ELIMINAR A UNO DE LOS HEAVYS, EL OTRO SE VUELVE INVISIBLE - Jules
+            //dLevel = Mathf.Lerp(dLevel, 0.69f, Time.deltaTime/1.69f);
+            //mat.SetFloat("_desintegrate", dLevel);
         }
     }
 
@@ -88,7 +89,7 @@ public class HeavyEnemyHealth : MonoBehaviour
 
     public void actuallyDie()
     {
-        StartCoroutine(dissolve());
+        //StartCoroutine(dissolve());
         StartCoroutine(imAtuallyDying());
        
     }
@@ -108,9 +109,11 @@ public class HeavyEnemyHealth : MonoBehaviour
         GameEvent.gotLlave = true;
     }
 
-    IEnumerator dissolve()
+    //COMENTADO POR ERROR AL ELIMINAR A UNO DE LOS HEAVYS, EL OTRO SE VUELVE INVISIBLE - Jules
+    /* IEnumerator dissolve()
     {
+        
         dLevel = 1.5f;
         yield return new WaitForSeconds(1f);
-    }
+    } */
 }
