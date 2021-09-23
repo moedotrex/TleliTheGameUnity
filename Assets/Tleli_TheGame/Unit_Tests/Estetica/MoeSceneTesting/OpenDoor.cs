@@ -12,12 +12,14 @@ public class OpenDoor : MonoBehaviour
     private bool isLoaded;
     private bool shouldLoad;
 
-    BossDoorAnimationController bossDoorAnimationController;
+    private bool doorIsOpen; 
+
+    public BossDoorAnimationController bossDoorAnimationController;
 
     void Start()
     {
-        bossDoorAnimationController = GameObject.FindGameObjectWithTag("BossDoor").GetComponent<BossDoorAnimationController>();
-
+        
+        doorIsOpen = false;
         //verify if the scene is already open to avoid opening a scene twice
         if (SceneManager.sceneCount > 0)
         {
@@ -65,6 +67,7 @@ public class OpenDoor : MonoBehaviour
         {
             SceneManager.LoadSceneAsync(gameObject.name, LoadSceneMode.Additive);
             isLoaded = true;
+            bossDoorAnimationController = GameObject.Find("puerta_circular_low").GetComponent<BossDoorAnimationController>();
         }
     }
 
@@ -77,17 +80,20 @@ public class OpenDoor : MonoBehaviour
         }
     }
 
-    void BossKeysCheck()
+    public void BossKeysCheck()
     {
         if (GameEvent.llaves == 2)
         {
-            bossDoorAnimationController.BossKeysTrigger();
+            if (!doorIsOpen)
+            {
+                bossDoorAnimationController.BossKeysTrigger();
+            }
+            doorIsOpen = true;
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-
         if (other.CompareTag("Player"))
         {
             shouldLoad = true;

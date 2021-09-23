@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class LlavesBossroom : MonoBehaviour
 {
-    /*
+    
     public Text taskText;
     public static int llaves = 0;
     public float esperaLlave;
@@ -28,7 +28,7 @@ public class LlavesBossroom : MonoBehaviour
         switch (GameEvent.llaves)
         {
             case 0:
-                taskText.text = "Get the other key defeating the Miniboss - (1/2)";
+                taskText.text = "Get the other key by defeating the Miniboss - (1/2)";
                 GameEvent.llaves++;
                 break;
             case 1:
@@ -37,5 +37,5 @@ public class LlavesBossroom : MonoBehaviour
                 break;
         }
     }
-    */
+    
 }
